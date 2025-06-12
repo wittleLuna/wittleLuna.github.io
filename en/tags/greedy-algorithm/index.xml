@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Greedy Algorithm on wittleLuna的博客</title>
+    <link>http://localhost:1313/en/tags/greedy-algorithm/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
+    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/en/tags/greedy-algorithm/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>greedy algorithm</title>
+      <link>http://localhost:1313/en/post/greedy-algorithm/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>xxx@example.com (D-Sketon)</author>
+      <guid>http://localhost:1313/en/post/greedy-algorithm/</guid>
+      <description>
+        <![CDATA[<h1>greedy algorithm</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        
+          <h1 id="数组">
+<a class="header-anchor" href="#%e6%95%b0%e7%bb%84"></a>
+数组
+</h1><h2 id="数组的初始化">
+<a class="header-anchor" href="#%e6%95%b0%e7%bb%84%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96"></a>
+数组的初始化
+</h2><ul>
+<li>
+<p>静态初始化：初始化时指定数组的元素，系统根据元素的个数决定数组的长度   </p>
+<ul>
+<li> <code>//数据类型 [] 数组名 = new 数据类型 [] {元素1，元素2，....}</code> </li>
+<li>可以简写为： //<code>数据类型 [] 数组名 = {元素1，元素2，....}</code></li>
+</ul>
+</li>
+<li>
+<p>动态初始化：初始化时只指定长度，不指定数值 ，由虚拟机给出默认的初始化值</p>
+<ul>
+<li> <code>//数据类型 [] 数组名 = new 数据类型 [数组的长度] {元素1，元素2，....}</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="二维数组">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e6%95%b0%e7%bb%84"></a>
+二维数组
+</h1><p>使用场景：把数据分组管理</p>
+<h2 id="二维数组的初始化">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e6%95%b0%e7%bb%84%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96"></a>
+二维数组的初始化
+</h2><ul>
+<li>二维数组的静态初始化：
+ <code>数据类型[] [] 数组名 = new 数据类型[] [] {{元素1，元素2},{元素1，元素2}}</code>
+<ul>
+<li>简写：
+ <code>数据类型[] [] 数组名 = {{元素1，元素2},{元素1，元素2}}</code>
+<ul>
+<li>建议的写法：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">{</span><span class="n">1</span><span class="p">,</span><span class="n">2</span><span class="p">,</span><span class="n">3</span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">{</span><span class="n">4</span><span class="p">,</span><span class="n">5</span><span class="p">,</span><span class="n">6</span><span class="p">,</span><span class="n">7</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>二维数组的动态初始化：
+ <code>数据类型[] [] 数组名 = new 数据类型[m] [n]</code>
+ <code>m表示二维数组的长度，能放多少个一维数组</code>
+ <code>n表示一维数组的长度，能放多少个元素</code></li>
+</ul>
+<h2 id="二维数组的内存图">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e6%95%b0%e7%bb%84%e7%9a%84%e5%86%85%e5%ad%98%e5%9b%be"></a>
+二维数组的内存图
+</h2><p><img src="https://note.youdao.com/yws/res/3119/WEBRESOURCEe095b069f93338ff40f29ec64b54d405" alt="image"></p>
+        
+        <hr><p>Published on 2025-06-11 at <a href='http://localhost:1313/'>wittleLuna的博客</a>, last modified on 2025-06-11</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+  </channel>
+</rss>

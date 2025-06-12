@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最小生成树算法 on wittleLuna的博客</title>
+    <link>http://localhost:1313/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>最小生成树算法</title>
+      <link>http://localhost:1313/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
+      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
+      <description>
+        <![CDATA[<h1>最小生成树算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <p><strong>最小生成树是所有节点的最小连通子图</strong>，<strong>即：以最小的成本（边的权值）将图中所有节点链接到一起。</strong></p>
+<h2 id="prim算法">
+<a class="header-anchor" href="#prim%e7%ae%97%e6%b3%95"></a>
+prim算法
+</h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
+        
+        <hr><p>本文2025-06-12首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-12</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
+    
+  </channel>
+</rss>
