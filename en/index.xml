@@ -12,12 +12,689 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>theoretical basis of Graph Theory</title>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="图论">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
+图论
+</h1><h2 id="图论理论基础">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+图论理论基础
+</h2><h3 id="图的基本概念">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
+图的基本概念
+</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
+<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
+<h3 id="图的种类">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
+图的种类
+</h3><p><strong>整体上分为有向图和无向图</strong></p>
+<p>有向图：图中边是有方向的：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195737.png" alt="image"></p>
+<p>无向图：图中边没有方向:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195451.png" alt="image"></p>
+<p>加权有向图，就是图中边是有权值的:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195821.png" alt="image"></p>
+<p>加权无向图也是同理</p>
+<h3 id="度">
+<a class="header-anchor" href="#%e5%ba%a6"></a>
+度
+</h3><p><strong>无向图:有几条边连接该节点，该节点就有几度</strong>
+例如，该无向图中，节点4的度为5，节点6的度为3。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115029.png" alt="image"></p>
+<p><strong>有向图:每个节点有出度和入度</strong>
+出度：从该节点出发的边的个数
+入度:指向该节点的边的个数</p>
+<p>例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115235.png" alt="image"></p>
+<h3 id="连通性">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e6%80%a7"></a>
+连通性
+</h3><p>在图中表示节点的连通情况，称之为连通性</p>
+<h4 id="连通图">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+连通图
+</h4><p>在无向图中，任何两个节点都是可以到达的，我们称之为连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102351.png" alt="image"></p>
+<p>如果有节点不能到达其他节点，则为非连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102449.png" alt="image"></p>
+<h4 id="强连通图">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+强连通图
+</h4><p>在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、</p>
+<p><strong>注意：强连通图是在有向图中任何两个节点是可以相互到达</strong></p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511104531.png" alt="image"></p>
+<p>这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511113101.png" alt="image">
+这个图是强连通图</p>
+<h3 id="连通分量">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+连通分量
+</h3><p>在<strong>无向图中的极大连通子图</strong>称之为该图的一个连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511111559.png" alt="image"></p>
+<p>该无向图中<strong>节点1、节点2、节点5</strong>构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。</p>
+<p>同理，<strong>节点3、节点4、节点6</strong>构成的子图 也是该无向图中的一个连通分量。</p>
+<p>那么无向图中<strong>节点3 、节点4</strong>构成的子图 是该无向图的联通分量吗？</p>
+<p>不是！</p>
+<p>因为必须是极大联通子图才能是连通分量，所以 必须是<strong>节点3、节点4、节点6</strong>构成的子图才是连通分量。</p>
+<p>在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。</p>
+<h3 id="强连通分量">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+强连通分量
+</h3><p>在有向图中极大强连通子图称之为该图的强连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511112951.png" alt="image"></p>
+<p><strong>节点1、节点2、节点3、节点4、节点5</strong> 构成的子图是强连通分量，因为这是强连通图，也是极大图。</p>
+<p>节点6、节点7、节点8构成的子图 不是强连通分量，因为这不是强连通图，节点8 不能达到节点6。</p>
+<p>节点1、节点2、节点5 构成的子图 也不是 强连通分量，因为这不是极大图。</p>
+<h2 id="图的构造">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e6%9e%84%e9%80%a0"></a>
+图的构造
+</h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
+<p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>theoretical basis of DFS/BFS</title>
+      <link>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of DFS/BFS</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="深度优先搜索理论基础">
+<a class="header-anchor" href="#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+深度优先搜索理论基础
+</h1><h2 id="两者大概的区别">
+<a class="header-anchor" href="#%e4%b8%a4%e8%80%85%e5%a4%a7%e6%a6%82%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+两者大概的区别：
+</h2><ul>
+<li>
+<p>dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。</p>
+</li>
+<li>
+<p>bfs是先把本节点所连接的所有节点遍历一遍，走到下一个节点的时候，再把连接节点的所有节点遍历一遍，搜索方向更像是广度，四面八方的搜索过程。</p>
+</li>
+</ul>
+<h2 id="dfs搜索过程">
+<a class="header-anchor" href="#dfs%e6%90%9c%e7%b4%a2%e8%bf%87%e7%a8%8b"></a>
+dfs搜索过程
+</h2><p>如图一，是一个无向图，我们要搜索从节点1到节点6的所有路径。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093643.png" alt="image">
+那么dfs搜索的第一条路径是这样的： （假设第一次延默认方向，就找到了节点6），图二
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093807.png" alt="image"></p>
+<p>此时我们找到了节点6，（遇到黄河了，是不是应该回头了），那么应该再去搜索其他方向了。 如图三：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094011.png" alt="image"></p>
+<p>路径2撤销了，改变了方向，走路径3（红色线）， 接着也找到终点6。 那么撤销路径2，改为路径3，在dfs中其实就是回溯的过程（这一点很重要，很多录友不理解dfs代码中回溯是用来干什么的）</p>
+<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图四中，路径4撤销（回溯的过程），改为路径5。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094322.png" alt="image"></p>
+<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图五，路径6撤销（回溯的过程），改为路径7，路径8 和 路径7，路径9， 结果发现死路一条，都走到了自己走过的节点。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094813.png" alt="image"></p>
+<p>那么节点2所连接路径和节点3所链接的路径 都走过了，撤销路径只能向上回退，去选择撤销当初节点4的选择，也就是撤销路径5，改为路径10 。 如图图六：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707095232.png" alt="image"></p>
+<p>上图演示中，其实我并没有把 所有的 从节点1 到节点6的dfs（深度优先搜索）的过程都画出来，那样太冗余了，但 已经把dfs 关键的地方都涉及到了，关键就两点：</p>
+<ul>
+<li>搜索方向，是认准一个方向搜，直到碰壁之后再换方向</li>
+<li>换方向是撤销原路径，改为节点链接的下一个路径，回溯的过程。</li>
+</ul>
+<h2 id="代码框架">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%a1%86%e6%9e%b6"></a>
+代码框架
+</h2><p>二叉树的递归法其实就是dfs，而二叉树的迭代法，就是bfs（广度优先搜索）</p>
+<p>所以dfs，bfs其实是基础搜索算法，也广泛应用与其他数据结构与算法中。</p>
+<p><strong>回溯法代码框架:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本层集合中元素</span><span class="err">（</span><span class="n">树中节点孩子的数量就是集合的大小</span><span class="err">）</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">backtracking</span><span class="p">(</span><span class="n">路径</span><span class="err">，</span><span class="n">选择列表</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>回溯算法，其实就是dfs的过程</p>
+<p><strong>dfs算法框架:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本节点所连接的其他节点</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">dfs</span><span class="p">(</span><span class="n">图</span><span class="err">，</span><span class="n">选择的节点</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="深搜三部曲">
+<a class="header-anchor" href="#%e6%b7%b1%e6%90%9c%e4%b8%89%e9%83%a8%e6%9b%b2"></a>
+深搜三部曲
+</h3><p>1.<strong>确认递归函数，参数</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>dynamic programming</title>
+      <link>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description>
+        <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="动规五部曲">
+<a class="header-anchor" href="#%e5%8a%a8%e8%a7%84%e4%ba%94%e9%83%a8%e6%9b%b2"></a>
+动规五部曲
+</h2><ol>
+<li>确定dp数组和下标的含义</li>
+<li>写出递推公式</li>
+<li>确定dp数组如何初始化</li>
+<li>确定遍历顺序（方向）</li>
+<li>打印，举例推导验证dp数组是否正确</li>
+</ol>
+<h2 id="背包问题">
+<a class="header-anchor" href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98"></a>
+背包问题
+</h2><h2 id="01背包">
+<a class="header-anchor" href="#01%e8%83%8c%e5%8c%85"></a>
+01背包
+</h2><ul>
+<li>可使用二维背包，一维滚动背包</li>
+</ul>
+<h3 id="二维背包">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e8%83%8c%e5%8c%85"></a>
+二维背包
+</h3><h4 id="基本了解">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e4%ba%86%e8%a7%a3"></a>
+基本了解
+</h4><ul>
+<li>
+<p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
+</li>
+<li>
+<p>dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</p>
+</li>
+<li>
+<p>遍历顺序一般是先物品，再背包。也可以先背包，再物品</p>
+</li>
+<li>
+<p>第一列初始化为0，第一行为第一个物品能否装入的价值</p>
+</li>
+<li>
+<p>dp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以</p>
+</li>
+</ul>
+<h3 id="一维背包滚动背包">
+<a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e8%83%8c%e5%8c%85%e6%bb%9a%e5%8a%a8%e8%83%8c%e5%8c%85"></a>
+一维背包/滚动背包
+</h3><ul>
+<li>基本递推公式 : <code>dp[j] = max(dp[j],dp[j - weight[i]] + value[i])</code></li>
+<li>需要先遍历物品，再遍历背包，遍历背包时要倒序遍历</li>
+<li>初始化为0</li>
+<li>dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]</li>
+</ul>
+<h4 id="为什么背包容量循环需要倒序">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%83%8c%e5%8c%85%e5%ae%b9%e9%87%8f%e5%be%aa%e7%8e%af%e9%9c%80%e8%a6%81%e5%80%92%e5%ba%8f"></a>
+为什么背包容量循环需要倒序：
+</h4><p><code>dp[j - weight[i]] + value[i]</code> : 说明是从左边的值来寻找当前合适的值</p>
+<p>如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品</p>
+<p>如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上</p>
+<h3 id="题型类型">
+<a class="header-anchor" href="#%e9%a2%98%e5%9e%8b%e7%b1%bb%e5%9e%8b"></a>
+题型类型
+</h3><p>1.纯01背包，计算背包装满的最大价值</p>
+<p>2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）</p>
+<ul>
+<li>不同点：返回值是和需要的容量作比较后的布尔值</li>
+</ul>
+<p>3.尽量填满背包</p>
+<p>4.填满背包的方法数量</p>
+<ul>
+<li>
+<p>不同点 ：</p>
+<p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
+<p>dp[j] += dp[j - weight[i]]</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>algorithm questions of lanqiao cup</title>
+      <link>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>
+        <![CDATA[<h1>algorithm questions of lanqiao cup</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="杂题">
+<a class="header-anchor" href="#%e6%9d%82%e9%a2%98"></a>
+杂题
+</h2><h3 id="105-油漆面积">
+<a class="header-anchor" href="#105-%e6%b2%b9%e6%bc%86%e9%9d%a2%e7%a7%af"></a>
+<a href="https://www.lanqiao.cn/problems/105/learning/?page=1&amp;first_category_id=1&amp;problem_id=105">105 油漆面积</a>
+</h3><p><strong>错误描述</strong> ： 发生了段错误</p>
+<p><strong>原因</strong>： 保持二维数组时使用了int数组，一个int占4字节。10004*10004(个int类型变量) * 4 (转换成字节) / 1000 (转换为kb/千字节) / 1024 (转换为mb) 约为390mb， 远超题目最大运行内存256mb,所以会报段字节的错误</p>
+<p><strong>解决方法</strong>： 使用占用内存更小的类型，如boolean,占用1个字节</p>
+<p><strong>代码实现</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		 
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		 
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">rectangles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		 
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="kt">boolean</span><span class="o">[][]</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">10004</span><span class="o">][</span><span class="n">10004</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		 
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">rectangles</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">:</span><span class="w"> </span><span class="n">rectangles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">2</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">3</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">result</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="3527-阶乘的和">
+<a class="header-anchor" href="#3527-%e9%98%b6%e4%b9%98%e7%9a%84%e5%92%8c"></a>
+<a href="https://www.lanqiao.cn/problems/3527/learning/?page=1&amp;first_category_id=1&amp;problem_id=3527">3527 阶乘的和</a>
+</h3><p><strong>解题方法</strong>
+从最小的数开始，尽可能多地将它的次数合并到更高一阶的数，直到无法合并为止。最终的min就是最大的m，因为此时所有比min小的阶乘已经被合并，而当前的min的阶乘次数不足以再合并到更高阶，所以m!就是最大的可能。</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>algorithm question</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Openwebui] How to use pipeline</title>
+      <link>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
+      <description>
+        <![CDATA[<h1>[Openwebui] How to use pipeline</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="方法一-用-docker-容器运行-pipelines">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e7%94%a8-docker-%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c-pipelines"></a>
+方法一： 用 Docker 容器运行 Pipelines
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 9099:9099 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --add-host<span class="o">=</span>host.docker.internal:host-gateway <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /home/yourname/my-pipelines:/app/pipelines <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name pipelines <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  ghcr.io/open-webui/pipelines:main
+</span></span></code></pre></div><p>这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用</p>
+<p>官方镜像下载慢，但是华为云又版本过低？没事，这里我已经帮你找到了南京大学的镜像，速度快，版本新，十分甚至九分的好用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ghcr.nju.edu.cn/open-webui/pipelines:main
+</span></span></code></pre></div><hr>
+<h2 id="方法二-本地部署pipelines">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e6%9c%ac%e5%9c%b0%e9%83%a8%e7%bd%b2pipelines"></a>
+方法二： 本地部署pipelines
+</h2><h3 id="第一步克隆官方pipeline仓库">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%85%8b%e9%9a%86%e5%ae%98%e6%96%b9pipeline%e4%bb%93%e5%ba%93"></a>
+第一步：克隆官方pipeline仓库
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/open-webui/pipelines.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pipelines
+</span></span><span class="line"><span class="cl">python3.11 -m venv venv
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> venv/bin/activate
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span></code></pre></div><h3 id="注意的点">
+<a class="header-anchor" href="#%e6%b3%a8%e6%84%8f%e7%9a%84%e7%82%b9"></a>
+注意的点
+</h3><ol>
+<li>关于 clone github 仓库</li>
+</ol>
+<ul>
+<li>
+<p>如果你拥有自己的服务器，可以在云端进行。而且vscode支持远程连接时git 仓库，很方便（可能需要科学上网），也可以选择先克隆到本地，再把写好的文件上传到云端服务器</p>
+<p><img src="https://i.miji.bid/2025/06/14/e6ff66acd13d9a475f5216188958744d.png" alt=""></p>
+</li>
+</ul>
+<ol start="2">
+<li>关于 requirement.txt</li>
+</ol>
+<ul>
+<li>需要rustc和cargo的支持，需要先下载rust。直接安装依赖可能报错</li>
+</ul>
+<hr>
+<h3 id="第二步创建-rag_pipelinepy-文件">
+<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e5%88%9b%e5%bb%ba-rag_pipelinepy-%e6%96%87%e4%bb%b6"></a>
+第二步：创建 <code>rag_pipeline.py</code> 文件
+</h3><p>📁 在 <code>pipelines/</code> 目录下新建：</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>AI platform/community</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Huggingface] How to build your space</title>
+      <link>http://localhost:1313/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</guid>
+      <description>
+        <![CDATA[<h1>[Huggingface] How to build your space</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="简单介绍">
+<a class="header-anchor" href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d"></a>
+简单介绍
+</h2><blockquote>
+<p>Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.</p></blockquote>
+<p>简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用</p>
+<h2 id="前提准备">
+<a class="header-anchor" href="#%e5%89%8d%e6%8f%90%e5%87%86%e5%a4%87"></a>
+前提准备
+</h2><ul>
+<li>huggingface, github账号</li>
+</ul>
+<h2 id="第一步-建立新的space">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5-%e5%bb%ba%e7%ab%8b%e6%96%b0%e7%9a%84space"></a>
+第一步 建立新的space
+</h2><p><img src="https://i.miji.bid/2025/06/14/32f38f5d570c679a3c108d6e91026628.jpeg" alt="image"></p>
+<p>在这里选择new space, 可以看到huggingface还支持建立模型，数据集等，这些目前用不到</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>AI platform/community</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Basic knowledge]Data Structure and Algorithms</title>
+      <link>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
+      <description>
+        <![CDATA[<h1>[Basic knowledge]Data Structure and Algorithms</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="数据结构和算法">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95"></a>
+数据结构和算法
+</h1><h2 id="经典算法题">
+<a class="header-anchor" href="#%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98"></a>
+经典算法题
+</h2><p>字符串匹配问题： 暴力匹配  KMP算法
+八皇后：回溯算法
+汉诺塔：分治算法
+马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法</p>
+<h2 id="线性结构和非线性结构">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84%e5%92%8c%e9%9d%9e%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+线性结构和非线性结构
+</h2><p>数据结构包括线性结构和非线性结构</p>
+<h3 id="线性结构">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+线性结构
+</h3><p>最常用的线性结构</p>
+<p>特点：数据之间存在==一对一==的线性关系</p>
+<p>存储结构：</p>
+<ul>
+<li>
+<p>顺序存储结构（数组）：顺序存储的线性表称为顺序表，==顺序表中的存储元素是连续的（内存分配的地址是连续的）==</p>
+</li>
+<li>
+<p>链式存储结构（链表）：链式存储的线性表称为链表，==存储元素不一定连续==</p>
+</li>
+<li>
+<p>常见的线性结构：数组，队列，链表，栈</p>
+</li>
+</ul>
+<h3 id="非线性结构">
+<a class="header-anchor" href="#%e9%9d%9e%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+非线性结构
+</h3><p>不是一对一的关系</p>
+<p>常见的非线性结构：二维数组，多维数组，广义表，树结构，图结构</p>
+<h2 id="稀疏数组和队列">
+<a class="header-anchor" href="#%e7%a8%80%e7%96%8f%e6%95%b0%e7%bb%84%e5%92%8c%e9%98%9f%e5%88%97"></a>
+稀疏数组和队列
+</h2><h3 id="稀疏数组sparsearray">
+<a class="header-anchor" href="#%e7%a8%80%e7%96%8f%e6%95%b0%e7%bb%84sparsearray"></a>
+稀疏数组(sparseArray)
+</h3><p>如：用二维数组记录棋盘数据，有很多0，记录了很多没有意义的数据
+<img src="https://note.youdao.com/yws/res/5865/WEBRESOURCE743d7d559f8c3426ceb41e6320f81f87" alt="image"></p>
+<p><strong>基本介绍：</strong>
+当一个数组中大部分元素是0，或者为同一个值的数组时，可以使用稀疏数组来保存数组。</p>
+<p><strong>稀疏数组的处理方法：</strong></p>
+<ul>
+<li>
+<p>1.记录数组一共有几行几列，有多少个不同的值</p>
+</li>
+<li>
+<p>2.把具有不同值的元素的行列及值记录在一个小规模数组中，从而缩小程序的规模</p>
+</li>
+</ul>
+<p><img src="https://note.youdao.com/yws/res/5860/WEBRESOURCE0f92863c3fb74c42d103f894caefa83a" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/5874/WEBRESOURCE449b4ba4311e03751770858c006bc4fe" alt="image">
+<strong>稀疏数组转二维数组：</strong></p>
+<ul>
+<li>
+<p>1.遍历原始二维数组，得到有效数据的个数sum</p>
+</li>
+<li>
+<p>2.根据sum创建sum创建sparsearr int[sum + 1][3]</p>
+</li>
+<li>
+<p>3.将二维数组的有效数据存到一维数组</p>
+</li>
+</ul>
+<p><strong>二维数组转稀疏数组：</strong></p>
+<ul>
+<li>
+<p>1.先读取稀疏数组的第一行，根据第一行的数据，创建原始二维数组</p>
+</li>
+<li>
+<p>2.再读取稀疏数组后几行的数据，并赋给原始的二维数组</p>
+</li>
+</ul>
+<h4 id="代码实现">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"></a>
+代码实现
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">sparsearray</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SparsearrDemo1</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">11</span><span class="o">][</span><span class="n">11</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">arr</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">arr</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;----------遍历原始二维数组------------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-------------遍历稀疏数组-------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getSparsearr</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-------------遍历恢复了的二维数组--------------------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">recoverArr</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">getSparsearr</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sum</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">sarr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w">  </span><span class="kt">int</span><span class="o">[</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">][</span><span class="n">3</span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">11</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">11</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sum</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的行数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的列数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的结果值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">sarr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">sarr</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">recoverArr</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">sparsearr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]][</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sparsearr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">arr</span><span class="o">[</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]][</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//		System.out.println(&#34;-------------恢复后的数组------------------------&#34;);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="队列">
+<a class="header-anchor" href="#%e9%98%9f%e5%88%97"></a>
+队列
+</h3><p><strong>基本介绍</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm | Basic knowledge</category>
+      
+    </item>
     
     
 
@@ -348,74 +1025,6 @@ prim算法
 </span></span></span></code></pre></div>
         
         <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-12</p>]]>
-      </description>
-      
-        <category>computer algorithm</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>Backtracking-algorithm</title>
-      <link>http://localhost:1313/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
-      <description>
-        <![CDATA[<h1>Backtracking-algorithm</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <p>回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构</p>
-<p>回溯法，一般可以解决如下几种问题：</p>
-<ul>
-<li>组合问题：N个数里面按一定规则找出k个数的集合</li>
-<li>切割问题：一个字符串按一定规则有几种切割方式</li>
-<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
-<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
-<li>棋盘问题：N皇后，解数独等等</li>
-</ul>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210130173631174.png" alt="image"></p>
-<p>模板框架:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本层集合中元素</span><span class="err">（</span><span class="n">树中节点孩子的数量就是集合的大小</span><span class="err">）</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">backtracking</span><span class="p">(</span><span class="n">路径</span><span class="err">，</span><span class="n">选择列表</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>回溯三部曲:
-1.确定递归函数的参数和返回值
-2.确定递归的终止条件
-3.确定单层搜索的逻辑</p>
-<p>一般返回值都为void</p>
-<h2 id="组合问题">
-<a class="header-anchor" href="#%e7%bb%84%e5%90%88%e9%97%ae%e9%a2%98"></a>
-组合问题
-</h2><p>==需要startIndex来保证元素不被重复选取==</p>
-<h3 id="组合">
-<a class="header-anchor" href="#%e7%bb%84%e5%90%88"></a>
-组合
-</h3><blockquote>
-<p>给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。</p>
-<p>你可以按 任何顺序 返回答案。</p>
-<p>示例 1：</p>
-<p>输入：n = 4, k = 2
-输出：
-[
-[2,4],
-[3,4],
-[2,3],
-[1,2],
-[1,3],
-[1,4],
-]</p>
-        
-        <hr><p>Published on 2025-06-11 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-11</p>]]>
       </description>
       
         <category>computer algorithm</category>

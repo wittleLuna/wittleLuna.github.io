@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph Theory on wittleLuna&#39;s blog</title>
+    <link>http://localhost:1313/en/tags/graph-theory/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/en/tags/graph-theory/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>theoretical basis of Graph Theory</title>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="图论">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
+图论
+</h1><h2 id="图论理论基础">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+图论理论基础
+</h2><h3 id="图的基本概念">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
+图的基本概念
+</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
+<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
+<h3 id="图的种类">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
+图的种类
+</h3><p><strong>整体上分为有向图和无向图</strong></p>
+<p>有向图：图中边是有方向的：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195737.png" alt="image"></p>
+<p>无向图：图中边没有方向:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195451.png" alt="image"></p>
+<p>加权有向图，就是图中边是有权值的:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195821.png" alt="image"></p>
+<p>加权无向图也是同理</p>
+<h3 id="度">
+<a class="header-anchor" href="#%e5%ba%a6"></a>
+度
+</h3><p><strong>无向图:有几条边连接该节点，该节点就有几度</strong>
+例如，该无向图中，节点4的度为5，节点6的度为3。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115029.png" alt="image"></p>
+<p><strong>有向图:每个节点有出度和入度</strong>
+出度：从该节点出发的边的个数
+入度:指向该节点的边的个数</p>
+<p>例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115235.png" alt="image"></p>
+<h3 id="连通性">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e6%80%a7"></a>
+连通性
+</h3><p>在图中表示节点的连通情况，称之为连通性</p>
+<h4 id="连通图">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+连通图
+</h4><p>在无向图中，任何两个节点都是可以到达的，我们称之为连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102351.png" alt="image"></p>
+<p>如果有节点不能到达其他节点，则为非连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102449.png" alt="image"></p>
+<h4 id="强连通图">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+强连通图
+</h4><p>在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、</p>
+<p><strong>注意：强连通图是在有向图中任何两个节点是可以相互到达</strong></p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511104531.png" alt="image"></p>
+<p>这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511113101.png" alt="image">
+这个图是强连通图</p>
+<h3 id="连通分量">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+连通分量
+</h3><p>在<strong>无向图中的极大连通子图</strong>称之为该图的一个连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511111559.png" alt="image"></p>
+<p>该无向图中<strong>节点1、节点2、节点5</strong>构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。</p>
+<p>同理，<strong>节点3、节点4、节点6</strong>构成的子图 也是该无向图中的一个连通分量。</p>
+<p>那么无向图中<strong>节点3 、节点4</strong>构成的子图 是该无向图的联通分量吗？</p>
+<p>不是！</p>
+<p>因为必须是极大联通子图才能是连通分量，所以 必须是<strong>节点3、节点4、节点6</strong>构成的子图才是连通分量。</p>
+<p>在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。</p>
+<h3 id="强连通分量">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+强连通分量
+</h3><p>在有向图中极大强连通子图称之为该图的强连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511112951.png" alt="image"></p>
+<p><strong>节点1、节点2、节点3、节点4、节点5</strong> 构成的子图是强连通分量，因为这是强连通图，也是极大图。</p>
+<p>节点6、节点7、节点8构成的子图 不是强连通分量，因为这不是强连通图，节点8 不能达到节点6。</p>
+<p>节点1、节点2、节点5 构成的子图 也不是 强连通分量，因为这不是极大图。</p>
+<h2 id="图的构造">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e6%9e%84%e9%80%a0"></a>
+图的构造
+</h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
+<p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+  </channel>
+</rss>

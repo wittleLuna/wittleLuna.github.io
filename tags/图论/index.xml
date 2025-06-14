@@ -5,19 +5,53 @@
     <link>http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
-    <language>zh-cn</language>
+    <language>zh-CN</language>
     
     <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
     <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>图论理论基础</title>
+      <link>http://localhost:1313/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>图论理论基础</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="图论">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
+图论
+</h1><h2 id="图论理论基础">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+图论理论基础
+</h2><h3 id="图的基本概念">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
+图的基本概念
+</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
+<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
+<h3 id="图的种类">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
+图的种类
+</h3><p><strong>整体上分为有向图和无向图</strong></p>
+        
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-14</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
     
     
 

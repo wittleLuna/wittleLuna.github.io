@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFS/BFS on wittleLuna的博客</title>
+    <link>http://localhost:1313/tags/dfs/bfs/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/tags/dfs/bfs/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>DFS/BFS理论基础</title>
+      <link>http://localhost:1313/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>DFS/BFS理论基础</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="深度优先搜索理论基础">
+<a class="header-anchor" href="#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+深度优先搜索理论基础
+</h1><h2 id="两者大概的区别">
+<a class="header-anchor" href="#%e4%b8%a4%e8%80%85%e5%a4%a7%e6%a6%82%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+两者大概的区别：
+</h2><ul>
+<li>
+<p>dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。</p>
+        
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-14</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
+    
+  </channel>
+</rss>

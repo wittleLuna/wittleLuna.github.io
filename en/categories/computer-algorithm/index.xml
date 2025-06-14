@@ -12,12 +12,288 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/en/categories/computer-algorithm/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>theoretical basis of Graph Theory</title>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="图论">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
+图论
+</h1><h2 id="图论理论基础">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+图论理论基础
+</h2><h3 id="图的基本概念">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
+图的基本概念
+</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
+<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
+<h3 id="图的种类">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
+图的种类
+</h3><p><strong>整体上分为有向图和无向图</strong></p>
+<p>有向图：图中边是有方向的：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195737.png" alt="image"></p>
+<p>无向图：图中边没有方向:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195451.png" alt="image"></p>
+<p>加权有向图，就是图中边是有权值的:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195821.png" alt="image"></p>
+<p>加权无向图也是同理</p>
+<h3 id="度">
+<a class="header-anchor" href="#%e5%ba%a6"></a>
+度
+</h3><p><strong>无向图:有几条边连接该节点，该节点就有几度</strong>
+例如，该无向图中，节点4的度为5，节点6的度为3。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115029.png" alt="image"></p>
+<p><strong>有向图:每个节点有出度和入度</strong>
+出度：从该节点出发的边的个数
+入度:指向该节点的边的个数</p>
+<p>例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115235.png" alt="image"></p>
+<h3 id="连通性">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e6%80%a7"></a>
+连通性
+</h3><p>在图中表示节点的连通情况，称之为连通性</p>
+<h4 id="连通图">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+连通图
+</h4><p>在无向图中，任何两个节点都是可以到达的，我们称之为连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102351.png" alt="image"></p>
+<p>如果有节点不能到达其他节点，则为非连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102449.png" alt="image"></p>
+<h4 id="强连通图">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+强连通图
+</h4><p>在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、</p>
+<p><strong>注意：强连通图是在有向图中任何两个节点是可以相互到达</strong></p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511104531.png" alt="image"></p>
+<p>这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511113101.png" alt="image">
+这个图是强连通图</p>
+<h3 id="连通分量">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+连通分量
+</h3><p>在<strong>无向图中的极大连通子图</strong>称之为该图的一个连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511111559.png" alt="image"></p>
+<p>该无向图中<strong>节点1、节点2、节点5</strong>构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。</p>
+<p>同理，<strong>节点3、节点4、节点6</strong>构成的子图 也是该无向图中的一个连通分量。</p>
+<p>那么无向图中<strong>节点3 、节点4</strong>构成的子图 是该无向图的联通分量吗？</p>
+<p>不是！</p>
+<p>因为必须是极大联通子图才能是连通分量，所以 必须是<strong>节点3、节点4、节点6</strong>构成的子图才是连通分量。</p>
+<p>在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。</p>
+<h3 id="强连通分量">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+强连通分量
+</h3><p>在有向图中极大强连通子图称之为该图的强连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511112951.png" alt="image"></p>
+<p><strong>节点1、节点2、节点3、节点4、节点5</strong> 构成的子图是强连通分量，因为这是强连通图，也是极大图。</p>
+<p>节点6、节点7、节点8构成的子图 不是强连通分量，因为这不是强连通图，节点8 不能达到节点6。</p>
+<p>节点1、节点2、节点5 构成的子图 也不是 强连通分量，因为这不是极大图。</p>
+<h2 id="图的构造">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e6%9e%84%e9%80%a0"></a>
+图的构造
+</h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
+<p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>theoretical basis of DFS/BFS</title>
+      <link>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of DFS/BFS</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="深度优先搜索理论基础">
+<a class="header-anchor" href="#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+深度优先搜索理论基础
+</h1><h2 id="两者大概的区别">
+<a class="header-anchor" href="#%e4%b8%a4%e8%80%85%e5%a4%a7%e6%a6%82%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+两者大概的区别：
+</h2><ul>
+<li>
+<p>dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。</p>
+</li>
+<li>
+<p>bfs是先把本节点所连接的所有节点遍历一遍，走到下一个节点的时候，再把连接节点的所有节点遍历一遍，搜索方向更像是广度，四面八方的搜索过程。</p>
+</li>
+</ul>
+<h2 id="dfs搜索过程">
+<a class="header-anchor" href="#dfs%e6%90%9c%e7%b4%a2%e8%bf%87%e7%a8%8b"></a>
+dfs搜索过程
+</h2><p>如图一，是一个无向图，我们要搜索从节点1到节点6的所有路径。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093643.png" alt="image">
+那么dfs搜索的第一条路径是这样的： （假设第一次延默认方向，就找到了节点6），图二
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093807.png" alt="image"></p>
+<p>此时我们找到了节点6，（遇到黄河了，是不是应该回头了），那么应该再去搜索其他方向了。 如图三：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094011.png" alt="image"></p>
+<p>路径2撤销了，改变了方向，走路径3（红色线）， 接着也找到终点6。 那么撤销路径2，改为路径3，在dfs中其实就是回溯的过程（这一点很重要，很多录友不理解dfs代码中回溯是用来干什么的）</p>
+<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图四中，路径4撤销（回溯的过程），改为路径5。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094322.png" alt="image"></p>
+<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图五，路径6撤销（回溯的过程），改为路径7，路径8 和 路径7，路径9， 结果发现死路一条，都走到了自己走过的节点。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094813.png" alt="image"></p>
+<p>那么节点2所连接路径和节点3所链接的路径 都走过了，撤销路径只能向上回退，去选择撤销当初节点4的选择，也就是撤销路径5，改为路径10 。 如图图六：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707095232.png" alt="image"></p>
+<p>上图演示中，其实我并没有把 所有的 从节点1 到节点6的dfs（深度优先搜索）的过程都画出来，那样太冗余了，但 已经把dfs 关键的地方都涉及到了，关键就两点：</p>
+<ul>
+<li>搜索方向，是认准一个方向搜，直到碰壁之后再换方向</li>
+<li>换方向是撤销原路径，改为节点链接的下一个路径，回溯的过程。</li>
+</ul>
+<h2 id="代码框架">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%a1%86%e6%9e%b6"></a>
+代码框架
+</h2><p>二叉树的递归法其实就是dfs，而二叉树的迭代法，就是bfs（广度优先搜索）</p>
+<p>所以dfs，bfs其实是基础搜索算法，也广泛应用与其他数据结构与算法中。</p>
+<p><strong>回溯法代码框架:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本层集合中元素</span><span class="err">（</span><span class="n">树中节点孩子的数量就是集合的大小</span><span class="err">）</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">backtracking</span><span class="p">(</span><span class="n">路径</span><span class="err">，</span><span class="n">选择列表</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>回溯算法，其实就是dfs的过程</p>
+<p><strong>dfs算法框架:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本节点所连接的其他节点</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">dfs</span><span class="p">(</span><span class="n">图</span><span class="err">，</span><span class="n">选择的节点</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="深搜三部曲">
+<a class="header-anchor" href="#%e6%b7%b1%e6%90%9c%e4%b8%89%e9%83%a8%e6%9b%b2"></a>
+深搜三部曲
+</h3><p>1.<strong>确认递归函数，参数</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>dynamic programming</title>
+      <link>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description>
+        <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="动规五部曲">
+<a class="header-anchor" href="#%e5%8a%a8%e8%a7%84%e4%ba%94%e9%83%a8%e6%9b%b2"></a>
+动规五部曲
+</h2><ol>
+<li>确定dp数组和下标的含义</li>
+<li>写出递推公式</li>
+<li>确定dp数组如何初始化</li>
+<li>确定遍历顺序（方向）</li>
+<li>打印，举例推导验证dp数组是否正确</li>
+</ol>
+<h2 id="背包问题">
+<a class="header-anchor" href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98"></a>
+背包问题
+</h2><h2 id="01背包">
+<a class="header-anchor" href="#01%e8%83%8c%e5%8c%85"></a>
+01背包
+</h2><ul>
+<li>可使用二维背包，一维滚动背包</li>
+</ul>
+<h3 id="二维背包">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e8%83%8c%e5%8c%85"></a>
+二维背包
+</h3><h4 id="基本了解">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e4%ba%86%e8%a7%a3"></a>
+基本了解
+</h4><ul>
+<li>
+<p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
+</li>
+<li>
+<p>dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</p>
+</li>
+<li>
+<p>遍历顺序一般是先物品，再背包。也可以先背包，再物品</p>
+</li>
+<li>
+<p>第一列初始化为0，第一行为第一个物品能否装入的价值</p>
+</li>
+<li>
+<p>dp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以</p>
+</li>
+</ul>
+<h3 id="一维背包滚动背包">
+<a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e8%83%8c%e5%8c%85%e6%bb%9a%e5%8a%a8%e8%83%8c%e5%8c%85"></a>
+一维背包/滚动背包
+</h3><ul>
+<li>基本递推公式 : <code>dp[j] = max(dp[j],dp[j - weight[i]] + value[i])</code></li>
+<li>需要先遍历物品，再遍历背包，遍历背包时要倒序遍历</li>
+<li>初始化为0</li>
+<li>dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]</li>
+</ul>
+<h4 id="为什么背包容量循环需要倒序">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%83%8c%e5%8c%85%e5%ae%b9%e9%87%8f%e5%be%aa%e7%8e%af%e9%9c%80%e8%a6%81%e5%80%92%e5%ba%8f"></a>
+为什么背包容量循环需要倒序：
+</h4><p><code>dp[j - weight[i]] + value[i]</code> : 说明是从左边的值来寻找当前合适的值</p>
+<p>如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品</p>
+<p>如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上</p>
+<h3 id="题型类型">
+<a class="header-anchor" href="#%e9%a2%98%e5%9e%8b%e7%b1%bb%e5%9e%8b"></a>
+题型类型
+</h3><p>1.纯01背包，计算背包装满的最大价值</p>
+<p>2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）</p>
+<ul>
+<li>不同点：返回值是和需要的容量作比较后的布尔值</li>
+</ul>
+<p>3.尽量填满背包</p>
+<p>4.填满背包的方法数量</p>
+<ul>
+<li>
+<p>不同点 ：</p>
+<p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
+<p>dp[j] += dp[j - weight[i]]</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
     
     
 
