@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构与算法 on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sun, 15 Jun 2025 14:36:47 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[基础知识]数据结构与算法</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
+      <description>
+        <![CDATA[<h1>[基础知识]数据结构与算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="数据结构和算法">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95"></a>
+数据结构和算法
+</h1><h2 id="经典算法题">
+<a class="header-anchor" href="#%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98"></a>
+经典算法题
+</h2><p>字符串匹配问题： 暴力匹配  KMP算法
+八皇后：回溯算法
+汉诺塔：分治算法
+马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法</p>
+        
+        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+      </description>
+      
+        <category>算法|基础知识</category>
+      
+    </item>
+    
+  </channel>
+</rss>

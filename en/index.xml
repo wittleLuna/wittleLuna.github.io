@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/algolia.json</link>
+    <link>https://wittleLuna.github.io/en/algolia.json</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,297 +12,21 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:40:07 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss&#43;xml" />
-    
-
-    
+    <atom:link href="https://wittleLuna.github.io/en/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
-    <item>
-      <title>theoretical basis of Graph Theory</title>
-      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
-      <description>
-        <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <h1 id="图论">
-<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
-图论
-</h1><h2 id="图论理论基础">
-<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
-图论理论基础
-</h2><h3 id="图的基本概念">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
-图的基本概念
-</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
-<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
-<h3 id="图的种类">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
-图的种类
-</h3><p><strong>整体上分为有向图和无向图</strong></p>
-<p>有向图：图中边是有方向的：
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195737.png" alt="image"></p>
-<p>无向图：图中边没有方向:
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195451.png" alt="image"></p>
-<p>加权有向图，就是图中边是有权值的:
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195821.png" alt="image"></p>
-<p>加权无向图也是同理</p>
-<h3 id="度">
-<a class="header-anchor" href="#%e5%ba%a6"></a>
-度
-</h3><p><strong>无向图:有几条边连接该节点，该节点就有几度</strong>
-例如，该无向图中，节点4的度为5，节点6的度为3。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115029.png" alt="image"></p>
-<p><strong>有向图:每个节点有出度和入度</strong>
-出度：从该节点出发的边的个数
-入度:指向该节点的边的个数</p>
-<p>例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115235.png" alt="image"></p>
-<h3 id="连通性">
-<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e6%80%a7"></a>
-连通性
-</h3><p>在图中表示节点的连通情况，称之为连通性</p>
-<h4 id="连通图">
-<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
-连通图
-</h4><p>在无向图中，任何两个节点都是可以到达的，我们称之为连通图
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102351.png" alt="image"></p>
-<p>如果有节点不能到达其他节点，则为非连通图
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102449.png" alt="image"></p>
-<h4 id="强连通图">
-<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
-强连通图
-</h4><p>在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、</p>
-<p><strong>注意：强连通图是在有向图中任何两个节点是可以相互到达</strong></p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511104531.png" alt="image"></p>
-<p>这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。</p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511113101.png" alt="image">
-这个图是强连通图</p>
-<h3 id="连通分量">
-<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
-连通分量
-</h3><p>在<strong>无向图中的极大连通子图</strong>称之为该图的一个连通分量。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511111559.png" alt="image"></p>
-<p>该无向图中<strong>节点1、节点2、节点5</strong>构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。</p>
-<p>同理，<strong>节点3、节点4、节点6</strong>构成的子图 也是该无向图中的一个连通分量。</p>
-<p>那么无向图中<strong>节点3 、节点4</strong>构成的子图 是该无向图的联通分量吗？</p>
-<p>不是！</p>
-<p>因为必须是极大联通子图才能是连通分量，所以 必须是<strong>节点3、节点4、节点6</strong>构成的子图才是连通分量。</p>
-<p>在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。</p>
-<h3 id="强连通分量">
-<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
-强连通分量
-</h3><p>在有向图中极大强连通子图称之为该图的强连通分量。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511112951.png" alt="image"></p>
-<p><strong>节点1、节点2、节点3、节点4、节点5</strong> 构成的子图是强连通分量，因为这是强连通图，也是极大图。</p>
-<p>节点6、节点7、节点8构成的子图 不是强连通分量，因为这不是强连通图，节点8 不能达到节点6。</p>
-<p>节点1、节点2、节点5 构成的子图 也不是 强连通分量，因为这不是极大图。</p>
-<h2 id="图的构造">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e6%9e%84%e9%80%a0"></a>
-图的构造
-</h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
-<p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
-        
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
-      </description>
-      
-        <category>computer algorithm</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>theoretical basis of DFS/BFS</title>
-      <link>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
-      <description>
-        <![CDATA[<h1>theoretical basis of DFS/BFS</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <h1 id="深度优先搜索理论基础">
-<a class="header-anchor" href="#%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%85%88%e6%90%9c%e7%b4%a2%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
-深度优先搜索理论基础
-</h1><h2 id="两者大概的区别">
-<a class="header-anchor" href="#%e4%b8%a4%e8%80%85%e5%a4%a7%e6%a6%82%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
-两者大概的区别：
-</h2><ul>
-<li>
-<p>dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。</p>
-</li>
-<li>
-<p>bfs是先把本节点所连接的所有节点遍历一遍，走到下一个节点的时候，再把连接节点的所有节点遍历一遍，搜索方向更像是广度，四面八方的搜索过程。</p>
-</li>
-</ul>
-<h2 id="dfs搜索过程">
-<a class="header-anchor" href="#dfs%e6%90%9c%e7%b4%a2%e8%bf%87%e7%a8%8b"></a>
-dfs搜索过程
-</h2><p>如图一，是一个无向图，我们要搜索从节点1到节点6的所有路径。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093643.png" alt="image">
-那么dfs搜索的第一条路径是这样的： （假设第一次延默认方向，就找到了节点6），图二
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707093807.png" alt="image"></p>
-<p>此时我们找到了节点6，（遇到黄河了，是不是应该回头了），那么应该再去搜索其他方向了。 如图三：
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094011.png" alt="image"></p>
-<p>路径2撤销了，改变了方向，走路径3（红色线）， 接着也找到终点6。 那么撤销路径2，改为路径3，在dfs中其实就是回溯的过程（这一点很重要，很多录友不理解dfs代码中回溯是用来干什么的）</p>
-<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图四中，路径4撤销（回溯的过程），改为路径5。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094322.png" alt="image"></p>
-<p>又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图五，路径6撤销（回溯的过程），改为路径7，路径8 和 路径7，路径9， 结果发现死路一条，都走到了自己走过的节点。
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707094813.png" alt="image"></p>
-<p>那么节点2所连接路径和节点3所链接的路径 都走过了，撤销路径只能向上回退，去选择撤销当初节点4的选择，也就是撤销路径5，改为路径10 。 如图图六：
-<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20220707095232.png" alt="image"></p>
-<p>上图演示中，其实我并没有把 所有的 从节点1 到节点6的dfs（深度优先搜索）的过程都画出来，那样太冗余了，但 已经把dfs 关键的地方都涉及到了，关键就两点：</p>
-<ul>
-<li>搜索方向，是认准一个方向搜，直到碰壁之后再换方向</li>
-<li>换方向是撤销原路径，改为节点链接的下一个路径，回溯的过程。</li>
-</ul>
-<h2 id="代码框架">
-<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%a1%86%e6%9e%b6"></a>
-代码框架
-</h2><p>二叉树的递归法其实就是dfs，而二叉树的迭代法，就是bfs（广度优先搜索）</p>
-<p>所以dfs，bfs其实是基础搜索算法，也广泛应用与其他数据结构与算法中。</p>
-<p><strong>回溯法代码框架:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本层集合中元素</span><span class="err">（</span><span class="n">树中节点孩子的数量就是集合的大小</span><span class="err">）</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">backtracking</span><span class="p">(</span><span class="n">路径</span><span class="err">，</span><span class="n">选择列表</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>回溯算法，其实就是dfs的过程</p>
-<p><strong>dfs算法框架:</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">dfs</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本节点所连接的其他节点</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">dfs</span><span class="p">(</span><span class="n">图</span><span class="err">，</span><span class="n">选择的节点</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="深搜三部曲">
-<a class="header-anchor" href="#%e6%b7%b1%e6%90%9c%e4%b8%89%e9%83%a8%e6%9b%b2"></a>
-深搜三部曲
-</h3><p>1.<strong>确认递归函数，参数</strong></p>
-        
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
-      </description>
-      
-        <category>computer algorithm</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>dynamic programming</title>
-      <link>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
-      <description>
-        <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <h2 id="动规五部曲">
-<a class="header-anchor" href="#%e5%8a%a8%e8%a7%84%e4%ba%94%e9%83%a8%e6%9b%b2"></a>
-动规五部曲
-</h2><ol>
-<li>确定dp数组和下标的含义</li>
-<li>写出递推公式</li>
-<li>确定dp数组如何初始化</li>
-<li>确定遍历顺序（方向）</li>
-<li>打印，举例推导验证dp数组是否正确</li>
-</ol>
-<h2 id="背包问题">
-<a class="header-anchor" href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98"></a>
-背包问题
-</h2><h2 id="01背包">
-<a class="header-anchor" href="#01%e8%83%8c%e5%8c%85"></a>
-01背包
-</h2><ul>
-<li>可使用二维背包，一维滚动背包</li>
-</ul>
-<h3 id="二维背包">
-<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e8%83%8c%e5%8c%85"></a>
-二维背包
-</h3><h4 id="基本了解">
-<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e4%ba%86%e8%a7%a3"></a>
-基本了解
-</h4><ul>
-<li>
-<p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
-</li>
-<li>
-<p>dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</p>
-</li>
-<li>
-<p>遍历顺序一般是先物品，再背包。也可以先背包，再物品</p>
-</li>
-<li>
-<p>第一列初始化为0，第一行为第一个物品能否装入的价值</p>
-</li>
-<li>
-<p>dp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以</p>
-</li>
-</ul>
-<h3 id="一维背包滚动背包">
-<a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e8%83%8c%e5%8c%85%e6%bb%9a%e5%8a%a8%e8%83%8c%e5%8c%85"></a>
-一维背包/滚动背包
-</h3><ul>
-<li>基本递推公式 : <code>dp[j] = max(dp[j],dp[j - weight[i]] + value[i])</code></li>
-<li>需要先遍历物品，再遍历背包，遍历背包时要倒序遍历</li>
-<li>初始化为0</li>
-<li>dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]</li>
-</ul>
-<h4 id="为什么背包容量循环需要倒序">
-<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%83%8c%e5%8c%85%e5%ae%b9%e9%87%8f%e5%be%aa%e7%8e%af%e9%9c%80%e8%a6%81%e5%80%92%e5%ba%8f"></a>
-为什么背包容量循环需要倒序：
-</h4><p><code>dp[j - weight[i]] + value[i]</code> : 说明是从左边的值来寻找当前合适的值</p>
-<p>如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品</p>
-<p>如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上</p>
-<h3 id="题型类型">
-<a class="header-anchor" href="#%e9%a2%98%e5%9e%8b%e7%b1%bb%e5%9e%8b"></a>
-题型类型
-</h3><p>1.纯01背包，计算背包装满的最大价值</p>
-<p>2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）</p>
-<ul>
-<li>不同点：返回值是和需要的容量作比较后的布尔值</li>
-</ul>
-<p>3.尽量填满背包</p>
-<p>4.填满背包的方法数量</p>
-<ul>
-<li>
-<p>不同点 ：</p>
-<p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
-<p>dp[j] += dp[j - weight[i]]</p>
-        
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
-      </description>
-      
-        <category>computer algorithm</category>
-      
-    </item>
     
     
 
     <item>
       <title>algorithm questions of lanqiao cup</title>
-      <link>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <link>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
       <description>
         <![CDATA[<h1>algorithm questions of lanqiao cup</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -380,7 +104,7 @@ dfs搜索过程
 </h3><p><strong>解题方法</strong>
 从最小的数开始，尽可能多地将它的次数合并到更高一阶的数，直到无法合并为止。最终的min就是最大的m，因为此时所有比min小的阶乘已经被合并，而当前的min的阶乘次数不足以再合并到更高阶，所以m!就是最大的可能。</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>algorithm question</category>
@@ -390,102 +114,70 @@ dfs搜索过程
     
 
     <item>
-      <title>[Openwebui] How to use pipeline</title>
-      <link>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <title>Minimum Spanning Tree</title>
+      <link>https://wittleLuna.github.io/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
+      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
       <description>
-        <![CDATA[<h1>[Openwebui] How to use pipeline</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        <![CDATA[<h1>Minimum Spanning Tree</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
-          <h2 id="方法一-用-docker-容器运行-pipelines">
-<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e7%94%a8-docker-%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c-pipelines"></a>
-方法一： 用 Docker 容器运行 Pipelines
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 9099:9099 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --add-host<span class="o">=</span>host.docker.internal:host-gateway <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /home/yourname/my-pipelines:/app/pipelines <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name pipelines <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart always <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  ghcr.io/open-webui/pipelines:main
-</span></span></code></pre></div><p>这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用</p>
-<p>官方镜像下载慢，但是华为云又版本过低？没事，这里我已经帮你找到了南京大学的镜像，速度快，版本新，十分甚至九分的好用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ghcr.nju.edu.cn/open-webui/pipelines:main
-</span></span></code></pre></div><hr>
-<h2 id="方法二-本地部署pipelines">
-<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e6%9c%ac%e5%9c%b0%e9%83%a8%e7%bd%b2pipelines"></a>
-方法二： 本地部署pipelines
-</h2><h3 id="第一步克隆官方pipeline仓库">
-<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%85%8b%e9%9a%86%e5%ae%98%e6%96%b9pipeline%e4%bb%93%e5%ba%93"></a>
-第一步：克隆官方pipeline仓库
-</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/open-webui/pipelines.git
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pipelines
-</span></span><span class="line"><span class="cl">python3.11 -m venv venv
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> venv/bin/activate
-</span></span><span class="line"><span class="cl">pip install -r requirements.txt
-</span></span></code></pre></div><h3 id="注意的点">
-<a class="header-anchor" href="#%e6%b3%a8%e6%84%8f%e7%9a%84%e7%82%b9"></a>
-注意的点
-</h3><ol>
-<li>关于 clone github 仓库</li>
-</ol>
+          <p><strong>最小生成树是所有节点的最小连通子图</strong>，<strong>即：以最小的成本（边的权值）将图中所有节点链接到一起。</strong></p>
+<h2 id="prim算法">
+<a class="header-anchor" href="#prim%e7%ae%97%e6%b3%95"></a>
+prim算法
+</h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
+<p>==<strong>只适用于加权无向图</strong>==</p>
+<p>那么如何选择这n-1条边就是最小生成树算法的任务所在。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20231206164306.png" alt="image"></p>
+<p>在这个图中，如何选取n-1条边使得图中所有节点连接到一起，并且边的权值和最小呢？</p>
+<p>（图中为n为7，即7个节点，那么只需要n-1即6条边就可以讲所有顶点连接到一起）</p>
+<p>prim算法是从节点的角度<strong>采用贪心的策略每次寻找距离最小生成树最近的节点并加入到最小生成树中。</strong></p>
+<p>prim算法核心就是三步，我称为<strong>prim三部曲</strong>，大家一定要熟悉这三步，代码相对会好些很多：</p>
 <ul>
-<li>
-<p>如果你拥有自己的服务器，可以在云端进行。而且vscode支持远程连接时git 仓库，很方便（可能需要科学上网），也可以选择先克隆到本地，再把写好的文件上传到云端服务器</p>
-<p><img src="https://i.miji.bid/2025/06/14/e6ff66acd13d9a475f5216188958744d.png" alt=""></p>
-</li>
+<li>第一步，选距离生成树最近节点</li>
+<li>第二步，最近节点加入生成树</li>
+<li>第三步，更新非生成树节点到生成树的距离（即更新minDist数组）</li>
 </ul>
-<ol start="2">
-<li>关于 requirement.txt</li>
-</ol>
-<ul>
-<li>需要rustc和cargo的支持，需要先下载rust。直接安装依赖可能报错</li>
-</ul>
-<hr>
-<h3 id="第二步创建-rag_pipelinepy-文件">
-<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e5%88%9b%e5%bb%ba-rag_pipelinepy-%e6%96%87%e4%bb%b6"></a>
-第二步：创建 <code>rag_pipeline.py</code> 文件
-</h3><p>📁 在 <code>pipelines/</code> 目录下新建：</p>
-        
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
-      </description>
-      
-        <category>AI platform/community</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>[Huggingface] How to build your space</title>
-      <link>http://localhost:1313/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</guid>
-      <description>
-        <![CDATA[<h1>[Huggingface] How to build your space</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <h2 id="简单介绍">
-<a class="header-anchor" href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d"></a>
-简单介绍
+<p><strong>minDist数组的含义：记录每一个节点距离最小生成树的最近距离。</strong></p>
+<p><a href="https://programmercarl.com/kamacoder/0053.%E5%AF%BB%E5%AE%9D-prim.html#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF">最小生成树prim算法</a></p>
+<h2 id="寻宝">
+<a class="header-anchor" href="#%e5%af%bb%e5%ae%9d"></a>
+寻宝
 </h2><blockquote>
-<p>Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.</p></blockquote>
-<p>简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用</p>
-<h2 id="前提准备">
-<a class="header-anchor" href="#%e5%89%8d%e6%8f%90%e5%87%86%e5%a4%87"></a>
-前提准备
-</h2><ul>
-<li>huggingface, github账号</li>
-</ul>
-<h2 id="第一步-建立新的space">
-<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5-%e5%bb%ba%e7%ab%8b%e6%96%b0%e7%9a%84space"></a>
-第一步 建立新的space
-</h2><p><img src="https://i.miji.bid/2025/06/14/32f38f5d570c679a3c108d6e91026628.jpeg" alt="image"></p>
-<p>在这里选择new space, 可以看到huggingface还支持建立模型，数据集等，这些目前用不到</p>
+<p>在世界的某个区域，有一些分散的神秘岛屿，每个岛屿上都有一种珍稀的资源或者宝藏。国王打算在这些岛屿上建公路，方便运输。</p>
+<p>不同岛屿之间，路途距离不同，国王希望你可以规划建公路的方案，如何可以以最短的总公路距离将 所有岛屿联通起来（注意：这是一个无向图）。</p>
+<p>给定一张地图，其中包括了所有的岛屿，以及它们之间的距离。以最小化公路建设长度，确保可以链接到所有岛屿。</p>
+<p>输入描述
+第一行包含两个整数V 和 E，V代表顶点数，E代表边数 。顶点编号是从1到V。例如：V=2，一个有两个顶点，分别是1和2。</p>
+<p>接下来共有 E 行，每行三个整数 v1，v2 和 val，v1 和 v2 为边的起点和终点，val代表边的权值。</p>
+<p>输出描述
+输出联通所有岛屿的最小路径总距离
+输入示例
+7 11
+1 2 1
+1 3 1
+1 5 2
+2 6 1
+2 4 2
+2 3 2
+3 4 1
+4 5 1
+5 6 2
+5 7 1
+6 7 1
+输出示例
+6
+提示信息
+数据范围：
+2 &lt;= V &lt;= 10000;
+1 &lt;= E &lt;= 100000;
+0 &lt;= val &lt;= 10000;</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
-        <category>AI platform/community</category>
+        <category>computer algorithm</category>
       
     </item>
     
@@ -493,10 +185,10 @@ dfs搜索过程
 
     <item>
       <title>[Basic knowledge]Data Structure and Algorithms</title>
-      <link>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
+      <link>https://wittleLuna.github.io/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
       <description>
         <![CDATA[<h1>[Basic knowledge]Data Structure and Algorithms</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -689,7 +381,7 @@ dfs搜索过程
 队列
 </h3><p><strong>基本介绍</strong></p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm | Basic knowledge</category>
@@ -699,81 +391,11 @@ dfs搜索过程
     
 
     <item>
-      <title>Minimum Spanning Tree</title>
-      <link>http://localhost:1313/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
-      <description>
-        <![CDATA[<h1>Minimum Spanning Tree</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <p><strong>最小生成树是所有节点的最小连通子图</strong>，<strong>即：以最小的成本（边的权值）将图中所有节点链接到一起。</strong></p>
-<h2 id="prim算法">
-<a class="header-anchor" href="#prim%e7%ae%97%e6%b3%95"></a>
-prim算法
-</h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
-<p>==<strong>只适用于加权无向图</strong>==</p>
-<p>那么如何选择这n-1条边就是最小生成树算法的任务所在。</p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20231206164306.png" alt="image"></p>
-<p>在这个图中，如何选取n-1条边使得图中所有节点连接到一起，并且边的权值和最小呢？</p>
-<p>（图中为n为7，即7个节点，那么只需要n-1即6条边就可以讲所有顶点连接到一起）</p>
-<p>prim算法是从节点的角度<strong>采用贪心的策略每次寻找距离最小生成树最近的节点并加入到最小生成树中。</strong></p>
-<p>prim算法核心就是三步，我称为<strong>prim三部曲</strong>，大家一定要熟悉这三步，代码相对会好些很多：</p>
-<ul>
-<li>第一步，选距离生成树最近节点</li>
-<li>第二步，最近节点加入生成树</li>
-<li>第三步，更新非生成树节点到生成树的距离（即更新minDist数组）</li>
-</ul>
-<p><strong>minDist数组的含义：记录每一个节点距离最小生成树的最近距离。</strong></p>
-<p><a href="https://programmercarl.com/kamacoder/0053.%E5%AF%BB%E5%AE%9D-prim.html#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF">最小生成树prim算法</a></p>
-<h2 id="寻宝">
-<a class="header-anchor" href="#%e5%af%bb%e5%ae%9d"></a>
-寻宝
-</h2><blockquote>
-<p>在世界的某个区域，有一些分散的神秘岛屿，每个岛屿上都有一种珍稀的资源或者宝藏。国王打算在这些岛屿上建公路，方便运输。</p>
-<p>不同岛屿之间，路途距离不同，国王希望你可以规划建公路的方案，如何可以以最短的总公路距离将 所有岛屿联通起来（注意：这是一个无向图）。</p>
-<p>给定一张地图，其中包括了所有的岛屿，以及它们之间的距离。以最小化公路建设长度，确保可以链接到所有岛屿。</p>
-<p>输入描述
-第一行包含两个整数V 和 E，V代表顶点数，E代表边数 。顶点编号是从1到V。例如：V=2，一个有两个顶点，分别是1和2。</p>
-<p>接下来共有 E 行，每行三个整数 v1，v2 和 val，v1 和 v2 为边的起点和终点，val代表边的权值。</p>
-<p>输出描述
-输出联通所有岛屿的最小路径总距离
-输入示例
-7 11
-1 2 1
-1 3 1
-1 5 2
-2 6 1
-2 4 2
-2 3 2
-3 4 1
-4 5 1
-5 6 2
-5 7 1
-6 7 1
-输出示例
-6
-提示信息
-数据范围：
-2 &lt;= V &lt;= 10000;
-1 &lt;= E &lt;= 100000;
-0 &lt;= val &lt;= 10000;</p>
-        
-        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-12</p>]]>
-      </description>
-      
-        <category>computer algorithm</category>
-      
-    </item>
-    
-    
-
-    <item>
       <title>Graph questions</title>
-      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</link>
+      <link>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</guid>
       <description>
         <![CDATA[<h1>Graph questions</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -825,7 +447,7 @@ prim算法
 输入描述
 第一行包含两个整数 N，M，表示图中拥有 N 个节点，M 条边</p>
         
-        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-12</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>algorithm question</category>
@@ -835,11 +457,368 @@ prim算法
     
 
     <item>
+      <title>theoretical basis of Graph Theory</title>
+      <link>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>
+        <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="图论">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
+图论
+</h1><h2 id="图论理论基础">
+<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
+图论理论基础
+</h2><h3 id="图的基本概念">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
+图的基本概念
+</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
+<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
+<h3 id="图的种类">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
+图的种类
+</h3><p><strong>整体上分为有向图和无向图</strong></p>
+<p>有向图：图中边是有方向的：
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195737.png" alt="image"></p>
+<p>无向图：图中边没有方向:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195451.png" alt="image"></p>
+<p>加权有向图，就是图中边是有权值的:
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240510195821.png" alt="image"></p>
+<p>加权无向图也是同理</p>
+<h3 id="度">
+<a class="header-anchor" href="#%e5%ba%a6"></a>
+度
+</h3><p><strong>无向图:有几条边连接该节点，该节点就有几度</strong>
+例如，该无向图中，节点4的度为5，节点6的度为3。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115029.png" alt="image"></p>
+<p><strong>有向图:每个节点有出度和入度</strong>
+出度：从该节点出发的边的个数
+入度:指向该节点的边的个数</p>
+<p>例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511115235.png" alt="image"></p>
+<h3 id="连通性">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e6%80%a7"></a>
+连通性
+</h3><p>在图中表示节点的连通情况，称之为连通性</p>
+<h4 id="连通图">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+连通图
+</h4><p>在无向图中，任何两个节点都是可以到达的，我们称之为连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102351.png" alt="image"></p>
+<p>如果有节点不能到达其他节点，则为非连通图
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511102449.png" alt="image"></p>
+<h4 id="强连通图">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%9b%be"></a>
+强连通图
+</h4><p>在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、</p>
+<p><strong>注意：强连通图是在有向图中任何两个节点是可以相互到达</strong></p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511104531.png" alt="image"></p>
+<p>这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511113101.png" alt="image">
+这个图是强连通图</p>
+<h3 id="连通分量">
+<a class="header-anchor" href="#%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+连通分量
+</h3><p>在<strong>无向图中的极大连通子图</strong>称之为该图的一个连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511111559.png" alt="image"></p>
+<p>该无向图中<strong>节点1、节点2、节点5</strong>构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。</p>
+<p>同理，<strong>节点3、节点4、节点6</strong>构成的子图 也是该无向图中的一个连通分量。</p>
+<p>那么无向图中<strong>节点3 、节点4</strong>构成的子图 是该无向图的联通分量吗？</p>
+<p>不是！</p>
+<p>因为必须是极大联通子图才能是连通分量，所以 必须是<strong>节点3、节点4、节点6</strong>构成的子图才是连通分量。</p>
+<p>在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。</p>
+<h3 id="强连通分量">
+<a class="header-anchor" href="#%e5%bc%ba%e8%bf%9e%e9%80%9a%e5%88%86%e9%87%8f"></a>
+强连通分量
+</h3><p>在有向图中极大强连通子图称之为该图的强连通分量。
+<img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20240511112951.png" alt="image"></p>
+<p><strong>节点1、节点2、节点3、节点4、节点5</strong> 构成的子图是强连通分量，因为这是强连通图，也是极大图。</p>
+<p>节点6、节点7、节点8构成的子图 不是强连通分量，因为这不是强连通图，节点8 不能达到节点6。</p>
+<p>节点1、节点2、节点5 构成的子图 也不是 强连通分量，因为这不是极大图。</p>
+<h2 id="图的构造">
+<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e6%9e%84%e9%80%a0"></a>
+图的构造
+</h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
+<p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Backtracking-algorithm</title>
+      <link>https://wittleLuna.github.io/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
+      <description>
+        <![CDATA[<h1>Backtracking-algorithm</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <p>回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构</p>
+<p>回溯法，一般可以解决如下几种问题：</p>
+<ul>
+<li>组合问题：N个数里面按一定规则找出k个数的集合</li>
+<li>切割问题：一个字符串按一定规则有几种切割方式</li>
+<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
+<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
+<li>棋盘问题：N皇后，解数独等等</li>
+</ul>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210130173631174.png" alt="image"></p>
+<p>模板框架:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">backtracking</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">终止条件</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">存放结果</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">选择</span><span class="err">：</span><span class="n">本层集合中元素</span><span class="err">（</span><span class="n">树中节点孩子的数量就是集合的大小</span><span class="err">）</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">处理节点</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">backtracking</span><span class="p">(</span><span class="n">路径</span><span class="err">，</span><span class="n">选择列表</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">回溯</span><span class="err">，</span><span class="n">撤销处理结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>回溯三部曲:
+1.确定递归函数的参数和返回值
+2.确定递归的终止条件
+3.确定单层搜索的逻辑</p>
+<p>一般返回值都为void</p>
+<h2 id="组合问题">
+<a class="header-anchor" href="#%e7%bb%84%e5%90%88%e9%97%ae%e9%a2%98"></a>
+组合问题
+</h2><p>==需要startIndex来保证元素不被重复选取==</p>
+<h3 id="组合">
+<a class="header-anchor" href="#%e7%bb%84%e5%90%88"></a>
+组合
+</h3><blockquote>
+<p>给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。</p>
+<p>你可以按 任何顺序 返回答案。</p>
+<p>示例 1：</p>
+<p>输入：n = 4, k = 2
+输出：
+[
+[2,4],
+[3,4],
+[2,3],
+[1,2],
+[1,3],
+[1,4],
+]</p>
+        
+        <hr><p>Published on 2025-06-11 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>dynamic programming</title>
+      <link>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description>
+        <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="动规五部曲">
+<a class="header-anchor" href="#%e5%8a%a8%e8%a7%84%e4%ba%94%e9%83%a8%e6%9b%b2"></a>
+动规五部曲
+</h2><ol>
+<li>确定dp数组和下标的含义</li>
+<li>写出递推公式</li>
+<li>确定dp数组如何初始化</li>
+<li>确定遍历顺序（方向）</li>
+<li>打印，举例推导验证dp数组是否正确</li>
+</ol>
+<h2 id="背包问题">
+<a class="header-anchor" href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98"></a>
+背包问题
+</h2><h2 id="01背包">
+<a class="header-anchor" href="#01%e8%83%8c%e5%8c%85"></a>
+01背包
+</h2><ul>
+<li>可使用二维背包，一维滚动背包</li>
+</ul>
+<h3 id="二维背包">
+<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e8%83%8c%e5%8c%85"></a>
+二维背包
+</h3><h4 id="基本了解">
+<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e4%ba%86%e8%a7%a3"></a>
+基本了解
+</h4><ul>
+<li>
+<p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
+</li>
+<li>
+<p>dp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</p>
+</li>
+<li>
+<p>遍历顺序一般是先物品，再背包。也可以先背包，再物品</p>
+</li>
+<li>
+<p>第一列初始化为0，第一行为第一个物品能否装入的价值</p>
+</li>
+<li>
+<p>dp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以</p>
+</li>
+</ul>
+<h3 id="一维背包滚动背包">
+<a class="header-anchor" href="#%e4%b8%80%e7%bb%b4%e8%83%8c%e5%8c%85%e6%bb%9a%e5%8a%a8%e8%83%8c%e5%8c%85"></a>
+一维背包/滚动背包
+</h3><ul>
+<li>基本递推公式 : <code>dp[j] = max(dp[j],dp[j - weight[i]] + value[i])</code></li>
+<li>需要先遍历物品，再遍历背包，遍历背包时要倒序遍历</li>
+<li>初始化为0</li>
+<li>dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]</li>
+</ul>
+<h4 id="为什么背包容量循环需要倒序">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%83%8c%e5%8c%85%e5%ae%b9%e9%87%8f%e5%be%aa%e7%8e%af%e9%9c%80%e8%a6%81%e5%80%92%e5%ba%8f"></a>
+为什么背包容量循环需要倒序：
+</h4><p><code>dp[j - weight[i]] + value[i]</code> : 说明是从左边的值来寻找当前合适的值</p>
+<p>如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品</p>
+<p>如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上</p>
+<h3 id="题型类型">
+<a class="header-anchor" href="#%e9%a2%98%e5%9e%8b%e7%b1%bb%e5%9e%8b"></a>
+题型类型
+</h3><p>1.纯01背包，计算背包装满的最大价值</p>
+<p>2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）</p>
+<ul>
+<li>不同点：返回值是和需要的容量作比较后的布尔值</li>
+</ul>
+<p>3.尽量填满背包</p>
+<p>4.填满背包的方法数量</p>
+<ul>
+<li>
+<p>不同点 ：</p>
+<p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
+<p>dp[j] += dp[j - weight[i]]</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Openwebui] How to use pipeline</title>
+      <link>https://wittleLuna.github.io/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
+      <description>
+        <![CDATA[<h1>[Openwebui] How to use pipeline</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="方法一-用-docker-容器运行-pipelines">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e7%94%a8-docker-%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c-pipelines"></a>
+方法一： 用 Docker 容器运行 Pipelines
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 9099:9099 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --add-host<span class="o">=</span>host.docker.internal:host-gateway <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /home/yourname/my-pipelines:/app/pipelines <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name pipelines <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  ghcr.io/open-webui/pipelines:main
+</span></span></code></pre></div><p>这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用</p>
+<p>官方镜像下载慢，但是华为云又版本过低？没事，这里我已经帮你找到了南京大学的镜像，速度快，版本新，十分甚至九分的好用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ghcr.nju.edu.cn/open-webui/pipelines:main
+</span></span></code></pre></div><hr>
+<h2 id="方法二-本地部署pipelines">
+<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%ba%8c-%e6%9c%ac%e5%9c%b0%e9%83%a8%e7%bd%b2pipelines"></a>
+方法二： 本地部署pipelines
+</h2><h3 id="第一步克隆官方pipeline仓库">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%85%8b%e9%9a%86%e5%ae%98%e6%96%b9pipeline%e4%bb%93%e5%ba%93"></a>
+第一步：克隆官方pipeline仓库
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/open-webui/pipelines.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pipelines
+</span></span><span class="line"><span class="cl">python3.11 -m venv venv
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> venv/bin/activate
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span></code></pre></div><h3 id="注意的点">
+<a class="header-anchor" href="#%e6%b3%a8%e6%84%8f%e7%9a%84%e7%82%b9"></a>
+注意的点
+</h3><ol>
+<li>关于 clone github 仓库</li>
+</ol>
+<ul>
+<li>
+<p>如果你拥有自己的服务器，可以在云端进行。而且vscode支持远程连接时git 仓库，很方便（可能需要科学上网），也可以选择先克隆到本地，再把写好的文件上传到云端服务器</p>
+<p><img src="https://i.miji.bid/2025/06/14/e6ff66acd13d9a475f5216188958744d.png" alt=""></p>
+</li>
+</ul>
+<ol start="2">
+<li>关于 requirement.txt</li>
+</ol>
+<ul>
+<li>需要rustc和cargo的支持，需要先下载rust。直接安装依赖可能报错</li>
+</ul>
+<hr>
+<h3 id="第二步创建-rag_pipelinepy-文件">
+<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e5%88%9b%e5%bb%ba-rag_pipelinepy-%e6%96%87%e4%bb%b6"></a>
+第二步：创建 <code>rag_pipeline.py</code> 文件
+</h3><p>📁 在 <code>pipelines/</code> 目录下新建：</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+      </description>
+      
+        <category>AI platform/community</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Huggingface] How to build your space</title>
+      <link>https://wittleLuna.github.io/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</guid>
+      <description>
+        <![CDATA[<h1>[Huggingface] How to build your space</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="简单介绍">
+<a class="header-anchor" href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d"></a>
+简单介绍
+</h2><blockquote>
+<p>Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.</p></blockquote>
+<p>简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用</p>
+<h2 id="前提准备">
+<a class="header-anchor" href="#%e5%89%8d%e6%8f%90%e5%87%86%e5%a4%87"></a>
+前提准备
+</h2><ul>
+<li>huggingface, github账号</li>
+</ul>
+<h2 id="第一步-建立新的space">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5-%e5%bb%ba%e7%ab%8b%e6%96%b0%e7%9a%84space"></a>
+第一步 建立新的space
+</h2><p><img src="https://i.miji.bid/2025/06/14/32f38f5d570c679a3c108d6e91026628.jpeg" alt="image"></p>
+<p>在这里选择new space, 可以看到huggingface还支持建立模型，数据集等，这些目前用不到</p>
+        
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+      </description>
+      
+        <category>AI platform/community</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Djikstra</title>
-      <link>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
+      <link>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Djikstra</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -1024,7 +1003,7 @@ prim算法
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div>
         
-        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-12</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>

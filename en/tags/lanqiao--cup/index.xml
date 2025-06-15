@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lanqiao  Cup on wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/tags/lanqiao--cup/</link>
+    <link>https://wittleLuna.github.io/en/tags/lanqiao--cup/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,10 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:40:07 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/tags/lanqiao--cup/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://wittleLuna.github.io/en/tags/lanqiao--cup/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>algorithm questions of lanqiao cup</title>
-      <link>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <link>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
       <description>
         <![CDATA[<h1>algorithm questions of lanqiao cup</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -104,7 +104,7 @@
 </h3><p><strong>解题方法</strong>
 从最小的数开始，尽可能多地将它的次数合并到更高一阶的数，直到无法合并为止。最终的min就是最大的m，因为此时所有比min小的阶乘已经被合并，而当前的min的阶乘次数不足以再合并到更高阶，所以m!就是最大的可能。</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>algorithm question</category>

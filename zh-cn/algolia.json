@@ -1,7 +1,79 @@
 [
-  {
-    "objectID": "1749600000",
-    "permalink": "/zh-cn/post/greedy-algorithm/",
-    "title": "贪心算法","content": " 数组 数组的初始化 静态初始化：初始化时指定数组的元素，系统根据元素的个数决定数组的长度 //数据类型 [] 数组名 = new 数据类型 [] {元素1，元素2，....} 可以简写为： //数据类型 [] 数组名 = {元素1，元素2，....} 动态初始化：初始化时只指定长度，不指定数值 ，由虚拟机给出默认的初始化值\n//数据类型 [] 数组名 = new 数据类型 [数组的长度] {元素1，元素2，....} 二维数组 使用场景：把数据分组管理\n二维数组的初始化 二维数组的静态初始化： 数据类型[] [] 数组名 = new 数据类型[] [] {{元素1，元素2},{元素1，元素2}} 简写： 数据类型[] [] 数组名 = {{元素1，元素2},{元素1，元素2}} 建议的写法： int[][] arr = { {1,2,3}, {4,5,6,7} } 二维数组的动态初始化： 数据类型[] [] 数组名 = new 数据类型[m] [n] m表示二维数组的长度，能放多少个一维数组 n表示一维数组的长度，能放多少个元素 二维数组的内存图 二维数组里储存的是一维数组的地址。\n数组的内存图 int[] arr中，arr存储的是指向堆中创建的数组的地址值\nJava内存分配 栈： 方法运行时使用的内存\n栈内存的更新速度很快，因为局部变量的生命周期很短。 储存局部变量 堆： 存储对象或数组，new创建的对象，都存储在堆里\n对象：实体（封装数据，可以封装多个） 堆中的实体不会被随时释放 堆中的每个对象都有地址 GC(garbage collection)垃圾回收器（程序），触发时间不一定 堆中的每一个实体的变量都有默认的初始值，栈中的没有 方法区 存储可以运行的class文件（调用字节码文件，方法临时存储）\n本地方法栈 JVM在使用操作系统功能时使用，和开发无关，不同的系统下调用不同的操作系统的内容\nJVM：( java virtual machine) java虚拟机， JVM屏蔽了与具体操作系统平台相关的信息，使Java程序只需生成在Java虚拟机上运行的目标代码（字节码）,就可以在多种平台上不加修改地运行。 寄存器 给CPU使用，和操作无关\n方法 方法是程序中最小的执行单元\n方法的内存图 方法调用的基本内存原理：存储在栈里，先进后出\n方法传递基本数据类型的内存 …","date": "2025-06-11 00:00:00",
-    "updated": "2025-06-11 00:00:00"
-  }]
+    {
+      "objectID": "3ec19241c503f5bfa4d6d6cd12368936-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/",
+      "title": "[Huggingface] 如何建立自己的Space","content": " 简单介绍 Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.\n简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用\n前提准备 huggingface, github账号 第一步 建立新的space 在这里选择new space, 可以看到huggingface还支持建立模型，数据集等，这些目前用不到\n这一步需要填写下列内容 你的空间名称\n对空间的描述\n许可，这里可默认不写\n选择空间的SDK, 这一步很关键，决定了你的空间是何种类型的;可以看到我们可以使用Gradio构建web应用，用HTML构建静态内容，或者使用Docker拉取镜像。\n这里Huggingface提供了很丰富的不同版本的内容，可按照个人喜好自由选择 公开/私有： 决定你的空间是否别人能够访问\n第二部，配置 Space 以我这里选择Gradio为例（不同类型流程也是一样的），你现在需要做的事情有：\n克隆space到自己的Github仓库\n创建/修改克隆到仓库中的文件内容，以符合你的需要\n如图，这是我 …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:35:09+08:00"
+    }, 
+    {
+      "objectID": "33f933bd343a607362e0b249de0590ec-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/",
+      "title": "[Openwebui] 使用Pipeline功能","content": " 方法一： 用 Docker 容器运行 Pipelines docker run -d -p 9099:9099 \\ --add-host=host.docker.internal:host-gateway \\ -v /home/yourname/my-pipelines:/app/pipelines \\ --name pipelines \\ --restart always \\ ghcr.io/open-webui/pipelines:main 这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用\n官方镜像下载慢，但是华为云又版本过低？没事，这里我已经帮你找到了南京大学的镜像，速度快，版本新，十分甚至九分的好用\nghcr.nju.edu.cn/open-webui/pipelines:main 方法二： 本地部署pipelines 第一步：克隆官方pipeline仓库 git clone https://github.com/open-webui/pipelines.git cd pipelines python3.11 -m venv venv source venv/bin/activate pip install -r requirements.txt 注意的点 关于 clone github 仓库 如果你拥有自己的服务器，可以在云端进行。而且vscode支持远程连接时git 仓库，很方便（可能需要科学上网），也可以选择先克隆到本地，再把写好的文件上传到云端服务器\n关于 requirement.txt 需要rustc和cargo的支持，需要先下载rust。直接安装依赖可能报错 第二步：创建 rag_pipeline.py 文件 📁 …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:35:27+08:00"
+    }, 
+    {
+      "objectID": "5840f0be3985306ab2f1b5cca4f9f6c9-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/",
+      "title": "[基础知识]数据结构与算法","content": " 数据结构和算法 经典算法题 字符串匹配问题： 暴力匹配 KMP算法 八皇后：回溯算法 汉诺塔：分治算法 马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法\n线性结构和非线性结构 数据结构包括线性结构和非线性结构\n线性结构 最常用的线性结构\n特点：数据之间存在==一对一==的线性关系\n存储结构：\n顺序存储结构（数组）：顺序存储的线性表称为顺序表，==顺序表中的存储元素是连续的（内存分配的地址是连续的）==\n链式存储结构（链表）：链式存储的线性表称为链表，==存储元素不一定连续==\n常见的线性结构：数组，队列，链表，栈\n非线性结构 不是一对一的关系\n常见的非线性结构：二维数组，多维数组，广义表，树结构，图结构\n稀疏数组和队列 稀疏数组(sparseArray) 如：用二维数组记录棋盘数据，有很多0，记录了很多没有意义的数据 基本介绍： 当一个数组中大部分元素是0，或者为同一个值的数组时，可以使用稀疏数组来保存数组。\n稀疏数组的处理方法：\n1.记录数组一共有几行几列，有多少个不同的值\n2.把具有不同值的元素的行列及值记录在一个小规模数组中，从而缩小程序的规模\n稀疏数组转二维数组：\n1.遍历原始二维数组，得到有效数据的个数sum\n2.根据sum创建sum创建sparsearr int[sum + 1][3]\n3.将二维数组的有效数据存到一维数组\n二维数组转稀疏数组：\n1.先读取稀疏数组的第一行，根据第一行的数据，创建原始二维数组\n2.再读取稀疏数组后几行的数据，并赋给原始的二维数组\n代码实现 package sparsearray; public class SparsearrDemo1 { public static void main(String[] args) { int[][] arr = new int[11][11]; arr[1][2] = 1; …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:36:47+08:00"
+    }, 
+    {
+      "objectID": "08d916ce800c13a660e205c615063679-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
+      "title": "DFS/BFS理论基础","content": " 深度优先搜索理论基础 两者大概的区别： dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。\nbfs是先把本节点所连接的所有节点遍历一遍，走到下一个节点的时候，再把连接节点的所有节点遍历一遍，搜索方向更像是广度，四面八方的搜索过程。\ndfs搜索过程 如图一，是一个无向图，我们要搜索从节点1到节点6的所有路径。 那么dfs搜索的第一条路径是这样的： （假设第一次延默认方向，就找到了节点6），图二 此时我们找到了节点6，（遇到黄河了，是不是应该回头了），那么应该再去搜索其他方向了。 如图三： 路径2撤销了，改变了方向，走路径3（红色线）， 接着也找到终点6。 那么撤销路径2，改为路径3，在dfs中其实就是回溯的过程（这一点很重要，很多录友不理解dfs代码中回溯是用来干什么的）\n又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图四中，路径4撤销（回溯的过程），改为路径5。 又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图五，路径6撤销（回溯的过程），改为路径7，路径8 和 路径7，路径9， 结果发现死路一条，都走到了自己走过的节点。 那么节点2所连接路径和节点3所链接的路径 都走过了，撤销路径只能向上回退，去选择撤销当初节点4的选择，也就是撤销路径5，改为路径10 。 如图图六： 上图演示中，其实我并没有把 所有的 从节点1 到节点6的dfs（深度优先搜索）的过程都画出来，那样太冗余了，但 已经把dfs 关键的地方都涉及到了，关键就两点：\n搜索方向，是认准一个方向搜，直到碰壁之后再换方向 换方向是撤销原路径，改为节点链接的下一个路径，回溯的过程。 代码框架 二叉树的递归法其实就是dfs，而二叉树的迭代法，就是bfs（广度优先搜索）\n所以dfs，bfs其实是基础搜索算法，也广泛应用与其他数据 …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:33:47+08:00"
+    }, 
+    {
+      "objectID": "72a54093b13861d65bc821ddb8913c16-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/",
+      "title": "动态规划算法","content": " 动规五部曲 确定dp数组和下标的含义 写出递推公式 确定dp数组如何初始化 确定遍历顺序（方向） 打印，举例推导验证dp数组是否正确 背包问题 01背包 可使用二维背包，一维滚动背包 二维背包 基本了解 基本递推公式 : dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])\ndp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少\n遍历顺序一般是先物品，再背包。也可以先背包，再物品\n第一列初始化为0，第一行为第一个物品能否装入的价值\ndp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以\n一维背包/滚动背包 基本递推公式 : dp[j] = max(dp[j],dp[j - weight[i]] + value[i]) 需要先遍历物品，再遍历背包，遍历背包时要倒序遍历 初始化为0 dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j] 为什么背包容量循环需要倒序： dp[j - weight[i]] + value[i] : 说明是从左边的值来寻找当前合适的值\n如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品\n如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上\n题型类型 1.纯01背包，计算背包装满的最大价值\n2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）\n不同点：返回值是和需要的容量作比较后的布尔值 3.尽量填满背包\n4.填满背包的方法数量\n不同点 ：\n1.递推公式不同: 总填充方法 = 不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数\ndp[j] += dp[j …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:35:43+08:00"
+    }, 
+    {
+      "objectID": "9857ac6b72a87029be956f036d9ee5d4-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/",
+      "title": "蓝桥杯题库复习","content": " 杂题 105 油漆面积 错误描述 ： 发生了段错误\n原因： 保持二维数组时使用了int数组，一个int占4字节。10004*10004(个int类型变量) * 4 (转换成字节) / 1000 (转换为kb/千字节) / 1024 (转换为mb) 约为390mb， 远超题目最大运行内存256mb,所以会报段字节的错误\n解决方法： 使用占用内存更小的类型，如boolean,占用1个字节\n代码实现\npublic static void main(String[] args) { Scanner scan = new Scanner(System.in); int n = scan.nextInt(); ArrayList\u0026amp;lt;int[]\u0026amp;gt; rectangles = new ArrayList\u0026amp;lt;\u0026amp;gt;(); boolean[][] grid = new boolean[10004][10004]; for(int i = 0 ; i \u0026amp;lt; n ; i++) { int x1 = scan.nextInt(); int y1 = scan.nextInt(); int x2 = scan.nextInt(); int y2 = scan.nextInt(); int temp = 0; if(x1 \u0026amp;gt; x2) { temp = x2; x2 = x1; x1 = temp; } if(y1 \u0026amp;gt; y2) { temp = y2; y2 = y1; y1 = temp; } rectangles.add(new int[]{x1,y1,x2,y2}); } for(int[] arr: rectangles) { for(int x = arr[0]; x \u0026amp;lt; arr[2]; x++) { for(int y = arr[1]; y\u0026amp;lt; …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:37:27+08:00"
+    }, 
+    {
+      "objectID": "c7cd35aad8111e2ecee01efdd394514b-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
+      "title": "图论理论基础","content": " 图论 图论理论基础 图的基本概念 二维坐标中，两点可以连成线，多个点连成的线就构成了图。\n当然图也可以就一个节点，甚至没有节点（空图）\n图的种类 整体上分为有向图和无向图\n有向图：图中边是有方向的： 无向图：图中边没有方向: 加权有向图，就是图中边是有权值的: 加权无向图也是同理\n度 无向图:有几条边连接该节点，该节点就有几度 例如，该无向图中，节点4的度为5，节点6的度为3。 有向图:每个节点有出度和入度 出度：从该节点出发的边的个数 入度:指向该节点的边的个数\n例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。 连通性 在图中表示节点的连通情况，称之为连通性\n连通图 在无向图中，任何两个节点都是可以到达的，我们称之为连通图 如果有节点不能到达其他节点，则为非连通图 强连通图 在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、\n注意：强连通图是在有向图中任何两个节点是可以相互到达\n这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。\n这个图是强连通图\n连通分量 在无向图中的极大连通子图称之为该图的一个连通分量。 该无向图中节点1、节点2、节点5构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。\n同理，节点3、节点4、节点6构成的子图 也是该无向图中的一个连通分量。\n那么无向图中节点3 、节点4构成的子图 是该无向图的联通分量吗？\n不是！\n因为必须是极大联通子图才能是连通分量，所以 必须是节点3、节点4、节点6构成的子图才是连通分量。\n在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。\n强连通分量 在有向图中极大强连通子图称之为该图的强连通分量。 节点1、节点2、节点3、节点4、节点5 构成的子图是强连通分量，因为这是强连通图，也是极大图。\n节点6、节 …","date": "2025-06-14T00:00:00+00:00",
+      "updated": "2025-06-15T14:36:16+08:00"
+    }, 
+    {
+      "objectID": "af8d9e6ebb52f38a177f234d18a71818-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/",
+      "title": "Djikstra算法","content": "dijkstra 三部曲：\n第一步，选源点到哪个节点近且该节点未被访问过 第二步，该最近节点被标记访问过 第三步，更新非访问节点到源点的距离（即更新minDist数组）\n==解决单源最短路径问题，适用于有向图和无向图，但边权值不能为负==\n参加科学大会 解题思路 使用dijkstra模板实现\n代码实现\npublic static void main(String[] args){ Scanner sc = new Scanner(System.in); int pointsNum = sc.nextInt(); int edgesNum = sc.nextInt(); int[][] map = new int[pointsNum + 1][pointsNum + 1];\tboolean[] isTree = new boolean[pointsNum+1]; int[] minDis = new int[pointsNum + 1]; Arrays.fill(minDis, Integer.MAX_VALUE); minDis[1] = 0; for(int i = 0 ; i \u0026amp;lt; edgesNum; i++) { int p1 = sc.nextInt(); int p2 = sc.nextInt(); int v = sc.nextInt(); map[p1][p2] = v; } for(int i = 1; i \u0026amp;lt;= pointsNum; i ++) { int cur = 1; int min = Integer.MAX_VALUE; //第一步，选距离源点最近且未访问过的节点 for(int j = 1; j \u0026amp;lt;= pointsNum; j++) { if(!isTree[j] \u0026amp;amp;\u0026amp;amp; minDis[j] \u0026amp;lt; min) { …","date": "2025-06-12T00:00:00+00:00",
+      "updated": "2025-06-15T14:34:40+08:00"
+    }, 
+    {
+      "objectID": "f7c17377324c8c2ad02f6bbdad9713d9-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/",
+      "title": "图论算法题","content": " 图的存储 邻接矩阵 Scanner scanner = new Scanner(System.in); int n = scanner.nextInt(); //n是节点数 int m = scanner.nextInt(); //m是边数 // 节点编号从1到n，所以申请 n+1 这么大的数组 int[][] graph = new int[n + 1][n + 1]; for (int i = 0; i \u0026amp;lt; m; i++) { int s = scanner.nextInt(); int t = scanner.nextInt(); // 使用邻接矩阵表示无向图，1 表示 s 与 t 是相连的 graph[s][t] = 1; } 邻接表 Scanner scanner = new Scanner(System.in); int n = scanner.nextInt(); //n是节点数 int m = scanner.nextInt(); //m是边数 // 节点编号从1到n，所以申请 n+1 这么大的数组 List\u0026amp;lt;LinkedList\u0026amp;lt;Integer\u0026amp;gt;\u0026amp;gt; graph = new ArrayList\u0026amp;lt;\u0026amp;gt;(n + 1); for (int i = 0; i \u0026amp;lt;= n; i++) { graph.add(new LinkedList\u0026amp;lt;\u0026amp;gt;()); } while (m-- \u0026amp;gt; 0) { int s = scanner.nextInt(); int t = scanner.nextInt(); // 使用邻接表表示 s -\u0026amp;gt; t 是相连的 graph.get(s).add(t); } 所有可达路径 题目描述 给定一个有 n 个节点的有向无环图，节点编号从 1 到 n。请编写一个函数，找出并返回所有从 …","date": "2025-06-12T00:00:00+00:00",
+      "updated": "2025-06-15T14:36:31+08:00"
+    }, 
+    {
+      "objectID": "553990afda82dc3f3fca468252c0adb1-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/",
+      "title": "最小生成树算法","content": "最小生成树是所有节点的最小连通子图，即：以最小的成本（边的权值）将图中所有节点链接到一起。\nprim算法 图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。\n==只适用于加权无向图==\n那么如何选择这n-1条边就是最小生成树算法的任务所在。\n在这个图中，如何选取n-1条边使得图中所有节点连接到一起，并且边的权值和最小呢？\n（图中为n为7，即7个节点，那么只需要n-1即6条边就可以讲所有顶点连接到一起）\nprim算法是从节点的角度采用贪心的策略每次寻找距离最小生成树最近的节点并加入到最小生成树中。\nprim算法核心就是三步，我称为prim三部曲，大家一定要熟悉这三步，代码相对会好些很多：\n第一步，选距离生成树最近节点 第二步，最近节点加入生成树 第三步，更新非生成树节点到生成树的距离（即更新minDist数组） minDist数组的含义：记录每一个节点距离最小生成树的最近距离。\n最小生成树prim算法\n寻宝 在世界的某个区域，有一些分散的神秘岛屿，每个岛屿上都有一种珍稀的资源或者宝藏。国王打算在这些岛屿上建公路，方便运输。\n不同岛屿之间，路途距离不同，国王希望你可以规划建公路的方案，如何可以以最短的总公路距离将 所有岛屿联通起来（注意：这是一个无向图）。\n给定一张地图，其中包括了所有的岛屿，以及它们之间的距离。以最小化公路建设长度，确保可以链接到所有岛屿。\n输入描述 第一行包含两个整数V 和 E，V代表顶点数，E代表边数 。顶点编号是从1到V。例如：V=2，一个有两个顶点，分别是1和2。\n接下来共有 E 行，每行三个整数 v1，v2 和 val，v1 和 v2 为边的起点和终点，val代表边的权值。\n输出描述 输出联通所有岛屿的最小路径总距离 输入示例 7 11 1 2 1 1 3 1 1 5 2 2 6 1 2 4 2 2 3 2 3 4 1 4 5 1 5 6 …","date": "2025-06-12T00:00:00+00:00",
+      "updated": "2025-06-15T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "32e32753f52fbaf154fe153782b5c8be-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/",
+      "title": "回溯算法","content": "回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构\n回溯法，一般可以解决如下几种问题：\n组合问题：N个数里面按一定规则找出k个数的集合 切割问题：一个字符串按一定规则有几种切割方式 子集问题：一个N个数的集合里有多少符合条件的子集 排列问题：N个数按一定规则全排列，有几种排列方式 棋盘问题：N皇后，解数独等等 模板框架:\nvoid backtracking(参数) { if (终止条件) { 存放结果; return; } for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) { 处理节点; backtracking(路径，选择列表); // 递归 回溯，撤销处理结果 } } 回溯三部曲: 1.确定递归函数的参数和返回值 2.确定递归的终止条件 3.确定单层搜索的逻辑\n一般返回值都为void\n组合问题 ==需要startIndex来保证元素不被重复选取==\n组合 给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。\n你可以按 任何顺序 返回答案。\n示例 1：\n输入：n = 4, k = 2 输出： [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ]\n确定参数和返回值： 参数：n:代表遍历的次数 k:代表需要走到的深度 startIndex: 代表当前层的遍历位置(因为是组合问题，每个节点只能从其之后的位置开始遍历)\n返回值：none, 使用全局遍历存储结果和当前路径的元素\n确定递归终止条件： 如果当前路径的元素=当前的深度 ： 说明找到的元素个数符合要求，那么把当前路径作为一种结果加入结果变量，之后返回 确定单层的递归逻辑： for循环，加入当前的元素，之后递归进行下一层循环，注意循环开始的位置，之后回溯去掉当前加入的元素（删除当前元素，之后回溯加入其他元素） …","date": "2025-06-11T00:00:00+00:00",
+      "updated": "2025-06-15T14:35:59+08:00"
+    }
+]

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openwebui on wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/tags/openwebui/</link>
+    <link>https://wittleLuna.github.io/en/tags/openwebui/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,10 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:38:47 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/tags/openwebui/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://wittleLuna.github.io/en/tags/openwebui/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Openwebui] How to use pipeline</title>
-      <link>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
+      <link>https://wittleLuna.github.io/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
+      <guid>https://wittleLuna.github.io/en/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
       <description>
         <![CDATA[<h1>[Openwebui] How to use pipeline</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -78,7 +78,7 @@
 第二步：创建 <code>rag_pipeline.py</code> 文件
 </h3><p>📁 在 <code>pipelines/</code> 目录下新建：</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>AI platform/community</category>

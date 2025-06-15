@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dynamic Programming on wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/tags/dynamic-programming/</link>
+    <link>https://wittleLuna.github.io/en/tags/dynamic-programming/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,10 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:38:58 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/tags/dynamic-programming/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://wittleLuna.github.io/en/tags/dynamic-programming/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>dynamic programming</title>
-      <link>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <link>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <guid>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description>
         <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -103,7 +103,7 @@
 <p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
 <p>dp[j] += dp[j - weight[i]]</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>

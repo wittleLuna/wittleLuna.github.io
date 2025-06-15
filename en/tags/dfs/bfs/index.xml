@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DFS/BFS on wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/tags/dfs/bfs/</link>
+    <link>https://wittleLuna.github.io/en/tags/dfs/bfs/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,10 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:37:49 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/tags/dfs/bfs/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://wittleLuna.github.io/en/tags/dfs/bfs/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>theoretical basis of DFS/BFS</title>
-      <link>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <link>https://wittleLuna.github.io/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://wittleLuna.github.io/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
       <description>
         <![CDATA[<h1>theoretical basis of DFS/BFS</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -101,7 +101,7 @@ dfs搜索过程
 深搜三部曲
 </h3><p>1.<strong>确认递归函数，参数</strong></p>
         
-        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-14</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>

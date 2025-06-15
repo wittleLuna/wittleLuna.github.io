@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Huggingface on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/tags/huggingface/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sun, 15 Jun 2025 14:35:09 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/huggingface/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Huggingface] 如何建立自己的Space</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</guid>
+      <description>
+        <![CDATA[<h1>[Huggingface] 如何建立自己的Space</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="简单介绍">
+<a class="header-anchor" href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d"></a>
+简单介绍
+</h2><blockquote>
+<p>Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.</p></blockquote>
+<p>简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用</p>
+        
+        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+      </description>
+      
+        <category>AI 平台/社区</category>
+      
+    </item>
+    
+  </channel>
+</rss>

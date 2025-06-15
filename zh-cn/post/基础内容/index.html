@@ -1,0 +1,2449 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  [基础知识]数据结构与算法 | wittleLuna
+</title>
+<meta
+  name="description"
+  content="吃饭..."
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://wittleLuna.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"wittleLuna's blog\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"zh-CN\",\"Title\":\"wittleLuna的博客\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="[基础知识]数据结构与算法 | wittleLuna" />
+  <meta
+    property="og:description"
+    content="吃饭..."
+  />
+  <meta property="og:url" content="https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/" />
+  <meta
+    property="og:site_name"
+    content="wittleLuna的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="wittleLuna" />
+  <meta property="article:published_time" content="2025-06-14T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-06-15T14:36:47&#43;08:00" /><meta property="article:tag" content="数据结构与算法" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.d3c48cc9d165550564a310b46a6d48b5e9d8446345525aed075b0601705f958a.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css"
+    integrity="sha384-4NN3fZ5AokFyHuoihl7A9qWaCt&#43;HsAtOaUsXwJGRb4/SMBtFr2vcNSHR5E8dg0Wk" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><img src="/images/preloader.webp" alt="loading" /></div><div class="loading-word">小猫睡觉中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+本文章没有找到对应的语言版本
+</div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/">首页</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/archives">归档</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/about">关于</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/friend">友链</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a></nav><nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items"><li data-value="en"  >English</li><li data-value="zh-cn" class="selected" >简体中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};langMap['en'] = '\/en\/post\/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9\/';selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav></div>
+<header id="header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner7.webp" alt="[基础知识]数据结构与算法"><div id="header-outer">
+    <div id="header-title"><a href="/zh-cn/" id="logo">
+            <h1 data-aos="slide-up">[基础知识]数据结构与算法</h1>
+          </a><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          
+          class="sidebar-right"  ><aside id="sidebar"><meting-js
+      theme="var(--color-link)"
+      id="2344726429"server="netease"type="playlist"volume="20"list-folded="true">
+    </meting-js><div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#经典算法题">经典算法题</a></li>
+    <li><a href="#线性结构和非线性结构">线性结构和非线性结构</a>
+      <ul>
+        <li><a href="#线性结构">线性结构</a></li>
+        <li><a href="#非线性结构">非线性结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#稀疏数组和队列">稀疏数组和队列</a>
+      <ul>
+        <li><a href="#稀疏数组sparsearray">稀疏数组(sparseArray)</a></li>
+        <li><a href="#队列">队列</a></li>
+      </ul>
+    </li>
+    <li><a href="#链表linked-list">链表（Linked List）</a>
+      <ul>
+        <li><a href="#链表的应用增删改查">链表的应用：增删改查</a></li>
+        <li><a href="#双向链表">双向链表</a></li>
+        <li><a href="#单向环形链表的应用">单向环形链表的应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#栈">栈</a></li>
+    <li><a href="#前缀中缀后缀逆波兰表达式">前缀，中缀，后缀（逆波兰）表达式</a></li>
+    <li><a href="#递归">递归</a></li>
+    <li><a href="#排序算法">排序算法</a></li>
+    <li><a href="#算法的时间复杂度">算法的时间复杂度：</a></li>
+    <li><a href="#冒泡排序bubble-sorting">冒泡排序(Bubble sorting)</a></li>
+    <li><a href="#选择排序select-sorting">选择排序(select sorting)</a></li>
+    <li><a href="#插入排序insertion-sorting">插入排序(Insertion Sorting)</a></li>
+    <li><a href="#希尔排序shellsort">希尔排序(ShellSort)</a></li>
+    <li><a href="#快速排序quicksort">快速排序(QuickSort)</a></li>
+    <li><a href="#归并排序mergesort">归并排序(MergeSort)</a></li>
+    <li><a href="#基数排序">基数排序</a></li>
+    <li><a href="#常用排序算法对比">常用排序算法对比</a></li>
+    <li><a href="#查找算法">查找算法</a></li>
+    <li><a href="#哈希表散列表">哈希表（散列表）</a></li>
+    <li><a href="#树结构">树结构</a></li>
+    <li><a href="#树结构的实际应用">树结构的实际应用</a></li>
+    <li><a href="#图">图</a></li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div>
+
+  <div class="sidebar-widget"></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-06-14 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-06-14</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-06-15</time
+    >
+  </span>
+</div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/zh-cn/categories/%e7%ae%97%e6%b3%95%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86"
+      data-aos="zoom-in"
+      >算法|基础知识</a
+    ></div>
+</div>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="数据结构和算法">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95"></a>
+数据结构和算法
+</h1><h2 id="经典算法题">
+<a class="header-anchor" href="#%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98"></a>
+经典算法题
+</h2><p>字符串匹配问题： 暴力匹配  KMP算法
+八皇后：回溯算法
+汉诺塔：分治算法
+马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法</p>
+<h2 id="线性结构和非线性结构">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84%e5%92%8c%e9%9d%9e%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+线性结构和非线性结构
+</h2><p>数据结构包括线性结构和非线性结构</p>
+<h3 id="线性结构">
+<a class="header-anchor" href="#%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+线性结构
+</h3><p>最常用的线性结构</p>
+<p>特点：数据之间存在==一对一==的线性关系</p>
+<p>存储结构：</p>
+<ul>
+<li>
+<p>顺序存储结构（数组）：顺序存储的线性表称为顺序表，==顺序表中的存储元素是连续的（内存分配的地址是连续的）==</p>
+</li>
+<li>
+<p>链式存储结构（链表）：链式存储的线性表称为链表，==存储元素不一定连续==</p>
+</li>
+<li>
+<p>常见的线性结构：数组，队列，链表，栈</p>
+</li>
+</ul>
+<h3 id="非线性结构">
+<a class="header-anchor" href="#%e9%9d%9e%e7%ba%bf%e6%80%a7%e7%bb%93%e6%9e%84"></a>
+非线性结构
+</h3><p>不是一对一的关系</p>
+<p>常见的非线性结构：二维数组，多维数组，广义表，树结构，图结构</p>
+<h2 id="稀疏数组和队列">
+<a class="header-anchor" href="#%e7%a8%80%e7%96%8f%e6%95%b0%e7%bb%84%e5%92%8c%e9%98%9f%e5%88%97"></a>
+稀疏数组和队列
+</h2><h3 id="稀疏数组sparsearray">
+<a class="header-anchor" href="#%e7%a8%80%e7%96%8f%e6%95%b0%e7%bb%84sparsearray"></a>
+稀疏数组(sparseArray)
+</h3><p>如：用二维数组记录棋盘数据，有很多0，记录了很多没有意义的数据
+<img src="https://note.youdao.com/yws/res/5865/WEBRESOURCE743d7d559f8c3426ceb41e6320f81f87" alt="image"></p>
+<p><strong>基本介绍：</strong>
+当一个数组中大部分元素是0，或者为同一个值的数组时，可以使用稀疏数组来保存数组。</p>
+<p><strong>稀疏数组的处理方法：</strong></p>
+<ul>
+<li>
+<p>1.记录数组一共有几行几列，有多少个不同的值</p>
+</li>
+<li>
+<p>2.把具有不同值的元素的行列及值记录在一个小规模数组中，从而缩小程序的规模</p>
+</li>
+</ul>
+<p><img src="https://note.youdao.com/yws/res/5860/WEBRESOURCE0f92863c3fb74c42d103f894caefa83a" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/5874/WEBRESOURCE449b4ba4311e03751770858c006bc4fe" alt="image">
+<strong>稀疏数组转二维数组：</strong></p>
+<ul>
+<li>
+<p>1.遍历原始二维数组，得到有效数据的个数sum</p>
+</li>
+<li>
+<p>2.根据sum创建sum创建sparsearr int[sum + 1][3]</p>
+</li>
+<li>
+<p>3.将二维数组的有效数据存到一维数组</p>
+</li>
+</ul>
+<p><strong>二维数组转稀疏数组：</strong></p>
+<ul>
+<li>
+<p>1.先读取稀疏数组的第一行，根据第一行的数据，创建原始二维数组</p>
+</li>
+<li>
+<p>2.再读取稀疏数组后几行的数据，并赋给原始的二维数组</p>
+</li>
+</ul>
+<h4 id="代码实现">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"></a>
+代码实现
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">sparsearray</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SparsearrDemo1</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">11</span><span class="o">][</span><span class="n">11</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">arr</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">arr</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">3</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;----------遍历原始二维数组------------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-------------遍历稀疏数组-------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getSparsearr</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;-------------遍历恢复了的二维数组--------------------------------&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">recoverArr</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="nf">getSparsearr</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sum</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">sarr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w">  </span><span class="kt">int</span><span class="o">[</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">][</span><span class="n">3</span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">11</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">11</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">sarr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sum</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">count</span><span class="o">++</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的行数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的列数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">sarr</span><span class="o">[</span><span class="n">count</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">//非0数据的结果值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">sarr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="o">+</span><span class="s">&#34; &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="n">sarr</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">recoverArr</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">sparsearr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]][</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">sparsearr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">arr</span><span class="o">[</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">]][</span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sparsearr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">2</span><span class="o">]</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">//		System.out.println(&#34;-------------恢复后的数组------------------------&#34;);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">arr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">is2</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">is</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">is2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&#34; &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><hr>
+<h3 id="队列">
+<a class="header-anchor" href="#%e9%98%9f%e5%88%97"></a>
+队列
+</h3><p><strong>基本介绍</strong></p>
+<ul>
+<li>
+<p>队列是一个==有序列表==，可以用==数组==或==链表==来实现</p>
+</li>
+<li>
+<p>遵循==先入先出==的原则，即：先存入队列的数据要先取出，后存入的数据后取出</p>
+</li>
+</ul>
+<p><strong>队列的一些特点：</strong></p>
+<ol>
+<li>
+<p>有序性：队列的元素是按照一定的顺序排列的，这种有序性使得队列能够被用来处理一些需要按照顺序进行的任务，比如打印机队列、计算机任务队列等。</p>
+</li>
+<li>
+<p>高效性：队列的先进先出特性使得队列能够高效地处理大量的数据。在处理数据时，队列能够保证数据的有序性，同时也能够保证数据的高效性。</p>
+</li>
+<li>
+<p>可扩展性：队列的特性使得它能够被轻松地扩展。如果需要处理更多的数据，只需要将数据添加到队列的末尾即可。</p>
+</li>
+<li>
+<p>并发性：队列的先进先出特性使得它非常适合用于并发编程。在并发编程中，队列可以被用来协调不同线程之间的执行顺序，从而避免出现竞争条件和死锁等问题。</p>
+</li>
+</ol>
+<p><strong>数组模拟队列</strong>
+<img src="https://note.youdao.com/yws/res/5917/WEBRESOURCE0de7e70071cc38fd500e09dbed75c97e" alt="image">
+Queue ：对象名 ，front ：初始值 -1，前端下标，rear ：初始值 -1，后端下标，最大容量 ：MaxSize</p>
+<p>front 随着数据输入而改变 ， rear 随着数据输出而改变</p>
+<ul>
+<li>
+<p>将数据存入队列称为addQueue，addQueue有两个步骤</p>
+</li>
+<li>
+<p>1.当front == rear（当前队列为空），尾指针往后移，rear + 1</p>
+</li>
+<li>
+<p>2.当rear == MaxSize - 1,说明当前队列已满，不能再存入元素</p>
+</li>
+</ul>
+<p>(实现代码写在eclipse -&gt; datastructure -&gt; queue 中了)</p>
+<p><strong>优化：数组模拟环形队列</strong></p>
+<p>目前数组使用一次就不能用，没有复用的效果</p>
+<p>将该数组使用算法，改造成环形队列 （通过取模的方式实现%）</p>
+<p>1.front的含义调整 ：指向队列的第一个元素，front的初始值为0</p>
+<p>2.rear的含义调整 ：指向队列的最后一个元素，需要在之后加一个置空位
+（防止出现队列为空和满时，都是rear = front ，不好判断）</p>
+<p>3.当队列为满时 ：（rear + 1）%MaxSize = front</p>
+<p>4.当队列为空时 ：rear = front</p>
+<p>5.队列中的有效元素个数 ：(rear + MaxSize - front) % MaxSize</p>
+<h2 id="链表linked-list">
+<a class="header-anchor" href="#%e9%93%be%e8%a1%a8linked-list"></a>
+链表（Linked List）
+</h2><p>链表是有序的列表，在内存中的存储示意图：
+<img src="https://note.youdao.com/yws/res/6034/WEBRESOURCE5f4d4e02467e60afdaa645c0f36e9d30" alt="image"></p>
+<ul>
+<li>
+<p>链表是以结点的方式来存储的，==是链式存储==</p>
+</li>
+<li>
+<p>每个节点包含 data域 ，next域 ，next域指向下一个节点</p>
+</li>
+<li>
+<p>如图 ，==链表的各个节点不一定是连续存放的==</p>
+</li>
+<li>
+<p>链表分带头节点的链表和没有头节点的链表，根据实际需求来确定</p>
+</li>
+</ul>
+<p><strong>链表的特点：</strong></p>
+<p>1、插入删除效率高：.任意位置插入元素和删除元素效率较高，时间复杂度为O(1</p>
+<p>2、灵活度高：链表不需要预先分配固定大小的空间，可以随着元素的增加自动扩容，因此不会出现内存不足的情况。</p>
+<p>3、空间分散：在内存中，元素的空间可以在任意地方，空间是分散的，不需要连续。</p>
+<p>4、查找效率低：查找数据时效率低，时间复杂度为O(N)，因为链表的空间是分散的，所以不具有随机访问性，如要需要访问某个位置的数据，需要从第一个数据开始找起，依次往后遍历，直到找到待查询的位置，故可能在查找某个元素时，时间复杂度达到O(N)。</p>
+<p>5、空间利用率高：空间不需要提前指定大小，是动态申请的，根据需求动态的申请和删除内存空间，扩展方便，故空间的利用率较高。</p>
+<p><strong>单链表的逻辑结构：</strong>
+<img src="https://note.youdao.com/yws/res/6053/WEBRESOURCE59b471083ea8e257ba3599e372bae54d" alt="image">
+最后一个节点的next域为null</p>
+<h3 id="链表的应用增删改查">
+<a class="header-anchor" href="#%e9%93%be%e8%a1%a8%e7%9a%84%e5%ba%94%e7%94%a8%e5%a2%9e%e5%88%a0%e6%94%b9%e6%9f%a5"></a>
+链表的应用：增删改查
+</h3><h4 id="单链表">
+<a class="header-anchor" href="#%e5%8d%95%e9%93%be%e8%a1%a8"></a>
+单链表
+</h4><p><strong>（添加方法一）单链表按照加入顺序直接添加</strong>
+通过遍历，直接加到尾部，比较简单
+<img src="https://note.youdao.com/yws/res/6146/WEBRESOURCE0f79a282f0111ff746cdf661f215f5df" alt="image">
+<strong>（添加方法二）单链表按顺序插入节点</strong>
+<img src="https://note.youdao.com/yws/res/6060/WEBRESOURCEecf350186a3995f183d9d28d488d9082" alt="image"></p>
+<ul>
+<li>
+<p>通过遍历实现</p>
+</li>
+<li>
+<p>新节点.next = temp.next</p>
+</li>
+<li>
+<p>temp.next = 新节点</p>
+</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>
+<p>如果使用这种方法添加节点，如果添加的两个节点是同一个元素，会导致<code>temp.next = 新节点</code>指向自身，从而进入死循环。</p>
+</li>
+<li>
+<p>bool类型的标识符很重要</p>
+</li>
+</ul>
+<p><strong>单链表删除节点</strong>
+<img src="https://note.youdao.com/yws/res/6089/WEBRESOURCE0b2108126ea2a7a7c9eb45510e5fff1d" alt="image"></p>
+<p>注意：单链表只能从前往后找数据，不能从后往前找数据</p>
+<p><strong>单链表修改节点</strong>
+1.通过遍历先找到该节点
+2.根据<code>temp.name = heronode.name</code>修改</p>
+<p>完成代码：存放在eclipse -&gt; datastructure -&gt; linkedlist</p>
+<p><strong>单链表常见练习题</strong></p>
+<ul>
+<li>1.求单链表中有效节点的个数</li>
+<li>2.查找单链表的倒数第n个节点</li>
+<li>3.单链表的反转 （使用辅助链表和辅助移动的节点）
+<ul>
+<li><img src="https://note.youdao.com/yws/res/6168/WEBRESOURCE996299837beafa5e1bc8ed7f60e46f2e" alt="image"></li>
+</ul>
+</li>
+<li>4.从尾到头打印单链表 （使用栈）
+<ul>
+<li><img src="https://note.youdao.com/yws/res/6171/WEBRESOURCE5426b76f02d29dc996b0cb12443fbe1f" alt="image"></li>
+<li>stack.add(),进栈 ， stack.pop(),出栈</li>
+</ul>
+</li>
+<li>5.合并两个有序链表，并且合并后的链表依然有序</li>
+</ul>
+<h3 id="双向链表">
+<a class="header-anchor" href="#%e5%8f%8c%e5%90%91%e9%93%be%e8%a1%a8"></a>
+双向链表
+</h3><p>单向链表的缺点：</p>
+<ul>
+<li>查找的方向只能是一个方向，双向链表可以向前，向后查找</li>
+<li>不能自我删除，需要找到前一个节点才能删除，需要靠辅助节点，而双向链表可以自我删除</li>
+</ul>
+<p><strong>双向链表的增删改查</strong>
+<img src="https://note.youdao.com/yws/res/6186/WEBRESOURCE2de6a377db61d96df126257c1aa00115" alt="image">
+注意点：双向链表可以直接找要删除的节点删除</p>
+<p><strong>关于双向链表按编号进行添加的作业</strong></p>
+<p>完成代码：存放在eclipse -&gt; datastructure -&gt; linkedlist -&gt; DoubleLinkedList&hellip;</p>
+<h3 id="单向环形链表的应用">
+<a class="header-anchor" href="#%e5%8d%95%e5%90%91%e7%8e%af%e5%bd%a2%e9%93%be%e8%a1%a8%e7%9a%84%e5%ba%94%e7%94%a8"></a>
+单向环形链表的应用
+</h3><p><strong>应用场景：josephu(约瑟夫，约瑟夫环问题)</strong>
+<img src="https://note.youdao.com/yws/res/6209/WEBRESOURCE57ecbcb97bde2b603e4d195b5f268a2b" alt="image"></p>
+<p><strong>单向环形链表的介绍</strong>
+<img src="https://note.youdao.com/yws/res/6213/WEBRESOURCE64136427ee83969d7aea7dd8879fd7a5" alt="image"></p>
+<p><strong>约瑟夫问题的解决思路</strong>
+<img src="https://note.youdao.com/yws/res/6217/WEBRESOURCE28d50e9ef73d29f0eab92f26cbe77b60" alt="image"></p>
+<p><strong>构建单向环形链表的思路</strong>
+<img src="https://note.youdao.com/yws/res/6221/WEBRESOURCE05ca2f4c4efb8fc9496f74838702e435" alt="image"></p>
+<p><strong>约瑟夫环出圈解决思路</strong>
+<img src="https://note.youdao.com/yws/res/6229/WEBRESOURCE7135c57e9a5a6164b8be2704a3f3083e" alt="image"></p>
+<p>完成代码：存放在eclipse -&gt; datastructure -&gt; linkedlist -&gt; linkedlist.josephu</p>
+<h2 id="栈">
+<a class="header-anchor" href="#%e6%a0%88"></a>
+栈
+</h2><p><strong>栈的一个实际需求</strong>
+<img src="https://note.youdao.com/yws/res/6239/WEBRESOURCEcdd0407c862bf5f288742d8a90ceffcb" alt="image"></p>
+<p><strong>栈的介绍</strong>
+1.栈的英文：stack</p>
+<p>2.栈是一个==先入后出==的有序列表（FILO-First in Last Out)</p>
+<p>3.栈是限制线性表中元素的插入和删除只能在线性表的同一端进行的一种特殊线性表。允许插入和删除的一端为==变化的一端，称为栈顶（Top),另一端为固定的一端，称为栈底(Bottom)==</p>
+<p>4.根据栈的定义，最先放入栈中元素在栈底，最后放入元素元素在栈顶，而删除元素刚好相反</p>
+<p>5.出栈(pop)和入栈(push)的示意图：</p>
+<ul>
+<li><img src="https://note.youdao.com/yws/res/6283/WEBRESOURCEe1bbcce4eeb400dd3f61d968b2338f0b" alt="image"></li>
+</ul>
+<p><strong>栈的应用场景</strong></p>
+<ul>
+<li>子程序的调用</li>
+<li>处理递归调用</li>
+<li>表达式的转换与求值：中缀转后缀</li>
+<li>二叉树的遍历</li>
+<li>图形的深度优先(depth-first)搜索法</li>
+</ul>
+<p><strong>栈的快速入门</strong>
+用数组模拟栈的入栈，出栈等操作</p>
+<p>课堂练习 ： 用链表模拟栈</p>
+<p><strong>使用栈实现综合计算器（中缀表达式）</strong></p>
+<p>思路：
+<img src="https://note.youdao.com/yws/res/6315/WEBRESOURCE126e77e358f20f14b75bd29fc36c9897" alt="image"></p>
+<p>代码实现：
+1.先实现一位数的运算
+2.拓展到多位数运算</p>
+<p>完成代码：存放在eclipse -&gt; datastructure -&gt; stack -&gt; Calculator</p>
+<p>课后练习：给表达式加入()</p>
+<h2 id="前缀中缀后缀逆波兰表达式">
+<a class="header-anchor" href="#%e5%89%8d%e7%bc%80%e4%b8%ad%e7%bc%80%e5%90%8e%e7%bc%80%e9%80%86%e6%b3%a2%e5%85%b0%e8%a1%a8%e8%be%be%e5%bc%8f"></a>
+前缀，中缀，后缀（逆波兰）表达式
+</h2><p><strong>前缀表达式(波兰表达式)</strong></p>
+<ul>
+<li>前缀表达式又称波兰表达式，==前缀表达式的运算符位于操作数之前==</li>
+<li>举例说明 ： (3 + 4) x 5 - 6 对应的前缀表达式是 - x + 3 4 5 6</li>
+<li><img src="https://note.youdao.com/yws/res/6352/WEBRESOURCE42eae28e58aba9a8f1d0a8dfdd7022c9" alt="image"></li>
+</ul>
+<p><strong>中缀表达式</strong></p>
+<ul>
+<li>中缀表达式就是常见的运算表达式，如 ：(3 + 4) x 5 - 6</li>
+<li>中缀表达式的求值是我们人最熟悉的，但是对计算机来说不好操作（需要判断优先级），因此，在计算结果时，往往把中缀表达式转成其他表达式（一般是后缀表达式）</li>
+</ul>
+<p><strong>后缀表达式（逆波兰表达式）</strong></p>
+<ul>
+<li>后缀表达式又称逆波兰表达式，与前缀表达式类似，只是运算符位于操作数之后</li>
+<li>举例说明 ： (3 + 4) x 5 - 6 对应的后缀表达式是 3 4 + 5 x 6 -</li>
+<li><img src="https://note.youdao.com/yws/res/6377/WEBRESOURCE79864c70b08a909a83bb81e7cf66d045" alt="image"></li>
+</ul>
+<p><strong>逆波兰计算器</strong>
+思路分析：</p>
+<ul>
+<li><img src="https://note.youdao.com/yws/res/6380/WEBRESOURCEcc6eac66260a5fd50ad88da948c23dd6" alt="image"></li>
+</ul>
+<p><strong>中缀表达式转后缀表达式</strong>
+后缀表达式适合进行计算，但是不方便人阅读，因此在开发中需要将中缀表达式转换成后缀表达式</p>
+<p>思路分析：
+<img src="https://note.youdao.com/yws/res/6400/WEBRESOURCE01d2157a55a43b1a0aeb70d082fa5846" alt="image">
+需要考虑的两个优先：</p>
+<ul>
+<li>1.符号优先级</li>
+<li>2.算式的顺序优先级</li>
+<li>根据栈先入后出的特点，能够很好的实现顺序优先顺序的排序</li>
+<li>再加上相应的比较方法就行了</li>
+</ul>
+<h2 id="递归">
+<a class="header-anchor" href="#%e9%80%92%e5%bd%92"></a>
+递归
+</h2><p><strong>递归应用场景</strong>
+迷宫回溯问题 :
+<img src="https://note.youdao.com/yws/res/6414/WEBRESOURCE620a705f090250357896fa3fde7b8e99" alt="image">
+小球能找到一条路，走到指定的终点</p>
+<p><strong>递归的概念</strong>
+==方法自己调用自己，每次调用时传入不同的变量==，递归有助于编程者解决复杂的问题，同时可以让代码变得简洁</p>
+<p><strong>递归的调用机制</strong></p>
+<ul>
+<li>打印问题</li>
+<li>阶乘问题
+<img src="https://note.youdao.com/yws/res/6429/WEBRESOURCE131706c78be950d723142af01baf1e89" alt="image">
+递归调用规则：</li>
+<li>当程序执行到一个方法时，就会开辟一个独立的空间（栈）</li>
+<li>每个空间的数据（局部变量）是独立的</li>
+</ul>
+<p><strong>递归能解决的问题类型</strong>
+1.各种数学问题：八皇后，汉诺塔，阶乘，迷宫，球和篮子&hellip;</p>
+<p>2.各种算法：快排，归并排序，二分查找，分治算法&hellip;</p>
+<p>3.将用栈解决的问题 -&gt; 递归代码比较简洁</p>
+<p><strong>递归需要遵守的重要规则</strong>
+1.执行一个方法时，就创建一个新的受保护的独立空间(栈空间)</p>
+<p>2.方法的局部变量是独立的，不会相互影响（比如上面的例子中的n）</p>
+<p>3.如果方法中使用的是引用类型变量( 比如数组 )，就会共享该引用类型的数据</p>
+<ul>
+<li><img src="https://note.youdao.com/yws/res/6471/WEBRESOURCE52cf0bf82f215322f3ac624c384998d0" alt="image"></li>
+</ul>
+<p>4.==递归必须向退出递归的条件逼近，否则就是无限递归，出现StackOverflowError，死龟了==</p>
+<p>5.当一个方法执行完毕，或者遇到return，就会返回。==遵守谁调用，就将结果返回给谁==，同时当方法执行完毕或者返回时，该方法也就执行完毕</p>
+<p><strong>递归——迷宫问题</strong>
+分析思路:</p>
+<p>使用递归回溯给小球找路
+1.map表示地图</p>
+<p>2.i，j表示从地图的哪个位置出发(1,1)</p>
+<p>3.如果小球能到map[6][5]的位置，说明通路找到了</p>
+<p>4，找到通路返回true，没找到返回false</p>
+<p>5.约定 ： 当map[i][j] 为0表示该点没有走过， 1表示墙，2表示为通路 ，3表示走不通的路</p>
+<p>6.走迷宫制定的策略：下  -&gt; 右 -&gt;上 -&gt;左，走不通就回溯到前一个点</p>
+<p>代码实现 ：datastructure -&gt; recursion -&gt; MiGong</p>
+<p><strong>对迷宫问题的讨论</strong>
+1.小球得到的路径，和程序员设置的找路策略有关
+2.测试回溯现象
+3.如何求出最短路径？</p>
+<p><strong>递归 - 八皇后问题（回溯算法）</strong>
+问题描述：</p>
+<p>在8×8格的国际象棋上摆放8个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。高斯认为有76种方案。1854年在柏林的象棋杂志上不同的作者发表了40种不同的解，后来有人用图论的方法解出92种结果。如果经过±90度、±180度旋转，和对角线对称变换的摆法看成一类，共有42类。计算机发明后，有多种计算机语言可以编程解决此问题（92种）。</p>
+<p>思路分析：
+<img src="https://note.youdao.com/yws/res/6506/WEBRESOURCE7a5a72c6ad1ee740ca16b8489eeb49a0" alt="image"></p>
+<ul>
+<li>理论上应该创建一个二维数组来代表棋盘，但是实际上可以通过算法，用一个一维数组解决问题
+<ul>
+<li>arr[8] = {0 , 4 , 7 , 5 , 2 , 6 , 1 , 3}</li>
+<li>arr[i] = val : i+1表示第几个皇后（所处的行）, val+1 代表该皇后在该行处在第几列
+代码实现 ： datastructure -&gt; recursion -&gt; Queue8</li>
+</ul>
+</li>
+</ul>
+<h2 id="排序算法">
+<a class="header-anchor" href="#%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95"></a>
+排序算法
+</h2><p>介绍：</p>
+<ul>
+<li>排序也称排序算法(Sort Algorithm)，排序是将一组数据，依指定的顺序进行排列的过程</li>
+</ul>
+<p>排序的分类:</p>
+<ul>
+<li>内部排序：指将需要处理的所有数据都加载到内部存储器（内存）进行排序</li>
+<li>外部排序：数据量过大，无法全部加载到内存中，需要借助外部存储（文件等）进行排序</li>
+<li>常见的排序算法 ： <img src="https://note.youdao.com/yws/res/6555/WEBRESOURCE119b5c2f1eb89d050cda8c4500be7823" alt="image"></li>
+</ul>
+<h2 id="算法的时间复杂度">
+<a class="header-anchor" href="#%e7%ae%97%e6%b3%95%e7%9a%84%e6%97%b6%e9%97%b4%e5%a4%8d%e6%9d%82%e5%ba%a6"></a>
+算法的时间复杂度：
+</h2><p>度量一个程序执行时间的两种方法</p>
+<p>1.事后统计法：</p>
+<ul>
+<li>先运行一遍程序，再计算该程序运行的时间</li>
+<li>问题：
+<ul>
+<li>要想对设计的算法的运行性能进行评估，需要实际运行该程序</li>
+<li>所得时间的统计量依赖于计算机硬件，软件等环境因素，==这种方式，需要同一台计算机在相同环境下运行，才能比较算法速度的快慢==</li>
+</ul>
+</li>
+</ul>
+<p>2.事前估算法：</p>
+<ul>
+<li>通过分析某个算法的==时间复杂度==来判断哪个算法更优</li>
+</ul>
+<p><strong>时间频度</strong>
+基本介绍:
+一个算法花费的时间与算法中语句的执行次数成正比，哪个算法中语句执行次数多，它花费时间就多。==一个算法中的语句执行次数称为语句频度或时间频度==，记为T(n)</p>
+<p>举例：<img src="https://note.youdao.com/yws/res/6602/WEBRESOURCEd105e91ffab0c3005f90e6524be7854a" alt="image"></p>
+<p>举例：忽略常数项：<img src="https://note.youdao.com/yws/res/6607/WEBRESOURCE69c855d2a86c42c2470054e51715b97a" alt="image"></p>
+<p>举例：忽略低次项：<img src="https://note.youdao.com/yws/res/6611/WEBRESOURCE5558e374b8f0656bf0dc7336d9b2198a" alt="image"></p>
+<p>举例：忽略系数：<img src="https://note.youdao.com/yws/res/6615/WEBRESOURCE72111349739a4c7961d8219b59cb0394" alt="image"></p>
+<p><strong>时间复杂度</strong></p>
+<ul>
+<li>
+<p>1.一般情况下，==算法中的基本操作语句的重复执行次数是问题规模n的某个函数==，用T(n)表示，若有某个辅助函数f(n),使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于0的常数，则称f(n)是T(n)的同量级函数。==记作T(n)=O(f(n))==,称O(f(n))为算法的渐进时间复杂度，简称时间复杂度。</p>
+</li>
+<li>
+<p>2.T(n)不同，但时间复杂度可能相同。如T(n) = n^2 + 7n + 6 与T(n) = 3n^2 + 2n + 2 ，它们的T(n)不同，但时间复杂度相同都为O(n^2)</p>
+</li>
+<li>
+<p>3.计算时间复杂度的方法：</p>
+<ul>
+<li>用常数1代替运行时间中的所有加法常数 T(n) = n^2 + 7n + 6 -&gt; T(n) = n^2 + 7n + 1</li>
+<li>修改后的运行次数函数中，只保留最高阶项 T(n) = n^2 + 7n + 1 -&gt; T(n) = n^2</li>
+<li>去除最高阶项的系数 T(n) = n^2 -&gt; O(n^2)</li>
+</ul>
+</li>
+</ul>
+<p><strong>常见的时间复杂度</strong>
+<img src="https://note.youdao.com/yws/res/6686/WEBRESOURCEa2ecb293fb80796abb49cd71ad74687f" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6689/WEBRESOURCEb551b536f0657c492eb465112270614b" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6694/WEBRESOURCE93b26b1e7df7114d16bd6d2edd2b814f" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6697/WEBRESOURCE205b796f4798b78ddce064e8810284d7" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6701/WEBRESOURCE4cd5cb49289e9423abebb67e08aee6b2" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6705/WEBRESOURCEd7a0fd013e25a2e051e2b4b073d56802" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6709/WEBRESOURCEd05d8fbd142d493bb6de717a057d3c9e" alt="image"></p>
+<p><strong>平均时间复杂度和最坏时间复杂度</strong>
+<img src="https://note.youdao.com/yws/res/6715/WEBRESOURCEaefcc9bcfe0b092f7c993daba94dd89e" alt="image"></p>
+<ul>
+<li>一般讨论时间复杂度均是最坏情况下的时间复杂度</li>
+</ul>
+<p><strong>算法的空间复杂度</strong>
+<img src="https://note.youdao.com/yws/res/6724/WEBRESOURCEa2af7e0adaf128f95806cf3e24f8f103" alt="image"></p>
+<ul>
+<li>实际开发中，用户是看程序执行的速度，一般都会用空间换时间，不会过多的考虑</li>
+</ul>
+<h2 id="冒泡排序bubble-sorting">
+<a class="header-anchor" href="#%e5%86%92%e6%b3%a1%e6%8e%92%e5%ba%8fbubble-sorting"></a>
+冒泡排序(Bubble sorting)
+</h2><p>基本介绍：
+<img src="https://note.youdao.com/yws/res/6739/WEBRESOURCE3b69b3fdc3f1a7d0a7c982c6c7560ea9" alt="image"></p>
+<p>思路：
+<img src="https://note.youdao.com/yws/res/6742/WEBRESOURCE2320a9959112a04537be2c4b79ce8d1e" alt="image"></p>
+<p>代码实现 ：/datastructure/sort/BubbleSort.java</p>
+<h2 id="选择排序select-sorting">
+<a class="header-anchor" href="#%e9%80%89%e6%8b%a9%e6%8e%92%e5%ba%8fselect-sorting"></a>
+选择排序(select sorting)
+</h2><p>基本介绍：
+选择式排序也属于内部排序法，是从欲排序的数据中，按指定的规则选出某一元素，再依规定交换位置后达到排序的目的</p>
+<p>基本思想:
+<img src="https://note.youdao.com/yws/res/6764/WEBRESOURCEe8efb4dc4c58ff50e70d456baf310a13" alt="image"></p>
+<p>选择排序思路分析图:
+<img src="https://note.youdao.com/yws/res/6771/WEBRESOURCE694c2df37006078c982063e741ce3b57" alt="image">
+<img src="https://note.youdao.com/yws/res/6774/WEBRESOURCEe2efe7f752627ae709a3c1cfb6848c7a" alt="image"></p>
+<p>应用实例：
+给牛排颜值</p>
+<p>代码实现 ：datastructure/sort/SelectSort.java</p>
+<h2 id="插入排序insertion-sorting">
+<a class="header-anchor" href="#%e6%8f%92%e5%85%a5%e6%8e%92%e5%ba%8finsertion-sorting"></a>
+插入排序(Insertion Sorting)
+</h2><p>基本介绍：
+插入式排序属于内部排序法，是对于欲排序的元素以插入的方式找寻该元素的适当位置，以达到排序的目的</p>
+<p>基本思想:
+<img src="https://note.youdao.com/yws/res/6798/WEBRESOURCE989428666ef65af640a251f7272559a9" alt="image"></p>
+<p>思路图:
+<img src="https://note.youdao.com/yws/res/6803/WEBRESOURCE10af6568da7d31b14fb8927a02e0659d" alt="image"></p>
+<p>应用实例：
+给小牛排成绩</p>
+<p>代码实现 ：datastructure/sort/InsertSort.java</p>
+<h2 id="希尔排序shellsort">
+<a class="header-anchor" href="#%e5%b8%8c%e5%b0%94%e6%8e%92%e5%ba%8fshellsort"></a>
+希尔排序(ShellSort)
+</h2><p>简单插入排序的缺点：
+如果要插入的元素是最后一个，就需要把把前面的数全部都移动一遍找到插入的位置</p>
+<p>基本介绍：
+希尔排序是希尔(Donald Shell)在1959年提出的一种排序算法。==希尔排序也是一种插入排序，是简单插入排序经过改进后的一个更高效版本，也称为缩小增量排序==</p>
+<p>基本思想：
+<img src="https://note.youdao.com/yws/res/6829/WEBRESOURCEb42609a5cc142f343bcc70eece0ac39e" alt="image"></p>
+<p>希尔排序法示意图：
+<img src="https://note.youdao.com/yws/res/6833/WEBRESOURCEa8ef46c9662fda15e8004ed379fcad33" alt="image">
+<img src="https://note.youdao.com/yws/res/6840/WEBRESOURCEebf2a0c2a33dbf36478034bdf3527e76" alt="image"></p>
+<p>两种实现方法
+交换法（速度较慢）
+移动法（速度较快）</p>
+<h2 id="快速排序quicksort">
+<a class="header-anchor" href="#%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8fquicksort"></a>
+快速排序(QuickSort)
+</h2><p>基本介绍
+<img src="https://note.youdao.com/yws/res/6853/WEBRESOURCEe4d100e048fc751aa344f07e4b203b92" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6857/WEBRESOURCE4a976a9be1d1f4d27c16d7b07b65ca10" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6862/WEBRESOURCE4c2944b67872fa890a9307b49c448812" alt="image"></p>
+<ul>
+<li>通过左指针，右指针，pivot（中轴值），递归 来完成</li>
+</ul>
+<h2 id="归并排序mergesort">
+<a class="header-anchor" href="#%e5%bd%92%e5%b9%b6%e6%8e%92%e5%ba%8fmergesort"></a>
+归并排序(MergeSort)
+</h2><p><img src="https://note.youdao.com/yws/res/6871/WEBRESOURCE13777074ff326ef3e5d10d5092848586" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6874/WEBRESOURCE5b71667e4c7db79f5ba570bd76da00c2" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6877/WEBRESOURCE20dbc2295ac385ba4ced02fe6d309859" alt="image"></p>
+<h2 id="基数排序">
+<a class="header-anchor" href="#%e5%9f%ba%e6%95%b0%e6%8e%92%e5%ba%8f"></a>
+基数排序
+</h2><p><img src="https://note.youdao.com/yws/res/6884/WEBRESOURCE266fe5e7754a45a4c906f543a1851c15" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6886/WEBRESOURCEdf91c25933e7ac3c43d4cec62b86ebdf" alt="image"></p>
+<p><img src="https://note.youdao.com/yws/res/6898/WEBRESOURCE7a01da86c4c429da4cf3a8e830e59ce9" alt="image">
+<img src="https://note.youdao.com/yws/res/6893/WEBRESOURCE92c638989121a5e1f9f2186fc56d7393" alt="image"></p>
+<ul>
+<li>
+<p>注意：基数排序是稳定排序</p>
+</li>
+<li>
+<p>稳定排序 ： 需要排序的数组里存在两个相同的数，先后不同，排序完成后仍然遵循开始时的先后顺序</p>
+</li>
+<li>
+<p>基数排序是经典的空间换时间的方法，占用内存很大，如果对海量数据排序时，容易造成OutofMemoryError</p>
+</li>
+<li>
+<p>如果是有负数的数组，不能用基数排序，如果要用，需要进行改进</p>
+</li>
+</ul>
+<h2 id="常用排序算法对比">
+<a class="header-anchor" href="#%e5%b8%b8%e7%94%a8%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95%e5%af%b9%e6%af%94"></a>
+常用排序算法对比
+</h2><p><img src="https://note.youdao.com/yws/res/6917/WEBRESOURCE583e5966af854196e42313c0d079d147" alt="image"></p>
+<h2 id="查找算法">
+<a class="header-anchor" href="#%e6%9f%a5%e6%89%be%e7%ae%97%e6%b3%95"></a>
+查找算法
+</h2><p>Java中常用的四种查找算法：</p>
+<ul>
+<li>顺序（线性）查找
+<ul>
+<li>使用的带查找的数组可以有序，也可以无序</li>
+<li>用循环遍历就行了，简单</li>
+</ul>
+</li>
+<li>二分/折半 查找
+<ul>
+<li>只能对有序数组进行</li>
+<li>二分查找的思路分析：<img src="https://note.youdao.com/yws/res/6938/WEBRESOURCE1ed992c5a724bdad507c71eda08a54d5" alt="image"></li>
+</ul>
+</li>
+<li>插值查找
+<ul>
+<li>
+<p>原理介绍 ： <img src="https://note.youdao.com/yws/res/6945/WEBRESOURCE5ce7f3271d23f4f7a0ed308a7b595a5c" alt="image"></p>
+<ul>
+<li>key:要查找的值(findVal)</li>
+</ul>
+</li>
+<li>
+<p>举例说明 ：<img src="https://note.youdao.com/yws/res/6952/WEBRESOURCE0c7590664d6538d899bf18371b93cf49" alt="image"></p>
+</li>
+<li>
+<p>注意事项 ：<img src="https://note.youdao.com/yws/res/6959/WEBRESOURCE145c972ec4c3aab68f7bbbbc73f1cfce" alt="image"> 关键字分布不均匀 ： 数值之间跳跃很大</p>
+</li>
+</ul>
+</li>
+<li>斐波那契(黄金分割法)查找
+<ul>
+<li>原理介绍 ：<img src="https://note.youdao.com/yws/res/6969/WEBRESOURCEfc266921e5a4590f1a509ae19c9def4d" alt="image"> 还是在有序数组中才能用</li>
+</ul>
+</li>
+</ul>
+<h2 id="哈希表散列表">
+<a class="header-anchor" href="#%e5%93%88%e5%b8%8c%e8%a1%a8%e6%95%a3%e5%88%97%e8%a1%a8"></a>
+哈希表（散列表）
+</h2><ul>
+<li>基本介绍
+<ul>
+<li>散列表（Hash table,也叫哈希表），是根据关键码值（key value）而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。</li>
+<li>哈希表的由来 ：<img src="https://note.youdao.com/yws/res/6998/WEBRESOURCE58cd19c7f3f5dd794a9f5b1ac5202128" alt="image"></li>
+<li>数组 + 链表 构成的哈希表 ：<img src="https://note.youdao.com/yws/res/7007/WEBRESOURCEcd5eb9a8eef4cea3391b2be81470f917" alt="image"></li>
+</ul>
+</li>
+<li>例题 : 有一个公司，当有新的员工来报道时，要求将该员工的信息（id，性别，年龄，名字）加入，当输入该员工的id时，要求查找到该员工的所有信息。
+<ul>
+<li>要求 ：不使用数据库，速度越快越好（哈希表）</li>
+<li>实现思路 ：<img src="https://note.youdao.com/yws/res/7026/WEBRESOURCEa638ae1017a14d0b89c57817b4efc5c1" alt="image"></li>
+</ul>
+</li>
+</ul>
+<h2 id="树结构">
+<a class="header-anchor" href="#%e6%a0%91%e7%bb%93%e6%9e%84"></a>
+树结构
+</h2><ul>
+<li>
+<p>二叉树
+<strong>为什么需要树这种存储结构</strong></p>
+</li>
+<li>
+<p>数组存储方式分析</p>
+<ul>
+<li>优点 ： 可以通过==下标访问==，速度快。对于有序数组，还可使用二分查找提高检索速度</li>
+<li>缺点 ： 如果要检索某个具体值，或插入值会==整体移动==，效率较低</li>
+<li>分析 ： <img src="https://note.youdao.com/yws/res/7044/WEBRESOURCE745a095ba2aa5d556326c058c3ed07df" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>链式存储方式的分析</p>
+<ul>
+<li>优点 ：在一定程度上对数组存储方式有优化（比如 ：插入一个数值节点，只需要将==插入==节点，链接到链表中即可，==删除效率也很好==）</li>
+<li>缺点 ： 在进行==检索时，效率依然较低==，比如（检索某个值，需要从头节点开始遍历）</li>
+<li>示意图 ：<img src="https://note.youdao.com/yws/res/7091/WEBRESOURCE013bf7f5f888843c4992de555d4beea7" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>树存储方式的分析</p>
+<ul>
+<li>能提高数据存储，读取的效率，比如二叉排列树（Binary Sort Tree）,既可以保证数据的检索速度，同时也可以保证数据的插入，删除，修改的速度</li>
+<li>示意图 ：<img src="https://note.youdao.com/yws/res/7078/WEBRESOURCEe234327ae90c2433ef6ee4e27cf5df1b" alt="image"></li>
+</ul>
+</li>
+<li>
+<p><strong>树示意图</strong></p>
+<ul>
+<li>树的常用术语 ： <img src="https://note.youdao.com/yws/res/7098/WEBRESOURCEbf75f48fbf2834ba9ff3b6f572f08a90" alt="image"></li>
+</ul>
+</li>
+<li>
+<p><strong>二叉树</strong></p>
+<ul>
+<li>二叉树的概念 ：
+<ul>
+<li>树有很多种，每个节点==最多只能有两个子节点==的一种形式称为二叉树</li>
+<li>二叉树的子节点分为左节点和右节点</li>
+<li><img src="https://note.youdao.com/yws/res/7116/WEBRESOURCEa10c1e6ccd58ebfd6d21860769a8282b" alt="image"></li>
+<li>如果该二叉树的==所有叶子节点都在最后一层==，并且节点总数 = ==2^n -1==,n为层数，则我们称为满二叉树</li>
+<li>完全二叉树 ： 叶子节点不一定在最后一层，但是从左到右连续</li>
+<li><img src="https://note.youdao.com/yws/res/7136/WEBRESOURCE370f02a32fde6ff1558357e7d79220b1" alt="image"></li>
+</ul>
+</li>
+<li>二叉树的遍历
+<ul>
+<li>使用前序，中序，后序对二叉树进行遍历
+<ul>
+<li>前序遍历 ： 先输出==父节点==，再遍历左子树和右子树</li>
+<li>中序遍历 ： 左子树 -&gt; ==父节点== -&gt; 右子树</li>
+<li>后序遍历 ： 左子树 -&gt; 右子树 -&gt; ==父节点==</li>
+<li>小结 ： 看父节点的顺序确定</li>
+<li>实现思路 ：<img src="https://note.youdao.com/yws/res/7165/WEBRESOURCE18854a0a68e080571381bc6c52063649" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用前序，中序，后序对二叉树节点进行查询
+<ul>
+<li>实现思路 ：<img src="https://note.youdao.com/yws/res/7175/WEBRESOURCE536edb002abeb90d9ca95e8467c67d75" alt="image"></li>
+<li>注意比较语句在程序中执行的顺序</li>
+</ul>
+</li>
+<li>二叉树删除节点
+<ul>
+<li>思路分析 ：<img src="https://note.youdao.com/yws/res/7186/WEBRESOURCEa96755a66935f0a59516cfa23d7817ac" alt="image"></li>
+<li>思考题 ：<img src="https://note.youdao.com/yws/res/7190/WEBRESOURCEd01b300ccb681992a26c9c0b30283831" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>顺序存储二叉树</p>
+<ul>
+<li>
+<p>从数据存储来看，数组存储方式和树的存储方式可以互相转化，即数组可以转化成树，树可以转化成数组 ：</p>
+</li>
+<li>
+<p><img src="https://note.youdao.com/yws/res/7302/WEBRESOURCE10d789c745b11d74bd17d2d83edf4cbf" alt="image"></p>
+</li>
+<li>
+<p>要求 : 以数组形式存储二叉树节点 ： arr : [1,2,3,4,5,6,7],在遍历数组arr时，以前，中，后序的方式进行节点的遍历</p>
+</li>
+<li>
+<p>==顺序存储二叉树的特点==：</p>
+<ul>
+<li>顺序二叉树通常只考虑完全二叉树</li>
+<li>第n个元素的左子节点为2 * n + 1</li>
+<li>第n个元素的右子节点为2 * n + 2</li>
+<li>第n个元素的父节点为(n - 1) / 2</li>
+<li>n : 表示二叉树的第几个元素（从0开始编号，跟数组保持一致）</li>
+</ul>
+</li>
+<li>
+<p>应用场景 ： 堆排序</p>
+</li>
+</ul>
+</li>
+<li>
+<p>线索化二叉树</p>
+<ul>
+<li>基本介绍 ：
+<ul>
+<li>
+<p>n个节点的二叉链表中含有 n + 1 (公式 : 2n - (n - 1) = n + 1) 个空指针域。利用二叉链表中的空指针域，存放指向该节点的在某种遍历次序下的前驱和后继节点的指针（这种附加的指针称为 线索）</p>
+</li>
+<li>
+<p>这种加上了线索的二叉链表称为线索链表，相应的二叉树称为线索二叉树（Threaded BinaryTree）.根据线索性质的不同，分为前序，中序，后序线索二叉树三种。</p>
+</li>
+<li>
+<p>一个节点的前一个节点称为前驱节点</p>
+</li>
+<li>
+<p>一个节点的下一个节点称为后继节点</p>
+</li>
+</ul>
+</li>
+<li>应用案例 ：
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7369/WEBRESOURCE85efc879887e4be7469d9c5c46207191" alt="image"></li>
+</ul>
+</li>
+<li>思路分析 ：
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7371/WEBRESOURCEb1a20ab1cfefbdef24ce55bf6eef57e5" alt="image"></li>
+</ul>
+</li>
+<li>遍历线索化二叉树
+<ul>
+<li>通过leftType和RightType找到头尾节点，进行线性遍历（类似双向链表）</li>
+<li>用原来的遍历方式可能会出问题，陷入死循环</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="树结构的实际应用">
+<a class="header-anchor" href="#%e6%a0%91%e7%bb%93%e6%9e%84%e7%9a%84%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8"></a>
+树结构的实际应用
+</h2><ul>
+<li>
+<p>堆排序</p>
+<ul>
+<li>基本介绍 ：
+<ul>
+<li>
+<p>堆排序是利用堆这种数据结构设计的一种排序算法，==堆排序是一种选择排序==，它的最好，最坏，平均时间复杂度均为O(nlogn),它也是不稳定排序</p>
+</li>
+<li>
+<p>堆是具有以下性质的完全二叉树 ：每个节点的值都大于等于其左右子节点的值，称为大顶堆（注意：没有要求左子节点和右子节点的值的大小关系）</p>
+</li>
+<li>
+<p>每个节点的值都小于或等于其左右子节点的值，称为小顶堆</p>
+</li>
+<li>
+<p>大顶堆举例说明 ： <img src="https://note.youdao.com/yws/res/7408/WEBRESOURCE05f51841d734a0f92b4a58f0c4188d5e" alt="image"></p>
+</li>
+<li>
+<p>小顶堆举例说明 ：<img src="https://note.youdao.com/yws/res/7416/WEBRESOURCEe9e39738401b1393ef19a9f546b58d8b" alt="image"></p>
+</li>
+<li>
+<p>一般升序采用大顶堆，降序采用小顶堆</p>
+</li>
+</ul>
+</li>
+<li>堆排序基本思想 ：
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7423/WEBRESOURCEdf01db6699c0ab19fe363bc4dbeb7ebb" alt="image"></li>
+<li>第一个非叶子节点的索引 ： arr.length /2 - 1</li>
+<li><img src="https://note.youdao.com/yws/res/7431/WEBRESOURCE34f5edd1c9c9bd001964d16898f68418" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>赫夫曼树</p>
+<ul>
+<li>基本概念 ：
+<ul>
+<li>给定n个权值作为n个叶子节点，构造一棵二叉树，若该树的==带权路径长度(wpl ： weighted path length)达到最小==，称这样的二叉树为==最优二叉树==，也称为哈夫曼树/霍夫曼树</li>
+<li>赫夫曼树是带权路径长度最短的树，权值较大的节点离根较近</li>
+</ul>
+</li>
+<li>几个重要概念和举例说明 ：
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7461/WEBRESOURCEd3497031453dc3357e0248139b51e278" alt="image"></li>
+<li><img src="https://note.youdao.com/yws/res/7470/WEBRESOURCEdfeef55c22def752fc63366393143ec5" alt="image"></li>
+</ul>
+</li>
+<li>实现思路 ： <img src="https://note.youdao.com/yws/res/7474/WEBRESOURCE55e3bae303256ce3a9580e9899777840" alt="image"><img src="https://note.youdao.com/yws/res/7478/WEBRESOURCEf87b290a1588da109953656fe927451a" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>赫夫曼编码</p>
+<ul>
+<li>基本介绍 ：
+<ul>
+<li>赫夫曼编码也翻译成哈夫曼编码(Huffman Coding),是一种编码方式，属于一种程序算法</li>
+<li>赫夫曼编码是赫夫曼树在电讯通信中的经典应用之一</li>
+<li>赫夫曼编码广泛的用于数据文件压缩，压缩率达到20%~90%</li>
+<li>赫夫曼码是可变字长编码的一种，称之为最佳编码</li>
+</ul>
+</li>
+<li>原理刨析
+<ul>
+<li>通信领域的处理方式1 - 定长编码</li>
+<li>通信领域的处理方式1 - 变长编码（会造成多义性）</li>
+<li>赫夫曼编码 ：</li>
+<li><img src="https://note.youdao.com/yws/res/7507/WEBRESOURCE9e19391720b9a5641c73176a198dcd1d" alt="image"><img src="https://note.youdao.com/yws/res/7509/WEBRESOURCE36821a0ff0f4f35cc6c6dc4f79b3315f" alt="image"><img src="https://note.youdao.com/yws/res/7511/WEBRESOURCE68b5a242cd962a27e2fd811bacee7e0e" alt="image"></li>
+<li>注意，这个赫夫曼树根据排序方法不同（可能排序时有几个相同权值的节点的情况），也可能不太一样，==这样对应的赫夫曼编码也不完全一样，但是wpl是一样的，都是最小的，编码处理后的长度也是一样的==。</li>
+<li>第四步的注意事项 ：<img src="https://note.youdao.com/yws/res/7544/WEBRESOURCEed1bd86eecb646cdccfedf105ab745b2" alt="image"></li>
+<li>第五步的注意事项<img src="https://note.youdao.com/yws/res/7550/WEBRESOURCEa842f8c99e16ed5a19d185031ff952a6" alt="image"></li>
+</ul>
+</li>
+<li>解码过程注意事项 : <img src="https://note.youdao.com/yws/res/7555/WEBRESOURCE07f8bcbd6d7b09423b4e62b8c17df0e9" alt="image"></li>
+<li>对文件的压缩和解压（涉及IO,没看，留着之后看）</li>
+<li>赫夫曼编码的注意事项
+<ul>
+<li>
+<p>如果文件本身本身就是经过压缩处理的，那么使用赫夫曼编码再压缩效率不会有明显的变化，如视频，ppt等</p>
+</li>
+<li>
+<p>赫夫曼编码是按字节处理的，因此可以处理所有的文件（二进制文件，文本文件..）</p>
+</li>
+<li>
+<p>如果一个文件中的内容，重复的数据不多，压缩效果也不会很明显</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>二叉排序树(BST ：Binary Sort Tree)</p>
+<ul>
+<li>介绍 ： 对于二叉排序树的任何一个非叶子节点，要求左子节点的值比当前节点（子节点的父节点）的值小，右子节点的值比当前节点的值大。
+<ul>
+<li>特别说明 ：如果有相同的值，可以放在左或右</li>
+<li><img src="https://note.youdao.com/yws/res/7595/WEBRESOURCE1f9803dbce8d93716e6006969321f1c2" alt="image"></li>
+</ul>
+</li>
+<li>创建和遍历 ：使用递归和判断，比较简单，注意中序遍历就是按顺序的</li>
+<li>删除 ：删除需要考虑三种情况 ：
+<ul>
+<li>删除叶子节点 <img src="https://note.youdao.com/yws/res/7608/WEBRESOURCEf324da12282e35bee8be6c05a4f84cf4" alt="image"></li>
+<li>删除只有一棵子树的节点<img src="https://note.youdao.com/yws/res/7613/WEBRESOURCEabe017560dfb906e71533ae4136e663b" alt="image"></li>
+<li>删除有两颗子树的节点<img src="https://note.youdao.com/yws/res/7615/WEBRESOURCEec50e7ba35e6592dff524e2cab3dc7d1" alt="image"></li>
+<li>实现代码 ： /text1/datastructure/binarysorttree/BinarySortTreeDemo.java</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>平衡二叉树（AVL树）</p>
+<ul>
+<li>引入 : <img src="https://note.youdao.com/yws/res/7632/WEBRESOURCE4a37affb0dba385aedd50bbe73f06046" alt="image"></li>
+<li>基本介绍 ： <img src="https://note.youdao.com/yws/res/7636/WEBRESOURCE5be33b7540759fa52a1fd4a9e581b262" alt="image"></li>
+<li>注意，平衡二叉树的前提是它是一棵二叉排序树</li>
+<li>
+<ul>
+<li>核心 ： 找到以指定节点为根节点的树的高度，根节点的左子树，右子树的高度</li>
+</ul>
+</li>
+<li>应用案列 ： 单旋转（左旋转）
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7644/WEBRESOURCE186d5c4155e3700f5813e702f28c3406" alt="image"></li>
+<li>条件 ： 右子树的高度 - 左子树的高度 &gt; 1</li>
+</ul>
+</li>
+<li>应用案列 ： 单旋转（右旋转）
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7668/WEBRESOURCE385a95047dd0f71b488a7b005d18dbe7" alt="image"></li>
+<li>条件 ： 左子树的高度 - 右子树的高度 &gt; 1</li>
+</ul>
+</li>
+<li>应用案列 ： 双旋转
+<ul>
+<li>有些二叉排序树经过单旋转平衡处理后，仍然不是AVL树</li>
+<li><img src="https://note.youdao.com/yws/res/7679/WEBRESOURCEadbe753d56684c9eb166b6fad30505eb" alt="image"></li>
+<li>如果直接单旋转 ， 仍然不是AVL树</li>
+<li>需要进行上面的四步操作</li>
+</ul>
+</li>
+<li>AVL树完整代码 ： /text1/datastructure/avl/AVLTreeDemo.java</li>
+</ul>
+</li>
+<li>
+<p>多路查找树</p>
+<ul>
+<li>二叉树的问题分析 ：
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7689/WEBRESOURCE9857f1ee3546e86444b0ed1e40d3fd7b" alt="image"></li>
+</ul>
+</li>
+<li>多叉树介绍 ：
+<ul>
+<li>在二叉树中，每个节点有数据项，最多有两个子节点。如果==允许每个节点可以有更多的数据项和更多的子节点，就是多叉树(multiway tree)==</li>
+<li>2-3树，2-3-4树就是多叉树，多叉树通过重新组织节点，减少树的高度，能对二叉树进行优化</li>
+<li>举例说明 ：<img src="https://note.youdao.com/yws/res/7707/WEBRESOURCE85b5e0bb37a01a014ea7990b26aa7d8c" alt="image">有三个子树的节点 ： 3节点，两个子树的节点 ： 2节点</li>
+</ul>
+</li>
+<li>B树介绍 ：<img src="https://note.youdao.com/yws/res/7718/WEBRESOURCE95ea2e9345c29b1f5f570fee21a05a18" alt="image"></li>
+<li>2-3 树 ：
+<ul>
+<li>2-3 树是最简单的 B树，具有如下特点 ：
+<ul>
+<li>2-3树的叶子节点都在同一层（只要是B树都满足这个条件）</li>
+<li>有两个子节点的节点叫二节点，二节点要么没有子节点，要么有两个子节点</li>
+<li>有三个子节点的节点叫三节点，三节点要么没有子节点，要么有三个子节点</li>
+<li>2-3树是由二节点和三节点构成的树</li>
+</ul>
+</li>
+<li>2-3 树应用案列 ：<img src="https://note.youdao.com/yws/res/7740/WEBRESOURCEa8954fb821f73146bea0b8c88125c5dc" alt="image"></li>
+</ul>
+</li>
+<li>B树，B+树和B*树
+<ul>
+<li>B树的介绍 ： B-tree树即B树，B即balanced ：<img src="https://note.youdao.com/yws/res/7752/WEBRESOURCE996037a9742661dd44d74b97bd853f66" alt="image"></li>
+<li>B+树介绍 ：<img src="https://note.youdao.com/yws/res/7758/WEBRESOURCEac7706934d3a89b4a23cca990e9b329c" alt="image">切割了链表，查找起来性能很好</li>
+<li>B*树介绍 ：<img src="https://note.youdao.com/yws/res/7764/WEBRESOURCE905874c5bb0532e5ca62da7d452415c0" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="图">
+<a class="header-anchor" href="#%e5%9b%be"></a>
+图
+</h2><ul>
+<li>图的基本介绍 ：
+<ul>
+<li>
+<p>为什么要有图 ：</p>
+</li>
+<li>
+<p>线性表局限于一个直接前驱和一个直接后继的关系</p>
+</li>
+<li>
+<p>树也只能有一个直接前驱也就是父节点</p>
+</li>
+<li>
+<p>当我们需要==表示多对多关系时，就用到了图==</p>
+</li>
+</ul>
+</li>
+<li>图的举例说明 ：<img src="https://note.youdao.com/yws/res/7784/WEBRESOURCE0ee78f3a71ba4283310ff7b1c27975c0" alt="image"></li>
+<li>图的常用概念 ：<img src="https://note.youdao.com/yws/res/7790/WEBRESOURCE8b0f9b644eb605d40a6a454b827f00eb" alt="image"><img src="https://note.youdao.com/yws/res/7792/WEBRESOURCE855cdc1c1e1e086d8c09fcb0980bcf46" alt="image"></li>
+<li>图的表示方式 ：
+<ul>
+<li>邻接矩阵 ：<img src="https://note.youdao.com/yws/res/7798/WEBRESOURCE608f48a2c61364f916bb78b039ef96a4" alt="image"></li>
+<li>邻接表 ：<img src="https://note.youdao.com/yws/res/7803/WEBRESOURCEec573a4633d95625f2d1aadf53ca49e5" alt="image"></li>
+</ul>
+</li>
+<li>图的快速入门案列 ：
+<ul>
+<li>图的创建和常用方法 ：/text1/datastructure/graph/Graph.java
+<ul>
+<li>添加节点，添加边，返回节点数目，边数目，返回索引的值，打印邻结矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>图的深度优先遍历 ：
+<ul>
+<li>
+<p>图的遍历即是对节点的访问，一个图有很多节点，遍历需要对应的策略，一般有两种策略（1）深度优先遍历（2）广度优先遍历</p>
+</li>
+<li>
+<p>深度优先搜索(Depth First Search  DFS) :</p>
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7825/WEBRESOURCEdb0920392217b808b66cf853acf11bf5" alt="image"></li>
+<li>深度优先遍历算法步骤和举例说明 ：<img src="https://note.youdao.com/yws/res/7834/WEBRESOURCEea7551ad6d512f013c944fe5164276fd" alt="image"></li>
+<li>注意，深度优先是每次从下一个邻结节点找下一个（往x轴方向向下），直到找不到，再换下一个节点开始</li>
+</ul>
+</li>
+<li>
+<p>图的广度优先遍历(Broad First Search) ：</p>
+<ul>
+<li>基本思想 ： ：<img src="https://note.youdao.com/yws/res/7841/WEBRESOURCE4eef7c128dd515c41ef7c62428af3c48" alt="image"></li>
+<li>广度优先搜索遍历步骤和举例说明 ：<img src="https://note.youdao.com/yws/res/7847/WEBRESOURCE98f96df2f1e1b8570959dd15d21fbe7e" alt="image"></li>
+<li><img src="https://note.youdao.com/yws/res/7854/WEBRESOURCE0d508af6b7500164fb6945e64f304afe" alt="image"></li>
+<li>
+<ul>
+<li>注意，广度优先是每次从同一个节点找下一个（往y轴方向向下）,直到找不到，再换下一个节点开始</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>区别 ： 深度优先是用递归，栈实现的，广度优先是用队列实现的</p>
+<ul>
+<li>代码实现 ：/text1/datastructure/graph/Graph.java</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="常用算法">
+<a class="header-anchor" href="#%e5%b8%b8%e7%94%a8%e7%ae%97%e6%b3%95"></a>
+常用算法
+</h1><ul>
+<li>
+<p>二分查找（非递归）</p>
+<ul>
+<li>基本介绍
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7883/WEBRESOURCE5794b3467f22f91ee647de859170abe9" alt="image"></li>
+</ul>
+</li>
+<li>代码实现 ： /Algorithm/src/binarysearchnorecursion/BinarySearchNoRecur.java</li>
+</ul>
+</li>
+<li>
+<p>分治算法</p>
+<ul>
+<li>基本介绍
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7890/WEBRESOURCE05f25f1cc8d7d93936a38b6170cc64f1" alt="image"></li>
+</ul>
+</li>
+<li>基本步骤
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7895/WEBRESOURCE269a565258ff3a0521d849db1b46fd3f" alt="image"></li>
+</ul>
+</li>
+<li>算法设计模式
+<ul>
+<li><img src="https://note.youdao.com/yws/res/7901/WEBRESOURCE68d7604f98649e7ea632d0922e3151db" alt="image"></li>
+</ul>
+</li>
+<li>分治算法的最佳实践 - 汉诺塔
+<ul>
+<li>汉诺塔介绍 ：<img src="https://note.youdao.com/yws/res/7909/WEBRESOURCE02a7606b85f9b6dd52f9e2888a9505f1" alt="image"></li>
+<li>汉诺塔思路分析 ：<img src="https://note.youdao.com/yws/res/7914/WEBRESOURCE2d351c465313111d21ca634b4826731f" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>动态规划算法（Dynamic Programming）</p>
+<ul>
+<li>应用场景 - 背包问题 ：<img src="https://note.youdao.com/yws/res/7921/WEBRESOURCEf8bf1105ecea7d67539c182515b82b4f" alt="image"></li>
+<li>算法介绍 ：<img src="https://note.youdao.com/yws/res/7927/WEBRESOURCE87834bbe6d0883ca0c1ffa80386f4066" alt="image"></li>
+<li>思路分析 ：<img src="https://note.youdao.com/yws/res/7969/WEBRESOURCEdc51e7a89ec5bce71a95f0d53de7d3c0" alt="image"> <img src="https://note.youdao.com/yws/res/7930/WEBRESOURCE42637cc2653f07867735761b9faf42db" alt="image"></li>
+<li>填表过程 ：<img src="https://note.youdao.com/yws/res/7932/WEBRESOURCE86d3daf786dac2dba8018e6d20cece4a" alt="image"><img src="https://note.youdao.com/yws/res/7939/WEBRESOURCEb8b0d7580d95ecb9f87458585c969ecd" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>KMP算法</p>
+<ul>
+<li>
+<p>应用场景 ：<img src="https://note.youdao.com/yws/res/7947/WEBRESOURCEb100af622766fb62ee7f17a45fd486b6" alt="image"></p>
+</li>
+<li>
+<p>暴力匹配算法 ： <img src="https://note.youdao.com/yws/res/7953/WEBRESOURCEb6db183a5c895a9ef3ffb2c5fdad054d" alt="image"></p>
+</li>
+<li>
+<p>KMP算法介绍 ：<img src="https://note.youdao.com/yws/res/7960/WEBRESOURCE376148137328b18d7b52a53335e731f6" alt="image">参考资料 ：<a href="https://blog.csdn.net/v_july_v/article/details/7041827#t10">https://blog.csdn.net/v_july_v/article/details/7041827#t10</a></p>
+</li>
+<li>
+<p>KMP算法应用-字符串匹配问题 ：<img src="https://note.youdao.com/yws/res/7975/WEBRESOURCE00e2923d42671ea7fc2c732ca8dc42df" alt="image"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>贪心算法</p>
+<ul>
+<li>
+<p>算法介绍 ：<img src="https://note.youdao.com/yws/res/7981/WEBRESOURCEe6b0e66457152b8779eebe2fdaf92bbb" alt="image"></p>
+</li>
+<li>
+<p>应用场景 ：<img src="https://note.youdao.com/yws/res/7983/WEBRESOURCEf9a7fc6a27ef59fed3e0b48cf03706ec" alt="image"></p>
+</li>
+<li>
+<p>思路分析 ：<img src="https://note.youdao.com/yws/res/7988/WEBRESOURCE49df6163abeb9e0e8ab58458069d2a9d" alt="image"><img src="https://note.youdao.com/yws/res/7990/WEBRESOURCE89fa4fa434f05bdf98ecb7c693fe8bcd" alt="image"></p>
+</li>
+<li>
+<p>思路图解 ：<img src="https://note.youdao.com/yws/res/7992/WEBRESOURCE9ccb4043e8dc46b7d1e290b2c2360dd0" alt="image"></p>
+</li>
+<li>
+<p>注意事项 ：<img src="https://note.youdao.com/yws/res/8001/WEBRESOURCE7ed143dbffb2c516195950743df98f9f" alt="image"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>普利姆(Prim)算法</p>
+<ul>
+<li>应用场景 ：<img src="https://note.youdao.com/yws/res/8010/WEBRESOURCE061de20f0a0e75cb395b0f81e701269d" alt="image"></li>
+<li>最小生成树 ：<img src="https://note.youdao.com/yws/res/8014/WEBRESOURCE2886389530422dd7acec419926e97769" alt="image"></li>
+<li>思路图 ：<img src="https://note.youdao.com/yws/res/8020/WEBRESOURCE27f30fc7b90c5c1d3ced2b8543aa0375" alt="image"></li>
+</ul>
+</li>
+<li>
+<p>克鲁斯卡尔算法</p>
+<ul>
+<li>应用场景 ：<img src="https://note.youdao.com/yws/res/8025/WEBRESOURCE7e69bbb86d1217b10ec8e712a0a23fb0" alt="image"></li>
+<li>算法介绍 ：<img src="https://note.youdao.com/yws/res/8027/WEBRESOURCE3a6d82abec8aabe0c0bd133feeb234e3" alt="image"></li>
+<li>算法图解 ：
+<ul>
+<li>添加边 ：<img src="https://note.youdao.com/yws/res/8033/WEBRESOURCE68ff10026c8f846c1539e8cbd2e6729d" alt="image"><img src="https://note.youdao.com/yws/res/8035/WEBRESOURCE56c5044f05fa3be1b3461eb42ce364fd" alt="image"></li>
+<li>判断回路 ：<img src="https://note.youdao.com/yws/res/8038/WEBRESOURCE04896dad49e2e1eb9cae6b1140964b4e" alt="image"><img src="https://note.youdao.com/yws/res/8040/WEBRESOURCE9267a481db562082c7fd2961d1383f34" alt="image"><img src="https://note.youdao.com/yws/res/8042/WEBRESOURCE5496c59a76d9d55c47f4eaf9e7c92a9d" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>迪杰斯特拉算法(Dijkstra)</p>
+<ul>
+<li>
+<p>应用场景 ：<img src="https://note.youdao.com/yws/res/8058/WEBRESOURCE5dcc2380332d512f0bf2d1c61d26619c" alt="image"></p>
+</li>
+<li>
+<p>算法介绍 ：Dijkstra算法是==典型的最短路径算法==，用于计算一个节点到其他节点的最短路径。它的主要特点是以起始点为中心向外层层层扩展（广度优先搜索思想），直到扩展到终点为止</p>
+</li>
+<li>
+<p>算法过程 ：<img src="https://note.youdao.com/yws/res/8079/WEBRESOURCEba9993a59618244a36add76937f4d068" alt="image"></p>
+</li>
+<li>
+<p>算法图解 ：<img src="https://note.youdao.com/yws/res/8082/WEBRESOURCE3248e1f1df84e9436ecec48fe84bf6af" alt="image"><img src="https://note.youdao.com/yws/res/8083/WEBRESOURCE3cfac85cfd8c47797403ae2b076a201e" alt="image"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>弗洛依德算法（Floyd）</p>
+<ul>
+<li>算法介绍 ：<img src="https://note.youdao.com/yws/res/8093/WEBRESOURCE3e672698df7defd8d2a508a1347a06d0" alt="image"></li>
+<li>算法图解 ：<img src="https://note.youdao.com/yws/res/8098/WEBRESOURCE651bd03f4c148c4fb7e0734e12e9df5e" alt="image"><img src="https://note.youdao.com/yws/res/8102/WEBRESOURCE0923139f51e77b11388f17d8bf456c55" alt="image"><img src="https://note.youdao.com/yws/res/8105/WEBRESOURCEb25ddd97d6d6ec6dff1b0226c9bfeadb" alt="image">三层for循环</li>
+</ul>
+</li>
+<li>
+<p>马踏棋盘算法（骑士周游问题）</p>
+<ul>
+<li>算法介绍 : <img src="https://note.youdao.com/yws/res/8115/WEBRESOURCE41e793a9923c15770c9823ef0b45f2a7" alt="image"></li>
+<li>代码实现 : <img src="https://note.youdao.com/yws/res/8117/WEBRESOURCEe7f2df3c1b931392b066b656c9bdc717" alt="image"></li>
+<li>解决思路 ： <img src="https://note.youdao.com/yws/res/8123/WEBRESOURCEeb07bd7f3857ee056635e9515a745334" alt="image"></li>
+<li>使用贪心算法对代码优化 ：<img src="https://note.youdao.com/yws/res/8130/WEBRESOURCE223cf41ca123367bad170c15866d1d49" alt="image">通过找到下一步能走的最少的步数集合，减少回溯的可能性，从而优化了算法</li>
+</ul>
+</li>
+</ul>
+</div>
+    <footer class="article-footer"><div class="share-wrapper"><a href="https://www.facebook.com/sharer/sharer.php?u=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-facebook"></div>
+    </a><a href="https://twitter.com/intent/tweet?url=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/&amp;text=[%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86]%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95&amp;via=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-twitter"></div>
+    </a><a href="https://www.linkedin.com/shareArticle?url=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/&amp;title=[%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86]%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95&amp;summary=%20%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95%20%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98%20%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d%e9%97%ae%e9%a2%98%ef%bc%9a%20%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d%20KMP%e7%ae%97%e6%b3%95%20%e5%85%ab%e7%9a%87%e5%90%8e%ef%bc%9a%e5%9b%9e%e6%ba%af%e7%ae%97%e6%b3%95%20%e6%b1%89%e8%af%ba%e5%a1%94%ef%bc%9a%e5%88%86%e6%b2%bb%e7%ae%97%e6%b3%95%20%e9%a9%ac%e8%b8%8f%e6%a3%8b%e7%9b%98%ef%bc%9a%e5%9b%be%e7%9a%84%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%8c%96%e9%81%8d%e5%8e%86%e7%ae%97%e6%b3%95%28DFS%29&#43;%e8%b4%aa%e5%bf%83%e7%ae%97%e6%b3%95%0a&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-linkedin"></div>
+    </a><a href="https://www.reddit.com/submit?url=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/&amp;title=[%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86]%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-reddit"></div>
+    </a><a href="https://service.weibo.com/share/share.php?url=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/&amp;appkey=&amp;title=[%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86]%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-weibo"></div>
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/&amp;title=[%e5%9f%ba%e7%a1%80%e7%9f%a5%e8%af%86]%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95&amp;desc=%20%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95%20%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98%20%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8c%b9%e9%85%8d%e9%97%ae%e9%a2%98%ef%bc%9a%20%e6%9a%b4%e5%8a%9b%e5%8c%b9%e9%85%8d%20KMP%e7%ae%97%e6%b3%95%20%e5%85%ab%e7%9a%87%e5%90%8e%ef%bc%9a%e5%9b%9e%e6%ba%af%e7%ae%97%e6%b3%95%20%e6%b1%89%e8%af%ba%e5%a1%94%ef%bc%9a%e5%88%86%e6%b2%bb%e7%ae%97%e6%b3%95%20%e9%a9%ac%e8%b8%8f%e6%a3%8b%e7%9b%98%ef%bc%9a%e5%9b%be%e7%9a%84%e6%b7%b1%e5%ba%a6%e4%bc%98%e5%8c%96%e9%81%8d%e5%8e%86%e7%ae%97%e6%b3%95%28DFS%29&#43;%e8%b4%aa%e5%bf%83%e7%ae%97%e6%b3%95%0a&amp;source=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-qq"></div>
+    </a><a href="javascript:;"  title="[基础知识]数据结构与算法">
+      <div class="share-icon icon icon-weixin"><div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div></div>
+    </a></div><a
+          data-aos="zoom-in"
+          href="/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count valine-comment-count"
+            data-xid="https//wittleluna.github.io/zh-cn/post/%e5%9f%ba%e7%a1%80%e5%86%85%e5%ae%b9/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/zh-cn/tags/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e4%b8%8e%e7%ae%97%e6%b3%95"
+        rel="tag"
+        >数据结构与算法</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap article-nav-link-left"><img
+              data-src="https://i.miji.bid/2025/06/12/f6d4658d812cf6f8690b15304d3e59c1.jpeg"
+              data-sizes="auto"
+              alt="DFS/BFS理论基础"
+              class="lazyload"
+            /><a href="/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">DFS/BFS理论基础</h3>
+      </div><div class="article-nav-link-wrap article-nav-link-right"><img
+              data-src="https://i.miji.bid/2025/06/11/f8e4a48a64389a10e1f7e3e7e3de346f.jpeg"
+              data-sizes="auto"
+              alt="[Openwebui] 使用Pipeline功能"
+              class="lazyload"
+            /><a href="/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/"></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">[Openwebui] 使用Pipeline功能</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="valine">
+          <span>valine</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment valine-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep "></span>
+      wittleLuna
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;72.3k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;02:29</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi "></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#经典算法题">经典算法题</a></li>
+    <li><a href="#线性结构和非线性结构">线性结构和非线性结构</a>
+      <ul>
+        <li><a href="#线性结构">线性结构</a></li>
+        <li><a href="#非线性结构">非线性结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#稀疏数组和队列">稀疏数组和队列</a>
+      <ul>
+        <li><a href="#稀疏数组sparsearray">稀疏数组(sparseArray)</a></li>
+        <li><a href="#队列">队列</a></li>
+      </ul>
+    </li>
+    <li><a href="#链表linked-list">链表（Linked List）</a>
+      <ul>
+        <li><a href="#链表的应用增删改查">链表的应用：增删改查</a></li>
+        <li><a href="#双向链表">双向链表</a></li>
+        <li><a href="#单向环形链表的应用">单向环形链表的应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#栈">栈</a></li>
+    <li><a href="#前缀中缀后缀逆波兰表达式">前缀，中缀，后缀（逆波兰）表达式</a></li>
+    <li><a href="#递归">递归</a></li>
+    <li><a href="#排序算法">排序算法</a></li>
+    <li><a href="#算法的时间复杂度">算法的时间复杂度：</a></li>
+    <li><a href="#冒泡排序bubble-sorting">冒泡排序(Bubble sorting)</a></li>
+    <li><a href="#选择排序select-sorting">选择排序(select sorting)</a></li>
+    <li><a href="#插入排序insertion-sorting">插入排序(Insertion Sorting)</a></li>
+    <li><a href="#希尔排序shellsort">希尔排序(ShellSort)</a></li>
+    <li><a href="#快速排序quicksort">快速排序(QuickSort)</a></li>
+    <li><a href="#归并排序mergesort">归并排序(MergeSort)</a></li>
+    <li><a href="#基数排序">基数排序</a></li>
+    <li><a href="#常用排序算法对比">常用排序算法对比</a></li>
+    <li><a href="#查找算法">查找算法</a></li>
+    <li><a href="#哈希表散列表">哈希表（散列表）</a></li>
+    <li><a href="#树结构">树结构</a></li>
+    <li><a href="#树结构的实际应用">树结构的实际应用</a></li>
+    <li><a href="#图">图</a></li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js"
+    integrity="sha384-vLev0II0HKFaxkcm&#43;/7kX5IGwVFBASkGchU311wmU/veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "JCQ52NHG79",
+        apiKey: "762929a52278c0879d86698a0f0de60f",
+        indexName: "blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script><script
+    src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"
+    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          return new Promise((resolve, reject) => {
+            const scriptElement = document.createElement('script');
+            if (script.type) {
+              scriptElement.type = script.type;
+            }
+            if (script.src) {
+              scriptElement.src = script.src;
+              if (script.integrity) {
+                scriptElement.integrity = script.integrity;
+              }
+              if (script.crossOrigin) {
+                scriptElement.crossOrigin = script.crossOrigin;
+              }
+              scriptElement.onload = resolve;
+              scriptElement.onerror = reject;
+            }
+            if (scriptContent) {
+              scriptElement.text = scriptContent;
+            }
+            document.head.appendChild(scriptElement);
+            if (!script.src) {
+              resolve();
+            }
+          })
+          
+        }
+
+        ;(src ? loadScript() : loadScript(script.text))
+          .then(() => loadScripts(scripts, index + 1))
+          .catch(error => {
+            console.error(`Failed to load script: ${src || 'inline script'}`, error);
+            loadScripts(scripts, index + 1);
+          });
+      }
+    }
+    if (window.Pjax) {
+      Pjax.prototype.getElements = function() {
+        const i18nLanguages = window.siteConfig.i18n_languages;
+        const baseUrl = window.siteConfig.base;
+        let basePathname = new URL(baseUrl).pathname;
+        if (!basePathname.endsWith('/')) {
+          basePathname += '/';  
+        }
+        const currentUrl = window.location.href;
+        const currentPathname = new URL(currentUrl).pathname.replace(basePathname, '');
+        const aLinks = document.querySelectorAll('a[href]');
+        const pjaxLinks = [];
+        for(let i = 0; i < aLinks.length; i++) {
+          const aLink = aLinks[i];
+          const aLinkHref = aLink.getAttribute('href');
+          const isExternal = aLink.getAttribute('target') === '_blank' || aLink.getAttribute('rel')?.includes('noopener');
+          if (isExternal || aLinkHref.startsWith('mailto:') || aLinkHref.startsWith('tel:') || aLinkHref.startsWith('javascript:') || aLinkHref.startsWith("data:") || aLinkHref.startsWith("vbscript:")) {
+            continue;
+          }
+          if (!i18nLanguages) {
+            
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const absoluteUrl = new URL(aLinkHref, currentUrl).href;
+          const absolutePathname = new URL(absoluteUrl).pathname.replace(basePathname, '');
+          if (!absolutePathname || !currentPathname) {
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const currentLangIndex = i18nLanguages.findIndex(lang => currentPathname.startsWith(lang.Lang));
+          if (currentLangIndex > -1) {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === currentLangIndex) {
+              
+              pjaxLinks.push(aLink);
+            }
+          } else {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === -1) {
+              
+              pjaxLinks.push(aLink);
+            }
+          }
+        }
+        return pjaxLinks;
+      }
+    }
+    window.Pjax &&
+      new window.Pjax({
+        selectors: [
+          "#header>img",
+          "#header>picture",
+          "head title",
+          "#header-title",
+          "#subtitle-wrap",
+          "#main",
+          "#content",
+          ".sidebar-widget",
+          ".sidebar-wrapper",
+          "#mobile-nav",
+          "#lazy-script",
+          '#i18n-nav'
+        ],
+        switches: {
+          "#content": function(oldEl, newEl) {
+            
+            oldEl.className = newEl.className;
+            this.onSwitch();
+          },
+          "#header-title": Pjax.switches.outerHTML,
+          "#subtitle-wrap": Pjax.switches.outerHTML,
+          "#main": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.outerHTML = newEl.outerHTML;
+            this.onSwitch();
+          },
+          "#mobile-nav": Pjax.switches.outerHTML,
+          "#lazy-script": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.innerHTML = newEl.innerHTML;
+            this.onSwitch();
+          },
+        },
+        cacheBust: false,
+      });
+  </script><script src="/js/pjax.js" integrity="" crossorigin="anonymous" ></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "wittleLuna",
+          title: "[基础知识]数据结构与算法",
+          url: "https:\/\/wittleLuna.github.io\/zh-cn\/post\/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9\/",
+          description: " 数据结构和算法 经典算法题 字符串匹配问题： 暴力匹配 KMP算法 八皇后：回溯算法 汉诺塔：分治算法 马踏棋盘：图的深度优化遍历算法(DFS)\u002b贪心算法\n",
+          cover: "https:\/\/wittleLuna.github.io\/images\/banner7.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
+  var commentConfig = {
+    valine: {
+      enable: true,
+      load: () => {
+        const container = document.querySelector('.valine-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
+          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
+        );
+        script.onload = () => {
+          const GUEST_INFO = ['nick', 'mail', 'link'];
+          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          const recordIP = JSON.parse('true');
+          const highlight = JSON.parse('true');
+          const visitor = JSON.parse('false');
+          const serverURLs = undefined;
+
+          new Valine({
+            el: '.valine-comment',
+            appId: "SwdmllEbhtlyJzMBXHd7Fp43-MdYXbMMI",
+            appKey: "8akFDT2lFtNrZrCd2Nwkr9g0",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: document.documentElement.lang || 'en',
+            recordIP: recordIP,
+            highlight: highlight,
+            visitor: visitor,
+            requiredFields: guest_info,
+            path: window.location.pathname,
+            serverURLs,
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    waline: {
+      enable: false,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/waline-a84jfcpfb-wittlelunas-projects.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  100 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },
+    twikoo: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.twikoo-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/twikoo@1.6.44\/dist\/twikoo.all.min.js',
+          !'webcache|twikoo@1.6.44\/dist\/twikoo.all.min.js'.startsWith('local') ? 'sha384-kwWLC0HjeZZnVPqCJ1AncI8tsk\u002bkQqF9TbAmCclcc9Z0hGkfgHRzeQZxmdmZhE0K' : undefined
+        );
+        script.onload = () => {
+          twikoo.init({
+            envId: '',
+            el: '.twikoo-comment',
+            region: '',
+            lang: document.documentElement.lang || 'en',
+          });
+          twikoo.getCommentsCount({
+            envId: '',
+            region: '',
+            urls: [
+              'https\/\/wittleluna.github.io\/zh-cn\/post\/%e5%9f%ba%e7%a1%80%e5%86%85%e5%ae%b9\/'
+            ],
+            includeReply: false
+          }).then((res) => {
+            document.querySelector('.twikoo-comment-count').innerText = res[0].count;
+          }).catch((err) => {
+            console.error(err);
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    gitalk: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.gitalk-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/gitalk@1.8.0\/dist\/gitalk.min.js',
+          !'webcache|gitalk@1.8.0\/dist\/gitalk.min.js'.startsWith('local') ? 'sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU\/lcEH5O8eVbSDhbPwsiVUTp\/aGX\/z\/5EuMA' : undefined
+        );
+        script.onload = () => {
+          if ( false ) {
+            
+            const md5Script = loadScript(
+              'https:\/\/npm.webcache.cn\/blueimp-md5@2.19.0\/js\/md5.min.js',
+              !'webcache|blueimp-md5@2.19.0\/js\/md5.min.js'.startsWith('local') ? 'sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr\/gZlbkHkL6vTthxH' : undefined
+            );
+            md5Script.onload = initGitalk;
+            document.head.appendChild(md5Script);
+          } else {
+            
+            initGitalk();
+          }
+        };
+        document.head.appendChild(script);
+
+        function initGitalk() {
+          let gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: JSON.parse("null"),
+            id: location.pathname,
+            distractionFreeMode: false,
+            language: document.documentElement.lang || 'en',
+          });
+          gitalk.render('gitalk-comment');
+        }
+      }
+    },
+    giscus: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.giscus-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
+
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', '');
+        giscusScript.setAttribute('data-repo-id', '');
+        giscusScript.setAttribute('data-category', '');
+        giscusScript.setAttribute('data-category-id', '');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', document.documentElement.lang || 'en');
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
+      }
+    }
+  };
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    deferdata-pjaxintegrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    deferdata-pjaxintegrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    var isMobile = window.matchMedia('(max-width: 959px)').matches;
+    if (isMobile) {
+      const meting = _$('meting-js');
+      if (meting) {
+        meting.setAttribute('fixed', 'true');
+        const aside = meting.parentNode;
+        if (aside?.tagName === 'ASIDE') {
+          aside.removeChild(meting);
+          document.body.appendChild(meting);
+        }
+      }
+    }
+  </script><script
+    src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js"
+    integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8&#43;0maanw1S/IyB&#43;Y4JG&#43;ZDU7GpKE8" crossorigin="anonymous"></script></body>
+</html>

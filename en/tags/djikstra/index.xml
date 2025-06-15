@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Djikstra on wittleLuna&#39;s blog</title>
-    <link>http://localhost:1313/en/tags/djikstra/</link>
+    <link>https://wittleLuna.github.io/en/tags/djikstra/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,10 +12,10 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2025 14:38:05 +0800</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/en/tags/djikstra/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://wittleLuna.github.io/en/tags/djikstra/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Djikstra</title>
-      <link>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
+      <link>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Djikstra</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -211,7 +211,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div>
         
-        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-12</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
