@@ -55,7 +55,7 @@
   <meta property="article:published_time" content="2025-06-14T00:00:00&#43;00:00" />
   <meta property="article:modified_time" content="2025-06-15T14:39:54&#43;08:00" /><meta name="twitter:card" content="summary" />
   <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="https://wittleLuna.github.io/en/categories/computer-algorithm/index.xml" title="wittleLuna's blog">
-<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.d3c48cc9d165550564a310b46a6d48b5e9d8446345525aed075b0601705f958a.css" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.89091367987649824f67d92f1f35c3322b79a20072eb80913f43e030cd64b165.css" />
 <link
     rel="preload"
     as="style"
@@ -66,7 +66,10 @@
     as="style"
     href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
     integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
-  /><script
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
     src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
     integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
     rel="stylesheet"
@@ -1029,7 +1032,7 @@ This article does not have a corresponding language version
   var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
   var commentConfig = {
     valine: {
-      enable: true,
+      enable: false,
       load: () => {
         const container = document.querySelector('.valine-comment');
         if (!container) return;
@@ -1069,7 +1072,7 @@ This article does not have a corresponding language version
       }
     },
     waline: {
-      enable: false,
+      enable: true,
       load: async () => {
         const container = document.querySelector('.waline-comment');
         if (!container) return;
@@ -1201,10 +1204,10 @@ This article does not have a corresponding language version
         const giscusScript = document.createElement('script');
         const domMode = document.documentElement.getAttribute("data-theme");
         giscusScript.src = 'https://giscus.app/client.js';
-        giscusScript.setAttribute('data-repo', '');
-        giscusScript.setAttribute('data-repo-id', '');
-        giscusScript.setAttribute('data-category', '');
-        giscusScript.setAttribute('data-category-id', '');
+        giscusScript.setAttribute('data-repo', 'wittleLuna\/giscus_comment');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOO768bw');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOO768b84Crhb8');
         giscusScript.setAttribute('data-mapping', '0');
         giscusScript.setAttribute('data-strict', '0');
         giscusScript.setAttribute('data-reactions-enabled', '1');
