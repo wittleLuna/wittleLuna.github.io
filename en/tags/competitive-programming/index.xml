@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Competitive Programming on wittleLuna&#39;s blog</title>
+    <link>https://wittleLuna.github.io/en/tags/competitive-programming/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Sat, 25 Oct 2025 17:41:41 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/en/tags/competitive-programming/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>Getting into Competitive Programming from Zero</title>
+      <link>https://wittleLuna.github.io/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
+      <description>
+        <![CDATA[<h1>Getting into Competitive Programming from Zero</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="从零开始入坑编程比赛">
+<a class="header-anchor" href="#%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e5%85%a5%e5%9d%91%e7%bc%96%e7%a8%8b%e6%af%94%e8%b5%9b"></a>
+从零开始，入坑编程比赛
+</h1><h2 id="1-什么是编程比赛">
+<a class="header-anchor" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e7%bc%96%e7%a8%8b%e6%af%94%e8%b5%9b"></a>
+1. 什么是编程比赛？
+</h2><p>编程比赛，一般称为程序设计竞赛，要求选手在有限的时间内编写程序，分析和解决问题。</p>
+<p>国内比较出名的比赛有：</p>
+<ul>
+<li>
+<p>OI（Olympiad in Informatics，信息学奥林匹克竞赛），是高中五大学科竞赛之一。</p>
+</li>
+<li>
+<p>ICPC（International Collegiate Programming Contest，国际大学生程序设计竞赛），由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。由于以前 ACM 赞助这个竞赛，也有很多人习惯叫它 ACM 竞赛。</p>
+</li>
+<li>
+<p>蓝桥杯，由中华人民共和国工业和信息化部人才交流中心主办（据相关新闻，2026届起已与工信部脱钩），从中小学到大学高校一直备受青睐，是参加人数多，知名度较高的比赛之一。</p>
+</li>
+<li>
+<p>码蹄杯，是由全国高等学校计算机教育研究会主办、清华大学出版社承办的编程竞赛，截至2025年举办了六届，也是目前备受青睐的，知名度较高的编程比赛之一。</p>
+</li>
+<li>
+<p>百度之星，由百度公司于2005年发起并主办的年度程序设计竞赛，初赛不限制参赛选手身份要求，是影响力较大，含金量较高的编程比赛之一。</p>
+</li>
+</ul>
+<h3 id="11-关于难度与含金量">
+<a class="header-anchor" href="#11-%e5%85%b3%e4%ba%8e%e9%9a%be%e5%ba%a6%e4%b8%8e%e5%90%ab%e9%87%91%e9%87%8f"></a>
+1.1 关于难度与含金量
+</h3><p><img src="https://i.mji.rip/2025/10/25/a0f7dfdcc838614a0fd95124e8862f5a.png" alt="image"></p>
+<blockquote>
+<p>注：关于评分码蹄杯比蓝桥杯难度高：码蹄杯题目数量更大，且难度与蓝桥杯大差不差（有些更难）。另外该图表只反映外界的普遍共识，但对于我们普通人来说，无论你参加了哪个比赛都很棒！</p></blockquote>
+<hr>
+<h2 id="2-关于各种算法比赛的介绍">
+<a class="header-anchor" href="#2-%e5%85%b3%e4%ba%8e%e5%90%84%e7%a7%8d%e7%ae%97%e6%b3%95%e6%af%94%e8%b5%9b%e7%9a%84%e4%bb%8b%e7%bb%8d"></a>
+2. 关于各种算法比赛的介绍
+</h2><h3 id="21-不同的赛制">
+<a class="header-anchor" href="#21-%e4%b8%8d%e5%90%8c%e7%9a%84%e8%b5%9b%e5%88%b6"></a>
+2.1 不同的赛制
+</h3><p>根据不同的比赛规则，需要采取不同的策略来完成比赛。</p>
+<h3 id="22-比赛规则之如何评分">
+<a class="header-anchor" href="#22-%e6%af%94%e8%b5%9b%e8%a7%84%e5%88%99%e4%b9%8b%e5%a6%82%e4%bd%95%e8%af%84%e5%88%86"></a>
+2.2 比赛规则之如何评分
+</h3><p>每道算法题会有若干个检测点。检测点具体是什么东西，如何判断的呢？</p>
+<p>举个例子，你编写了一个程序，现在有各种各样的用户来做测试，如果一个用户用完你的程序没有问题，体验好，那你就通过了检测。反之，如果用户做出了你没考虑到的操作，导致程序失灵出现错误，那么这个检测你就没有通过。</p>
+<p>对应到程序竞赛中来说，程序每通过一个样例，没有报错，输出了符合答案预期的结果，那么这个检测点你就通过了，反之则没有通过。一般一道题会有几十个，甚至上百个这样的样例来全面，系统的检测你的程序设计是否合理（包括程序设计方法，时间，空间复杂度等多维度综合考虑）。</p>
+<h3 id="23-一道题举例">
+<a class="header-anchor" href="#23-%e4%b8%80%e9%81%93%e9%a2%98%e4%b8%be%e4%be%8b"></a>
+2.3 一道题举例
+</h3><p><strong>蓝桥杯官网[19728 拼十字]</strong></p>
+<p>官网题库练习界面，有调试和提交检测按钮。调试按钮使用第一个节点的测试数据测试程序能不能得到正确结果，提交检测会检测所有测试数据，最后给出完整的结果。
+<img src="https://i.postimg.cc/bJYvGGMH/20250122095816.png" alt="image"></p>
+<p>怎样的答案才算是正确答案？
+1.程序逻辑正确
+2.满足时间复杂度和空间复杂度的要求</p>
+<p><img src="https://i.postimg.cc/prpXZwPm/20250122095952.png" alt="image"></p>
+<p>根据选择使用的算法不同，复杂度不同，通过率会有差别。20个检测点，使用回溯算法，通过6个，得6分。</p>
+<p><img src="https://i.postimg.cc/DZCw1v3V/20250122095909.png" alt="image"></p>
+<p><img src="https://i.postimg.cc/PJ9fFSq2/20250122095858.jpg" alt="image"></p>
+<p><strong>==在正式比赛中，需要在指定位置上传自己的程序代码。看不到提交后的结果，不能进行调试。检测方法就是根据题目要求，自己想例子手动测试。==</strong></p>
+<h3 id="24-不同规则介绍">
+<a class="header-anchor" href="#24-%e4%b8%8d%e5%90%8c%e8%a7%84%e5%88%99%e4%bb%8b%e7%bb%8d"></a>
+2.4 不同规则介绍
+</h3><h4 id="241-icpcacm">
+<a class="header-anchor" href="#241-icpcacm"></a>
+2.4.1 ICPC/ACM
+</h4><p>形式：3人一队、1台电脑、5小时左右，题目 8–13 道。</p>
+<p>评分：按解题数排序；同解题数按罚时（最后一次通过时间之和 + 每题若干分钟的错误罚时）升序。</p>
+<p>特点：强调分工协作与代码实现速度；不允许上网；常见于 ICPC、CCPC 等。</p>
+        
+        <hr><p>Published on 2025-10-25 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-10-25</p>]]>
+      </description>
+      
+        <category>STUDY</category>
+      
+    </item>
+    
+  </channel>
+</rss>
