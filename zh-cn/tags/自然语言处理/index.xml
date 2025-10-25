@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自然语言处理 on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 25 Feb 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>自然语言处理</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</guid>
+      <description>
+        <![CDATA[<h1>自然语言处理</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="背景知识">
+<a class="header-anchor" href="#%e8%83%8c%e6%99%af%e7%9f%a5%e8%af%86"></a>
+背景知识
+</h2><p>自然语言处理(natural language processing, NLP)</p>
+<h3 id="nlp发展历程">
+<a class="header-anchor" href="#nlp%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b"></a>
+NLP发展历程
+</h3><p><strong>阶段一：图灵测试</strong>
+该测试的流程是，一名测试者写下自己的问题，随后将问题以纯文本的形式（如计算机屏幕和键盘）发送给另一个房间中的一个人与一台机器。测试者根据他们的回答来判断哪一个是真人，哪一个是机器。所有参与测试的人或机器都会被分开。这个测试旨在探究机器能否模拟出与人类相似或无法区分的智能 [1]。
+现在的图灵测试测试时长通常为5分钟，如果电脑能回答由人类测试者提出的一系列问题，且其超过30%的回答让测试者误认为是人类所答，则电脑通过测试。</p>
+        
+        <hr><p>本文2025-02-25首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-02-25</p>]]>
+      </description>
+      
+        <category>NLP</category>
+      
+    </item>
+    
+  </channel>
+</rss>

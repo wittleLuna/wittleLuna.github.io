@@ -12,12 +12,58 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 15 Jun 2025 14:36:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
     <atom:link href="https://wittleLuna.github.io/zh-cn/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>[算法]协同过滤系统</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <description>
+        <![CDATA[<h1>[算法]协同过滤系统</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <p><strong>协同过滤系统</strong>（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是<strong>利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐</strong>。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[算法]GATv2图注意力网络</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        <![CDATA[<h1>[算法]GATv2图注意力网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="1-背景gat-的问题">
+<a class="header-anchor" href="#1-%e8%83%8c%e6%99%afgat-%e7%9a%84%e9%97%ae%e9%a2%98"></a>
+1. 背景：GAT 的问题
+</h2><p>GAT（Velickovic et al., ICLR 2018）通过 <strong>自注意力机制</strong> 在图结构上聚合邻居节点信息，每条边的权重由注意力函数计算：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha_{ij} = \text{softmax}_j \left( \text{LeakyReLU}(a^T [W h_i \, || \, W h_j]) \right)
+</span></span></code></pre></div><p>其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。
+但 GAT 有一个限制：注意力权重的计算公式在 <strong>输入的线性变换</strong> 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
     
     
 

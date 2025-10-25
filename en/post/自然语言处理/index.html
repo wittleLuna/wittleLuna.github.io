@@ -1,0 +1,1360 @@
+<!doctype html>
+<html
+  lang="en" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  The Introduction of Natural Language Processing (NLP) | wittleLuna
+</title>
+<meta
+  name="description"
+  content="吃饭..."
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://wittleLuna.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"wittleLuna's blog\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"zh-CN\",\"Title\":\"wittleLuna的博客\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="The Introduction of Natural Language Processing (NLP) | wittleLuna" />
+  <meta
+    property="og:description"
+    content="吃饭..."
+  />
+  <meta property="og:url" content="https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" />
+  <meta
+    property="og:site_name"
+    content="wittleLuna&#39;s blog"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="wittleLuna" />
+  <meta property="article:published_time" content="2025-02-25T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-02-25T14:36:58&#43;08:00" /><meta property="article:tag" content="NLP" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.89091367987649824f67d92f1f35c3322b79a20072eb80913f43e030cd64b165.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css"
+    integrity="sha384-4NN3fZ5AokFyHuoihl7A9qWaCt&#43;HsAtOaUsXwJGRb4/SMBtFr2vcNSHR5E8dg0Wk" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><img src="/images/preloader.webp" alt="loading" /></div><div class="loading-word">Loading...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+This article does not have a corresponding language version
+</div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/en/">Home</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/en/archives">Archives</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/en/about">About</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/en/friend">Friend</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"><a id="nav-search-btn" class="nav-icon popup-trigger" title="Search"></a></nav><nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">English</span>
+        </div>
+        <ul class="select-items" id="select-items"><li data-value="en" class="selected" >English</li><li data-value="zh-cn"  >简体中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};langMap['zh-cn'] = '\/zh-cn\/post\/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86\/';selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'en') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav></div>
+<header id="header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner7.webp" alt="The Introduction of Natural Language Processing (NLP)"><div id="header-outer">
+    <div id="header-title"><a href="/en/" id="logo">
+            <h1 data-aos="slide-up">The Introduction of Natural Language Processing (NLP)</h1>
+          </a><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          
+          class="sidebar-right"  ><aside id="sidebar"><meting-js
+      theme="var(--color-link)"
+      id="2344726429"server="netease"type="playlist"volume="20"list-folded="true">
+    </meting-js><div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景知识">背景知识</a>
+      <ul>
+        <li><a href="#nlp发展历程">NLP发展历程</a></li>
+        <li><a href="#ai发展历程">AI发展历程</a></li>
+        <li><a href="#语言模型">语言模型</a></li>
+        <li><a href="#语料库">语料库</a></li>
+        <li><a href="#数据预处理">数据预处理</a></li>
+        <li><a href="#统计语言模型的发展历程">统计语言模型的发展历程</a></li>
+        <li><a href="#基于transformer框架的预训练语言模型">基于Transformer框架的预训练语言模型</a></li>
+        <li><a href="#bertgpt">BERT,GPT</a></li>
+        <li><a href="#预训练微调大模型">预训练+微调大模型</a></li>
+        <li><a href="#以提示指令模式使用大模型">以提示/指令模式使用大模型</a></li>
+        <li><a href="#gpt">GPT</a></li>
+        <li><a href="#自然语言处理nlp常见任务">自然语言处理(NLP)常见任务</a></li>
+        <li><a href="#百炼平台-云工开物-wildcard">百炼平台 云工开物 wildcard</a></li>
+      </ul>
+    </li>
+    <li><a href="#语言模型基础">语言模型基础</a>
+      <ul>
+        <li><a href="#embedding-技术">Embedding 技术</a></li>
+        <li><a href="#训练-和-预训练的区别">训练 和 预训练的区别</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tags</div>
+    <div class="sidebar-state-number">21</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div>
+
+  <div class="sidebar-widget"></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-02-25 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-02-25</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-02-25</time
+    >
+  </span>
+</div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/en/categories/nlp"
+      data-aos="zoom-in"
+      >NLP</a
+    ></div>
+</div>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="背景知识">
+<a class="header-anchor" href="#%e8%83%8c%e6%99%af%e7%9f%a5%e8%af%86"></a>
+背景知识
+</h2><p>自然语言处理(natural language processing, NLP)</p>
+<h3 id="nlp发展历程">
+<a class="header-anchor" href="#nlp%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b"></a>
+NLP发展历程
+</h3><p><strong>阶段一：图灵测试</strong>
+该测试的流程是，一名测试者写下自己的问题，随后将问题以纯文本的形式（如计算机屏幕和键盘）发送给另一个房间中的一个人与一台机器。测试者根据他们的回答来判断哪一个是真人，哪一个是机器。所有参与测试的人或机器都会被分开。这个测试旨在探究机器能否模拟出与人类相似或无法区分的智能 [1]。
+现在的图灵测试测试时长通常为5分钟，如果电脑能回答由人类测试者提出的一系列问题，且其超过30%的回答让测试者误认为是人类所答，则电脑通过测试。</p>
+<p><strong>阶段二：基于规则的方法</strong>
+自然语言处理的最早阶段主要采用基于规则的方法，通过人工定义语法和规则来解析和生成文本。这些方法的局限性在于难以涵盖语言的复杂性和多样性，因为规则需要人为设计且难以适应不同的语境。</p>
+<p><strong>阶段三：统计学习方法</strong>
+随着统计学习方法的兴起，自然语言处理进入了统计学习阶段。该阶段的代表性方法包括隐马尔可夫模型（Hidden Markov Models，HMM）和最大熵模型（Maximum Entropy Models）。这些方法通过从大量语料中学习统计规律来解决语言处理问题，提高了模型的泛化能力。</p>
+<p><strong>阶段四：深度学习与神经网络</strong>
+深度学习的广泛应用推动了自然语言处理领域的进一步发展。循环神经网络（Recurrent Neural Networks，RNN）和长短时记忆网络（Long Short-Term Memory，LSTM）等模型在序列标注、机器翻译等任务上取得了显著的成果。随后，注意力机制和Transformer模型的提出进一步提升了自然语言处理的性能，例如BERT、GPT等模型。</p>
+<h3 id="ai发展历程">
+<a class="header-anchor" href="#ai%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b"></a>
+AI发展历程
+</h3><p>第一阶段-AI兴起：人工智能的诞生（1941- 1956）</p>
+<p>第二阶段-AI早期成功：AI黄金发展时代（1956-1974）</p>
+<p>第三阶段-AI第一次寒冬：神经网络遇冷，研究经费减少（1974~1980）</p>
+<p>第四阶段-AI复兴：第二次AI黄金发展时代，专家系统流行并商用（1980~1987）</p>
+<p>第五阶段-AI第二次寒冬：专家系统溃败，研究经费大减（1987~1993）</p>
+<p>第六阶段-AI崛起：深度学习理论和工程突破（1993至今）</p>
+<h3 id="语言模型">
+<a class="header-anchor" href="#%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b"></a>
+语言模型
+</h3><p>用于捕捉自然语言中词汇，短语和句子的概率分布的统计模型。根据给定的上下文，预测接下来出现的单词。</p>
+<h3 id="语料库">
+<a class="header-anchor" href="#%e8%af%ad%e6%96%99%e5%ba%93"></a>
+语料库
+</h3><p>大量自然语言文本的集合</p>
+<ul>
+<li>通用领域语料库</li>
+<li>特定领域语料库</li>
+</ul>
+<h3 id="数据预处理">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e9%a2%84%e5%a4%84%e7%90%86"></a>
+数据预处理
+</h3><p><strong>数据采集</strong>：获取文本数据，可以来自各种来源，如网页、社交媒体、新闻文章、文本文件等。数据采集可能需要网络爬虫或API调用。</p>
+<p><strong>文本清洗</strong>：清除不需要的字符、符号、HTML标签等。这通常涉及使用正则表达式和文本处理库来进行清洗。清洗后的文本更易于分析和处理。</p>
+<p><strong>分词</strong>：将文本分割成单词或标记。分词是将文本数据转化为机器可理解的基本单位，有助于构建词汇表和分析文本结构。</p>
+<p><strong>停用词去除</strong>：停用词是常见的无实际信息的词语，如“the”、“and”等。通常需要将它们从文本中去除，以减小词汇表的大小。</p>
+<p><strong>词干提取和词形还原</strong>：这有助于将单词还原为其基本形式，以减少词汇多样性。例如，将“running”还原为“run”。</p>
+<p><strong>特征提取</strong>：将文本转化为数值特征，例如词袋模型、TF-IDF权重等。这是将文本数据转化为可以用于机器学习模型的数值表示的重要步骤。</p>
+<p><strong>数据标记和标签</strong>：对文本数据进行标记和分类，以便用于监督学习任务，如文本分类或命名实体识别。</p>
+<h3 id="统计语言模型的发展历程">
+<a class="header-anchor" href="#%e7%bb%9f%e8%ae%a1%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b"></a>
+统计语言模型的发展历程
+</h3><p>出现很早，但由于网络结构和数据量的限制，早期并没有实现突破性应用。存在不少缺点：过拟合，无法处理文本间长距离依赖性等。</p>
+<ul>
+<li>
+<p>1948 N-Gram模型：基于前N-1个词来预测第N个词</p>
+</li>
+<li>
+<p>1954 Bag-of-word模型: 将一个句子或文档表示为单词的集合，不考虑单词在文本中的顺序。不能捕捉语义语法信息。</p>
+</li>
+<li>
+<p>1986 分布式表示法：将单词或短语表示为数值向量的方法。具有较多的语法和句意信息。解决了Bag-of-Word模型和独热编码中的词汇鸿沟问题。</p>
+</li>
+<li>
+<p>2003 神经概率语言模型: 通过神经网络对语言进行建模</p>
+</li>
+<li>
+<p>2013 WordtoVec: 通过训练神经网络模型来学习词汇的分布式表示，简单又高效。两种架构：CBOW模型和Skip-Gram模型。可以捕捉到单词之间的相似性和语义语法信息。</p>
+</li>
+<li>
+<p>2018以后 基于Transformer的预训练语言模型：通过更大的语料库和更复杂的神经网络体系结构来进行语法语义的学习</p>
+</li>
+</ul>
+<h3 id="基于transformer框架的预训练语言模型">
+<a class="header-anchor" href="#%e5%9f%ba%e4%ba%8etransformer%e6%a1%86%e6%9e%b6%e7%9a%84%e9%a2%84%e8%ae%ad%e7%bb%83%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b"></a>
+基于Transformer框架的预训练语言模型
+</h3><p>自然语言处理中的预训练，通常指在大量无标注文本数据上训练语言模型。预训练所得的大规模语言模型也被叫做‘基础模型’。</p>
+<p>在预训练过程中，模型学习了词汇，语法，句子结构及上下文信息等语言知识。这种知识为后续下游任务提供了一个通用的，丰富的语言表示基础，为解决许多复杂的NLP问题提供了可能。</p>
+<h3 id="bertgpt">
+<a class="header-anchor" href="#bertgpt"></a>
+BERT,GPT
+</h3><p>BERT和GPT的区别主要有三点：</p>
+<ol>
+<li><strong>训练目标</strong>：BERT使用双向上下文进行掩码语言建模，而GPT通过单向自回归预测下一个词。</li>
+<li><strong>架构</strong>：BERT基于Transformer编码器，关注上下文理解；GPT基于Transformer解码器，侧重文本生成。</li>
+<li><strong>应用场景</strong>：BERT擅长文本分类、问答等理解任务，GPT更适合文本生成、续写等创作任务。</li>
+</ol>
+<h3 id="预训练微调大模型">
+<a class="header-anchor" href="#%e9%a2%84%e8%ae%ad%e7%bb%83%e5%be%ae%e8%b0%83%e5%a4%a7%e6%a8%a1%e5%9e%8b"></a>
+预训练+微调大模型
+</h3><p>预训练:大量无标注文本数据 -&gt; fine-tuning(微调)：创建带有相应标签的数据集</p>
+<p>大模型应用方式: fine-tuning, RAG(检索增强生成), Agent(智能体), workflow,prompt(提示词工程)，蒸馏</p>
+<h3 id="以提示指令模式使用大模型">
+<a class="header-anchor" href="#%e4%bb%a5%e6%8f%90%e7%a4%ba%e6%8c%87%e4%bb%a4%e6%a8%a1%e5%bc%8f%e4%bd%bf%e7%94%a8%e5%a4%a7%e6%a8%a1%e5%9e%8b"></a>
+以提示/指令模式使用大模型
+</h3><p>prompt/instruct模式和&rsquo;预训练+微调大模型&rsquo;的异同</p>
+<ul>
+<li>预训练+微调大模型：通过在特定任务上对模型进行微调，使得模型更加精确适应任务需求</li>
+<li>prompt/instruct模式：直接利用预训练语言模型的生成能力，更加灵活</li>
+</ul>
+<h3 id="gpt">
+<a class="header-anchor" href="#gpt"></a>
+GPT
+</h3><p>目标：最大化语句序列出现的概率</p>
+<h3 id="自然语言处理nlp常见任务">
+<a class="header-anchor" href="#%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86nlp%e5%b8%b8%e8%a7%81%e4%bb%bb%e5%8a%a1"></a>
+自然语言处理(NLP)常见任务
+</h3><ol>
+<li><strong>基础任务</strong>：分词、词性标注、命名实体识别（NER）、句法分析（依存/成分句法）。</li>
+<li><strong>语义理解</strong>：语义角色标注、词义消歧、语义相似度计算、文本蕴含判断。</li>
+<li><strong>文本分类</strong>：情感分析、主题分类、垃圾邮件检测、意图识别。</li>
+<li><strong>生成与翻译</strong>：机器翻译、文本摘要、对话生成、文本续写（如GPT）。</li>
+<li><strong>信息抽取</strong>：关系抽取、事件抽取、关键词提取、知识图谱构建。</li>
+<li><strong>问答系统</strong>：开放域问答、阅读理解（如SQuAD）、FAQ匹配。</li>
+<li><strong>应用任务</strong>：文本纠错、文本聚类、推荐系统、多模态交互（文本+图像/语音）。</li>
+</ol>
+<h3 id="百炼平台-云工开物-wildcard">
+<a class="header-anchor" href="#%e7%99%be%e7%82%bc%e5%b9%b3%e5%8f%b0-%e4%ba%91%e5%b7%a5%e5%bc%80%e7%89%a9-wildcard"></a>
+百炼平台 云工开物 wildcard
+</h3><h2 id="语言模型基础">
+<a class="header-anchor" href="#%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e5%9f%ba%e7%a1%80"></a>
+语言模型基础
+</h2><p>词表</p>
+<p><strong>定义和作用</strong>：从语料库中提取的词汇集合，是将文本转换为数值形式（词向量，索引序列）的基础</p>
+<p><strong>构建要点</strong>：</p>
+<ul>
+<li>词频统计</li>
+<li>词表大小选择</li>
+<li>特殊标记</li>
+</ul>
+<p><strong>未登录词</strong>
+在自然语言处理（NLP）中，未登录词（Out-of-Vocabulary, OOV） 是指未被预先构建的词表（Vocabulary）或训练数据覆盖的词语。这类词会导致模型无法有效处理，常见原因包括：</p>
+<p>新词：如网络流行语（“绝绝子”）、专业术语或领域专有名词。
+形态变化：如英文的“unhappiness”（若词表仅含“happy”）。
+拼写错误：如“teh”代替“the”。
+低频词：在训练数据中出现次数过少而被过滤的词。</p>
+<p>影响：OOV会降低分词、词性标注、翻译等任务的性能。例如，中文分词可能因未登录词导致切分错误。</p>
+<p><strong>停用词</strong>
+在自然语言处理（NLP）中，停用词（Stop Words） 是指文本中频繁出现但语义贡献较低的词，通常会被预处理阶段过滤以提升模型效率。例如：</p>
+<p>常见停用词：
+中文：的、了、是、在、和、而等。
+英文：the, a, an, and, is, of 等。</p>
+<p>核心作用：
+降噪：减少无意义词对文本分类、情感分析等任务的干扰。
+节省资源：降低特征维度，加速模型训练（如TF-IDF或词袋模型）。
+提升效果：避免高频词掩盖关键语义（如搜索索引中优先匹配内容词）。</p>
+<p>应用场景：
+需要过滤：文本分类、搜索引擎、主题建模（如LDA）。
+可能需要保留：对话系统（如“不”、“吗”影响语气）、某些实体识别任务（如“和”连接人名）。</p>
+<p><strong>分词</strong>
+将连续的文本序列拆分成较小的基础单位（单词，子词或字符）的过程。分词方式会根据语言和应用场景有所不同。</p>
+<p>重要性</p>
+<ul>
+<li>分词是文本预处理的首要步骤，直接影响词表构建，词向量训练和后续模型对语义的理解</li>
+<li>合理分词可以减少噪声，降低数据维度，使模型更加高效</li>
+</ul>
+<h3 id="embedding-技术">
+<a class="header-anchor" href="#embedding-%e6%8a%80%e6%9c%af"></a>
+Embedding 技术
+</h3><p>将高维数据映射到低维空间的方法，通过将<strong>复杂，离散的数据(文本，图像，网络)转换为连续的数值向量表示</strong>，使计算机能够处理和分析数据</p>
+<h3 id="训练-和-预训练的区别">
+<a class="header-anchor" href="#%e8%ae%ad%e7%bb%83-%e5%92%8c-%e9%a2%84%e8%ae%ad%e7%bb%83%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+训练 和 预训练的区别
+</h3><p><strong>训练</strong>
+垂直领域数据</p>
+<p><strong>预训练</strong>
+通用领域数据</p>
+</div>
+    <footer class="article-footer"><div class="share-wrapper"><a href="https://www.facebook.com/sharer/sharer.php?u=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-facebook"></div>
+    </a><a href="https://twitter.com/intent/tweet?url=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/&amp;text=The%20Introduction%20of%20Natural%20Language%20Processing%20%28NLP%29&amp;via=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-twitter"></div>
+    </a><a href="https://www.linkedin.com/shareArticle?url=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/&amp;title=The%20Introduction%20of%20Natural%20Language%20Processing%20%28NLP%29&amp;summary=%20%e8%83%8c%e6%99%af%e7%9f%a5%e8%af%86%20%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86%28natural%20language%20processing,%20NLP%29%0aNLP%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b%20%e9%98%b6%e6%ae%b5%e4%b8%80%ef%bc%9a%e5%9b%be%e7%81%b5%e6%b5%8b%e8%af%95%20%e8%af%a5%e6%b5%8b%e8%af%95%e7%9a%84%e6%b5%81%e7%a8%8b%e6%98%af%ef%bc%8c%e4%b8%80%e5%90%8d%e6%b5%8b%e8%af%95%e8%80%85%e5%86%99%e4%b8%8b%e8%87%aa%e5%b7%b1%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%8c%e9%9a%8f%e5%90%8e%e5%b0%86%e9%97%ae%e9%a2%98%e4%bb%a5%e7%ba%af%e6%96%87%e6%9c%ac%e7%9a%84%e5%bd%a2%e5%bc%8f%ef%bc%88%e5%a6%82%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%b1%8f%e5%b9%95%e5%92%8c%e9%94%ae%e7%9b%98%ef%bc%89%e5%8f%91%e9%80%81%e7%bb%99%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%88%bf%e9%97%b4%e4%b8%ad%e7%9a%84%e4%b8%80%e4%b8%aa%e4%ba%ba%e4%b8%8e%e4%b8%80%e5%8f%b0%e6%9c%ba%e5%99%a8%e3%80%82%e6%b5%8b%e8%af%95%e8%80%85%e6%a0%b9%e6%8d%ae%e4%bb%96%e4%bb%ac%e7%9a%84%e5%9b%9e%e7%ad%94%e6%9d%a5%e5%88%a4%e6%96%ad%e5%93%aa%e4%b8%80%e4%b8%aa%e6%98%af%e7%9c%9f%e4%ba%ba%ef%bc%8c%e5%93%aa%e4%b8%80%e4%b8%aa%e6%98%af%e6%9c%ba%e5%99%a8%e3%80%82%e6%89%80%e6%9c%89%e5%8f%82%e4%b8%8e%e6%b5%8b%e8%af%95%e7%9a%84%e4%ba%ba%e6%88%96%e6%9c%ba%e5%99%a8%e9%83%bd%e4%bc%9a%e8%a2%ab%e5%88%86%e5%bc%80%e3%80%82%e8%bf%99%e4%b8%aa%e6%b5%8b%e8%af%95%e6%97%a8%e5%9c%a8%e6%8e%a2%e7%a9%b6%e6%9c%ba%e5%99%a8%e8%83%bd%e5%90%a6%e6%a8%a1%e6%8b%9f%e5%87%ba%e4%b8%8e%e4%ba%ba%e7%b1%bb%e7%9b%b8%e4%bc%bc%e6%88%96%e6%97%a0%e6%b3%95%e5%8c%ba%e5%88%86%e7%9a%84%e6%99%ba%e8%83%bd%20[1]%e3%80%82%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e5%9b%be%e7%81%b5%e6%b5%8b%e8%af%95%e6%b5%8b%e8%af%95%e6%97%b6%e9%95%bf%e9%80%9a%e5%b8%b8%e4%b8%ba5%e5%88%86%e9%92%9f%ef%bc%8c%e5%a6%82%e6%9e%9c%e7%94%b5%e8%84%91%e8%83%bd%e5%9b%9e%e7%ad%94%e7%94%b1%e4%ba%ba%e7%b1%bb%e6%b5%8b%e8%af%95%e8%80%85%e6%8f%90%e5%87%ba%e7%9a%84%e4%b8%80%e7%b3%bb%e5%88%97%e9%97%ae%e9%a2%98%ef%bc%8c%e4%b8%94%e5%85%b6%e8%b6%85%e8%bf%8730%25%e7%9a%84%e5%9b%9e%e7%ad%94%e8%ae%a9%e6%b5%8b%e8%af%95%e8%80%85%e8%af%af%e8%ae%a4%e4%b8%ba%e6%98%af%e4%ba%ba%e7%b1%bb%e6%89%80%e7%ad%94%ef%bc%8c%e5%88%99%e7%94%b5%e8%84%91%e9%80%9a%e8%bf%87%e6%b5%8b%e8%af%95%e3%80%82%0a%e9%98%b6%e6%ae%b5%e4%ba%8c%ef%bc%9a%e5%9f%ba%e4%ba%8e%e8%a7%84%e5%88%99%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86%e7%9a%84%e6%9c%80%e6%97%a9%e9%98%b6%e6%ae%b5%20%e2%80%a6&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-linkedin"></div>
+    </a><a href="https://www.reddit.com/submit?url=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/&amp;title=The%20Introduction%20of%20Natural%20Language%20Processing%20%28NLP%29" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-reddit"></div>
+    </a><a href="https://service.weibo.com/share/share.php?url=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/&amp;appkey=&amp;title=The%20Introduction%20of%20Natural%20Language%20Processing%20%28NLP%29&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-weibo"></div>
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/&amp;title=The%20Introduction%20of%20Natural%20Language%20Processing%20%28NLP%29&amp;desc=%20%e8%83%8c%e6%99%af%e7%9f%a5%e8%af%86%20%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86%28natural%20language%20processing,%20NLP%29%0aNLP%e5%8f%91%e5%b1%95%e5%8e%86%e7%a8%8b%20%e9%98%b6%e6%ae%b5%e4%b8%80%ef%bc%9a%e5%9b%be%e7%81%b5%e6%b5%8b%e8%af%95%20%e8%af%a5%e6%b5%8b%e8%af%95%e7%9a%84%e6%b5%81%e7%a8%8b%e6%98%af%ef%bc%8c%e4%b8%80%e5%90%8d%e6%b5%8b%e8%af%95%e8%80%85%e5%86%99%e4%b8%8b%e8%87%aa%e5%b7%b1%e7%9a%84%e9%97%ae%e9%a2%98%ef%bc%8c%e9%9a%8f%e5%90%8e%e5%b0%86%e9%97%ae%e9%a2%98%e4%bb%a5%e7%ba%af%e6%96%87%e6%9c%ac%e7%9a%84%e5%bd%a2%e5%bc%8f%ef%bc%88%e5%a6%82%e8%ae%a1%e7%ae%97%e6%9c%ba%e5%b1%8f%e5%b9%95%e5%92%8c%e9%94%ae%e7%9b%98%ef%bc%89%e5%8f%91%e9%80%81%e7%bb%99%e5%8f%a6%e4%b8%80%e4%b8%aa%e6%88%bf%e9%97%b4%e4%b8%ad%e7%9a%84%e4%b8%80%e4%b8%aa%e4%ba%ba%e4%b8%8e%e4%b8%80%e5%8f%b0%e6%9c%ba%e5%99%a8%e3%80%82%e6%b5%8b%e8%af%95%e8%80%85%e6%a0%b9%e6%8d%ae%e4%bb%96%e4%bb%ac%e7%9a%84%e5%9b%9e%e7%ad%94%e6%9d%a5%e5%88%a4%e6%96%ad%e5%93%aa%e4%b8%80%e4%b8%aa%e6%98%af%e7%9c%9f%e4%ba%ba%ef%bc%8c%e5%93%aa%e4%b8%80%e4%b8%aa%e6%98%af%e6%9c%ba%e5%99%a8%e3%80%82%e6%89%80%e6%9c%89%e5%8f%82%e4%b8%8e%e6%b5%8b%e8%af%95%e7%9a%84%e4%ba%ba%e6%88%96%e6%9c%ba%e5%99%a8%e9%83%bd%e4%bc%9a%e8%a2%ab%e5%88%86%e5%bc%80%e3%80%82%e8%bf%99%e4%b8%aa%e6%b5%8b%e8%af%95%e6%97%a8%e5%9c%a8%e6%8e%a2%e7%a9%b6%e6%9c%ba%e5%99%a8%e8%83%bd%e5%90%a6%e6%a8%a1%e6%8b%9f%e5%87%ba%e4%b8%8e%e4%ba%ba%e7%b1%bb%e7%9b%b8%e4%bc%bc%e6%88%96%e6%97%a0%e6%b3%95%e5%8c%ba%e5%88%86%e7%9a%84%e6%99%ba%e8%83%bd%20[1]%e3%80%82%20%e7%8e%b0%e5%9c%a8%e7%9a%84%e5%9b%be%e7%81%b5%e6%b5%8b%e8%af%95%e6%b5%8b%e8%af%95%e6%97%b6%e9%95%bf%e9%80%9a%e5%b8%b8%e4%b8%ba5%e5%88%86%e9%92%9f%ef%bc%8c%e5%a6%82%e6%9e%9c%e7%94%b5%e8%84%91%e8%83%bd%e5%9b%9e%e7%ad%94%e7%94%b1%e4%ba%ba%e7%b1%bb%e6%b5%8b%e8%af%95%e8%80%85%e6%8f%90%e5%87%ba%e7%9a%84%e4%b8%80%e7%b3%bb%e5%88%97%e9%97%ae%e9%a2%98%ef%bc%8c%e4%b8%94%e5%85%b6%e8%b6%85%e8%bf%8730%25%e7%9a%84%e5%9b%9e%e7%ad%94%e8%ae%a9%e6%b5%8b%e8%af%95%e8%80%85%e8%af%af%e8%ae%a4%e4%b8%ba%e6%98%af%e4%ba%ba%e7%b1%bb%e6%89%80%e7%ad%94%ef%bc%8c%e5%88%99%e7%94%b5%e8%84%91%e9%80%9a%e8%bf%87%e6%b5%8b%e8%af%95%e3%80%82%0a%e9%98%b6%e6%ae%b5%e4%ba%8c%ef%bc%9a%e5%9f%ba%e4%ba%8e%e8%a7%84%e5%88%99%e7%9a%84%e6%96%b9%e6%b3%95%20%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86%e7%9a%84%e6%9c%80%e6%97%a9%e9%98%b6%e6%ae%b5%20%e2%80%a6&amp;source=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-qq"></div>
+    </a><a href="javascript:;"  title="The Introduction of Natural Language Processing (NLP)">
+      <div class="share-icon icon icon-weixin"><div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div></div>
+    </a></div><a
+          data-aos="zoom-in"
+          href="/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="https//wittleluna.github.io/en/post/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86/"
+            itemprop="commentCount"
+          ></span>
+          Comments
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"
+            >0</span
+          >
+          <em class="post-meta-item-text">Readings</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/en/tags/nlp"
+        rel="tag"
+        >NLP</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap article-nav-link-left"><img
+              data-src="https://i.mji.rip/2025/10/25/a87114348fdaeee09a2ec5389d719361.jpeg"
+              data-sizes="auto"
+              alt="[LanQiao CUP]Introduction"
+              class="lazyload"
+            /><a href="/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/"></a>
+        <div class="article-nav-caption">Newer</div>
+        <h3 class="article-nav-title">[LanQiao CUP]Introduction</h3>
+      </div><div class="article-nav-link-wrap article-nav-link-right"><img
+              data-src="https://i.miji.bid/2025/06/12/0e734a57251299bfd12798b7107567ea.jpeg"
+              data-sizes="auto"
+              alt="Summary of IELTS Reading Judgment Items"
+              class="lazyload"
+            /><a href="/en/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/"></a>
+        <div class="article-nav-caption">Older</div>
+        <h3 class="article-nav-title">Summary of IELTS Reading Judgment Items</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">Leave a comment</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep "></span>
+      wittleLuna
+    </div><div>
+        Powered by&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;28.6k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;02:24</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >Number of visits&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >Number of visitors&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi "></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">Contents</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景知识">背景知识</a>
+      <ul>
+        <li><a href="#nlp发展历程">NLP发展历程</a></li>
+        <li><a href="#ai发展历程">AI发展历程</a></li>
+        <li><a href="#语言模型">语言模型</a></li>
+        <li><a href="#语料库">语料库</a></li>
+        <li><a href="#数据预处理">数据预处理</a></li>
+        <li><a href="#统计语言模型的发展历程">统计语言模型的发展历程</a></li>
+        <li><a href="#基于transformer框架的预训练语言模型">基于Transformer框架的预训练语言模型</a></li>
+        <li><a href="#bertgpt">BERT,GPT</a></li>
+        <li><a href="#预训练微调大模型">预训练+微调大模型</a></li>
+        <li><a href="#以提示指令模式使用大模型">以提示/指令模式使用大模型</a></li>
+        <li><a href="#gpt">GPT</a></li>
+        <li><a href="#自然语言处理nlp常见任务">自然语言处理(NLP)常见任务</a></li>
+        <li><a href="#百炼平台-云工开物-wildcard">百炼平台 云工开物 wildcard</a></li>
+      </ul>
+    </li>
+    <li><a href="#语言模型基础">语言模型基础</a>
+      <ul>
+        <li><a href="#embedding-技术">Embedding 技术</a></li>
+        <li><a href="#训练-和-预训练的区别">训练 和 预训练的区别</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tags</div>
+    <div class="sidebar-state-number">21</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/en/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js"
+    integrity="sha384-vLev0II0HKFaxkcm&#43;/7kX5IGwVFBASkGchU311wmU/veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "JCQ52NHG79",
+        apiKey: "762929a52278c0879d86698a0f0de60f",
+        indexName: "blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": 'Search.....',
+          "hits_empty": 'No results found for 「${query}」',
+          "hits_stats": 'Found ${hits} results (in ${time} ms)'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script><script
+    src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"
+    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          return new Promise((resolve, reject) => {
+            const scriptElement = document.createElement('script');
+            if (script.type) {
+              scriptElement.type = script.type;
+            }
+            if (script.src) {
+              scriptElement.src = script.src;
+              if (script.integrity) {
+                scriptElement.integrity = script.integrity;
+              }
+              if (script.crossOrigin) {
+                scriptElement.crossOrigin = script.crossOrigin;
+              }
+              scriptElement.onload = resolve;
+              scriptElement.onerror = reject;
+            }
+            if (scriptContent) {
+              scriptElement.text = scriptContent;
+            }
+            document.head.appendChild(scriptElement);
+            if (!script.src) {
+              resolve();
+            }
+          })
+          
+        }
+
+        ;(src ? loadScript() : loadScript(script.text))
+          .then(() => loadScripts(scripts, index + 1))
+          .catch(error => {
+            console.error(`Failed to load script: ${src || 'inline script'}`, error);
+            loadScripts(scripts, index + 1);
+          });
+      }
+    }
+    if (window.Pjax) {
+      Pjax.prototype.getElements = function() {
+        const i18nLanguages = window.siteConfig.i18n_languages;
+        const baseUrl = window.siteConfig.base;
+        let basePathname = new URL(baseUrl).pathname;
+        if (!basePathname.endsWith('/')) {
+          basePathname += '/';  
+        }
+        const currentUrl = window.location.href;
+        const currentPathname = new URL(currentUrl).pathname.replace(basePathname, '');
+        const aLinks = document.querySelectorAll('a[href]');
+        const pjaxLinks = [];
+        for(let i = 0; i < aLinks.length; i++) {
+          const aLink = aLinks[i];
+          const aLinkHref = aLink.getAttribute('href');
+          const isExternal = aLink.getAttribute('target') === '_blank' || aLink.getAttribute('rel')?.includes('noopener');
+          if (isExternal || aLinkHref.startsWith('mailto:') || aLinkHref.startsWith('tel:') || aLinkHref.startsWith('javascript:') || aLinkHref.startsWith("data:") || aLinkHref.startsWith("vbscript:")) {
+            continue;
+          }
+          if (!i18nLanguages) {
+            
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const absoluteUrl = new URL(aLinkHref, currentUrl).href;
+          const absolutePathname = new URL(absoluteUrl).pathname.replace(basePathname, '');
+          if (!absolutePathname || !currentPathname) {
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const currentLangIndex = i18nLanguages.findIndex(lang => currentPathname.startsWith(lang.Lang));
+          if (currentLangIndex > -1) {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === currentLangIndex) {
+              
+              pjaxLinks.push(aLink);
+            }
+          } else {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === -1) {
+              
+              pjaxLinks.push(aLink);
+            }
+          }
+        }
+        return pjaxLinks;
+      }
+    }
+    window.Pjax &&
+      new window.Pjax({
+        selectors: [
+          "#header>img",
+          "#header>picture",
+          "head title",
+          "#header-title",
+          "#subtitle-wrap",
+          "#main",
+          "#content",
+          ".sidebar-widget",
+          ".sidebar-wrapper",
+          "#mobile-nav",
+          "#lazy-script",
+          '#i18n-nav'
+        ],
+        switches: {
+          "#content": function(oldEl, newEl) {
+            
+            oldEl.className = newEl.className;
+            this.onSwitch();
+          },
+          "#header-title": Pjax.switches.outerHTML,
+          "#subtitle-wrap": Pjax.switches.outerHTML,
+          "#main": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.outerHTML = newEl.outerHTML;
+            this.onSwitch();
+          },
+          "#mobile-nav": Pjax.switches.outerHTML,
+          "#lazy-script": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.innerHTML = newEl.innerHTML;
+            this.onSwitch();
+          },
+        },
+        cacheBust: false,
+      });
+  </script><script src="/js/pjax.js" integrity="" crossorigin="anonymous" ></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "wittleLuna",
+          title: "The Introduction of Natural Language Processing (NLP)",
+          url: "https:\/\/wittleLuna.github.io\/en\/post\/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86\/",
+          description: " 背景知识 自然语言处理(natural language processing, NLP)\nNLP发展历程 阶段一：图灵测试 该测试的流程是，一名测试者写下自己的问题，随后将问题以纯文本的形式（如计算机屏幕和键盘）发送给另一个房间中的一个人与一台机器。测试者根据他们的回答来判断哪一个是真人，哪一个是机器。所有参与测试的人或机器都会被分开。这个测试旨在探究机器能否模拟出与人类相似或无法区分的智能 [1]。 现在的图灵测试测试时长通常为5分钟，如果电脑能回答由人类测试者提出的一系列问题，且其超过30%的回答让测试者误认为是人类所答，则电脑通过测试。\n阶段二：基于规则的方法 自然语言处理的最早阶段 …",
+          cover: "https:\/\/wittleLuna.github.io\/images\/banner7.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
+  var commentConfig = {
+    valine: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.valine-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
+          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
+        );
+        script.onload = () => {
+          const GUEST_INFO = ['nick', 'mail', 'link'];
+          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          const recordIP = JSON.parse('true');
+          const highlight = JSON.parse('true');
+          const visitor = JSON.parse('false');
+          const serverURLs = undefined;
+
+          new Valine({
+            el: '.valine-comment',
+            appId: "SwdmllEbhtlyJzMBXHd7Fp43-MdYXbMMI",
+            appKey: "8akFDT2lFtNrZrCd2Nwkr9g0",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: document.documentElement.lang || 'en',
+            recordIP: recordIP,
+            highlight: highlight,
+            visitor: visitor,
+            requiredFields: guest_info,
+            path: window.location.pathname,
+            serverURLs,
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/waline-iota-gilt.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  100 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },
+    twikoo: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.twikoo-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/twikoo@1.6.44\/dist\/twikoo.all.min.js',
+          !'webcache|twikoo@1.6.44\/dist\/twikoo.all.min.js'.startsWith('local') ? 'sha384-kwWLC0HjeZZnVPqCJ1AncI8tsk\u002bkQqF9TbAmCclcc9Z0hGkfgHRzeQZxmdmZhE0K' : undefined
+        );
+        script.onload = () => {
+          twikoo.init({
+            envId: '',
+            el: '.twikoo-comment',
+            region: '',
+            lang: document.documentElement.lang || 'en',
+          });
+          twikoo.getCommentsCount({
+            envId: '',
+            region: '',
+            urls: [
+              'https\/\/wittleluna.github.io\/en\/post\/%e8%87%aa%e7%84%b6%e8%af%ad%e8%a8%80%e5%a4%84%e7%90%86\/'
+            ],
+            includeReply: false
+          }).then((res) => {
+            document.querySelector('.twikoo-comment-count').innerText = res[0].count;
+          }).catch((err) => {
+            console.error(err);
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    gitalk: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.gitalk-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/gitalk@1.8.0\/dist\/gitalk.min.js',
+          !'webcache|gitalk@1.8.0\/dist\/gitalk.min.js'.startsWith('local') ? 'sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU\/lcEH5O8eVbSDhbPwsiVUTp\/aGX\/z\/5EuMA' : undefined
+        );
+        script.onload = () => {
+          if ( false ) {
+            
+            const md5Script = loadScript(
+              'https:\/\/npm.webcache.cn\/blueimp-md5@2.19.0\/js\/md5.min.js',
+              !'webcache|blueimp-md5@2.19.0\/js\/md5.min.js'.startsWith('local') ? 'sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr\/gZlbkHkL6vTthxH' : undefined
+            );
+            md5Script.onload = initGitalk;
+            document.head.appendChild(md5Script);
+          } else {
+            
+            initGitalk();
+          }
+        };
+        document.head.appendChild(script);
+
+        function initGitalk() {
+          let gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: JSON.parse("null"),
+            id: location.pathname,
+            distractionFreeMode: false,
+            language: document.documentElement.lang || 'en',
+          });
+          gitalk.render('gitalk-comment');
+        }
+      }
+    },
+    giscus: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.giscus-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
+
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'wittleLuna\/giscus_comment');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOO768bw');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOO768b84Crhb8');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', document.documentElement.lang || 'en');
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
+      }
+    }
+  };
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    deferdata-pjaxintegrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    deferdata-pjaxintegrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    var isMobile = window.matchMedia('(max-width: 959px)').matches;
+    if (isMobile) {
+      const meting = _$('meting-js');
+      if (meting) {
+        meting.setAttribute('fixed', 'true');
+        const aside = meting.parentNode;
+        if (aside?.tagName === 'ASIDE') {
+          aside.removeChild(meting);
+          document.body.appendChild(meting);
+        }
+      }
+    }
+  </script><script
+    src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js"
+    integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8&#43;0maanw1S/IyB&#43;Y4JG&#43;ZDU7GpKE8" crossorigin="anonymous"></script></body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>深度学习 on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[深度学习]图注意力网络 图神经网络</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        <![CDATA[<h1>[深度学习]图注意力网络 图神经网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="1-信息聚合方式的区别">
+<a class="header-anchor" href="#1-%e4%bf%a1%e6%81%af%e8%81%9a%e5%90%88%e6%96%b9%e5%bc%8f%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+1. 信息聚合方式的区别
+</h2><h3 id="-传统-gnn如-gcn">
+<a class="header-anchor" href="#-%e4%bc%a0%e7%bb%9f-gnn%e5%a6%82-gcn"></a>
+🔹 传统 GNN（如 GCN）
+</h3><ul>
+<li>采用 <strong>固定的归一化权重</strong> 来聚合邻居节点特征。</li>
+<li>公式示例（GCN）：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">h_i&#39; = \sigma\left( \sum_{j \in \mathcal{N}(i)} \frac{1}{\sqrt{d_i d_j}} W h_j \right)
+</span></span></code></pre></div><p>这里权重 $\frac{1}{\sqrt{d_i d_j}}$ 仅依赖于节点度数，是预定义的，不随数据学习。
+➡ 聚合方式是 <strong>静态的</strong>，缺少自适应性。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>深度学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[深度学习]残差连接</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <description>
+        <![CDATA[<h1>[深度学习]残差连接</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="-什么是残差连接">
+<a class="header-anchor" href="#-%e4%bb%80%e4%b9%88%e6%98%af%e6%ae%8b%e5%b7%ae%e8%bf%9e%e6%8e%a5"></a>
+📖 什么是残差连接
+</h2><ul>
+<li><strong>残差连接</strong>是深度学习里的一种 <strong>网络结构设计技巧</strong>，最早在 <strong>ResNet（残差网络）</strong> 中提出。</li>
+<li>它的核心思想是：
+👉 <strong>让输入绕过若干层神经网络，直接加到输出上。</strong></li>
+</ul>
+<p>公式：</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>深度学习</category>
+      
+    </item>
+    
+  </channel>
+</rss>

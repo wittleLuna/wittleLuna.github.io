@@ -12,12 +12,293 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 15 Jun 2025 14:37:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Oct 2025 17:41:41 +0800</lastBuildDate>
     
     
     <atom:link href="https://wittleLuna.github.io/zh-cn/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>从零开始，入坑编程比赛</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
+      <description>
+        <![CDATA[<h1>从零开始，入坑编程比赛</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="从零开始入坑编程比赛">
+<a class="header-anchor" href="#%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e5%85%a5%e5%9d%91%e7%bc%96%e7%a8%8b%e6%af%94%e8%b5%9b"></a>
+从零开始，入坑编程比赛
+</h1><h2 id="1-什么是编程比赛">
+<a class="header-anchor" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e7%bc%96%e7%a8%8b%e6%af%94%e8%b5%9b"></a>
+1. 什么是编程比赛？
+</h2><p>编程比赛，一般称为程序设计竞赛，要求选手在有限的时间内编写程序，分析和解决问题。</p>
+<p>国内比较出名的比赛有：</p>
+        
+        <hr><p>本文2025-10-25首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-10-25</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[算法]协同过滤系统</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <description>
+        <![CDATA[<h1>[算法]协同过滤系统</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <p><strong>协同过滤系统</strong>（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是<strong>利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐</strong>。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[算法]GATv2图注意力网络</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        <![CDATA[<h1>[算法]GATv2图注意力网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="1-背景gat-的问题">
+<a class="header-anchor" href="#1-%e8%83%8c%e6%99%afgat-%e7%9a%84%e9%97%ae%e9%a2%98"></a>
+1. 背景：GAT 的问题
+</h2><p>GAT（Velickovic et al., ICLR 2018）通过 <strong>自注意力机制</strong> 在图结构上聚合邻居节点信息，每条边的权重由注意力函数计算：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha_{ij} = \text{softmax}_j \left( \text{LeakyReLU}(a^T [W h_i \, || \, W h_j]) \right)
+</span></span></code></pre></div><p>其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。
+但 GAT 有一个限制：注意力权重的计算公式在 <strong>输入的线性变换</strong> 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>算法</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[深度学习]图注意力网络 图神经网络</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        <![CDATA[<h1>[深度学习]图注意力网络 图神经网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="1-信息聚合方式的区别">
+<a class="header-anchor" href="#1-%e4%bf%a1%e6%81%af%e8%81%9a%e5%90%88%e6%96%b9%e5%bc%8f%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+1. 信息聚合方式的区别
+</h2><h3 id="-传统-gnn如-gcn">
+<a class="header-anchor" href="#-%e4%bc%a0%e7%bb%9f-gnn%e5%a6%82-gcn"></a>
+🔹 传统 GNN（如 GCN）
+</h3><ul>
+<li>采用 <strong>固定的归一化权重</strong> 来聚合邻居节点特征。</li>
+<li>公式示例（GCN）：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">h_i&#39; = \sigma\left( \sum_{j \in \mathcal{N}(i)} \frac{1}{\sqrt{d_i d_j}} W h_j \right)
+</span></span></code></pre></div><p>这里权重 $\frac{1}{\sqrt{d_i d_j}}$ 仅依赖于节点度数，是预定义的，不随数据学习。
+➡ 聚合方式是 <strong>静态的</strong>，缺少自适应性。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>深度学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[深度学习]残差连接</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <description>
+        <![CDATA[<h1>[深度学习]残差连接</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="-什么是残差连接">
+<a class="header-anchor" href="#-%e4%bb%80%e4%b9%88%e6%98%af%e6%ae%8b%e5%b7%ae%e8%bf%9e%e6%8e%a5"></a>
+📖 什么是残差连接
+</h2><ul>
+<li><strong>残差连接</strong>是深度学习里的一种 <strong>网络结构设计技巧</strong>，最早在 <strong>ResNet（残差网络）</strong> 中提出。</li>
+<li>它的核心思想是：
+👉 <strong>让输入绕过若干层神经网络，直接加到输出上。</strong></li>
+</ul>
+<p>公式：</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>深度学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Git]常见错误和解决方法</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>
+        <![CDATA[<h1>[Git]常见错误和解决方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="1拉取镜像时报错">
+<a class="header-anchor" href="#1%e6%8b%89%e5%8f%96%e9%95%9c%e5%83%8f%e6%97%b6%e6%8a%a5%e9%94%99"></a>
+1.拉取镜像时报错
+</h1><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hint: Updates were rejected because the tip of your current branch is behind
+</span></span><span class="line"><span class="cl">hint: its remote counterpart. If you want to integrate the remote changes,
+</span></span><span class="line"><span class="cl">hint: use <span class="s1">&#39;git pull&#39;</span> before pushing again.
+</span></span><span class="line"><span class="cl">hint: See the <span class="s1">&#39;Note about fast-forwards&#39;</span> in <span class="s1">&#39;git push --help&#39;</span> <span class="k">for</span> details.
+</span></span></code></pre></div><h2 id="出现原因">
+<a class="header-anchor" href="#%e5%87%ba%e7%8e%b0%e5%8e%9f%e5%9b%a0"></a>
+出现原因
+</h2><p>1.别人先 push 了
+团队协作时，别人往远端推送了新提交，而你本地的分支还停留在旧的版本。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Git]推送项目，多人协助</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
+      <description>
+        <![CDATA[<h1>[Git]推送项目，多人协助</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="git如何推送项目">
+<a class="header-anchor" href="#git%e5%a6%82%e4%bd%95%e6%8e%a8%e9%80%81%e9%a1%b9%e7%9b%ae"></a>
+Git如何推送项目
+</h1><h2 id="-从本地推送项目到-github-的完整流程">
+<a class="header-anchor" href="#-%e4%bb%8e%e6%9c%ac%e5%9c%b0%e6%8e%a8%e9%80%81%e9%a1%b9%e7%9b%ae%e5%88%b0-github-%e7%9a%84%e5%ae%8c%e6%95%b4%e6%b5%81%e7%a8%8b"></a>
+🚀 从本地推送项目到 GitHub 的完整流程
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 进入你的项目目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> F:/备份/项目备份GPU/algokg_platform_server（改成你的文件路径）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 初始化 Git 仓库（如果你已经 git init 过，可以跳过）</span>
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 添加所有文件到暂存区</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 提交到本地仓库，写提交说明</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;初始化项目&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 确认本地分支名称（旧版本 Git 默认是 master，新版本默认是 main）</span>
+</span></span><span class="line"><span class="cl">git branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果不是 main，可以把当前分支改名为 main</span>
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 6. 添加远程仓库地址（如果已经添加过，就用 set-url 修改）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一次添加：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git remote add origin https://github.com/wittleLuna/AlgoKG.git</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果提示 remote origin already exists，说明已经绑定过，就用：</span>
+</span></span><span class="line"><span class="cl">git remote set-url origin https://github.com/wittleLuna/AlgoKG.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 7. 拉取远程仓库的 main 分支（避免冲突，比如 GitHub 默认生成的 README.md）</span>
+</span></span><span class="line"><span class="cl">git pull origin main --rebase
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8. 推送本地 main 分支到远程，并建立跟踪关系</span>
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div><h2 id="-后续日常开发流程以后每次更新代码">
+<a class="header-anchor" href="#-%e5%90%8e%e7%bb%ad%e6%97%a5%e5%b8%b8%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%e4%bb%a5%e5%90%8e%e6%af%8f%e6%ac%a1%e6%9b%b4%e6%96%b0%e4%bb%a3%e7%a0%81"></a>
+🔑 后续日常开发流程（以后每次更新代码）
+</h2><p>当你修改了文件后，只需要执行以下三步：</p>
+        
+        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Git]常用命令，使用方法</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>
+        <![CDATA[<h1>[Git]常用命令，使用方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="分支">
+<a class="header-anchor" href="#%e5%88%86%e6%94%af"></a>
+分支
+</h2><p><strong>git branch <!-- raw HTML omitted --></strong>
+新建分支</p>
+<p>使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”</p>
+<p><strong>git checkout <!-- raw HTML omitted --></strong>
+切换到指定分支</p>
+<blockquote>
+<p>注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p>
+        
+        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[码蹄杯]2025年题目学习</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <description>
+        <![CDATA[<h1>[码蹄杯]2025年题目学习</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h3 id="括号序列">
+<a class="header-anchor" href="#%e6%8b%ac%e5%8f%b7%e5%ba%8f%e5%88%97"></a>
+括号序列
+</h3><blockquote>
+<p>唐僧师徒途经一座神秘的古庙，庙前刻着一行字：“欲往决赛，需解此阵！” 小码哥自告奋勇上前查看，发现地上刻着一串由“(”和“)”括号组成的符号（长度为偶数），显然是某种法阵，但次序混乱，使得灵气无法流转。
+小码哥看了一眼，笑道：“这法阵应该是要变成一套匹配的符号，才能显现出通往西天的正确道路，但怎么判断是否匹配呢？”
+悟空指着庙旁的一块石碑说道：“规则在这儿！这几种情况都可以递归地定义一个括号序列是匹配的:
+1.空序列是匹配的。
+2.若A和B都是匹配的，则AB是匹配的。
+3.若A是匹配的，则(A)是匹配的。</p>
+        
+        <hr><p>本文2025-07-15首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-07-15</p>]]>
+      </description>
+      
+        <category>算法题</category>
+      
+    </item>
     
     
 
@@ -43,312 +324,6 @@
       </description>
       
         <category>算法题</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>最小生成树算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
-      <description>
-        <![CDATA[<h1>最小生成树算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <p><strong>最小生成树是所有节点的最小连通子图</strong>，<strong>即：以最小的成本（边的权值）将图中所有节点链接到一起。</strong></p>
-<h2 id="prim算法">
-<a class="header-anchor" href="#prim%e7%ae%97%e6%b3%95"></a>
-prim算法
-</h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
-        
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>[基础知识]数据结构与算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
-      <description>
-        <![CDATA[<h1>[基础知识]数据结构与算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h1 id="数据结构和算法">
-<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%92%8c%e7%ae%97%e6%b3%95"></a>
-数据结构和算法
-</h1><h2 id="经典算法题">
-<a class="header-anchor" href="#%e7%bb%8f%e5%85%b8%e7%ae%97%e6%b3%95%e9%a2%98"></a>
-经典算法题
-</h2><p>字符串匹配问题： 暴力匹配  KMP算法
-八皇后：回溯算法
-汉诺塔：分治算法
-马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法</p>
-        
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法|基础知识</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>图论算法题</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</guid>
-      <description>
-        <![CDATA[<h1>图论算法题</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h1 id="图的存储">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%ad%98%e5%82%a8"></a>
-图的存储
-</h1><h2 id="邻接矩阵">
-<a class="header-anchor" href="#%e9%82%bb%e6%8e%a5%e7%9f%a9%e9%98%b5"></a>
-邻接矩阵
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">  </span><span class="c1">//n是节点数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">  </span><span class="c1">//m是边数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 节点编号从1到n，所以申请 n+1 这么大的数组</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="o">[][]</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">][</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 使用邻接矩阵表示无向图，1 表示 s 与 t 是相连的</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">graph</span><span class="o">[</span><span class="n">s</span><span class="o">][</span><span class="n">t</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="邻接表">
-<a class="header-anchor" href="#%e9%82%bb%e6%8e%a5%e8%a1%a8"></a>
-邻接表
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">  </span><span class="c1">//n是节点数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">  </span><span class="c1">//m是边数</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        
-</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="c1">// 节点编号从1到n，所以申请 n+1 这么大的数组</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">graph</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 使用邻接表表示 s -&gt; t 是相连的</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">graph</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">s</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="n">t</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h2 id="所有可达路径">
-<a class="header-anchor" href="#%e6%89%80%e6%9c%89%e5%8f%af%e8%be%be%e8%b7%af%e5%be%84"></a>
-所有可达路径
-</h2><blockquote>
-<p>题目描述
-给定一个有 n 个节点的有向无环图，节点编号从 1 到 n。请编写一个函数，找出并返回所有从节点 1 到节点 n 的路径。每条路径应以节点编号的列表形式表示。
-输入描述
-第一行包含两个整数 N，M，表示图中拥有 N 个节点，M 条边</p>
-        
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法题</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>图论理论基础</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
-      <description>
-        <![CDATA[<h1>图论理论基础</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h1 id="图论">
-<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba"></a>
-图论
-</h1><h2 id="图论理论基础">
-<a class="header-anchor" href="#%e5%9b%be%e8%ae%ba%e7%90%86%e8%ae%ba%e5%9f%ba%e7%a1%80"></a>
-图论理论基础
-</h2><h3 id="图的基本概念">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
-图的基本概念
-</h3><p>二维坐标中，两点可以连成线，多个点连成的线就构成了图。</p>
-<p>当然图也可以就一个节点，甚至没有节点（空图）</p>
-<h3 id="图的种类">
-<a class="header-anchor" href="#%e5%9b%be%e7%9a%84%e7%a7%8d%e7%b1%bb"></a>
-图的种类
-</h3><p><strong>整体上分为有向图和无向图</strong></p>
-        
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>回溯算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
-      <description>
-        <![CDATA[<h1>回溯算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <p>回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构</p>
-<p>回溯法，一般可以解决如下几种问题：</p>
-<ul>
-<li>组合问题：N个数里面按一定规则找出k个数的集合</li>
-<li>切割问题：一个字符串按一定规则有几种切割方式</li>
-<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
-<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
-<li>棋盘问题：N皇后，解数独等等</li>
-</ul>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210130173631174.png" alt="image"></p>
-        
-        <hr><p>本文2025-06-11首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>动态规划算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
-      <description>
-        <![CDATA[<h1>动态规划算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h2 id="动规五部曲">
-<a class="header-anchor" href="#%e5%8a%a8%e8%a7%84%e4%ba%94%e9%83%a8%e6%9b%b2"></a>
-动规五部曲
-</h2><ol>
-<li>确定dp数组和下标的含义</li>
-<li>写出递推公式</li>
-<li>确定dp数组如何初始化</li>
-<li>确定遍历顺序（方向）</li>
-<li>打印，举例推导验证dp数组是否正确</li>
-</ol>
-<h2 id="背包问题">
-<a class="header-anchor" href="#%e8%83%8c%e5%8c%85%e9%97%ae%e9%a2%98"></a>
-背包问题
-</h2><h2 id="01背包">
-<a class="header-anchor" href="#01%e8%83%8c%e5%8c%85"></a>
-01背包
-</h2><ul>
-<li>可使用二维背包，一维滚动背包</li>
-</ul>
-<h3 id="二维背包">
-<a class="header-anchor" href="#%e4%ba%8c%e7%bb%b4%e8%83%8c%e5%8c%85"></a>
-二维背包
-</h3><h4 id="基本了解">
-<a class="header-anchor" href="#%e5%9f%ba%e6%9c%ac%e4%ba%86%e8%a7%a3"></a>
-基本了解
-</h4><ul>
-<li>
-<p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
-        
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>[Openwebui] 使用Pipeline功能</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/</guid>
-      <description>
-        <![CDATA[<h1>[Openwebui] 使用Pipeline功能</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h2 id="方法一-用-docker-容器运行-pipelines">
-<a class="header-anchor" href="#%e6%96%b9%e6%b3%95%e4%b8%80-%e7%94%a8-docker-%e5%ae%b9%e5%99%a8%e8%bf%90%e8%a1%8c-pipelines"></a>
-方法一： 用 Docker 容器运行 Pipelines
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d -p 9099:9099 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --add-host<span class="o">=</span>host.docker.internal:host-gateway <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /home/yourname/my-pipelines:/app/pipelines <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name pipelines <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart always <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  ghcr.io/open-webui/pipelines:main
-</span></span></code></pre></div><p>这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用</p>
-        
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>AI 平台/社区</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>[Huggingface] 如何建立自己的Space</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/</guid>
-      <description>
-        <![CDATA[<h1>[Huggingface] 如何建立自己的Space</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <h2 id="简单介绍">
-<a class="header-anchor" href="#%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d"></a>
-简单介绍
-</h2><blockquote>
-<p>Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.</p></blockquote>
-<p>简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用</p>
-        
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>AI 平台/社区</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>Djikstra算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
-      <description>
-        <![CDATA[<h1>Djikstra算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
-        
-          <p>dijkstra 三部曲：</p>
-<p>第一步，选源点到哪个节点近且该节点未被访问过
-第二步，该最近节点被标记访问过
-第三步，更新非访问节点到源点的距离（即更新minDist数组）</p>
-        
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
-      </description>
-      
-        <category>算法</category>
       
     </item>
     

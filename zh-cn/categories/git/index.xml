@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/categories/git/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/categories/git/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Git]常见错误和解决方法</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>
+        <![CDATA[<h1>[Git]常见错误和解决方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="1拉取镜像时报错">
+<a class="header-anchor" href="#1%e6%8b%89%e5%8f%96%e9%95%9c%e5%83%8f%e6%97%b6%e6%8a%a5%e9%94%99"></a>
+1.拉取镜像时报错
+</h1><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hint: Updates were rejected because the tip of your current branch is behind
+</span></span><span class="line"><span class="cl">hint: its remote counterpart. If you want to integrate the remote changes,
+</span></span><span class="line"><span class="cl">hint: use <span class="s1">&#39;git pull&#39;</span> before pushing again.
+</span></span><span class="line"><span class="cl">hint: See the <span class="s1">&#39;Note about fast-forwards&#39;</span> in <span class="s1">&#39;git push --help&#39;</span> <span class="k">for</span> details.
+</span></span></code></pre></div><h2 id="出现原因">
+<a class="header-anchor" href="#%e5%87%ba%e7%8e%b0%e5%8e%9f%e5%9b%a0"></a>
+出现原因
+</h2><p>1.别人先 push 了
+团队协作时，别人往远端推送了新提交，而你本地的分支还停留在旧的版本。</p>
+        
+        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Git]推送项目，多人协助</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
+      <description>
+        <![CDATA[<h1>[Git]推送项目，多人协助</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="git如何推送项目">
+<a class="header-anchor" href="#git%e5%a6%82%e4%bd%95%e6%8e%a8%e9%80%81%e9%a1%b9%e7%9b%ae"></a>
+Git如何推送项目
+</h1><h2 id="-从本地推送项目到-github-的完整流程">
+<a class="header-anchor" href="#-%e4%bb%8e%e6%9c%ac%e5%9c%b0%e6%8e%a8%e9%80%81%e9%a1%b9%e7%9b%ae%e5%88%b0-github-%e7%9a%84%e5%ae%8c%e6%95%b4%e6%b5%81%e7%a8%8b"></a>
+🚀 从本地推送项目到 GitHub 的完整流程
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1. 进入你的项目目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> F:/备份/项目备份GPU/algokg_platform_server（改成你的文件路径）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 初始化 Git 仓库（如果你已经 git init 过，可以跳过）</span>
+</span></span><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 添加所有文件到暂存区</span>
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 提交到本地仓库，写提交说明</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;初始化项目&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 5. 确认本地分支名称（旧版本 Git 默认是 master，新版本默认是 main）</span>
+</span></span><span class="line"><span class="cl">git branch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果不是 main，可以把当前分支改名为 main</span>
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 6. 添加远程仓库地址（如果已经添加过，就用 set-url 修改）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 第一次添加：</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># git remote add origin https://github.com/wittleLuna/AlgoKG.git</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果提示 remote origin already exists，说明已经绑定过，就用：</span>
+</span></span><span class="line"><span class="cl">git remote set-url origin https://github.com/wittleLuna/AlgoKG.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 7. 拉取远程仓库的 main 分支（避免冲突，比如 GitHub 默认生成的 README.md）</span>
+</span></span><span class="line"><span class="cl">git pull origin main --rebase
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 8. 推送本地 main 分支到远程，并建立跟踪关系</span>
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div><h2 id="-后续日常开发流程以后每次更新代码">
+<a class="header-anchor" href="#-%e5%90%8e%e7%bb%ad%e6%97%a5%e5%b8%b8%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%e4%bb%a5%e5%90%8e%e6%af%8f%e6%ac%a1%e6%9b%b4%e6%96%b0%e4%bb%a3%e7%a0%81"></a>
+🔑 后续日常开发流程（以后每次更新代码）
+</h2><p>当你修改了文件后，只需要执行以下三步：</p>
+        
+        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>[Git]常用命令，使用方法</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>
+        <![CDATA[<h1>[Git]常用命令，使用方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="分支">
+<a class="header-anchor" href="#%e5%88%86%e6%94%af"></a>
+分支
+</h2><p><strong>git branch <!-- raw HTML omitted --></strong>
+新建分支</p>
+<p>使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”</p>
+<p><strong>git checkout <!-- raw HTML omitted --></strong>
+切换到指定分支</p>
+<blockquote>
+<p>注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p>
+        
+        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+      </description>
+      
+        <category>Git</category>
+      
+    </item>
+    
+  </channel>
+</rss>

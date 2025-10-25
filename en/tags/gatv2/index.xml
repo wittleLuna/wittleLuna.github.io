@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GATv2 on wittleLuna&#39;s blog</title>
+    <link>https://wittleLuna.github.io/en/tags/gatv2/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/en/tags/gatv2/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Algorithm]Graph Attention Network v2</title>
+      <link>https://wittleLuna.github.io/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <description>
+        <![CDATA[<h1>[Algorithm]Graph Attention Network v2</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="1-背景gat-的问题">
+<a class="header-anchor" href="#1-%e8%83%8c%e6%99%afgat-%e7%9a%84%e9%97%ae%e9%a2%98"></a>
+1. 背景：GAT 的问题
+</h2><p>GAT（Velickovic et al., ICLR 2018）通过 <strong>自注意力机制</strong> 在图结构上聚合邻居节点信息，每条边的权重由注意力函数计算：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha_{ij} = \text{softmax}_j \left( \text{LeakyReLU}(a^T [W h_i \, || \, W h_j]) \right)
+</span></span></code></pre></div><p>其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。
+但 GAT 有一个限制：注意力权重的计算公式在 <strong>输入的线性变换</strong> 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a^T (W h_i \, || \, W h_j) = a^T (W h_j \, || \, W h_i)
+</span></span></code></pre></div><p>→ 可能导致表达能力不足。</p>
+<h2 id="2-gatv2-的改进">
+<a class="header-anchor" href="#2-gatv2-%e7%9a%84%e6%94%b9%e8%bf%9b"></a>
+2. GATv2 的改进
+</h2><p>GATv2（Brody et al., ICLR 2021）在注意力机制上进行了关键修改：
+把 <strong>非线性函数移到线性变换之前</strong>，得到更强的表达能力。</p>
+<p>注意力计算公式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha_{ij} = \text{softmax}_j \left( a^T \, \text{LeakyReLU}( W [h_i \, || \, h_j] ) \right)
+</span></span></code></pre></div><p>区别：</p>
+        
+        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+      </description>
+      
+        <category>Algorithm</category>
+      
+    </item>
+    
+  </channel>
+</rss>

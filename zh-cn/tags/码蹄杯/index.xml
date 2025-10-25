@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>码蹄杯 on wittleLuna的博客</title>
+    <link>https://wittleLuna.github.io/zh-cn/tags/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 15 Jul 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E7%A0%81%E8%B9%84%E6%9D%AF/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[码蹄杯]2025年题目学习</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <description>
+        <![CDATA[<h1>[码蹄杯]2025年题目学习</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h3 id="括号序列">
+<a class="header-anchor" href="#%e6%8b%ac%e5%8f%b7%e5%ba%8f%e5%88%97"></a>
+括号序列
+</h3><blockquote>
+<p>唐僧师徒途经一座神秘的古庙，庙前刻着一行字：“欲往决赛，需解此阵！” 小码哥自告奋勇上前查看，发现地上刻着一串由“(”和“)”括号组成的符号（长度为偶数），显然是某种法阵，但次序混乱，使得灵气无法流转。
+小码哥看了一眼，笑道：“这法阵应该是要变成一套匹配的符号，才能显现出通往西天的正确道路，但怎么判断是否匹配呢？”
+悟空指着庙旁的一块石碑说道：“规则在这儿！这几种情况都可以递归地定义一个括号序列是匹配的:
+1.空序列是匹配的。
+2.若A和B都是匹配的，则AB是匹配的。
+3.若A是匹配的，则(A)是匹配的。</p>
+        
+        <hr><p>本文2025-07-15首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-07-15</p>]]>
+      </description>
+      
+        <category>算法题</category>
+      
+    </item>
+    
+  </channel>
+</rss>

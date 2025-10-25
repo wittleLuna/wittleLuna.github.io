@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collaborative Filtering on wittleLuna&#39;s blog</title>
+    <link>https://wittleLuna.github.io/en/tags/collaborative-filtering/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/en/tags/collaborative-filtering/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Algorithm]Collaborative Filtering</title>
+      <link>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <description>
+        <![CDATA[<h1>[Algorithm]Collaborative Filtering</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <p><strong>协同过滤系统</strong>（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是<strong>利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐</strong>。</p>
+<h2 id="1-核心思想">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e6%80%9d%e6%83%b3"></a>
+<strong>1. 核心思想</strong>
+</h2><blockquote>
+<p>“志同道合的人喜欢相似的东西。”</p></blockquote>
+<ul>
+<li>如果用户 A 和用户 B 的兴趣很相似，那么 A 喜欢的物品，B 也可能喜欢。</li>
+<li>如果物品 X 和物品 Y 被很多相同用户喜欢，那么喜欢 X 的人也可能喜欢 Y。</li>
+</ul>
+<h2 id="2-两大类型">
+<a class="header-anchor" href="#2-%e4%b8%a4%e5%a4%a7%e7%b1%bb%e5%9e%8b"></a>
+<strong>2. 两大类型</strong>
+</h2><h3 id="1-基于用户的协同过滤user-based-cf">
+<a class="header-anchor" href="#1-%e5%9f%ba%e4%ba%8e%e7%94%a8%e6%88%b7%e7%9a%84%e5%8d%8f%e5%90%8c%e8%bf%87%e6%bb%a4user-based-cf"></a>
+(1) <strong>基于用户的协同过滤</strong>（User-Based CF）
+</h3><ul>
+<li>
+<p>找到与目标用户兴趣相似的其他用户（邻居），推荐他们喜欢的物品。</p>
+</li>
+<li>
+<p>例子：</p>
+<ul>
+<li>你喜欢电影 A、B，有另一个用户也喜欢 A、B，而且他还喜欢 C → 推荐 C 给你。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-基于物品的协同过滤item-based-cf">
+<a class="header-anchor" href="#2-%e5%9f%ba%e4%ba%8e%e7%89%a9%e5%93%81%e7%9a%84%e5%8d%8f%e5%90%8c%e8%bf%87%e6%bb%a4item-based-cf"></a>
+(2) <strong>基于物品的协同过滤</strong>（Item-Based CF）
+</h3><ul>
+<li>
+<p>找到与目标物品相似的其他物品，推荐这些物品给用户。</p>
+</li>
+<li>
+<p>例子：</p>
+<ul>
+<li>很多人看了电影 A 后还看了电影 B → 如果你看了 A，就推荐 B。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-优点">
+<a class="header-anchor" href="#3-%e4%bc%98%e7%82%b9"></a>
+<strong>3. 优点</strong>
+</h2><ul>
+<li>不需要物品内容信息（可以处理多媒体、文本等无法直接比较的内容）。</li>
+<li>只依赖用户行为数据，容易实现。</li>
+<li>可以发现意料之外的推荐（serendipity）。</li>
+</ul>
+<h2 id="4-缺点">
+<a class="header-anchor" href="#4-%e7%bc%ba%e7%82%b9"></a>
+<strong>4. 缺点</strong>
+</h2><ul>
+<li><strong>冷启动问题</strong>：新用户/新物品没有足够的交互数据时很难推荐。</li>
+<li><strong>稀疏性问题</strong>：用户-物品矩阵很稀疏时，找到相似用户/物品的难度大。</li>
+<li>无法直接利用上下文信息（时间、地点等）。</li>
+</ul>
+<h2 id="5-在工业界的变体">
+<a class="header-anchor" href="#5-%e5%9c%a8%e5%b7%a5%e4%b8%9a%e7%95%8c%e7%9a%84%e5%8f%98%e4%bd%93"></a>
+<strong>5. 在工业界的变体</strong>
+</h2><ul>
+<li><strong>矩阵分解</strong>（Matrix Factorization）：如 SVD、ALS，把用户和物品映射到同一个向量空间。</li>
+<li><strong>深度学习 CF</strong>：用 MLP、Embedding 代替传统相似度计算（比如 YouTube 双塔模型就是一种协同过滤思想的深度实现）。</li>
+</ul>
+<p>📌 <strong>一句话总结</strong></p>
+        
+        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+      </description>
+      
+        <category>Algorithm</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1252 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  [Git]常用命令，使用方法 | wittleLuna
+</title>
+<meta
+  name="description"
+  content="吃饭..."
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://wittleLuna.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"wittleLuna's blog\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"zh-CN\",\"Title\":\"wittleLuna的博客\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="[Git]常用命令，使用方法 | wittleLuna" />
+  <meta
+    property="og:description"
+    content="吃饭..."
+  />
+  <meta property="og:url" content="https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" />
+  <meta
+    property="og:site_name"
+    content="wittleLuna的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="wittleLuna" />
+  <meta property="article:published_time" content="2025-09-01T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-09-01T14:36:58&#43;08:00" /><meta property="article:tag" content="Git" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.89091367987649824f67d92f1f35c3322b79a20072eb80913f43e030cd64b165.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css"
+    integrity="sha384-4NN3fZ5AokFyHuoihl7A9qWaCt&#43;HsAtOaUsXwJGRb4/SMBtFr2vcNSHR5E8dg0Wk" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><img src="/images/preloader.webp" alt="loading" /></div><div class="loading-word">小猫睡觉中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+本文章没有找到对应的语言版本
+</div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/">首页</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/archives">归档</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/about">关于</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/friend">友链</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a></nav><nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items"><li data-value="en"  >English</li><li data-value="zh-cn" class="selected" >简体中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};langMap['en'] = '\/en\/post\/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95\/';selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav></div>
+<header id="header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner7.webp" alt="[Git]常用命令，使用方法"><div id="header-outer">
+    <div id="header-title"><a href="/zh-cn/" id="logo">
+            <h1 data-aos="slide-up">[Git]常用命令，使用方法</h1>
+          </a><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          
+          class="sidebar-right"  ><aside id="sidebar"><meting-js
+      theme="var(--color-link)"
+      id="2344726429"server="netease"type="playlist"volume="20"list-folded="true">
+    </meting-js><div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#分支">分支</a></li>
+    <li><a href="#分支与合并">分支与合并</a></li>
+    <li><a href="#在提交树上移动">在提交树上移动</a></li>
+    <li><a href="#撤销变更">撤销变更</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#远程分支">远程分支</a></li>
+    <li><a href="#git-fetch">Git Fetch</a></li>
+    <li><a href="#git-pull">Git Pull</a></li>
+    <li><a href="#git-push">Git Push</a></li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">19</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div>
+
+  <div class="sidebar-widget"></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-09-01 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-09-01</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-09-01</time
+    >
+  </span>
+</div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/zh-cn/categories/git"
+      data-aos="zoom-in"
+      >GIT</a
+    ></div>
+</div>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="分支">
+<a class="header-anchor" href="#%e5%88%86%e6%94%af"></a>
+分支
+</h2><p><strong>git branch <!-- raw HTML omitted --></strong>
+新建分支</p>
+<p>使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”</p>
+<p><strong>git checkout <!-- raw HTML omitted --></strong>
+切换到指定分支</p>
+<blockquote>
+<p>注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p></blockquote>
+<p>更简洁的方式：如果你想创建一个新的分支同时切换到新创建的分支的话，可以通过 git checkout -b <!-- raw HTML omitted --> 来实现。</p>
+<h2 id="分支与合并">
+<a class="header-anchor" href="#%e5%88%86%e6%94%af%e4%b8%8e%e5%90%88%e5%b9%b6"></a>
+分支与合并
+</h2><p><strong>git merge &lt;你要合并的另一个分支&gt;</strong></p>
+<p>在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个 parent 节点。翻译成自然语言相当于：“我要把这两个 parent 节点本身及它们所有的祖先都包含进来。</p>
+<p><strong>git rebase</strong></p>
+<p>取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。</p>
+<h2 id="在提交树上移动">
+<a class="header-anchor" href="#%e5%9c%a8%e6%8f%90%e4%ba%a4%e6%a0%91%e4%b8%8a%e7%a7%bb%e5%8a%a8"></a>
+在提交树上移动
+</h2><p>HEAD</p>
+<p>HEAD 是一个对当前所在分支的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。</p>
+<p>HEAD 总是指向当前分支上最近一次提交记录。HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。</p>
+<p>分离的 HEAD</p>
+<p>分离的 HEAD 就是让其指向了某个具体的提交记录而不是分支名。</p>
+<p>相对引用
+<strong>git log</strong> 来查查看提交记录的哈希值。</p>
+<p>根据哈希值进行移动
+<strong>git branch -f &lt;分支&gt; &lt;指定提交记录的哈希值位置&gt;</strong></p>
+<p><strong>“ ^ ” 操作符</strong></p>
+<p>相对引用非常给力，这里我介绍两个简单的用法：</p>
+<ul>
+<li>使用 ^ 向上移动 1 个提交记录</li>
+<li>使用 ~<!-- raw HTML omitted --> 向上移动多个提交记录，如 ~3
+<strong>git checkout &lt;分支&gt;^</strong></li>
+</ul>
+<p><strong>“~”操作符</strong></p>
+<p>如果你想在提交树中向上移动很多步的话，敲那么多 ^ 貌似也挺烦人的，Git 当然也考虑到了这一点，于是又引入了操作符 ~。</p>
+<p>该操作符后面可以跟一个数字（可选，不跟数字时与 ^ 相同，向上移动一次），指定向上移动多少次。</p>
+<p><strong>强制修改分支位置</strong>
+可以直接使用 -f 选项让分支指向另一个提交。例如:</p>
+<p><strong>git branch -f main HEAD~3</strong></p>
+<p>上面的命令会将 main 分支强制指向 HEAD 的第 3 级 parent 提交。</p>
+<h2 id="撤销变更">
+<a class="header-anchor" href="#%e6%92%a4%e9%94%80%e5%8f%98%e6%9b%b4"></a>
+撤销变更
+</h2><p>主要有两种方法用来撤销变更 —— 一是 git reset，还有就是 git revert</p>
+<p>git reset 通过把分支记录回退几个提交记录来实现撤销改动。你可以将这想象成“改写历史”。
+git reset 向上移动分支，原来指向的提交记录就跟从来没有提交过一样。</p>
+<p>为了撤销更改并分享给别人，我们需要使用 git revert，新建一个和之前版本一样的新分支</p>
+<h1 id="远程仓库">
+<a class="header-anchor" href="#%e8%bf%9c%e7%a8%8b%e4%bb%93%e5%ba%93"></a>
+远程仓库
+</h1><p>git clone 命令的作用是在本地创建一个远程仓库的拷贝</p>
+<h2 id="远程分支">
+<a class="header-anchor" href="#%e8%bf%9c%e7%a8%8b%e5%88%86%e6%94%af"></a>
+远程分支
+</h2><p>由于远程分支的特性导致其拥有一些特殊属性。
+远程分支反映了远程仓库(在你上次和它通信时)的状态。
+远程分支有一个特别的属性，在你切换到远程分支时，自动进入分离 HEAD 状态。Git 这么做是出于不能直接在这些分支上进行操作的原因, 你必须在别的地方完成你的工作, （更新了远程分支之后）再用远程分享你的工作成果。</p>
+<h2 id="git-fetch">
+<a class="header-anchor" href="#git-fetch"></a>
+Git Fetch
+</h2><p>从远程仓库获取数据</p>
+<p>Git 远程仓库相当的操作实际可以归纳为两点：向远程仓库传输数据以及从远程仓库获取数据。既然我们能与远程仓库同步，那么就可以分享任何能被 Git 管理的更新</p>
+<p><strong>git fetch 做了些什么</strong>
+git fetch 完成了仅有的但是很重要的两步:</p>
+<p>1.从远程仓库下载本地仓库中缺失的提交记录
+2.更新远程分支指针(如 origin main)</p>
+<p>git fetch 实际上将本地仓库中的远程分支更新成了远程仓库相应分支最新的状态。</p>
+<p><strong>git fetch 不会做的事</strong>
+git fetch 并不会改变你本地仓库的状态。它不会更新你的 main 分支，也不会修改你磁盘上的文件。</p>
+<h2 id="git-pull">
+<a class="header-anchor" href="#git-pull"></a>
+Git Pull
+</h2><p>git pull 就是 git fetch 和 git merge 的缩写！</p>
+<h2 id="git-push">
+<a class="header-anchor" href="#git-push"></a>
+Git Push
+</h2><p>git push 负责将你的变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录。一旦 git push 完成, 你的朋友们就可以从这个远程仓库下载你分享的成果了！</p>
+</div>
+    <footer class="article-footer"><div class="share-wrapper"><a href="https://www.facebook.com/sharer/sharer.php?u=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-facebook"></div>
+    </a><a href="https://twitter.com/intent/tweet?url=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/&amp;text=[Git]%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%ef%bc%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95&amp;via=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-twitter"></div>
+    </a><a href="https://www.linkedin.com/shareArticle?url=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/&amp;title=[Git]%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%ef%bc%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95&amp;summary=%20%e5%88%86%e6%94%af%20git%20branch%20%e6%96%b0%e5%bb%ba%e5%88%86%e6%94%af%0a%e4%bd%bf%e7%94%a8%e5%88%86%e6%94%af%e5%85%b6%e5%ae%9e%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%ba%8e%e5%9c%a8%e8%af%b4%ef%bc%9a%e2%80%9c%e6%88%91%e6%83%b3%e5%9f%ba%e4%ba%8e%e8%bf%99%e4%b8%aa%e6%8f%90%e4%ba%a4%e4%bb%a5%e5%8f%8a%e5%ae%83%e6%89%80%e6%9c%89%e7%9a%84%20parent%20%e6%8f%90%e4%ba%a4%e8%bf%9b%e8%a1%8c%e6%96%b0%e7%9a%84%e5%b7%a5%e4%bd%9c%e3%80%82%e2%80%9d%0agit%20checkout%20%e5%88%87%e6%8d%a2%e5%88%b0%e6%8c%87%e5%ae%9a%e5%88%86%e6%94%af%0a%e6%b3%a8%e6%84%8f%ef%bc%9a%e5%9c%a8%20Git%202.23%20%e7%89%88%e6%9c%ac%e4%b8%ad%ef%bc%8c%e5%bc%95%e5%85%a5%e4%ba%86%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%ba%20git%20switch%20%e7%9a%84%e6%96%b0%e5%91%bd%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%bc%9a%e5%8f%96%e4%bb%a3%20git%20checkout%ef%bc%8c%e5%9b%a0%e4%b8%ba%20checkout%20%e4%bd%9c%e4%b8%ba%e5%8d%95%e4%b8%aa%e5%91%bd%e4%bb%a4%e6%9c%89%e7%82%b9%e8%b6%85%e8%bd%bd%ef%bc%88%e5%ae%83%e6%89%bf%e8%bd%bd%e4%ba%86%e5%be%88%e5%a4%9a%e7%8b%ac%e7%ab%8b%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%89%e3%80%82%0a&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-linkedin"></div>
+    </a><a href="https://www.reddit.com/submit?url=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/&amp;title=[Git]%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%ef%bc%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-reddit"></div>
+    </a><a href="https://service.weibo.com/share/share.php?url=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/&amp;appkey=&amp;title=[Git]%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%ef%bc%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-weibo"></div>
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/&amp;title=[Git]%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%ef%bc%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95&amp;desc=%20%e5%88%86%e6%94%af%20git%20branch%20%e6%96%b0%e5%bb%ba%e5%88%86%e6%94%af%0a%e4%bd%bf%e7%94%a8%e5%88%86%e6%94%af%e5%85%b6%e5%ae%9e%e5%b0%b1%e7%9b%b8%e5%bd%93%e4%ba%8e%e5%9c%a8%e8%af%b4%ef%bc%9a%e2%80%9c%e6%88%91%e6%83%b3%e5%9f%ba%e4%ba%8e%e8%bf%99%e4%b8%aa%e6%8f%90%e4%ba%a4%e4%bb%a5%e5%8f%8a%e5%ae%83%e6%89%80%e6%9c%89%e7%9a%84%20parent%20%e6%8f%90%e4%ba%a4%e8%bf%9b%e8%a1%8c%e6%96%b0%e7%9a%84%e5%b7%a5%e4%bd%9c%e3%80%82%e2%80%9d%0agit%20checkout%20%e5%88%87%e6%8d%a2%e5%88%b0%e6%8c%87%e5%ae%9a%e5%88%86%e6%94%af%0a%e6%b3%a8%e6%84%8f%ef%bc%9a%e5%9c%a8%20Git%202.23%20%e7%89%88%e6%9c%ac%e4%b8%ad%ef%bc%8c%e5%bc%95%e5%85%a5%e4%ba%86%e4%b8%80%e4%b8%aa%e5%90%8d%e4%b8%ba%20git%20switch%20%e7%9a%84%e6%96%b0%e5%91%bd%e4%bb%a4%ef%bc%8c%e6%9c%80%e7%bb%88%e4%bc%9a%e5%8f%96%e4%bb%a3%20git%20checkout%ef%bc%8c%e5%9b%a0%e4%b8%ba%20checkout%20%e4%bd%9c%e4%b8%ba%e5%8d%95%e4%b8%aa%e5%91%bd%e4%bb%a4%e6%9c%89%e7%82%b9%e8%b6%85%e8%bd%bd%ef%bc%88%e5%ae%83%e6%89%bf%e8%bd%bd%e4%ba%86%e5%be%88%e5%a4%9a%e7%8b%ac%e7%ab%8b%e7%9a%84%e5%8a%9f%e8%83%bd%ef%bc%89%e3%80%82%0a&amp;source=https://wittleLuna.github.io/" target="_blank" rel="noopener noreferrer" title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-qq"></div>
+    </a><a href="javascript:;"  title="[Git]常用命令，使用方法">
+      <div class="share-icon icon icon-weixin"><div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div></div>
+    </a></div><a
+          data-aos="zoom-in"
+          href="/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="https//wittleluna.github.io/zh-cn/post/git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/zh-cn/tags/git"
+        rel="tag"
+        >GIT</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap article-nav-link-left"><img
+              data-src="https://i.mji.rip/2025/10/25/6c25eb7dd18449d6220ba4dac677e718.jpeg"
+              data-sizes="auto"
+              alt="[Git]推送项目，多人协助"
+              class="lazyload"
+            /><a href="/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">[Git]推送项目，多人协助</h3>
+      </div><div class="article-nav-link-wrap article-nav-link-right"><img
+              data-src="https://i.mji.rip/2025/10/25/f94c64ac98f3d2aaa8e72b00f7dc3832.jpeg"
+              data-sizes="auto"
+              alt="[算法]协同过滤系统"
+              class="lazyload"
+            /><a href="/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/"></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">[算法]协同过滤系统</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep "></span>
+      wittleLuna
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;113.7k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;03:57</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi "></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#分支">分支</a></li>
+    <li><a href="#分支与合并">分支与合并</a></li>
+    <li><a href="#在提交树上移动">在提交树上移动</a></li>
+    <li><a href="#撤销变更">撤销变更</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#远程分支">远程分支</a></li>
+    <li><a href="#git-fetch">Git Fetch</a></li>
+    <li><a href="#git-pull">Git Pull</a></li>
+    <li><a href="#git-push">Git Push</a></li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">23</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">19</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js"
+    integrity="sha384-vLev0II0HKFaxkcm&#43;/7kX5IGwVFBASkGchU311wmU/veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "JCQ52NHG79",
+        apiKey: "762929a52278c0879d86698a0f0de60f",
+        indexName: "blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script><script
+    src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"
+    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          return new Promise((resolve, reject) => {
+            const scriptElement = document.createElement('script');
+            if (script.type) {
+              scriptElement.type = script.type;
+            }
+            if (script.src) {
+              scriptElement.src = script.src;
+              if (script.integrity) {
+                scriptElement.integrity = script.integrity;
+              }
+              if (script.crossOrigin) {
+                scriptElement.crossOrigin = script.crossOrigin;
+              }
+              scriptElement.onload = resolve;
+              scriptElement.onerror = reject;
+            }
+            if (scriptContent) {
+              scriptElement.text = scriptContent;
+            }
+            document.head.appendChild(scriptElement);
+            if (!script.src) {
+              resolve();
+            }
+          })
+          
+        }
+
+        ;(src ? loadScript() : loadScript(script.text))
+          .then(() => loadScripts(scripts, index + 1))
+          .catch(error => {
+            console.error(`Failed to load script: ${src || 'inline script'}`, error);
+            loadScripts(scripts, index + 1);
+          });
+      }
+    }
+    if (window.Pjax) {
+      Pjax.prototype.getElements = function() {
+        const i18nLanguages = window.siteConfig.i18n_languages;
+        const baseUrl = window.siteConfig.base;
+        let basePathname = new URL(baseUrl).pathname;
+        if (!basePathname.endsWith('/')) {
+          basePathname += '/';  
+        }
+        const currentUrl = window.location.href;
+        const currentPathname = new URL(currentUrl).pathname.replace(basePathname, '');
+        const aLinks = document.querySelectorAll('a[href]');
+        const pjaxLinks = [];
+        for(let i = 0; i < aLinks.length; i++) {
+          const aLink = aLinks[i];
+          const aLinkHref = aLink.getAttribute('href');
+          const isExternal = aLink.getAttribute('target') === '_blank' || aLink.getAttribute('rel')?.includes('noopener');
+          if (isExternal || aLinkHref.startsWith('mailto:') || aLinkHref.startsWith('tel:') || aLinkHref.startsWith('javascript:') || aLinkHref.startsWith("data:") || aLinkHref.startsWith("vbscript:")) {
+            continue;
+          }
+          if (!i18nLanguages) {
+            
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const absoluteUrl = new URL(aLinkHref, currentUrl).href;
+          const absolutePathname = new URL(absoluteUrl).pathname.replace(basePathname, '');
+          if (!absolutePathname || !currentPathname) {
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const currentLangIndex = i18nLanguages.findIndex(lang => currentPathname.startsWith(lang.Lang));
+          if (currentLangIndex > -1) {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === currentLangIndex) {
+              
+              pjaxLinks.push(aLink);
+            }
+          } else {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === -1) {
+              
+              pjaxLinks.push(aLink);
+            }
+          }
+        }
+        return pjaxLinks;
+      }
+    }
+    window.Pjax &&
+      new window.Pjax({
+        selectors: [
+          "#header>img",
+          "#header>picture",
+          "head title",
+          "#header-title",
+          "#subtitle-wrap",
+          "#main",
+          "#content",
+          ".sidebar-widget",
+          ".sidebar-wrapper",
+          "#mobile-nav",
+          "#lazy-script",
+          '#i18n-nav'
+        ],
+        switches: {
+          "#content": function(oldEl, newEl) {
+            
+            oldEl.className = newEl.className;
+            this.onSwitch();
+          },
+          "#header-title": Pjax.switches.outerHTML,
+          "#subtitle-wrap": Pjax.switches.outerHTML,
+          "#main": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.outerHTML = newEl.outerHTML;
+            this.onSwitch();
+          },
+          "#mobile-nav": Pjax.switches.outerHTML,
+          "#lazy-script": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.innerHTML = newEl.innerHTML;
+            this.onSwitch();
+          },
+        },
+        cacheBust: false,
+      });
+  </script><script src="/js/pjax.js" integrity="" crossorigin="anonymous" ></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "wittleLuna",
+          title: "[Git]常用命令，使用方法",
+          url: "https:\/\/wittleLuna.github.io\/zh-cn\/post\/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95\/",
+          description: " 分支 git branch 新建分支\n使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”\ngit checkout 切换到指定分支\n注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。\n",
+          cover: "https:\/\/wittleLuna.github.io\/images\/banner7.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
+  var commentConfig = {
+    valine: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.valine-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
+          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
+        );
+        script.onload = () => {
+          const GUEST_INFO = ['nick', 'mail', 'link'];
+          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          const recordIP = JSON.parse('true');
+          const highlight = JSON.parse('true');
+          const visitor = JSON.parse('false');
+          const serverURLs = undefined;
+
+          new Valine({
+            el: '.valine-comment',
+            appId: "SwdmllEbhtlyJzMBXHd7Fp43-MdYXbMMI",
+            appKey: "8akFDT2lFtNrZrCd2Nwkr9g0",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: document.documentElement.lang || 'en',
+            recordIP: recordIP,
+            highlight: highlight,
+            visitor: visitor,
+            requiredFields: guest_info,
+            path: window.location.pathname,
+            serverURLs,
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/waline-iota-gilt.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  100 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },
+    twikoo: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.twikoo-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/twikoo@1.6.44\/dist\/twikoo.all.min.js',
+          !'webcache|twikoo@1.6.44\/dist\/twikoo.all.min.js'.startsWith('local') ? 'sha384-kwWLC0HjeZZnVPqCJ1AncI8tsk\u002bkQqF9TbAmCclcc9Z0hGkfgHRzeQZxmdmZhE0K' : undefined
+        );
+        script.onload = () => {
+          twikoo.init({
+            envId: '',
+            el: '.twikoo-comment',
+            region: '',
+            lang: document.documentElement.lang || 'en',
+          });
+          twikoo.getCommentsCount({
+            envId: '',
+            region: '',
+            urls: [
+              'https\/\/wittleluna.github.io\/zh-cn\/post\/git%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95\/'
+            ],
+            includeReply: false
+          }).then((res) => {
+            document.querySelector('.twikoo-comment-count').innerText = res[0].count;
+          }).catch((err) => {
+            console.error(err);
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    gitalk: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.gitalk-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/gitalk@1.8.0\/dist\/gitalk.min.js',
+          !'webcache|gitalk@1.8.0\/dist\/gitalk.min.js'.startsWith('local') ? 'sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU\/lcEH5O8eVbSDhbPwsiVUTp\/aGX\/z\/5EuMA' : undefined
+        );
+        script.onload = () => {
+          if ( false ) {
+            
+            const md5Script = loadScript(
+              'https:\/\/npm.webcache.cn\/blueimp-md5@2.19.0\/js\/md5.min.js',
+              !'webcache|blueimp-md5@2.19.0\/js\/md5.min.js'.startsWith('local') ? 'sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr\/gZlbkHkL6vTthxH' : undefined
+            );
+            md5Script.onload = initGitalk;
+            document.head.appendChild(md5Script);
+          } else {
+            
+            initGitalk();
+          }
+        };
+        document.head.appendChild(script);
+
+        function initGitalk() {
+          let gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: JSON.parse("null"),
+            id: location.pathname,
+            distractionFreeMode: false,
+            language: document.documentElement.lang || 'en',
+          });
+          gitalk.render('gitalk-comment');
+        }
+      }
+    },
+    giscus: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.giscus-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
+
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'wittleLuna\/giscus_comment');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOO768bw');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOO768b84Crhb8');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', document.documentElement.lang || 'en');
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
+      }
+    }
+  };
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    deferdata-pjaxintegrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    deferdata-pjaxintegrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    var isMobile = window.matchMedia('(max-width: 959px)').matches;
+    if (isMobile) {
+      const meting = _$('meting-js');
+      if (meting) {
+        meting.setAttribute('fixed', 'true');
+        const aside = meting.parentNode;
+        if (aside?.tagName === 'ASIDE') {
+          aside.removeChild(meting);
+          document.body.appendChild(meting);
+        }
+      }
+    }
+  </script><script
+    src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js"
+    integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8&#43;0maanw1S/IyB&#43;Y4JG&#43;ZDU7GpKE8" crossorigin="anonymous"></script></body>
+</html>

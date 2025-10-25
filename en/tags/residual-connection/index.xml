@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Residual Connection on wittleLuna&#39;s blog</title>
+    <link>https://wittleLuna.github.io/en/tags/residual-connection/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/en/tags/residual-connection/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Deep Learning]Residual Connection</title>
+      <link>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <description>
+        <![CDATA[<h1>[Deep Learning]Residual Connection</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h2 id="-什么是残差连接">
+<a class="header-anchor" href="#-%e4%bb%80%e4%b9%88%e6%98%af%e6%ae%8b%e5%b7%ae%e8%bf%9e%e6%8e%a5"></a>
+📖 什么是残差连接
+</h2><ul>
+<li><strong>残差连接</strong>是深度学习里的一种 <strong>网络结构设计技巧</strong>，最早在 <strong>ResNet（残差网络）</strong> 中提出。</li>
+<li>它的核心思想是：
+👉 <strong>让输入绕过若干层神经网络，直接加到输出上。</strong></li>
+</ul>
+<p>公式：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">y = F(x) + x
+</span></span></code></pre></div><p>其中：</p>
+<ul>
+<li>x = 输入</li>
+<li>F(x) = 若干层神经网络的变换</li>
+<li>y = 输出（包含了原始输入 + 新学到的变化）</li>
+</ul>
+<h2 id="-为什么要用残差连接">
+<a class="header-anchor" href="#-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e6%ae%8b%e5%b7%ae%e8%bf%9e%e6%8e%a5"></a>
+📌 为什么要用残差连接
+</h2><ol>
+<li>
+<p><strong>缓解梯度消失/爆炸</strong></p>
+<ul>
+<li>在非常深的神经网络里，梯度可能传不下去，导致训练困难。</li>
+<li>残差连接给梯度提供了一条“捷径”，更容易训练。</li>
+</ul>
+</li>
+<li>
+<p><strong>避免退化问题</strong></p>
+<ul>
+<li>网络越深，不一定越好，有时反而性能下降。</li>
+<li>残差连接让深层网络至少能“模仿浅层网络”，避免性能变差。</li>
+</ul>
+</li>
+<li>
+<p><strong>更易学习</strong></p>
+<ul>
+<li>网络不需要学完整的映射 H(x)，只需学“残差” F(x) = H(x) - x，任务更简单。</li>
+</ul>
+</li>
+</ol>
+<h2 id="-直观理解">
+<a class="header-anchor" href="#-%e7%9b%b4%e8%a7%82%e7%90%86%e8%a7%a3"></a>
+🎯 直观理解
+</h2><ul>
+<li>没有残差：网络必须学会 <strong>从 0 到目标函数</strong> 的完整映射。</li>
+<li>有了残差：网络只需在“已有的输入基础上，做一些修正”。</li>
+</ul>
+<p>👉 就像写作文：不是从零开始写，而是拿一篇草稿（输入）做修改（残差），效率更高。</p>
+<h2 id="-一句话总结">
+<a class="header-anchor" href="#-%e4%b8%80%e5%8f%a5%e8%af%9d%e6%80%bb%e7%bb%93"></a>
+✅ 一句话总结
+</h2><p><strong>残差连接就是在网络里给输入开一条“捷径”，把输入直接加到输出上，帮助训练更深的神经网络。</strong></p>
+        
+        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+      </description>
+      
+        <category>Deep Learning</category>
+      
+    </item>
+    
+  </channel>
+</rss>

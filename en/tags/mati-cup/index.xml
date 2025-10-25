@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mati CUP on wittleLuna&#39;s blog</title>
+    <link>https://wittleLuna.github.io/en/tags/mati-cup/</link>
+    <description>Recent content from wittleLuna&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 15 Jul 2025 14:36:58 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://wittleLuna.github.io/en/tags/mati-cup/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>[Mati Cup]2025 Problems — Study Notes</title>
+      <link>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <description>
+        <![CDATA[<h1>[Mati Cup]2025 Problems — Study Notes</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h3 id="括号序列">
+<a class="header-anchor" href="#%e6%8b%ac%e5%8f%b7%e5%ba%8f%e5%88%97"></a>
+括号序列
+</h3><blockquote>
+<p>唐僧师徒途经一座神秘的古庙，庙前刻着一行字：“欲往决赛，需解此阵！” 小码哥自告奋勇上前查看，发现地上刻着一串由“(”和“)”括号组成的符号（长度为偶数），显然是某种法阵，但次序混乱，使得灵气无法流转。
+小码哥看了一眼，笑道：“这法阵应该是要变成一套匹配的符号，才能显现出通往西天的正确道路，但怎么判断是否匹配呢？”
+悟空指着庙旁的一块石碑说道：“规则在这儿！这几种情况都可以递归地定义一个括号序列是匹配的:
+1.空序列是匹配的。
+2.若A和B都是匹配的，则AB是匹配的。
+3.若A是匹配的，则(A)是匹配的。</p>
+<p>但此法阵只能交换相邻两个符号的位置，那我们最少需要多少次才能使其完全匹配呢？
+小码哥摩拳擦掌：“交给我吧，我一定能算出来！”</p></blockquote>
+<p>输入格式:第一行一个整数 T(T&lt; 10^6)，表示测试数据组数。对于每组测试数据:一行一个字符串，表示括号序列。数据保证，最终结果一定可以匹配。所有字符串长度之和不超过 10^6
+输出格式:对于每组测试数据:输出一行一个整数，表示答案。</p>
+<p>输入:</p>
+<p>3
+()())(
+)(
+()()</p>
+<p>输出:</p>
+<p>1
+1
+0</p>
+<p>标签
+<code>找规律</code> <code>括号匹配</code></p>
+<h4 id="解题思路">
+<a class="header-anchor" href="#%e8%a7%a3%e9%a2%98%e6%80%9d%e8%b7%af"></a>
+解题思路
+</h4><p>根据题目可以获得的信息有:</p>
+<p>1.括号字符串是肯定可以匹配的，只是次序乱了
+2.每次只能交换两个字符的位置</p>
+<p>括号的特点:</p>
+<p>匹配的括号: <code>()</code> , 不匹配的括号: <code>)(</code>, 也就是说如果不匹配，肯定是 <code>)</code> 出现在 <code>(</code> 的 前面。<strong>那么在判断需要移动几次的时候，肯定要依据 <code>(</code> 来，才能得到正确的结果，因为不匹配时, <code>(</code> 肯定是出现在不匹配字符串的后面的位置的。</strong></p>
+<p>通过分别统计<code>(</code>和<code>)</code>的数量（leftbracket 和 rightbracket），和字符串当前所在的位置，来判断需要移动几次。具体操作如下:</p>
+<ul>
+<li>
+<p>如果当前为<code>(</code>, 并且当前已经有统计的 rightbracket, 那么可以把当前的<code>(</code>向前移动 rightbracket的数量的位置，完成一个括号的匹配，匹配完成后rightbracket&ndash;, 表示当前已经匹配完成了一个<code>(</code>。 如果没有 rightbracket, lefbracket++.</p>
+</li>
+<li>
+<p>如果当前为<code>)</code>, 并且当前已经有 leftbracket, 说明在其之前有<code>(</code>, 此时 leftbracket&ndash;即可，表明已经匹配了一个括号。如果没有, rightbracket++.</p>
+</li>
+</ul>
+<h4 id="代码实现">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0"></a>
+代码实现
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Scanner</span><span class="w"> </span><span class="n">sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w"> </span><span class="c1">//t组数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">--</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">String</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="na">next</span><span class="p">();</span><span class="w"> </span><span class="c1">//括号字符串</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">leftBracket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//左括号的数量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">rightBracket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//右括号的数量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">ans</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">//当前第t组的答案</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//当前为左括号</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="n">rightBracket</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//右括号的数量不为0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">						
+</span></span></span><span class="line"><span class="cl"><span class="w">						</span><span class="n">ans</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">rightBracket</span><span class="p">;</span><span class="w"> </span><span class="c1">//答案 += 当前的右括号数量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">						
+</span></span></span><span class="line"><span class="cl"><span class="w">						</span><span class="n">rightBracket</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">//减去一个右括号的数量（来表示当前左括号和右括号已经匹配）</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">						
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">						</span><span class="n">leftBracket</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">//右括号数量为0，说明无法匹配，记录当前的左括号</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> 	</span><span class="c1">//当前为右括号</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="k">if</span><span class="p">(</span><span class="n">leftBracket</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//如果左括号数量大于0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">						</span><span class="n">leftBracket</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">//使得左括号和右括号匹配，左括号--</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">						
+</span></span></span><span class="line"><span class="cl"><span class="w">						</span><span class="n">rightBracket</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">//无法匹配，增加右括号的数量</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">					
+</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">				
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">ans</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="判断奇偶">
+<a class="header-anchor" href="#%e5%88%a4%e6%96%ad%e5%a5%87%e5%81%b6"></a>
+判断奇偶
+</h3><p>唐僧师徒跋山涉水，终于来到了一座雄伟的石桥前，桥边站着一位神秘老者，拦住了他们的去路。“此桥乃通往决赛的关键之路，若想通过，需解开一道神秘考验。”老者捋着胡子说道。
+小码哥自告奋勇上前询问：“请问前辈，是什么考验？”
+老者点头道：“此考验涉及两组长度均为n神秘数列，分别称为‘天数列’a1~an和‘地数列’b1 ~ bn.每个数皆为正整数。”
+他指了指桥上的一块石碑，上面刻着一道古老的公式：</p>
+        
+        <hr><p>Published on 2025-07-15 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
+      </description>
+      
+        <category>computer algorithm</category>
+      
+    </item>
+    
+  </channel>
+</rss>

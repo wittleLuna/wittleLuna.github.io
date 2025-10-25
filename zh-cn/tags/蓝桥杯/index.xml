@@ -46,5 +46,38 @@
       
     </item>
     
+    
+
+    <item>
+      <title>[蓝桥杯]赛事介绍</title>
+      <link>https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Wed, 22 Jan 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</guid>
+      <description>
+        <![CDATA[<h1>[蓝桥杯]赛事介绍</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h2 id="蓝桥杯介绍">
+<a class="header-anchor" href="#%e8%93%9d%e6%a1%a5%e6%9d%af%e4%bb%8b%e7%bb%8d"></a>
+蓝桥杯介绍
+</h2><h3 id="蓝桥杯赛制">
+<a class="header-anchor" href="#%e8%93%9d%e6%a1%a5%e6%9d%af%e8%b5%9b%e5%88%b6"></a>
+蓝桥杯赛制
+</h3><p>IO赛制</p>
+<p><strong>赛制特点</strong>：
+个人赛：每个选手独立参赛。
+<strong>比赛时长</strong>：4小时。
+题目数量：通常8-10道题。
+<strong>答题方式</strong>：选手每题可提交多次，但==仅保留最后一次提交结果，比赛期间无法看到评测结果==。
+<strong>题目类型</strong>：单结果题+编程题。单结果题：只需要输出题目问题的答案。编程题：有多个测试点，每个测试点有一个正确答案。
+<strong>评分规则</strong>：每道题包含多个测试点，根据通过的测试点数量得分，部分数据通过也能获得部分分数。最终得分在赛后公布。</p>
+        
+        <hr><p>本文2025-01-22首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-01-22</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
   </channel>
 </rss>

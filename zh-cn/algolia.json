@@ -1,5 +1,68 @@
 [
     {
+      "objectID": "d62995adc6b8a6334d192da821e1f2f4-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/",
+      "title": "从零开始，入坑编程比赛","content": " 从零开始，入坑编程比赛 1. 什么是编程比赛？ 编程比赛，一般称为程序设计竞赛，要求选手在有限的时间内编写程序，分析和解决问题。\n国内比较出名的比赛有：\nOI（Olympiad in Informatics，信息学奥林匹克竞赛），是高中五大学科竞赛之一。\nICPC（International Collegiate Programming Contest，国际大学生程序设计竞赛），由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。由于以前 ACM 赞助这个竞赛，也有很多人习惯叫它 ACM 竞赛。\n蓝桥杯，由中华人民共和国工业和信息化部人才交流中心主办（据相关新闻，2026届起已与工信部脱钩），从中小学到大学高校一直备受青睐，是参加人数多，知名度较高的比赛之一。\n码蹄杯，是由全国高等学校计算机教育研究会主办、清华大学出版社承办的编程竞赛，截至2025年举办了六届，也是目前备受青睐的，知名度较高的编程比赛之一。\n百度之星，由百度公司于2005年发起并主办的年度程序设计竞赛，初赛不限制参赛选手身份要求，是影响力较大，含金量较高的编程比赛之一。\n1.1 关于难度与含金量 注：关于评分码蹄杯比蓝桥杯难度高：码蹄杯题目数量更大，且难度与蓝桥杯大差不差（有些更难）。另外该图表只反映外界的普遍共识，但对于我们普通人来说，无论你参加了哪个比赛都很棒！\n2. 关于各种算法比赛的介绍 2.1 不同的赛制 根据不同的比赛规则，需要采取不同的策略来完成比赛。\n2.2 比赛规则之如何评分 每道算法题会有若干个检测点。检测点具体是什么东西，如何判断的呢？\n举个例子，你编写了一个程序，现在有各种各样的用户来做测试，如果一个用户用完你的程序没有问题，体验好，那你就通过了检测。反之，如果用户做出了你没考虑到的操作，导致程序失灵出现错误，那么这个检测你就没有通过。\n对应 …","date": "2025-10-25T00:00:00+00:00",
+      "updated": "2025-10-25T17:41:41+08:00"
+    }, 
+    {
+      "objectID": "ba0227469ab790e7b9503b88e81b7e61-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/",
+      "title": "[Git]常见错误和解决方法","content": " 1.拉取镜像时报错 hint: Updates were rejected because the tip of your current branch is behind hint: its remote counterpart. If you want to integrate the remote changes, hint: use \u0026#39;git pull\u0026#39; before pushing again. hint: See the \u0026#39;Note about fast-forwards\u0026#39; in \u0026#39;git push --help\u0026#39; for details. 出现原因 1.别人先 push 了 团队协作时，别人往远端推送了新提交，而你本地的分支还停留在旧的版本。\n2.本地仓库没及时同步远端 你可能有一段时间没 git pull，导致历史落后。\n解决方法 不使用git pull origin main而是改为使用git pull --rebase origin main来保持直线历史。\n万金油自检顺序 git status # 看看是否有未提交/冲突/进行中操作 git branch -vv # 确认当前分支及其 upstream git fetch origin # 先拉最新引用 git pull --rebase origin \u0026lt;your-branch\u0026gt; # 整合远端 # 若有冲突：按提示解决 -\u0026gt; git add -\u0026gt; git rebase --continue git push 或 git pull origin main \u0026ndash;allow-unrelated-histories\n","date": "2025-09-09T00:00:00+00:00",
+      "updated": "2025-09-09T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "afacf803fd1274679fd65187032f3388-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/",
+      "title": "[深度学习]残差连接","content": " 📖 什么是残差连接 残差连接是深度学习里的一种 网络结构设计技巧，最早在 ResNet（残差网络） 中提出。 它的核心思想是： 👉 让输入绕过若干层神经网络，直接加到输出上。 公式：\ny = F(x) + x 其中：\nx = 输入 F(x) = 若干层神经网络的变换 y = 输出（包含了原始输入 + 新学到的变化） 📌 为什么要用残差连接 缓解梯度消失/爆炸\n在非常深的神经网络里，梯度可能传不下去，导致训练困难。 残差连接给梯度提供了一条“捷径”，更容易训练。 避免退化问题\n网络越深，不一定越好，有时反而性能下降。 残差连接让深层网络至少能“模仿浅层网络”，避免性能变差。 更易学习\n网络不需要学完整的映射 H(x)，只需学“残差” F(x) = H(x) - x，任务更简单。 🎯 直观理解 没有残差：网络必须学会 从 0 到目标函数 的完整映射。 有了残差：网络只需在“已有的输入基础上，做一些修正”。 👉 就像写作文：不是从零开始写，而是拿一篇草稿（输入）做修改（残差），效率更高。\n✅ 一句话总结 残差连接就是在网络里给输入开一条“捷径”，把输入直接加到输出上，帮助训练更深的神经网络。\n","date": "2025-09-09T00:00:00+00:00",
+      "updated": "2025-09-09T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "dcb6cd9511b2648db127cc79997a533f-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/",
+      "title": "[深度学习]图注意力网络 图神经网络","content": " 1. 信息聚合方式的区别 🔹 传统 GNN（如 GCN） 采用 固定的归一化权重 来聚合邻居节点特征。 公式示例（GCN）： h_i\u0026#39; = \\sigma\\left( \\sum_{j \\in \\mathcal{N}(i)} \\frac{1}{\\sqrt{d_i d_j}} W h_j \\right) 这里权重 $\\frac{1}{\\sqrt{d_i d_j}}$ 仅依赖于节点度数，是预定义的，不随数据学习。 ➡ 聚合方式是 静态的，缺少自适应性。\n🔹 图注意力网络（GAT / GATv2） 采用 自注意力机制 来为邻居分配权重。 公式： h_i\u0026#39; = \\sigma\\left( \\sum_{j \\in \\mathcal{N}(i)} \\alpha_{ij} W h_j \\right), \\quad \\alpha_{ij} = \\text{softmax}_j \\big( a^T \\, \\text{LeakyReLU}(W[h_i \\, || \\, h_j]) \\big) 其中 alpha_{ij} 是 可学习的权重，依赖于节点特征本身。 ➡ 聚合方式是 动态的，模型能根据任务自动决定哪些邻居更重要。\n2. 表达能力的区别 传统 GNN（GCN, GraphSAGE 等）：对所有邻居的贡献大体一致，只能学习“平均化”或“加权和”的表示。 GAT 系列：允许不同邻居有不同的重要性，可以突出关键邻居、弱化噪声邻居，表达能力更强。 3. 可解释性的区别 传统 GNN：聚合权重由图结构决定，难以解释“为什么这个邻居重要”。 GAT 系列：注意力权重 alpha_{ij} 可以直接看作“节点 i 对邻居 j 的依赖程度”，可解释性更好。 4. 适用场景的区别 传统 GNN：适合结构相对规则的图（如社交网络、引文网络），邻居的贡献差别不大。 图注意力网络：适合异质图、知识图谱、推荐系统等场景——因为这些图的边类型复杂、邻居的重要性差异大。 5. 小总结 方面 传统 GNN (如 GCN) 图注意力网络 (GAT / GATv2) 聚合方式 固定权重（度数归一化） 动态权重（自注意力学习） 表达能力 相对有限 更灵活、更强 可解释性 较弱 较强（注意力可视化） 适用场景 同质图、规则图 异质图、复杂关系图 ","date": "2025-09-09T00:00:00+00:00",
+      "updated": "2025-09-09T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "4adae78a76cd18454aa0bae7d2843349-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/",
+      "title": "[算法]GATv2图注意力网络","content": " 1. 背景：GAT 的问题 GAT（Velickovic et al., ICLR 2018）通过 自注意力机制 在图结构上聚合邻居节点信息，每条边的权重由注意力函数计算：\n\\alpha_{ij} = \\text{softmax}_j \\left( \\text{LeakyReLU}(a^T [W h_i \\, || \\, W h_j]) \\right) 其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。 但 GAT 有一个限制：注意力权重的计算公式在 输入的线性变换 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：\na^T (W h_i \\, || \\, W h_j) = a^T (W h_j \\, || \\, W h_i) → 可能导致表达能力不足。\n2. GATv2 的改进 GATv2（Brody et al., ICLR 2021）在注意力机制上进行了关键修改： 把 非线性函数移到线性变换之前，得到更强的表达能力。\n注意力计算公式：\n\\alpha_{ij} = \\text{softmax}_j \\left( a^T \\, \\text{LeakyReLU}( W [h_i \\, || \\, h_j] ) \\right) 区别：\nGAT：先对每个节点分别线性变换，再拼接，再做非线性。 GATv2：直接拼接原始特征，再做线性变换 + 非线性 → 更灵活。 ==这使得 GATv2 可以学习到 非对称的注意力模式，从而提升了表达能力。==\n3. 特点总结 更强表达能力：能捕捉 GAT 无法区分的模式。 兼容 GAT：如果权重矩阵退化，GATv2 可退化为 GAT。 性能提升：在多个数据集上比 GAT 表现更好，尤其在异质关系或需要方向性建模的任务上。 简单易用：代码和参数量与 GAT 几乎相同。 4. 公式回顾 节点更新公式：\nh_i\u0026#39; = \\sigma \\left( \\sum_{j \\in \\mathcal{N}(i)} \\alpha_{ij} W h_j \\right) 其中注意力：\n\\alpha_{ij} = \\frac{\\exp\\left( \\text{LeakyReLU}(a^T W [h_i \\, || \\, h_j]) \\right)}{\\sum_{k \\in \\mathcal{N}(i)} \\exp\\left( \\text{LeakyReLU}(a^T W [h_i \\, || \\, h_k]) \\right)} 和 GAT 的区别就在于 LeakyReLU 放在更前的位置。\n5. 应用场景 知识图谱问答（KGQA）：处理图谱中的实体关系，建模方向性边。 图分类 / 节点分类：尤其是图结构复杂、关系非对称的任务。 图生成 / 图谱结构学习：对边关系敏感时，GATv2 的非对称注意力很有优势。 ","date": "2025-09-09T00:00:00+00:00",
+      "updated": "2025-09-09T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "6624464f066ab9f2d730e9c3358dbf5f-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/",
+      "title": "[算法]协同过滤系统","content": "协同过滤系统（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐。\n1. 核心思想 “志同道合的人喜欢相似的东西。”\n如果用户 A 和用户 B 的兴趣很相似，那么 A 喜欢的物品，B 也可能喜欢。 如果物品 X 和物品 Y 被很多相同用户喜欢，那么喜欢 X 的人也可能喜欢 Y。 2. 两大类型 (1) 基于用户的协同过滤（User-Based CF） 找到与目标用户兴趣相似的其他用户（邻居），推荐他们喜欢的物品。\n例子：\n你喜欢电影 A、B，有另一个用户也喜欢 A、B，而且他还喜欢 C → 推荐 C 给你。 (2) 基于物品的协同过滤（Item-Based CF） 找到与目标物品相似的其他物品，推荐这些物品给用户。\n例子：\n很多人看了电影 A 后还看了电影 B → 如果你看了 A，就推荐 B。 3. 优点 不需要物品内容信息（可以处理多媒体、文本等无法直接比较的内容）。 只依赖用户行为数据，容易实现。 可以发现意料之外的推荐（serendipity）。 4. 缺点 冷启动问题：新用户/新物品没有足够的交互数据时很难推荐。 稀疏性问题：用户-物品矩阵很稀疏时，找到相似用户/物品的难度大。 无法直接利用上下文信息（时间、地点等）。 5. 在工业界的变体 矩阵分解（Matrix Factorization）：如 SVD、ALS，把用户和物品映射到同一个向量空间。 深度学习 CF：用 MLP、Embedding 代替传统相似度计算（比如 YouTube 双塔模型就是一种协同过滤思想的深度实现）。 📌 一句话总结\n协同过滤就是用“人和人之间的兴趣相似度”或“物品和物品之间的相似度”来做推荐，它是现代深度推荐系统的理论基础之一。\n","date": "2025-09-09T00:00:00+00:00",
+      "updated": "2025-09-09T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "0d27cbeee9b8171434b6853dd40e88ad-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/",
+      "title": "[Git]常用命令，使用方法","content": " 分支 git branch 新建分支\n使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”\ngit checkout 切换到指定分支\n注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。\n更简洁的方式：如果你想创建一个新的分支同时切换到新创建的分支的话，可以通过 git checkout -b 来实现。\n分支与合并 git merge \u0026amp;lt;你要合并的另一个分支\u0026amp;gt;\n在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个 parent 节点。翻译成自然语言相当于：“我要把这两个 parent 节点本身及它们所有的祖先都包含进来。\ngit rebase\n取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。\n在提交树上移动 HEAD\nHEAD 是一个对当前所在分支的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。\nHEAD 总是指向当前分支上最近一次提交记录。HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。\n分离的 HEAD\n分离的 HEAD 就是让其指向了某个具体的提交记录而不是分支名。\n相对引用 git log 来查查看提交记录的哈希值。\n根据哈希值进行移动 git branch -f \u0026amp;lt;分支\u0026amp;gt; \u0026amp;lt;指定提交记录的哈希值位置\u0026amp;gt;\n“ ^ ” 操作符\n相对引用非常给力，这里我介绍两个简单的用法：\n使用 ^ 向上移动 1 个提交记录 使用 ~ 向上移动多个提交记录，如 ~3 git checkout \u0026amp;lt;分支\u0026amp;gt;^ “~”操作符\n如果你想在提交树中向上移动很多步的 …","date": "2025-09-01T00:00:00+00:00",
+      "updated": "2025-09-01T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "f58b9b257d7dc72fab83409b02481270-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/",
+      "title": "[Git]推送项目，多人协助","content": " Git如何推送项目 🚀 从本地推送项目到 GitHub 的完整流程 # 1. 进入你的项目目录 cd F:/备份/项目备份GPU/algokg_platform_server（改成你的文件路径） # 2. 初始化 Git 仓库（如果你已经 git init 过，可以跳过） git init # 3. 添加所有文件到暂存区 git add . # 4. 提交到本地仓库，写提交说明 git commit -m \u0026#34;初始化项目\u0026#34; # 5. 确认本地分支名称（旧版本 Git 默认是 master，新版本默认是 main） git branch # 如果不是 main，可以把当前分支改名为 main git branch -M main # 6. 添加远程仓库地址（如果已经添加过，就用 set-url 修改） # 第一次添加： # git remote add origin https://github.com/wittleLuna/AlgoKG.git # 如果提示 remote origin already exists，说明已经绑定过，就用： git remote set-url origin https://github.com/wittleLuna/AlgoKG.git # 7. 拉取远程仓库的 main 分支（避免冲突，比如 GitHub 默认生成的 README.md） git pull origin main --rebase # 8. 推送本地 main 分支到远程，并建立跟踪关系 git push -u origin main 🔑 后续日常开发流程（以后每次更新代码） 当你修改了文件后，只需要执行以下三步：\n# 查看状态，确认改了哪些文件 git status # 添加改动 git add . # 提交改动 git commit -m \u0026#34;修改了XXX功能\u0026#34; # 推送到远程仓库 git push Git如何多人协作 🟢 情况 1：你们是协作开发（推荐） 步骤 你给别人添加权限\n打开 GitHub 仓库页面 → Settings → Collaborators → 添加对方的 GitHub 用户名 / 邮箱 → 发送邀请。 对方接受后，就能对仓库有 push 权限。 别人克隆仓库\ngit clone https://github.com/wittleLuna/AlgoKG.git cd AlgoKG 别人日常操作\n# 修改代码后 git add . git commit -m \u0026#34;修改了XXX\u0026#34; git push origin main ✅ 就能把代码直接推送到你的仓库。\n🟡 情况 2：你不想直接给权限（更安全） 这种情况适合 开源项目 或者 只想让别人贡献代码但不想给写权限。\n流程是 Fork + Pull Request：\n别人在 GitHub 上点击你的仓库 → Fork → 复制一份到自己的账户。 在自己账户的仓库里改代码、commit、push。 改好后发起 Pull Request (PR) 给你。 你在仓库里审核 → 如果同意，就合并进主仓库。 拉取远程仓库文件 git pull origin main git pull origin main --allow-unrelated-histories git remote set-url origin https://github.com/wittleLuna/AlgoKG.git\n","date": "2025-09-01T00:00:00+00:00",
+      "updated": "2025-09-01T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "878015405502d481a0095ddf8183b1ca-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/",
+      "title": "[码蹄杯]2025年题目学习","content": " 括号序列 唐僧师徒途经一座神秘的古庙，庙前刻着一行字：“欲往决赛，需解此阵！” 小码哥自告奋勇上前查看，发现地上刻着一串由“(”和“)”括号组成的符号（长度为偶数），显然是某种法阵，但次序混乱，使得灵气无法流转。 小码哥看了一眼，笑道：“这法阵应该是要变成一套匹配的符号，才能显现出通往西天的正确道路，但怎么判断是否匹配呢？” 悟空指着庙旁的一块石碑说道：“规则在这儿！这几种情况都可以递归地定义一个括号序列是匹配的: 1.空序列是匹配的。 2.若A和B都是匹配的，则AB是匹配的。 3.若A是匹配的，则(A)是匹配的。\n但此法阵只能交换相邻两个符号的位置，那我们最少需要多少次才能使其完全匹配呢？ 小码哥摩拳擦掌：“交给我吧，我一定能算出来！”\n输入格式:第一行一个整数 T(T\u0026amp;lt; 10^6)，表示测试数据组数。对于每组测试数据:一行一个字符串，表示括号序列。数据保证，最终结果一定可以匹配。所有字符串长度之和不超过 10^6 输出格式:对于每组测试数据:输出一行一个整数，表示答案。\n输入:\n3 ()())( )( ()()\n输出:\n1 1 0\n标签 找规律 括号匹配\n解题思路 根据题目可以获得的信息有:\n1.括号字符串是肯定可以匹配的，只是次序乱了 2.每次只能交换两个字符的位置\n括号的特点:\n匹配的括号: () , 不匹配的括号: )(, 也就是说如果不匹配，肯定是 ) 出现在 ( 的 前面。那么在判断需要移动几次的时候，肯定要依据 ( 来，才能得到正确的结果，因为不匹配时, ( 肯定是出现在不匹配字符串的后面的位置的。\n通过分别统计(和)的数量（leftbracket 和 rightbracket），和字符串当前所在的位置，来判断需要移动几次。具体操作如下:\n如果当前为(, 并且当前已经有统计的 rightbracket, 那么可以把当前的( …","date": "2025-07-15T00:00:00+00:00",
+      "updated": "2025-07-15T14:36:58+08:00"
+    }, 
+    {
       "objectID": "3ec19241c503f5bfa4d6d6cd12368936-zh-cn",
       "lang": "zh-cn",
       "permalink": "https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/",
@@ -75,5 +138,26 @@
       "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/",
       "title": "回溯算法","content": "回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构\n回溯法，一般可以解决如下几种问题：\n组合问题：N个数里面按一定规则找出k个数的集合 切割问题：一个字符串按一定规则有几种切割方式 子集问题：一个N个数的集合里有多少符合条件的子集 排列问题：N个数按一定规则全排列，有几种排列方式 棋盘问题：N皇后，解数独等等 模板框架:\nvoid backtracking(参数) { if (终止条件) { 存放结果; return; } for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) { 处理节点; backtracking(路径，选择列表); // 递归 回溯，撤销处理结果 } } 回溯三部曲: 1.确定递归函数的参数和返回值 2.确定递归的终止条件 3.确定单层搜索的逻辑\n一般返回值都为void\n组合问题 ==需要startIndex来保证元素不被重复选取==\n组合 给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。\n你可以按 任何顺序 返回答案。\n示例 1：\n输入：n = 4, k = 2 输出： [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ]\n确定参数和返回值： 参数：n:代表遍历的次数 k:代表需要走到的深度 startIndex: 代表当前层的遍历位置(因为是组合问题，每个节点只能从其之后的位置开始遍历)\n返回值：none, 使用全局遍历存储结果和当前路径的元素\n确定递归终止条件： 如果当前路径的元素=当前的深度 ： 说明找到的元素个数符合要求，那么把当前路径作为一种结果加入结果变量，之后返回 确定单层的递归逻辑： for循环，加入当前的元素，之后递归进行下一层循环，注意循环开始的位置，之后回溯去掉当前加入的元素（删除当前元素，之后回溯加入其他元素） …","date": "2025-06-11T00:00:00+00:00",
       "updated": "2025-06-15T14:35:59+08:00"
+    }, 
+    {
+      "objectID": "190c022a65c850da958a8f1d779e5475-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/",
+      "title": "雅思阅读判断总结","content": " 📘 雅思阅读判断题十大陷阱类型 + 触发语速查卡 ✅ 陷阱类型 🚨 特征关键词 🎯 触发语口诀 1️⃣ 主语错配 the author / researchers / experts / some / all “谁说的？别乱代入作者。” 2️⃣ 程度误导 all, always, never, only “看到 always / never，要提高警觉。” 3️⃣ 范围偷换 some ↔ most / people ↔ students “小变大，大变小，一律警惕。” 4️⃣ 时态陷阱 used to / now / recent studies “时间变了，观点也会变！” 5️⃣ 语气反转 however, although, but “but 出没，反转常有。” 6️⃣ 观点 vs 事实 “argue”, “believe” vs “confirm”, “prove” “观点 ≠ 事实，别搞混！” 7️⃣ 模糊词对撞 may, might vs must / will “原文说可能，题干说一定 → FALSE！” 8️⃣ 双面观点 some believe X, others believe Y “题干说一致？直接判 FALSE。” 9️⃣ 同义换骨 “cut costs” vs “save money”, “concerned” vs “worried” “换壳不换意，看透词芯。” 🔟 因果关系误判 “A happened and B happened” ≠ “A caused B” “并列 ≠ 因果，小心脑补！” 触发语 常见误判 正确处理 the country / this practice / such an approach 忽略代词指代的具体对象，觉得信息不明确（误选 NG） 回头找前文最近明确提到的对象，代入判断是否对应 题目中带有“所有人 / 所有人 …","date": "2025-05-20T00:00:00+00:00",
+      "updated": "2025-05-20T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "03fcf2da5448523bbd3963d79c22b449-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/",
+      "title": "自然语言处理","content": " 背景知识 自然语言处理(natural language processing, NLP)\nNLP发展历程 阶段一：图灵测试 该测试的流程是，一名测试者写下自己的问题，随后将问题以纯文本的形式（如计算机屏幕和键盘）发送给另一个房间中的一个人与一台机器。测试者根据他们的回答来判断哪一个是真人，哪一个是机器。所有参与测试的人或机器都会被分开。这个测试旨在探究机器能否模拟出与人类相似或无法区分的智能 [1]。 现在的图灵测试测试时长通常为5分钟，如果电脑能回答由人类测试者提出的一系列问题，且其超过30%的回答让测试者误认为是人类所答，则电脑通过测试。\n阶段二：基于规则的方法 自然语言处理的最早阶段主要采用基于规则的方法，通过人工定义语法和规则来解析和生成文本。这些方法的局限性在于难以涵盖语言的复杂性和多样性，因为规则需要人为设计且难以适应不同的语境。\n阶段三：统计学习方法 随着统计学习方法的兴起，自然语言处理进入了统计学习阶段。该阶段的代表性方法包括隐马尔可夫模型（Hidden Markov Models，HMM）和最大熵模型（Maximum Entropy Models）。这些方法通过从大量语料中学习统计规律来解决语言处理问题，提高了模型的泛化能力。\n阶段四：深度学习与神经网络 深度学习的广泛应用推动了自然语言处理领域的进一步发展。循环神经网络（Recurrent Neural Networks，RNN）和长短时记忆网络（Long Short-Term Memory，LSTM）等模型在序列标注、机器翻译等任务上取得了显著的成果。随后，注意力机制和Transformer模型的提出进一步提升了自然语言处理的性能，例如BERT、GPT等模型。\nAI发展历程 第一阶段-AI兴起：人工智能的诞生（1941- 1956）\n第二阶段-AI早期成功：AI黄金发展时代（1956-1974）\n第 …","date": "2025-02-25T00:00:00+00:00",
+      "updated": "2025-02-25T14:36:58+08:00"
+    }, 
+    {
+      "objectID": "2fbcaeed0e4e4f766e1e6c76b77dff9b-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/",
+      "title": "[蓝桥杯]赛事介绍","content": " 蓝桥杯介绍 蓝桥杯赛制 IO赛制\n赛制特点： 个人赛：每个选手独立参赛。 比赛时长：4小时。 题目数量：通常8-10道题。 答题方式：选手每题可提交多次，但==仅保留最后一次提交结果，比赛期间无法看到评测结果==。 题目类型：单结果题+编程题。单结果题：只需要输出题目问题的答案。编程题：有多个测试点，每个测试点有一个正确答案。 评分规则：每道题包含多个测试点，根据通过的测试点数量得分，部分数据通过也能获得部分分数。最终得分在赛后公布。\nOI赛制最大的特点在于考试的时候看不到评测结果，不像ACM赛制可以立马看到结果，知道自己对不对，但是好处是有部分分，过了几个点也有分拿。\n图例[19728 拼十字]\n官网题库练习界面，有调试和提交检测按钮。调试按钮使用第一个节点的测试数据测试程序能不能得到正确结果，提交检测会检测所有测试数据，最后给出完整的结果。 怎样的答案才算是正确答案？ 1.程序逻辑正确 2.满足时间复杂度和空间复杂度的要求\n根据选择使用的算法不同，复杂度不同，通过率会有差别。20个检测点，使用回溯算法，通过6个，得6分。\n==在正式比赛中，需要在指定位置上传自己的程序代码。看不到提交后的结果，不能进行调试。检测方法就是根据题目要求，自己想例子手动测试。==\n蓝桥杯常用数据结构 列表(数组) 特点： 连续存储，支持随机访问，索引复杂度为 \\(O(1)\\)。 插入、删除复杂度为 \\(O(n)\\)。 应用场景： 简单的序列存储（如题目输入输出）。 作为动态数组的基础结构。 蓝桥杯常见题型： 前缀和：求连续子数组的和。 双指针：查找满足条件的子数组或子序列。 例题： 给定一个数组，找到和为目标值的连续子数组。 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。\n子数组是数组中元素的连续非空序列。\n示例 1：\n输入：nums = …","date": "2025-01-22T00:00:00+00:00",
+      "updated": "2025-01-22T14:36:58+08:00"
     }
 ]
