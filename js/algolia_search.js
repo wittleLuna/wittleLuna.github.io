@@ -1,1 +1,114 @@
-(()=>{var l=()=>{let t=ALGOLIA_CONFIG.algolia;if(!(t.applicationID&&t.apiKey&&t.indexName)){console.error("Algolia Settings are invalid.");return}if(!window.instantsearch){console.error("Algolia InstantSearch is not loaded.");return}let i=instantsearch({indexName:t.indexName,searchClient:algoliasearch(t.applicationID,t.apiKey),searchFunction:e=>{let a=document.querySelector("#reimu-search-input input")?.value.trim()||"";if(a){let n=document.documentElement.lang.toLowerCase();console.log("[DEBUG] query:",a,"lang:",n),e.setQuery(a),e.clearRefinements(),e.addFacetRefinement("lang",n),e.search()}}});i.addWidgets([instantsearch.widgets.configure({facets:["lang"]})]),[instantsearch.widgets.configure({hitsPerPage:t.hits.per_page||10}),instantsearch.widgets.searchBox({container:"#reimu-search-input",placeholder:t.labels.input_placeholder,showReset:!1,showSubmit:!1,showLoadingIndicator:!1}),instantsearch.widgets.hits({container:"#reimu-hits",templates:{item:e=>'<a href="'+e.permalink+'" class="reimu-hit-item-link">'+e._highlightResult.title.value+"</a>",empty:e=>'<div id="reimu-hits-empty">'+t.labels.hits_empty.replace(/\$\{query}/,e.query)+"</div>"},cssClasses:{item:"reimu-hit-item"}}),instantsearch.widgets.stats({container:"#reimu-stats",templates:{text:e=>t.labels.hits_stats.replace(/\$\{hits}/,e.nbHits).replace(/\$\{time}/,e.processingTimeMS)+'<span class="reimu-powered">  <img src="'+ALGOLIA_CONFIG.logo+'" alt="Algolia" /></span><hr />'}}),instantsearch.widgets.pagination({container:"#reimu-pagination",scrollTo:!1,showFirst:!1,showLast:!1,cssClasses:{list:"pagination",item:"pagination-item",link:"page-number",selectedItem:"current",disabledItem:"disabled-item"}})].forEach(i.addWidget,i),i.start(),_$(".popup-trigger")?.off("click").on("click",e=>{e.stopPropagation();let s=window.innerWidth-document.documentElement.offsetWidth;_$("#container").style.marginRight=s+"px",_$("#header-nav").style.marginRight=s+"px",_$(".popup").classList.add("show"),_$("#mask").classList.remove("hide"),document.body.style.overflow="hidden",_$("#reimu-search-input input").focus()}),_$(".popup-btn-close")?.off("click").on("click",()=>{_$(".popup").classList.remove("show"),_$("#mask").classList.add("hide"),_$("#container").style.marginRight="",_$("#header-nav").style.marginRight="",document.body.style.overflow=""})};document.readyState!=="loading"?l():document.addEventListener("DOMContentLoaded",l);})();
+(() => {
+  // <stdin>
+  var algoliaHandler = () => {
+    const algoliaSettings = ALGOLIA_CONFIG.algolia;
+    const isAlgoliaSettingsValid = algoliaSettings.applicationID && algoliaSettings.apiKey && algoliaSettings.indexName;
+    if (!isAlgoliaSettingsValid) {
+      console.error("Algolia Settings are invalid.");
+      return;
+    }
+    if (!window.instantsearch) {
+      console.error("Algolia InstantSearch is not loaded.");
+      return;
+    }
+    const search = instantsearch({
+      indexName: algoliaSettings.indexName,
+      searchClient: algoliasearch(
+        algoliaSettings.applicationID,
+        algoliaSettings.apiKey
+      ),
+      searchFunction: (helper) => {
+        const inputElem = document.querySelector("#reimu-search-input input");
+        const query = inputElem?.value.trim() || "";
+        if (query) {
+          const lang = document.documentElement.lang.toLowerCase();
+          console.log("[DEBUG] query:", query, "lang:", lang);
+          helper.setQuery(query);
+          helper.clearRefinements();
+          helper.addFacetRefinement("lang", lang);
+          helper.search();
+        }
+      }
+    });
+    search.addWidgets([
+      instantsearch.widgets.configure({
+        facets: ["lang"]
+        // 🔥 关键配置
+      })
+    ]);
+    [
+      instantsearch.widgets.configure({
+        hitsPerPage: algoliaSettings.hits.per_page || 10
+      }),
+      instantsearch.widgets.searchBox({
+        container: "#reimu-search-input",
+        placeholder: algoliaSettings.labels.input_placeholder,
+        showReset: false,
+        showSubmit: false,
+        showLoadingIndicator: false
+      }),
+      instantsearch.widgets.hits({
+        container: "#reimu-hits",
+        templates: {
+          item: (data) => {
+            return '<a href="' + data.permalink + '" class="reimu-hit-item-link">' + data._highlightResult.title.value + "</a>";
+          },
+          empty: (data) => {
+            return '<div id="reimu-hits-empty">' + algoliaSettings.labels.hits_empty.replace(
+              /\$\{query}/,
+              data.query
+            ) + "</div>";
+          }
+        },
+        cssClasses: {
+          item: "reimu-hit-item"
+        }
+      }),
+      instantsearch.widgets.stats({
+        container: "#reimu-stats",
+        templates: {
+          text: (data) => {
+            const stats = algoliaSettings.labels.hits_stats.replace(/\$\{hits}/, data.nbHits).replace(/\$\{time}/, data.processingTimeMS);
+            return stats + '<span class="reimu-powered">  <img src="' + ALGOLIA_CONFIG.logo + '" alt="Algolia" /></span><hr />';
+          }
+        }
+      }),
+      instantsearch.widgets.pagination({
+        container: "#reimu-pagination",
+        scrollTo: false,
+        showFirst: false,
+        showLast: false,
+        cssClasses: {
+          list: "pagination",
+          item: "pagination-item",
+          link: "page-number",
+          selectedItem: "current",
+          disabledItem: "disabled-item"
+        }
+      })
+    ].forEach(search.addWidget, search);
+    search.start();
+    _$(".popup-trigger")?.off("click").on("click", (event) => {
+      event.stopPropagation();
+      const scrollWidth = window.innerWidth - document.documentElement.offsetWidth;
+      _$("#container").style.marginRight = scrollWidth + "px";
+      _$("#header-nav").style.marginRight = scrollWidth + "px";
+      _$(".popup").classList.add("show");
+      _$("#mask").classList.remove("hide");
+      document.body.style.overflow = "hidden";
+      _$("#reimu-search-input input").focus();
+    });
+    _$(".popup-btn-close")?.off("click").on("click", () => {
+      _$(".popup").classList.remove("show");
+      _$("#mask").classList.add("hide");
+      _$("#container").style.marginRight = "";
+      _$("#header-nav").style.marginRight = "";
+      document.body.style.overflow = "";
+    });
+  };
+  if (document.readyState !== "loading") {
+    algoliaHandler();
+  } else {
+    document.addEventListener("DOMContentLoaded", algoliaHandler);
+  }
+})();

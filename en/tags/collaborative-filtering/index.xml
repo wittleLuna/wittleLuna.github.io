@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Collaborative Filtering on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/collaborative-filtering/</link>
+    <link>http://localhost:1313/en/tags/collaborative-filtering/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/collaborative-filtering/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/collaborative-filtering/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Algorithm]Collaborative Filtering</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://localhost:1313/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://localhost:1313/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
       <description>
         <![CDATA[<h1>[Algorithm]Collaborative Filtering</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -96,7 +96,7 @@
 </ul>
 <p>📌 <strong>一句话总结</strong></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Algorithm</category>

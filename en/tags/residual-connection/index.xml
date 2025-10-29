@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Residual Connection on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/residual-connection/</link>
+    <link>http://localhost:1313/en/tags/residual-connection/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/residual-connection/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/residual-connection/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Deep Learning]Residual Connection</title>
-      <link>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <link>http://localhost:1313/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>http://localhost:1313/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
       <description>
         <![CDATA[<h1>[Deep Learning]Residual Connection</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -84,7 +84,7 @@
 ✅ 一句话总结
 </h2><p><strong>残差连接就是在网络里给输入开一条“捷径”，把输入直接加到输出上，帮助训练更深的神经网络。</strong></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Deep Learning</category>

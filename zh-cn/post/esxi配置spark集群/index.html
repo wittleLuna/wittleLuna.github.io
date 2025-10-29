@@ -1,0 +1,1581 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  EXSI配置Spark集群 | wittleLuna
+</title>
+<meta
+  name="description"
+  content="吃饭..."
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"wittleLuna's blog\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"zh-CN\",\"Title\":\"wittleLuna的博客\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false}],\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.css" />
+<meta property="og:type" content="website" />
+  <meta property="og:title" content="EXSI配置Spark集群 | wittleLuna" />
+  <meta
+    property="og:description"
+    content="吃饭..."
+  />
+  <meta property="og:url" content="http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/" />
+  <meta
+    property="og:site_name"
+    content="wittleLuna的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="wittleLuna" />
+  <meta property="article:published_time" content="2025-10-29T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-10-29T17:41:41&#43;08:00" /><meta property="article:tag" content="Spark" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css"
+    integrity="sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy&#43;Ub9QgnxUYJmwOhYCK" crossorigin="anonymous"/><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css"
+    integrity="sha384-4NN3fZ5AokFyHuoihl7A9qWaCt&#43;HsAtOaUsXwJGRb4/SMBtFr2vcNSHR5E8dg0Wk" crossorigin="anonymous"/><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.css"
+    integrity="sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj&#43;vDDLIL&#43;xBGQU/voDBY5XE2lVh" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><img src="/images/preloader.webp" alt="loading" /></div><div class="loading-word">小猫睡觉中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+本文章没有找到对应的语言版本
+</div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/">首页</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/archives">归档</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/about">关于</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+        <a class="main-nav-link" href="/zh-cn/friend">友链</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a></nav><nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items"><li data-value="en"  >English</li><li data-value="zh-cn" class="selected" >简体中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};langMap['en'] = '\/en\/post\/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4\/';selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav></div>
+<header id="header"><picture></picture><img crossorigin="anonymous" fetchpriority="high" src="/images/banner7.webp" alt="EXSI配置Spark集群"><div id="header-outer">
+    <div id="header-title"><a href="/zh-cn/" id="logo">
+            <h1 data-aos="slide-up">EXSI配置Spark集群</h1>
+          </a><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          
+          class="sidebar-right"  ><aside id="sidebar"><meting-js
+      theme="var(--color-link)"
+      id="2344726429"server="netease"type="playlist"volume="20"list-folded="true">
+    </meting-js><div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一安装虚拟机配置网络">一、安装虚拟机，配置网络</a>
+      <ul>
+        <li><a href="#具体步骤易错事项">具体步骤|易错事项</a></li>
+      </ul>
+    </li>
+    <li><a href="#二安装所需文件">二、安装所需文件</a>
+      <ul>
+        <li><a href="#文件清单">文件清单</a></li>
+      </ul>
+    </li>
+    <li><a href="#三克隆master虚拟机作为worker节点部署spark集群">三、克隆Master虚拟机作为Worker节点，部署Spark集群</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">24</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">20</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div>
+
+  <div class="sidebar-widget"></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-10-29</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-10-29</time
+    >
+  </span>
+</div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/zh-cn/categories/linux"
+      data-aos="zoom-in"
+      >LINUX</a
+    ></div>
+</div>
+    <div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="esxi-配置-spark集群">
+<a class="header-anchor" href="#esxi-%e9%85%8d%e7%bd%ae-spark%e9%9b%86%e7%be%a4"></a>
+ESXI 配置 Spark集群
+</h1><h2 id="一安装虚拟机配置网络">
+<a class="header-anchor" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c"></a>
+一、安装虚拟机，配置网络
+</h2><p>在主页面左侧选择虚拟机选项卡，点击虚拟机，此时会自动跳转到虚拟机详情页，在详情页左上角单击点击创建/注册虚拟机。</p>
+<p><img src="https://i.mji.rip/2025/10/29/a2f525740be3a19f38458ad313f9c7ca.png" alt="image"></p>
+<h3 id="具体步骤易错事项">
+<a class="header-anchor" href="#%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e6%98%93%e9%94%99%e4%ba%8b%e9%a1%b9"></a>
+具体步骤|易错事项
+</h3><h4 id="1选择创建类型这里默认第一个即可因为服务器上只有iso镜像文件">
+<a class="header-anchor" href="#1%e9%80%89%e6%8b%a9%e5%88%9b%e5%bb%ba%e7%b1%bb%e5%9e%8b%e8%bf%99%e9%87%8c%e9%bb%98%e8%ae%a4%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8d%b3%e5%8f%af%e5%9b%a0%e4%b8%ba%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e5%8f%aa%e6%9c%89iso%e9%95%9c%e5%83%8f%e6%96%87%e4%bb%b6"></a>
+1.选择创建类型，这里默认第一个即可。因为服务器上只有ISO镜像文件
+</h4><p><img src="https://i.mji.rip/2025/10/29/8d4b7849a2971fdbb991f9e01b4503ef.png" alt="image"></p>
+<h4 id="2设置名称按要求设置即可操作系统系列和版本等根据自身安装需求对应选择">
+<a class="header-anchor" href="#2%e8%ae%be%e7%bd%ae%e5%90%8d%e7%a7%b0%e6%8c%89%e8%a6%81%e6%b1%82%e8%ae%be%e7%bd%ae%e5%8d%b3%e5%8f%af%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%b3%bb%e5%88%97%e5%92%8c%e7%89%88%e6%9c%ac%e7%ad%89%e6%a0%b9%e6%8d%ae%e8%87%aa%e8%ba%ab%e5%ae%89%e8%a3%85%e9%9c%80%e6%b1%82%e5%af%b9%e5%ba%94%e9%80%89%e6%8b%a9"></a>
+2.设置名称，按要求设置即可，操作系统系列和版本等根据自身安装需求对应选择。
+</h4><blockquote>
+<p>例： 服务器上有CentOS7和ubuntu的镜像，可根据个人喜欢选择。就算和后面加载的镜像文件不对应其实也不影响，不会出错</p></blockquote>
+<p><img src="https://i.mji.rip/2025/10/29/0c9f0c3fdcb4ee2254c977f5c68be15c.png" alt="image"></p>
+<h4 id="3选择储存-这里注意选择第二项选择第一项会导致错误而无法新建虚拟机">
+<a class="header-anchor" href="#3%e9%80%89%e6%8b%a9%e5%82%a8%e5%ad%98-%e8%bf%99%e9%87%8c%e6%b3%a8%e6%84%8f%e9%80%89%e6%8b%a9%e7%ac%ac%e4%ba%8c%e9%a1%b9%e9%80%89%e6%8b%a9%e7%ac%ac%e4%b8%80%e9%a1%b9%e4%bc%9a%e5%af%bc%e8%87%b4%e9%94%99%e8%af%af%e8%80%8c%e6%97%a0%e6%b3%95%e6%96%b0%e5%bb%ba%e8%99%9a%e6%8b%9f%e6%9c%ba"></a>
+3.选择储存， 这里注意选择第二项。选择第一项会导致错误而无法新建虚拟机
+</h4><p><img src="https://i.mji.rip/2025/10/29/d9fca4820636ca99a966b8a15f788043.png" alt="image"></p>
+<h4 id="4cpu内存和硬盘根据实际要求选择这里需要注意的关键点有两个网络适配器和cddvd驱动器接下来就这两部分进行详细介绍">
+<a class="header-anchor" href="#4cpu%e5%86%85%e5%ad%98%e5%92%8c%e7%a1%ac%e7%9b%98%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e8%a6%81%e6%b1%82%e9%80%89%e6%8b%a9%e8%bf%99%e9%87%8c%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e5%85%b3%e9%94%ae%e7%82%b9%e6%9c%89%e4%b8%a4%e4%b8%aa%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e5%92%8ccddvd%e9%a9%b1%e5%8a%a8%e5%99%a8%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%b0%b1%e8%bf%99%e4%b8%a4%e9%83%a8%e5%88%86%e8%bf%9b%e8%a1%8c%e8%af%a6%e7%bb%86%e4%bb%8b%e7%bb%8d"></a>
+4.CPU,内存和硬盘根据实际要求选择，这里需要注意的关键点有两个：<strong>网络适配器和CD/DVD驱动器</strong>。接下来就这两部分进行详细介绍
+</h4><p><strong>网络适配器</strong></p>
+<p>为保证虚拟机之间能够正常通信，需要将创建的虚拟机设置在同一个VLAN口。</p>
+<p>详情设置可看到网络部分的vswitcher(虚拟交换机)， 虚拟交换机和VMkernel已提取配置好，可以看到其中Management Network中的VMkernel端口就是服务器的访问地址。这些VLAN口最后连接到物理适配器实现网络互通。</p>
+<p>同理，因为所有服务器都在同一个网段 10.10.10.x, 且服务器之间可以互相通信，所以不同服务器上的虚拟机也是可以互相通信的。</p>
+<p><img src="https://i.mji.rip/2025/10/29/2ec8bab5924baadca19879cb1f7cdff0.jpeg" alt="image"></p>
+<p><strong>CD/DVD驱动器</strong></p>
+<p>我们需要新建多个CD/DVD驱动器，用于安装系统和后续的安装。由于服务器没有网络，我们需要添加新的CD/DVD驱动器，通过IOS镜像挂载的方式把提前下载好的文件挂载到虚拟机，再进行后续的安装操作。</p>
+<p>选择准备好的ISO文件</p>
+<p><img src="https://i.mji.rip/2025/10/29/e072a87914e2c0fd9970dfc464bb0ec7.png" alt="image"></p>
+<p>选择合适系统镜像</p>
+<p><img src="https://i.mji.rip/2025/10/29/6107d4ba163402e5a015ca7ce64c0be0.png" alt="图 配置CPU等"></p>
+<p>关于系统镜像，需要注意的是，这里要选择大的，包括完整系统的镜像，容量小的镜像需要后续进行在线下载。</p>
+<p>关于文件镜像，可用镜像制作软件(如UltraISO) 进行镜像制作，之后进行挂载。</p>
+<p><img src="https://i.mji.rip/2025/10/28/5bbdc20c527f7b28ffb7f8363e86dc5b.png" alt="image"></p>
+<h4 id="5配置确认无误点击完成">
+<a class="header-anchor" href="#5%e9%85%8d%e7%bd%ae%e7%a1%ae%e8%ae%a4%e6%97%a0%e8%af%af%e7%82%b9%e5%87%bb%e5%ae%8c%e6%88%90"></a>
+5.配置确认无误，点击完成
+</h4><p><img src="https://i.mji.rip/2025/10/29/3af56f72e8ee2c83c7593e050ff9e965.png" alt="图 配置确认"></p>
+<h4 id="6打开电源">
+<a class="header-anchor" href="#6%e6%89%93%e5%bc%80%e7%94%b5%e6%ba%90"></a>
+6.打开电源
+</h4><p><img src="https://i.mji.rip/2025/10/29/caa6678b160a94e168e1f2478e0de03b.jpeg" alt="image"></p>
+<h4 id="7安装需要注意的两件事配置网络和用户密码">
+<a class="header-anchor" href="#7%e5%ae%89%e8%a3%85%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e4%b8%a4%e4%bb%b6%e4%ba%8b%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c%e5%92%8c%e7%94%a8%e6%88%b7%e5%af%86%e7%a0%81"></a>
+7.安装需要注意的两件事：配置网络和用户密码。
+</h4><p><strong>配置网络</strong></p>
+<p>可以在这里提前配置好手动地址，或者等安装完成后再通过配置文件修改（这部分后面会写到）</p>
+<p>图 配置手动地址</p>
+<p><strong>用户密码</strong></p>
+<p>根据个人喜欢配置即可，新用户可不用配置，直接使用root用户更方便。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/46831afb1ff72236aeafc971876ca086.png" alt="图 配置用户密码"></p>
+<h4 id="8设置静态ip">
+<a class="header-anchor" href="#8%e8%ae%be%e7%bd%ae%e9%9d%99%e6%80%81ip"></a>
+8.设置静态ip
+</h4><p>进入虚拟机后,通过如下命令修改ifcfg文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/sysconfig/network-scripts/ifcfg-eth193
+</span></span></code></pre></div><blockquote>
+<p>注意：这里eth193是我使用的服务器的网卡，需要自行确认后再进行编辑</p></blockquote>
+<p>需要修改的部分有: IPADDR(因为服务器的网段为10.10.10.x，可根据喜欢自行设置), NETMASK, ONBOOT（需要设置为yes）, BOOTPROTO（需要设置为static）。
+不需要写网关（GATEWAY）, 因为都在同一网段，可直接ping通。</p>
+<blockquote>
+<p>vi 使用： 进入编辑器后按<code>a</code>进入编辑，编辑完成后按<code>ESC</code>返回主页面，之后按<code>:</code>, 再按下<code>wq</code>，回车。进行保存和退出</p></blockquote>
+<p><img src="https://ask.qcloudimg.com/raw/yehe-b343ae46ed357/nyszqtsj68.png" alt="image"></p>
+<p>修改完成并退出后，通过ip addr 命令查看自己刚刚修改的静态端口,如果能看到，并ping另一台虚拟机/另一台服务器上的虚拟机正常，就可以进行下一步的操作了。</p>
+<p><img src="https://i.mji.rip/2025/10/29/e7bcdda704df9ce570be17c37c00aff9.jpeg" alt="image"></p>
+<h2 id="二安装所需文件">
+<a class="header-anchor" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e6%89%80%e9%9c%80%e6%96%87%e4%bb%b6"></a>
+二、安装所需文件
+</h2><h3 id="文件清单">
+<a class="header-anchor" href="#%e6%96%87%e4%bb%b6%e6%b8%85%e5%8d%95"></a>
+文件清单
+</h3><p>文件可命名为<code>spark-offline-package</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">spark-offline-package
+</span></span><span class="line"><span class="cl"> ├── spark/             <span class="o">(</span>Spark安装文件<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ├── jdk/               <span class="o">(</span>Java JDK<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ├── python/            <span class="o">(</span>Python及依赖库<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> ├── data/              <span class="o">(</span>股票数据集<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> └── scripts/           <span class="o">(</span>部署脚本<span class="o">)</span>
+</span></span></code></pre></div><h4 id="1镜像挂载">
+<a class="header-anchor" href="#1%e9%95%9c%e5%83%8f%e6%8c%82%e8%bd%bd"></a>
+1.镜像挂载
+</h4><p>使用lsblk命令查看是否挂载成功，如图sr0为挂载的镜像文件， sr1为挂载的文件包。</p>
+<p>图 查看挂载</p>
+<p>使用下面命令把镜像文件挂载到本地</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /mnt/cdrom <span class="c1"># 新建挂载目录</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mount /dev/sr1 /mnt/cdrom <span class="c1"># 挂载到指定目录</span>
+</span></span></code></pre></div><p>挂载完成后，会提示read-only,这是对镜像的写入保护，不影响后续操作。完成后便可进行各种软件的安装。
+<img src="https://i.mji.rip/2025/10/28/34ea5175569dc0f7e74d6c1fe453657e.png" alt="image"></p>
+<h4 id="2安装jdk">
+<a class="header-anchor" href="#2%e5%ae%89%e8%a3%85jdk"></a>
+2.安装JDK
+</h4><p>这里我选用的是<code>openjdk-11+28_linux-x64_bin.tar.gz</code>。使用以下命令解压JDK包</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /opt/jdk <span class="c1">#新建jdk安装目录</span>
+</span></span><span class="line"><span class="cl">tar -xzf /mnt/cdrom/jdk/openjdk-11+28_linux-x64_bin.tar.gz -C /opt/jdk
+</span></span></code></pre></div><p>编写<code>java.sh</code>脚本设置JAVA路径,并验证是否安装成功</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo tee /etc/profile.d/java.sh &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">export JAVA_HOME=/opt/jdk/current
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=&#34;$JAVA_HOME/bin:$PATH&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 立刻加载，并验证</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span><span class="line"><span class="cl"><span class="nb">printf</span> <span class="s1">&#39;PATH=%q\n&#39;</span> <span class="s2">&#34;</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">command</span> -v java
+</span></span><span class="line"><span class="cl">java -version
+</span></span></code></pre></div><p>安装完成如图</p>
+<p><img src="https://i.mji.rip/2025/10/28/9e49e9d74d05adfd7077d934d43446b3.png" alt="image"></p>
+<blockquote>
+<p>如果有问题，可验证绝对路径下java是否存在。如果绝对路径下存在，说明JAVA安装好了，但是路径设置有问题。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l /opt/jdk/current/bin/java <span class="o">||</span> <span class="nb">echo</span> <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">/opt/jdk/current/bin/java -version || echo &#34;</span>
+</span></span></code></pre></div></blockquote>
+<h4 id="安装spark">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85spark"></a>
+安装Spark
+</h4><p>解压安装Spark</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /opt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">tar -xzf /mnt/cdrom/spark/spark-3.5.6-bin-hadoop3.tgz -C /opt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ln -sfn /opt/spark-3.5.6-bin-hadoop3 /opt/spark
+</span></span></code></pre></div><p>编写<code>spark.sh</code>脚本设置Spark路径,并验证是否安装成功</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo tee /etc/profile.d/spark.sh &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">export SPARK_HOME=/opt/spark
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=&#34;$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><p>确认Spark路径配置正确</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="s2">&#34;</span><span class="nv">$SPARK_HOME</span><span class="s2">/bin/spark-shell&#34;</span> --version
+</span></span></code></pre></div><p>安装完成如图
+<img src="https://i.mji.rip/2025/10/28/f18d1bf108caefc026b18e9b7eb13ccd.png" alt="image"></p>
+<h4 id="安装python">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85python"></a>
+安装Python
+</h4><h5 id="1构建离线依赖">
+<a class="header-anchor" href="#1%e6%9e%84%e5%bb%ba%e7%a6%bb%e7%ba%bf%e4%be%9d%e8%b5%96"></a>
+1.构建离线依赖
+</h5><p>用 CentOS 安装介质当本地仓库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1) 挂载安装介质（注意：这会占用一次光驱，先把 python ISO 卸载）</span>
+</span></span><span class="line"><span class="cl">sudo umount /mnt/cdrom 2&gt;/dev/null <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">sudo mount /dev/sr0 /mnt/cdrom
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2) 建立本地 repo 指向光盘</span>
+</span></span><span class="line"><span class="cl">sudo tee /etc/yum.repos.d/CentOS-Media.repo &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">[c7-media]
+</span></span></span><span class="line"><span class="cl"><span class="s">name=CentOS-$releasever - Media
+</span></span></span><span class="line"><span class="cl"><span class="s">baseurl=file:///mnt/cdrom
+</span></span></span><span class="line"><span class="cl"><span class="s">gpgcheck=0
+</span></span></span><span class="line"><span class="cl"><span class="s">enabled=1
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo yum clean all
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3) 安装编译环境（Development Tools）和常用头文件</span>
+</span></span><span class="line"><span class="cl">sudo yum --disablerepo<span class="o">=</span><span class="s2">&#34;*&#34;</span> --enablerepo<span class="o">=</span><span class="s2">&#34;c7-media&#34;</span> -y groupinstall <span class="s2">&#34;Development Tools&#34;</span>
+</span></span><span class="line"><span class="cl">sudo yum --disablerepo<span class="o">=</span><span class="s2">&#34;*&#34;</span> --enablerepo<span class="o">=</span><span class="s2">&#34;c7-media&#34;</span> -y install <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  zlib-devel bzip2-devel xz-devel libffi-devel sqlite-devel <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  readline-devel ncurses-devel tk-devel uuid-devel openssl-devel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 4) 验证 gcc 已就绪</span>
+</span></span><span class="line"><span class="cl">gcc --version
+</span></span><span class="line"><span class="cl">make --version
+</span></span></code></pre></div><h4 id="安装python-1">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85python-1"></a>
+安装Python
+</h4><p>正确的依赖文件已经放在ISO中，直接安装就行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1) 解压源码（路径按你的 ISO 实际为准）</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /usr/src
+</span></span><span class="line"><span class="cl">sudo tar -xzf /mnt/cdrom/python-3.11.4.tgz
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> Python-3.11.4
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2) 配置与编译安装到 /opt/py311</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 说明：--enable-shared + rpath 便于后续使用；无 OpenSSL 1.1.1 时 ssl 模块会被跳过</span>
+</span></span><span class="line"><span class="cl">sudo ./configure --prefix<span class="o">=</span>/opt/py311 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --enable-optimizations --with-lto --enable-shared <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&#34;-Wl,-rpath=/opt/py311/lib&#34;</span>
+</span></span><span class="line"><span class="cl">sudo make -j<span class="s2">&#34;</span><span class="k">$(</span>nproc<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3) 验证</span>
+</span></span><span class="line"><span class="cl">/opt/py311/bin/python3.11 -V
+</span></span><span class="line"><span class="cl">/opt/py311/bin/pip3.11 --version
+</span></span><span class="line"><span class="cl">/opt/py311/bin/python3.11 -c <span class="s2">&#34;import sys; print(&#39;ssl ok?&#39;, end=&#39; &#39;); import ssl; print(True)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 若这里报错，说明没有 ssl 模块（预期现象）</span>
+</span></span></code></pre></div><p>安装完成如图
+<img src="https://i.mji.rip/2025/10/29/f106e1e140d78b3681ce6070ecfd3019.png" alt="image"></p>
+<h4 id="安装所需的库">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85%e6%89%80%e9%9c%80%e7%9a%84%e5%ba%93"></a>
+安装所需的库
+</h4><p>numpy, pandas, matplotlib及其依赖</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 用 Python 3.11 的 pip，只从本地目录找</span>
+</span></span><span class="line"><span class="cl">python3.11 -m pip install --no-index --find-links<span class="o">=</span>/mnt/cdrom <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="nv">six</span><span class="o">==</span>1.16.0 <span class="nv">packaging</span><span class="o">==</span>24.1 <span class="nv">pyparsing</span><span class="o">==</span>3.1.4 python-dateutil<span class="o">==</span>2.9.0.post0 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="nv">cycler</span><span class="o">==</span>0.12.1 <span class="nv">fonttools</span><span class="o">==</span>4.53.1 <span class="nv">tzdata</span><span class="o">==</span>2024.1 <span class="nv">pytz</span><span class="o">==</span>2024.1 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="nv">kiwisolver</span><span class="o">==</span>1.4.7 <span class="nv">pillow</span><span class="o">==</span>10.4.0 <span class="nv">contourpy</span><span class="o">==</span>1.2.1 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="nv">numpy</span><span class="o">==</span>2.1.1 <span class="nv">pandas</span><span class="o">==</span>2.1.0 <span class="nv">matplotlib</span><span class="o">==</span>3.8.4
+</span></span></code></pre></div><p>安装完成如图</p>
+<p><img src="https://i.mji.rip/2025/10/29/fbc45dd4caa024edb6edb1d9fee450d5.png" alt="image"></p>
+<h4 id="安装pyspark">
+<a class="header-anchor" href="#%e5%ae%89%e8%a3%85pyspark"></a>
+安装PySpark
+</h4><p>正确的依赖文件已经放在ISO中，直接安装就行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 用 Python 3.11 的 pip</span>
+</span></span><span class="line"><span class="cl">python3.11 -m pip install --no-index --find-links<span class="o">=</span>/mnt/cdrom <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  setuptools-*.whl wheel-*.whl
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装 py4j（优先 whl；若只有 tar.gz 也可以）</span>
+</span></span><span class="line"><span class="cl">python3.11 -m pip install --no-index --find-links<span class="o">=</span>/mnt/cdrom <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --no-build-isolation /mnt/cdrom/py4j-0.10.9.7.tar.gz
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装PySpark</span>
+</span></span><span class="line"><span class="cl">python3.11 -m pip install --no-index --find-links<span class="o">=</span>/mnt/cdrom <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --no-build-isolation /mnt/cdrom/pyspark-3.5.6.tar.gz
+</span></span></code></pre></div><p>验证是否安装正确</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">unset</span> SPARK_HOME                      <span class="c1"># 避免不小心用到 /opt/spark</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PYSPARK_PYTHON</span><span class="o">=</span>/opt/py311/bin/python3.11
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">python3.11 - <span class="s">&lt;&lt;&#39;PY&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">import pyspark
+</span></span></span><span class="line"><span class="cl"><span class="s">from pyspark.sql import SparkSession
+</span></span></span><span class="line"><span class="cl"><span class="s">print(&#34;pyspark:&#34;, pyspark.__version__)
+</span></span></span><span class="line"><span class="cl"><span class="s">spark = SparkSession.builder.master(&#34;local[*]&#34;).appName(&#34;check&#34;).getOrCreate()
+</span></span></span><span class="line"><span class="cl"><span class="s">print(&#34;spark core version (local):&#34;, spark.version)
+</span></span></span><span class="line"><span class="cl"><span class="s">spark.range(5).show()
+</span></span></span><span class="line"><span class="cl"><span class="s">spark.stop()
+</span></span></span><span class="line"><span class="cl"><span class="s">PY</span>
+</span></span></code></pre></div><h2 id="三克隆master虚拟机作为worker节点部署spark集群">
+<a class="header-anchor" href="#%e4%b8%89%e5%85%8b%e9%9a%86master%e8%99%9a%e6%8b%9f%e6%9c%ba%e4%bd%9c%e4%b8%baworker%e8%8a%82%e7%82%b9%e9%83%a8%e7%bd%b2spark%e9%9b%86%e7%be%a4"></a>
+三、克隆Master虚拟机作为Worker节点，部署Spark集群
+</h2><blockquote>
+<p>温馨提示，关于虚拟机内大小写切换：连续按两下<code>shift</code>+<code>Caps Locks</code>切换大小写</p></blockquote>
+<p>克隆前，最后一次确认并写好Spark配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 1) 确认关键环境都OK</span>
+</span></span><span class="line"><span class="cl">java -version
+</span></span><span class="line"><span class="cl">/opt/spark/bin/spark-shell --version <span class="o">||</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">python3.11 - <span class="s">&lt;&lt;&#39;PY&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">import pyspark, numpy, pandas, matplotlib
+</span></span></span><span class="line"><span class="cl"><span class="s">print(&#34;pyspark&#34;, pyspark.__version__)
+</span></span></span><span class="line"><span class="cl"><span class="s">print(&#34;numpy&#34;, numpy.__version__, &#34;pandas&#34;, pandas.__version__, &#34;matplotlib&#34;, matplotlib.__version__)
+</span></span></span><span class="line"><span class="cl"><span class="s">PY</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2) Spark 环境固定（Master/Worker 通用骨架）</span>
+</span></span><span class="line"><span class="cl">sudo tee /opt/spark/conf/spark-env.sh &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">JAVA_HOME=/opt/jdk/current
+</span></span></span><span class="line"><span class="cl"><span class="s">PYSPARK_PYTHON=/opt/py311/bin/python3.11
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_MASTER_PORT=7077
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_MASTER_WEBUI_PORT=8080
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_WORKER_CORES=2
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_WORKER_MEMORY=4g
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_WORKER_PORT=7078
+</span></span></span><span class="line"><span class="cl"><span class="s">SPARK_WORKER_WEBUI_PORT=8081
+</span></span></span><span class="line"><span class="cl"><span class="s"># Master 克隆出来后再填：SPARK_MASTER_HOST=&lt;master-ip-or-hostname&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 留空 workers（Master 克隆出来后再填）</span>
+</span></span><span class="line"><span class="cl">sudo bash -c <span class="s1">&#39;echo -n &gt; /opt/spark/conf/workers&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3) 克隆清理（避免ID/SSH冲突）</span>
+</span></span><span class="line"><span class="cl">sudo truncate -s <span class="m">0</span> /etc/machine-id
+</span></span><span class="line"><span class="cl">sudo rm -f /var/lib/dbus/machine-id
+</span></span><span class="line"><span class="cl">sudo ln -s /etc/machine-id /var/lib/dbus/machine-id
+</span></span><span class="line"><span class="cl">sudo rm -f /etc/ssh/ssh_host_*key /etc/ssh/ssh_host_*key.pub
+</span></span></code></pre></div><h5 id="克隆">
+<a class="header-anchor" href="#%e5%85%8b%e9%9a%86"></a>
+克隆
+</h5><p>使用vSphere可直接将镜像克隆到指定虚拟机</p>
+<p>首先要将其放置到指定位置
+<img src="https://i.mji.rip/2025/10/29/4b672a45a9f428069cdee51e090fa823.png" alt="image"></p>
+<p>之后选择你要克隆到的虚拟机
+<img src="https://i.mji.rip/2025/10/29/60f27f7a79e994de027b9374288c85b5.png" alt="image"></p>
+<p>选择好指定的位置，确认即可
+<img src="https://i.mji.rip/2025/10/29/d7d64171fb12db9c40056e1d7bebaa04.png" alt="image">
+<img src="https://i.mji.rip/2025/10/29/d6f87285a46d3fef03734085ee94a727.png" alt="image"></p>
+<p>节点克隆完整，接下来需要进行调整静态IP等操作</p>
+<p><img src="https://i.mji.rip/2025/10/29/794991b870c7883c26e1a272d2d3900b.jpeg" alt="image"></p>
+<h5 id="配置节点">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e8%8a%82%e7%82%b9"></a>
+配置节点
+</h5><h6 id="每台节点做节点化操作">
+<a class="header-anchor" href="#%e6%af%8f%e5%8f%b0%e8%8a%82%e7%82%b9%e5%81%9a%e8%8a%82%e7%82%b9%e5%8c%96%e6%93%8d%e4%bd%9c"></a>
+每台节点做节点化操作
+</h6><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 主机名（举例：这台是 spark-worker3）</span>
+</span></span><span class="line"><span class="cl">sudo hostnamectl set-hostname spark-worker3
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /etc/hosts 填全集群清单（按你实际IP改）</span>
+</span></span><span class="line"><span class="cl">sudo tee -a /etc/hosts &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s"># Spark Cluster Nodes
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.101 spark-master
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.102 spark-worker1
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.103 spark-worker2
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.104 spark-worker3
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.105 spark-worker4
+</span></span></span><span class="line"><span class="cl"><span class="s">10.10.10.106 spark-worker5
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重新生成 SSH 主机密钥</span>
+</span></span><span class="line"><span class="cl">sudo dpkg-reconfigure openssh-server &gt;/dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> sudo systemctl restart sshd <span class="o">||</span> sudo systemctl restart ssh
+</span></span></code></pre></div><h5 id="配置所有worker节点的静态ip地址">
+<a class="header-anchor" href="#%e9%85%8d%e7%bd%ae%e6%89%80%e6%9c%89worker%e8%8a%82%e7%82%b9%e7%9a%84%e9%9d%99%e6%80%81ip%e5%9c%b0%e5%9d%80"></a>
+配置所有worker节点的静态IP地址
+</h5><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo tee /etc/sysconfig/network-scripts/ifcfg-ens192 &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">TYPE=Ethernet
+</span></span></span><span class="line"><span class="cl"><span class="s">BOOTPROTO=none
+</span></span></span><span class="line"><span class="cl"><span class="s">NAME=ens192
+</span></span></span><span class="line"><span class="cl"><span class="s">DEVICE=ens192
+</span></span></span><span class="line"><span class="cl"><span class="s">ONBOOT=yes
+</span></span></span><span class="line"><span class="cl"><span class="s">IPADDR=10.10.10.104
+</span></span></span><span class="line"><span class="cl"><span class="s">PREFIX=24
+</span></span></span><span class="line"><span class="cl"><span class="s">GATEWAY=10.10.10.1
+</span></span></span><span class="line"><span class="cl"><span class="s">DNS1=10.10.10.1
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart network
+</span></span></code></pre></div><h5 id="在master节点生成并向worker节点分发密钥开启端口">
+<a class="header-anchor" href="#%e5%9c%a8master%e8%8a%82%e7%82%b9%e7%94%9f%e6%88%90%e5%b9%b6%e5%90%91worker%e8%8a%82%e7%82%b9%e5%88%86%e5%8f%91%e5%af%86%e9%92%a5%e5%bc%80%e5%90%af%e7%ab%af%e5%8f%a3"></a>
+在Master节点生成并向worker节点分发密钥,开启端口
+</h5><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 指定 Master 可达地址</span>
+</span></span><span class="line"><span class="cl">sudo sed -i <span class="s1">&#39;1i SPARK_MASTER_HOST=spark-master&#39;</span> /opt/spark/conf/spark-env.sh
+</span></span><span class="line"><span class="cl"><span class="c1"># 写入 workers 列表</span>
+</span></span><span class="line"><span class="cl">sudo tee /opt/spark/conf/workers &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">spark-worker1
+</span></span></span><span class="line"><span class="cl"><span class="s">spark-worker2
+</span></span></span><span class="line"><span class="cl"><span class="s">spark-worker3
+</span></span></span><span class="line"><span class="cl"><span class="s">spark-worker4
+</span></span></span><span class="line"><span class="cl"><span class="s">spark-worker5
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成 SSH 密钥并分发（用于 start-all.sh 免密）</span>
+</span></span><span class="line"><span class="cl">ssh-keygen -t ed25519 -N <span class="s1">&#39;&#39;</span> -f ~/.ssh/id_ed25519
+</span></span><span class="line"><span class="cl"><span class="k">for</span> h in spark-worker1 spark-worker2 spark-worker3 spark-worker4 spark-worker5<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  ssh-copy-id -i ~/.ssh/id_ed25519.pub root@<span class="nv">$h</span> <span class="o">||</span> ssh-copy-id -i ~/.ssh/id_ed25519.pub &lt;你的用户名&gt;@<span class="nv">$h</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动 Master（可启用 systemd 自启）</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now spark-master
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者：/opt/spark/sbin/start-master.sh</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打开防火墙端口</span>
+</span></span><span class="line"><span class="cl">firewall-cmd --add-port<span class="o">=</span>7077/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --add-port<span class="o">=</span>8080/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --add-port<span class="o">=</span>7078/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --add-port<span class="o">=</span>8081/tcp --permanent
+</span></span><span class="line"><span class="cl">firewall-cmd --reload
+</span></span></code></pre></div><h5 id="设置spark服务配置文件">
+<a class="header-anchor" href="#%e8%ae%be%e7%bd%aespark%e6%9c%8d%e5%8a%a1%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6"></a>
+设置Spark服务配置文件
+</h5><p>Master节点</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># spark-env.sh</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;1i SPARK_MASTER_HOST=10.10.10.101&#39;</span> /opt/spark/conf/spark-env.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 直启主类的 unit（已避免脚本问题）</span>
+</span></span><span class="line"><span class="cl">cat &gt;/etc/systemd/system/spark-master.service <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s">Description=Apache Spark Master
+</span></span></span><span class="line"><span class="cl"><span class="s">After=network-online.target
+</span></span></span><span class="line"><span class="cl"><span class="s">Wants=network-online.target
+</span></span></span><span class="line"><span class="cl"><span class="s">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s">Type=simple
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=JAVA_HOME=/opt/jdk/current
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=SPARK_HOME=/opt/spark
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=SPARK_NO_DAEMONIZE=1
+</span></span></span><span class="line"><span class="cl"><span class="s">WorkingDirectory=/opt/spark
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecStart=/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --port 7077 --webui-port 8080
+</span></span></span><span class="line"><span class="cl"><span class="s">Restart=on-failure
+</span></span></span><span class="line"><span class="cl"><span class="s">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s">WantedBy=multi-user.target
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> --now spark-master
+</span></span><span class="line"><span class="cl">journalctl -u spark-master -n <span class="m">50</span> --no-pager
+</span></span></code></pre></div><p>Worker节点</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 2.1 建议固定主机名（例：这台是 worker3）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sudo hostnamectl set-hostname spark-worker3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.2 写 Worker 的 systemd 服务（直启主类）</span>
+</span></span><span class="line"><span class="cl">sudo tee /etc/systemd/system/spark-worker.service &gt;/dev/null <span class="s">&lt;&lt;&#39;EOF&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s">Description=Apache Spark Worker
+</span></span></span><span class="line"><span class="cl"><span class="s">After=network-online.target
+</span></span></span><span class="line"><span class="cl"><span class="s">Wants=network-online.target
+</span></span></span><span class="line"><span class="cl"><span class="s">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s">Type=simple
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=JAVA_HOME=/opt/jdk/current
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=SPARK_HOME=/opt/spark
+</span></span></span><span class="line"><span class="cl"><span class="s">Environment=SPARK_NO_DAEMONIZE=1
+</span></span></span><span class="line"><span class="cl"><span class="s">WorkingDirectory=/opt/spark
+</span></span></span><span class="line"><span class="cl"><span class="s"># 如需自定义端口/资源，在此行后追加 --cores/--memory/--port/--webui-port
+</span></span></span><span class="line"><span class="cl"><span class="s">ExecStart=/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker \
+</span></span></span><span class="line"><span class="cl"><span class="s">  spark://spark-master:7077 --port 7078 --webui-port 8081
+</span></span></span><span class="line"><span class="cl"><span class="s">Restart=on-failure
+</span></span></span><span class="line"><span class="cl"><span class="s">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s">WantedBy=multi-user.target
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> --now spark-worker
+</span></span><span class="line"><span class="cl">systemctl status spark-worker --no-pager
+</span></span></code></pre></div><blockquote>
+<p>注意这里<code>spark://spark-master:7077</code>部分的<code>spark-master</code>要改为你的master节点</p></blockquote>
+<p>不能直接通过浏览器访问，但可通过虚拟机中的浏览器进行查看，配置完成结果如图</p>
+<p><img src="https://i.mji.rip/2025/10/29/3631891563320cef29d5082297233229.png" alt="image"></p>
+</div>
+    <footer class="article-footer"><div class="share-wrapper"><a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-facebook"></div>
+    </a><a href="https://twitter.com/intent/tweet?url=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/&amp;text=EXSI%e9%85%8d%e7%bd%aeSpark%e9%9b%86%e7%be%a4&amp;via=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-twitter"></div>
+    </a><a href="https://www.linkedin.com/shareArticle?url=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/&amp;title=EXSI%e9%85%8d%e7%bd%aeSpark%e9%9b%86%e7%be%a4&amp;summary=%20ESXI%20%e9%85%8d%e7%bd%ae%20Spark%e9%9b%86%e7%be%a4%20%e4%b8%80%e3%80%81%e5%ae%89%e8%a3%85%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c%20%e5%9c%a8%e4%b8%bb%e9%a1%b5%e9%9d%a2%e5%b7%a6%e4%be%a7%e9%80%89%e6%8b%a9%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%80%89%e9%a1%b9%e5%8d%a1%ef%bc%8c%e7%82%b9%e5%87%bb%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%bc%9a%e8%87%aa%e5%8a%a8%e8%b7%b3%e8%bd%ac%e5%88%b0%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%af%a6%e6%83%85%e9%a1%b5%ef%bc%8c%e5%9c%a8%e8%af%a6%e6%83%85%e9%a1%b5%e5%b7%a6%e4%b8%8a%e8%a7%92%e5%8d%95%e5%87%bb%e7%82%b9%e5%87%bb%e5%88%9b%e5%bb%ba/%e6%b3%a8%e5%86%8c%e8%99%9a%e6%8b%9f%e6%9c%ba%e3%80%82%0a&amp;mini=true&amp;ro=true" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-linkedin"></div>
+    </a><a href="https://www.reddit.com/submit?url=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/&amp;title=EXSI%e9%85%8d%e7%bd%aeSpark%e9%9b%86%e7%be%a4" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-reddit"></div>
+    </a><a href="https://service.weibo.com/share/share.php?url=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/&amp;appkey=&amp;title=EXSI%e9%85%8d%e7%bd%aeSpark%e9%9b%86%e7%be%a4&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-weibo"></div>
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/&amp;title=EXSI%e9%85%8d%e7%bd%aeSpark%e9%9b%86%e7%be%a4&amp;desc=%20ESXI%20%e9%85%8d%e7%bd%ae%20Spark%e9%9b%86%e7%be%a4%20%e4%b8%80%e3%80%81%e5%ae%89%e8%a3%85%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%8c%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c%20%e5%9c%a8%e4%b8%bb%e9%a1%b5%e9%9d%a2%e5%b7%a6%e4%be%a7%e9%80%89%e6%8b%a9%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%80%89%e9%a1%b9%e5%8d%a1%ef%bc%8c%e7%82%b9%e5%87%bb%e8%99%9a%e6%8b%9f%e6%9c%ba%ef%bc%8c%e6%ad%a4%e6%97%b6%e4%bc%9a%e8%87%aa%e5%8a%a8%e8%b7%b3%e8%bd%ac%e5%88%b0%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%af%a6%e6%83%85%e9%a1%b5%ef%bc%8c%e5%9c%a8%e8%af%a6%e6%83%85%e9%a1%b5%e5%b7%a6%e4%b8%8a%e8%a7%92%e5%8d%95%e5%87%bb%e7%82%b9%e5%87%bb%e5%88%9b%e5%bb%ba/%e6%b3%a8%e5%86%8c%e8%99%9a%e6%8b%9f%e6%9c%ba%e3%80%82%0a&amp;source=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-qq"></div>
+    </a><a href="javascript:;"  title="EXSI配置Spark集群">
+      <div class="share-icon icon icon-weixin"><div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div></div>
+    </a></div><a
+          data-aos="zoom-in"
+          href="/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/#comments"
+          class="article-comment-link"
+        >
+          <span
+            class="post-comments-count waline-comment-count"
+            data-path="http//localhost1313/zh-cn/post/esxi%e9%85%8d%e7%bd%aespark%e9%9b%86%e7%be%a4/"
+            itemprop="commentCount"
+          ></span>
+          留言
+        </a><span
+          data-aos="zoom-in"
+          class="article-visitor-link"
+        >
+          <span
+            class="waline-pageview-count"
+            data-path="/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/"
+            >0</span
+          >
+          <em class="post-meta-item-text">阅读量</em>
+        </span><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/zh-cn/tags/spark"
+        rel="tag"
+        >SPARK</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap article-nav-link-left"><img
+              data-src="https://i.mji.rip/2025/10/25/9e987f83fb2e0ab6a65d0535d59a346d.jpeg"
+              data-sizes="auto"
+              alt="从零开始，入坑编程比赛"
+              class="lazyload"
+            /><a href="/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">从零开始，入坑编程比赛</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="waline">
+          <span>waline</span>
+        </div></div>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment waline-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2025<span class="footer-info-sep "></span>
+      wittleLuna
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;117.6k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;04:05</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi "></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一安装虚拟机配置网络">一、安装虚拟机，配置网络</a>
+      <ul>
+        <li><a href="#具体步骤易错事项">具体步骤|易错事项</a></li>
+      </ul>
+    </li>
+    <li><a href="#二安装所需文件">二、安装所需文件</a>
+      <ul>
+        <li><a href="#文件清单">文件清单</a></li>
+      </ul>
+    </li>
+    <li><a href="#三克隆master虚拟机作为worker节点部署spark集群">三、克隆Master虚拟机作为Worker节点，部署Spark集群</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="wittleLuna"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">wittleLuna</div>
+  <div class="sidebar-description">吃饭...</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">24</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      9
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">20</div>
+  </div>
+</div>
+<div class="sidebar-social"><div class="icon-email sidebar-social-icon">
+      <a
+        href="mailto:syaz23277@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/wittleLuna"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div><div class="icon-steam sidebar-social-icon">
+      <a
+        href="https://steamcommunity.com/profiles/76561198322403263/"
+        itemprop="url"
+        target="_blank"
+        aria-label="steam"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="home icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="archives icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/milk.png" alt="about icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">关于</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/zh-cn/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '><img src="/avatar/orange.png" alt="friend icon" class="" style="height: 1em;"></div>
+      <div class="sidebar-menu-link">友链</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js"
+    integrity="sha384-vLev0II0HKFaxkcm&#43;/7kX5IGwVFBASkGchU311wmU/veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script><script src="/js/main.js" ></script><script src="/js/aos.js" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" data-pjax></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "JCQ52NHG79",
+        apiKey: "762929a52278c0879d86698a0f0de60f",
+        indexName: "blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    deferintegrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    deferintegrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"></script><script src="/js/algolia_search.js" ></script><script
+    src="https://npm.webcache.cn/mouse-firework@0.1.1/dist/index.umd.js"
+    integrity="sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d" crossorigin="anonymous"></script><script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script><script
+    src="https://npm.webcache.cn/theme-shokax-pjax@0.0.3/dist/index.umd.js"
+    integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD&#43;jAPU55x/jj3wlf" crossorigin="anonymous"></script><script>
+    function loadScripts(scripts, index) {
+      if (index < scripts.length) {
+        const script = scripts[index];
+        const src = script.getAttribute('src');
+
+        const loadScript = (scriptContent) => {
+          return new Promise((resolve, reject) => {
+            const scriptElement = document.createElement('script');
+            if (script.type) {
+              scriptElement.type = script.type;
+            }
+            if (script.src) {
+              scriptElement.src = script.src;
+              if (script.integrity) {
+                scriptElement.integrity = script.integrity;
+              }
+              if (script.crossOrigin) {
+                scriptElement.crossOrigin = script.crossOrigin;
+              }
+              scriptElement.onload = resolve;
+              scriptElement.onerror = reject;
+            }
+            if (scriptContent) {
+              scriptElement.text = scriptContent;
+            }
+            document.head.appendChild(scriptElement);
+            if (!script.src) {
+              resolve();
+            }
+          })
+          
+        }
+
+        ;(src ? loadScript() : loadScript(script.text))
+          .then(() => loadScripts(scripts, index + 1))
+          .catch(error => {
+            console.error(`Failed to load script: ${src || 'inline script'}`, error);
+            loadScripts(scripts, index + 1);
+          });
+      }
+    }
+    if (window.Pjax) {
+      Pjax.prototype.getElements = function() {
+        const i18nLanguages = window.siteConfig.i18n_languages;
+        const baseUrl = window.siteConfig.base;
+        let basePathname = new URL(baseUrl).pathname;
+        if (!basePathname.endsWith('/')) {
+          basePathname += '/';  
+        }
+        const currentUrl = window.location.href;
+        const currentPathname = new URL(currentUrl).pathname.replace(basePathname, '');
+        const aLinks = document.querySelectorAll('a[href]');
+        const pjaxLinks = [];
+        for(let i = 0; i < aLinks.length; i++) {
+          const aLink = aLinks[i];
+          const aLinkHref = aLink.getAttribute('href');
+          const isExternal = aLink.getAttribute('target') === '_blank' || aLink.getAttribute('rel')?.includes('noopener');
+          if (isExternal || aLinkHref.startsWith('mailto:') || aLinkHref.startsWith('tel:') || aLinkHref.startsWith('javascript:') || aLinkHref.startsWith("data:") || aLinkHref.startsWith("vbscript:")) {
+            continue;
+          }
+          if (!i18nLanguages) {
+            
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const absoluteUrl = new URL(aLinkHref, currentUrl).href;
+          const absolutePathname = new URL(absoluteUrl).pathname.replace(basePathname, '');
+          if (!absolutePathname || !currentPathname) {
+            pjaxLinks.push(aLink);
+            continue;
+          }
+          const currentLangIndex = i18nLanguages.findIndex(lang => currentPathname.startsWith(lang.Lang));
+          if (currentLangIndex > -1) {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === currentLangIndex) {
+              
+              pjaxLinks.push(aLink);
+            }
+          } else {
+            
+            const absoluteLangIndex = i18nLanguages.findIndex(lang => absolutePathname.startsWith(lang.Lang));
+            if (absoluteLangIndex === -1) {
+              
+              pjaxLinks.push(aLink);
+            }
+          }
+        }
+        return pjaxLinks;
+      }
+    }
+    window.Pjax &&
+      new window.Pjax({
+        selectors: [
+          "#header>img",
+          "#header>picture",
+          "head title",
+          "#header-title",
+          "#subtitle-wrap",
+          "#main",
+          "#content",
+          ".sidebar-widget",
+          ".sidebar-wrapper",
+          "#mobile-nav",
+          "#lazy-script",
+          '#i18n-nav'
+        ],
+        switches: {
+          "#content": function(oldEl, newEl) {
+            
+            oldEl.className = newEl.className;
+            this.onSwitch();
+          },
+          "#header-title": Pjax.switches.outerHTML,
+          "#subtitle-wrap": Pjax.switches.outerHTML,
+          "#main": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.outerHTML = newEl.outerHTML;
+            this.onSwitch();
+          },
+          "#mobile-nav": Pjax.switches.outerHTML,
+          "#lazy-script": function (oldEl, newEl) {
+            const scripts = [...newEl.querySelectorAll("script")];
+            loadScripts(scripts, 0);
+            oldEl.innerHTML = newEl.innerHTML;
+            this.onSwitch();
+          },
+        },
+        cacheBust: false,
+      });
+  </script><script src="/js/pjax.js" ></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "wittleLuna",
+          title: "EXSI配置Spark集群",
+          url: "http:\/\/localhost:1313\/zh-cn\/post\/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4\/",
+          description: " ESXI 配置 Spark集群 一、安装虚拟机，配置网络 在主页面左侧选择虚拟机选项卡，点击虚拟机，此时会自动跳转到虚拟机详情页，在详情页左上角单击点击创建\/注册虚拟机。\n",
+          cover: "http:\/\/localhost:1313\/images\/banner7.webp",
+        };
+      </script><script src="/js/insert_highlight.js" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+  var commentConfigKeys = ['valine', 'waline', 'twikoo', 'gitalk', 'giscus'];
+  var commentConfig = {
+    valine: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.valine-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/valine@1.5.1\/dist\/Valine.min.js',
+          !'webcache|valine@1.5.1\/dist\/Valine.min.js'.startsWith('local') ? 'sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE\u002bs5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn' : undefined
+        );
+        script.onload = () => {
+          const GUEST_INFO = ['nick', 'mail', 'link'];
+          const guest_info = 'nick,mail,link'.split(',').filter((item) => {
+            return GUEST_INFO.indexOf(item) > -1
+          });
+          const recordIP = JSON.parse('true');
+          const highlight = JSON.parse('true');
+          const visitor = JSON.parse('false');
+          const serverURLs = undefined;
+
+          new Valine({
+            el: '.valine-comment',
+            appId: "SwdmllEbhtlyJzMBXHd7Fp43-MdYXbMMI",
+            appKey: "8akFDT2lFtNrZrCd2Nwkr9g0",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: document.documentElement.lang || 'en',
+            recordIP: recordIP,
+            highlight: highlight,
+            visitor: visitor,
+            requiredFields: guest_info,
+            path: window.location.pathname,
+            serverURLs,
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs';
+        
+        if ('webcache|@waline\/client@2.15.8\/dist\/waline.mjs'.startsWith('local')) {
+          
+          const module = await safeImport(walineCdn);
+          walineInit = module.init;
+        } else {
+          
+          const module = await safeImport(
+            walineCdn, 
+            'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5'
+          );
+          walineInit = module.init;
+        }
+        
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https:\/\/waline-iota-gilt.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: JSON.parse("{}"),
+          emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+          meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+          requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+          wordLimit:  100 ,
+          comment: true,
+          pageSize:  10 ,
+          dark: 'html[data-theme="dark"]',
+          pageview:  true ,
+        });
+      }
+    },
+    twikoo: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.twikoo-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/twikoo@1.6.44\/dist\/twikoo.all.min.js',
+          !'webcache|twikoo@1.6.44\/dist\/twikoo.all.min.js'.startsWith('local') ? 'sha384-kwWLC0HjeZZnVPqCJ1AncI8tsk\u002bkQqF9TbAmCclcc9Z0hGkfgHRzeQZxmdmZhE0K' : undefined
+        );
+        script.onload = () => {
+          twikoo.init({
+            envId: '',
+            el: '.twikoo-comment',
+            region: '',
+            lang: document.documentElement.lang || 'en',
+          });
+          twikoo.getCommentsCount({
+            envId: '',
+            region: '',
+            urls: [
+              'http\/\/localhost1313\/zh-cn\/post\/esxi%e9%85%8d%e7%bd%aespark%e9%9b%86%e7%be%a4\/'
+            ],
+            includeReply: false
+          }).then((res) => {
+            document.querySelector('.twikoo-comment-count').innerText = res[0].count;
+          }).catch((err) => {
+            console.error(err);
+          });
+        };
+        document.head.appendChild(script);
+      }
+    },
+    gitalk: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.gitalk-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        const script = loadScript(
+          'https:\/\/npm.webcache.cn\/gitalk@1.8.0\/dist\/gitalk.min.js',
+          !'webcache|gitalk@1.8.0\/dist\/gitalk.min.js'.startsWith('local') ? 'sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU\/lcEH5O8eVbSDhbPwsiVUTp\/aGX\/z\/5EuMA' : undefined
+        );
+        script.onload = () => {
+          if ( false ) {
+            
+            const md5Script = loadScript(
+              'https:\/\/npm.webcache.cn\/blueimp-md5@2.19.0\/js\/md5.min.js',
+              !'webcache|blueimp-md5@2.19.0\/js\/md5.min.js'.startsWith('local') ? 'sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr\/gZlbkHkL6vTthxH' : undefined
+            );
+            md5Script.onload = initGitalk;
+            document.head.appendChild(md5Script);
+          } else {
+            
+            initGitalk();
+          }
+        };
+        document.head.appendChild(script);
+
+        function initGitalk() {
+          let gitalk = new Gitalk({
+            clientID: '',
+            clientSecret: '',
+            repo: '',
+            owner: '',
+            admin: JSON.parse("null"),
+            id: location.pathname,
+            distractionFreeMode: false,
+            language: document.documentElement.lang || 'en',
+          });
+          gitalk.render('gitalk-comment');
+        }
+      }
+    },
+    giscus: {
+      enable: false,
+      load: () => {
+        const container = document.querySelector('.giscus-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        
+        const existingScript = container.querySelector('script[src*="giscus.app/client.js"]');
+        if (existingScript) existingScript.remove();
+        const existingFrame = document.querySelector('iframe.giscus-frame');
+        if (existingFrame) existingFrame.remove();
+
+        
+        const giscusScript = document.createElement('script');
+        const domMode = document.documentElement.getAttribute("data-theme");
+        giscusScript.src = 'https://giscus.app/client.js';
+        giscusScript.setAttribute('data-repo', 'wittleLuna\/giscus_comment');
+        giscusScript.setAttribute('data-repo-id', 'R_kgDOO768bw');
+        giscusScript.setAttribute('data-category', 'Announcements');
+        giscusScript.setAttribute('data-category-id', 'DIC_kwDOO768b84Crhb8');
+        giscusScript.setAttribute('data-mapping', '0');
+        giscusScript.setAttribute('data-strict', '0');
+        giscusScript.setAttribute('data-reactions-enabled', '1');
+        giscusScript.setAttribute('data-emit-metadata', '0');
+        giscusScript.setAttribute('data-input-position', 'bottom');
+        giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+        giscusScript.setAttribute('data-lang', document.documentElement.lang || 'en');
+        giscusScript.setAttribute('crossorigin', 'anonymous');
+        giscusScript.async = true;
+        container.appendChild(giscusScript);
+        document.body.addEventListener('light-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+        });
+        document.body.addEventListener('dark-theme-set', () => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+        });
+      }
+    }
+  };
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      
+      const commentType = item.getAttribute('data-selector');
+
+      
+      hideAllComments();
+
+      
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          
+          changeActiveCommentItems(item);
+        });
+      }
+
+      
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script><script
+    src="https://npm.webcache.cn/qrcode@1.4.4/build/qrcode.min.js"
+    deferdata-pjaxintegrity="sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx&#43;aUuBDqQwEk" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/html-to-image@1.11.11/dist/html-to-image.js"
+    deferdata-pjaxintegrity="sha384-UbfRVKN3/elS1r7JcK2FhmPP&#43;KlJ4CvYwbyYD7tH&#43;uTkbT9bNJr9eJeQ0FoFbAgz" crossorigin="anonymous"></script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script><script
+    src="https://npm.webcache.cn/aplayer@1.10.1/dist/APlayer.min.js"
+    integrity="sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr&#43;h5UfruuRL/aORyw&#43;5&#43;HZoU6e" crossorigin="anonymous"></script><script>
+    var isMobile = window.matchMedia('(max-width: 959px)').matches;
+    if (isMobile) {
+      const meting = _$('meting-js');
+      if (meting) {
+        meting.setAttribute('fixed', 'true');
+        const aside = meting.parentNode;
+        if (aside?.tagName === 'ASIDE') {
+          aside.removeChild(meting);
+          document.body.appendChild(meting);
+        }
+      }
+    }
+  </script><script
+    src="https://npm.webcache.cn/meting@2.0.1/dist/Meting.min.js"
+    integrity="sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8&#43;0maanw1S/IyB&#43;Y4JG&#43;ZDU7GpKE8" crossorigin="anonymous"></script></body>
+</html>

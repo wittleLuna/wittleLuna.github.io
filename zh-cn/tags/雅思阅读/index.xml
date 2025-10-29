@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>雅思|阅读 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB/</link>
+    <link>http://localhost:1313/zh-cn/tags/%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 20 May 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>雅思阅读判断总结(十分有效，我阅读考了8.0)</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</link>
+      <link>http://localhost:1313/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</link>
       <pubDate>Tue, 20 May 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</guid>
       <description>
         <![CDATA[<h1>雅思阅读判断总结(十分有效，我阅读考了8.0)</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -210,7 +210,7 @@
 <hr>
 <p>题干的范围“比原文窄” = False；比原文“宽”但未明确 = Not Given；完全一致 = True。</p>
         
-        <hr><p>本文2025-05-20首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-05-20</p>]]>
+        <hr><p>本文2025-05-20首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-05-20</p>]]>
       </description>
       
         <category>学习</category>

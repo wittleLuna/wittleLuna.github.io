@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graph on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/graph/</link>
+    <link>http://localhost:1313/en/tags/graph/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 15 Jun 2025 14:39:32 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/graph/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/graph/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Graph questions</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</link>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</guid>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/</guid>
       <description>
         <![CDATA[<h1>Graph questions</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -78,7 +78,7 @@
 输入描述
 第一行包含两个整数 N，M，表示图中拥有 N 个节点，M 条边</p>
         
-        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>algorithm question</category>

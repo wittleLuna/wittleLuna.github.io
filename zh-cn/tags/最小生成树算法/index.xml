@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>最小生成树算法 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/</link>
+    <link>http://localhost:1313/zh-cn/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 15 Jun 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>最小生成树算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
+      <link>http://localhost:1313/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
       <description>
         <![CDATA[<h1>最小生成树算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -36,7 +36,7 @@
 prim算法
 </h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
         
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-12首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>

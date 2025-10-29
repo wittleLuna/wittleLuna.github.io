@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Djikstra算法 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/djikstra%E7%AE%97%E6%B3%95/</link>
+    <link>http://localhost:1313/zh-cn/tags/djikstra%E7%AE%97%E6%B3%95/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 15 Jun 2025 14:34:40 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/djikstra%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/djikstra%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>Djikstra算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Djikstra算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -35,7 +35,7 @@
 第二步，该最近节点被标记访问过
 第三步，更新非访问节点到源点的距离（即更新minDist数组）</p>
         
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-12首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>

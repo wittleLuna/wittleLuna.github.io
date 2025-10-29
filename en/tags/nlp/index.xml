@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NLP on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/nlp/</link>
+    <link>http://localhost:1313/en/tags/nlp/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 25 Feb 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/nlp/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/nlp/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>The Introduction of Natural Language Processing (NLP)</title>
-      <link>https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
+      <link>http://localhost:1313/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</link>
       <pubDate>Tue, 25 Feb 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</guid>
+      <guid>http://localhost:1313/en/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</guid>
       <description>
         <![CDATA[<h1>The Introduction of Natural Language Processing (NLP)</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -100,7 +100,7 @@ AI发展历程
 <li>
 <p>2018以后 基于Transformer的预训练语言模型：通过更大的语料库和更复杂的神经网络体系结构来进行语法语义的学习</p>
         
-        <hr><p>Published on 2025-02-25 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-02-25</p>]]>
+        <hr><p>Published on 2025-02-25 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-02-25</p>]]>
       </description>
       
         <category>NLP</category>

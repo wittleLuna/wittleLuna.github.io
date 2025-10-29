@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mati CUP on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/mati-cup/</link>
+    <link>http://localhost:1313/en/tags/mati-cup/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 15 Jul 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/mati-cup/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/mati-cup/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Mati Cup]2025 Problems — Study Notes</title>
-      <link>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <link>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
       <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <guid>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
       <description>
         <![CDATA[<h1>[Mati Cup]2025 Problems — Study Notes</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -129,7 +129,7 @@
 老者点头道：“此考验涉及两组长度均为n神秘数列，分别称为‘天数列’a1~an和‘地数列’b1 ~ bn.每个数皆为正整数。”
 他指了指桥上的一块石碑，上面刻着一道古老的公式：</p>
         
-        <hr><p>Published on 2025-07-15 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
+        <hr><p>Published on 2025-07-15 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
       </description>
       
         <category>computer algorithm</category>

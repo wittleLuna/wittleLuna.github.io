@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>GATv2 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/gatv2/</link>
+    <link>http://localhost:1313/zh-cn/tags/gatv2/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/gatv2/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/gatv2/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[算法]GATv2图注意力网络</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <link>http://localhost:1313/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <guid>http://localhost:1313/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
       <description>
         <![CDATA[<h1>[算法]GATv2图注意力网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -38,7 +38,7 @@
 </span></span></code></pre></div><p>其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。
 但 GAT 有一个限制：注意力权重的计算公式在 <strong>输入的线性变换</strong> 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：</p>
         
-        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+        <hr><p>本文2025-09-09首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
       </description>
       
         <category>算法</category>

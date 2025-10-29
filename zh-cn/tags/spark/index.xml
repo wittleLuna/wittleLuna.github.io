@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spark on wittleLuna的博客</title>
+    <link>http://localhost:1313/zh-cn/tags/spark/</link>
+    <description>Recent content from wittleLuna的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>syaz23277@gmail.com (wittleLuna)</managingEditor>
+    <webMaster>syaz23277@gmail.com (wittleLuna)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 29 Oct 2025 17:41:41 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/zh-cn/tags/spark/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>EXSI配置Spark集群</title>
+      <link>http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/</guid>
+      <description>
+        <![CDATA[<h1>EXSI配置Spark集群</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
+        
+          <h1 id="esxi-配置-spark集群">
+<a class="header-anchor" href="#esxi-%e9%85%8d%e7%bd%ae-spark%e9%9b%86%e7%be%a4"></a>
+ESXI 配置 Spark集群
+</h1><h2 id="一安装虚拟机配置网络">
+<a class="header-anchor" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c"></a>
+一、安装虚拟机，配置网络
+</h2><p>在主页面左侧选择虚拟机选项卡，点击虚拟机，此时会自动跳转到虚拟机详情页，在详情页左上角单击点击创建/注册虚拟机。</p>
+        
+        <hr><p>本文2025-10-29首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-10-29</p>]]>
+      </description>
+      
+        <category>Linux</category>
+      
+    </item>
+    
+  </channel>
+</rss>

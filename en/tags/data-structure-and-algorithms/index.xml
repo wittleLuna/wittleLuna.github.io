@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Structure and Algorithms on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/tags/data-structure-and-algorithms/</link>
+    <link>http://localhost:1313/en/tags/data-structure-and-algorithms/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 15 Jun 2025 14:39:44 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/tags/data-structure-and-algorithms/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/tags/data-structure-and-algorithms/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Basic knowledge]Data Structure and Algorithms</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
+      <link>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
+      <guid>http://localhost:1313/en/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/</guid>
       <description>
         <![CDATA[<h1>[Basic knowledge]Data Structure and Algorithms</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -219,7 +219,7 @@
 队列
 </h3><p><strong>基本介绍</strong></p>
         
-        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm | Basic knowledge</category>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/algolia.json</link>
+    <link>http://localhost:1313/en/algolia.json</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -12,21 +12,106 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Sat, 25 Oct 2025 17:41:41 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Oct 2025 17:41:41 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
     
 
     <item>
+      <title>Setting Up an Apache Spark Cluster on VMware ESXi</title>
+      <link>http://localhost:1313/en/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 &#43;0000</pubDate>
+      <author>syaz23277@gmail.com (wittleLuna)</author>
+      <guid>http://localhost:1313/en/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/</guid>
+      <description>
+        <![CDATA[<h1>Setting Up an Apache Spark Cluster on VMware ESXi</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
+        
+          <h1 id="esxi-配置-spark集群">
+<a class="header-anchor" href="#esxi-%e9%85%8d%e7%bd%ae-spark%e9%9b%86%e7%be%a4"></a>
+ESXI 配置 Spark集群
+</h1><h2 id="一安装虚拟机配置网络">
+<a class="header-anchor" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c"></a>
+一、安装虚拟机，配置网络
+</h2><p>在主页面左侧选择虚拟机选项卡，点击虚拟机，此时会自动跳转到虚拟机详情页，在详情页左上角单击点击创建/注册虚拟机。</p>
+<p><img src="https://i-blog.csdnimg.cn/direct/bf3ebeff584b4afc83789bda5c681a1d.png" alt="image"></p>
+<h3 id="具体步骤易错事项">
+<a class="header-anchor" href="#%e5%85%b7%e4%bd%93%e6%ad%a5%e9%aa%a4%e6%98%93%e9%94%99%e4%ba%8b%e9%a1%b9"></a>
+具体步骤|易错事项
+</h3><h4 id="1选择创建类型这里默认第一个即可因为服务器上只有iso镜像文件">
+<a class="header-anchor" href="#1%e9%80%89%e6%8b%a9%e5%88%9b%e5%bb%ba%e7%b1%bb%e5%9e%8b%e8%bf%99%e9%87%8c%e9%bb%98%e8%ae%a4%e7%ac%ac%e4%b8%80%e4%b8%aa%e5%8d%b3%e5%8f%af%e5%9b%a0%e4%b8%ba%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e5%8f%aa%e6%9c%89iso%e9%95%9c%e5%83%8f%e6%96%87%e4%bb%b6"></a>
+1.选择创建类型，这里默认第一个即可。因为服务器上只有ISO镜像文件
+</h4><p><img src="https://i-blog.csdnimg.cn/direct/9a747b3d40ad47e7b7c3c0dd9544191a.png" alt="image"></p>
+<h4 id="2设置名称按要求设置即可操作系统系列和版本等根据自身安装需求对应选择">
+<a class="header-anchor" href="#2%e8%ae%be%e7%bd%ae%e5%90%8d%e7%a7%b0%e6%8c%89%e8%a6%81%e6%b1%82%e8%ae%be%e7%bd%ae%e5%8d%b3%e5%8f%af%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%b3%bb%e5%88%97%e5%92%8c%e7%89%88%e6%9c%ac%e7%ad%89%e6%a0%b9%e6%8d%ae%e8%87%aa%e8%ba%ab%e5%ae%89%e8%a3%85%e9%9c%80%e6%b1%82%e5%af%b9%e5%ba%94%e9%80%89%e6%8b%a9"></a>
+2.设置名称，按要求设置即可，操作系统系列和版本等根据自身安装需求对应选择。
+</h4><blockquote>
+<p>例： 服务器上有CentOS7和ubuntu的镜像，可根据个人喜欢选择。就算和后面加载的镜像文件不对应其实也不影响，不会出错</p></blockquote>
+<p><img src="https://i-blog.csdnimg.cn/direct/67ea9fec4a804902bc7b306862f36831.png" alt="image"></p>
+<h4 id="3选择储存-这里注意选择第二项选择第一项会导致错误而无法新建虚拟机">
+<a class="header-anchor" href="#3%e9%80%89%e6%8b%a9%e5%82%a8%e5%ad%98-%e8%bf%99%e9%87%8c%e6%b3%a8%e6%84%8f%e9%80%89%e6%8b%a9%e7%ac%ac%e4%ba%8c%e9%a1%b9%e9%80%89%e6%8b%a9%e7%ac%ac%e4%b8%80%e9%a1%b9%e4%bc%9a%e5%af%bc%e8%87%b4%e9%94%99%e8%af%af%e8%80%8c%e6%97%a0%e6%b3%95%e6%96%b0%e5%bb%ba%e8%99%9a%e6%8b%9f%e6%9c%ba"></a>
+3.选择储存， 这里注意选择第二项。选择第一项会导致错误而无法新建虚拟机
+</h4><p><img src="https://i.mji.rip/2025/10/29/d9fca4820636ca99a966b8a15f788043.png" alt="image"></p>
+<h4 id="4cpu内存和硬盘根据实际要求选择这里需要注意的关键点有两个网络适配器和cddvd驱动器接下来就这两部分进行详细介绍">
+<a class="header-anchor" href="#4cpu%e5%86%85%e5%ad%98%e5%92%8c%e7%a1%ac%e7%9b%98%e6%a0%b9%e6%8d%ae%e5%ae%9e%e9%99%85%e8%a6%81%e6%b1%82%e9%80%89%e6%8b%a9%e8%bf%99%e9%87%8c%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e5%85%b3%e9%94%ae%e7%82%b9%e6%9c%89%e4%b8%a4%e4%b8%aa%e7%bd%91%e7%bb%9c%e9%80%82%e9%85%8d%e5%99%a8%e5%92%8ccddvd%e9%a9%b1%e5%8a%a8%e5%99%a8%e6%8e%a5%e4%b8%8b%e6%9d%a5%e5%b0%b1%e8%bf%99%e4%b8%a4%e9%83%a8%e5%88%86%e8%bf%9b%e8%a1%8c%e8%af%a6%e7%bb%86%e4%bb%8b%e7%bb%8d"></a>
+4.CPU,内存和硬盘根据实际要求选择，这里需要注意的关键点有两个：<strong>网络适配器和CD/DVD驱动器</strong>。接下来就这两部分进行详细介绍
+</h4><p><strong>网络适配器</strong></p>
+<p>为保证虚拟机之间能够正常通信，需要将创建的虚拟机设置在同一个VLAN口。</p>
+<p>详情设置可看到网络部分的vswitcher(虚拟交换机)， 虚拟交换机和VMkernel已提取配置好，可以看到其中Management Network中的VMkernel端口就是服务器的访问地址。这些VLAN口最后连接到物理适配器实现网络互通。</p>
+<p>同理，因为所有服务器都在同一个网段 10.10.10.x, 且服务器之间可以互相通信，所以不同服务器上的虚拟机也是可以互相通信的。</p>
+<p><img src="https://i.mji.rip/2025/10/29/2ec8bab5924baadca19879cb1f7cdff0.jpeg" alt="image"></p>
+<p><strong>CD/DVD驱动器</strong></p>
+<p>我们需要新建多个CD/DVD驱动器，用于安装系统和后续的安装。由于服务器没有网络，我们需要添加新的CD/DVD驱动器，通过IOS镜像挂载的方式把提前下载好的文件挂载到虚拟机，再进行后续的安装操作。</p>
+<p>选择准备好的ISO文件</p>
+<p><img src="https://i.mji.rip/2025/10/29/e072a87914e2c0fd9970dfc464bb0ec7.png" alt="image"></p>
+<p>选择合适系统镜像</p>
+<p><img src="https://i.mji.rip/2025/10/29/6107d4ba163402e5a015ca7ce64c0be0.png" alt="图 配置CPU等"></p>
+<p>关于系统镜像，需要注意的是，这里要选择大的，包括完整系统的镜像，容量小的镜像需要后续进行在线下载。</p>
+<p>关于文件镜像，可用镜像制作软件(如UltraISO) 进行镜像制作，之后进行挂载。</p>
+<p><img src="https://i.mji.rip/2025/10/28/5bbdc20c527f7b28ffb7f8363e86dc5b.png" alt="image"></p>
+<h4 id="5配置确认无误点击完成">
+<a class="header-anchor" href="#5%e9%85%8d%e7%bd%ae%e7%a1%ae%e8%ae%a4%e6%97%a0%e8%af%af%e7%82%b9%e5%87%bb%e5%ae%8c%e6%88%90"></a>
+5.配置确认无误，点击完成
+</h4><p><img src="https://i.mji.rip/2025/10/29/3af56f72e8ee2c83c7593e050ff9e965.png" alt="图 配置确认"></p>
+<h4 id="6打开电源">
+<a class="header-anchor" href="#6%e6%89%93%e5%bc%80%e7%94%b5%e6%ba%90"></a>
+6.打开电源
+</h4><p><img src="https://i.mji.rip/2025/10/29/caa6678b160a94e168e1f2478e0de03b.jpeg" alt="image"></p>
+<h4 id="7安装需要注意的两件事配置网络和用户密码">
+<a class="header-anchor" href="#7%e5%ae%89%e8%a3%85%e9%9c%80%e8%a6%81%e6%b3%a8%e6%84%8f%e7%9a%84%e4%b8%a4%e4%bb%b6%e4%ba%8b%e9%85%8d%e7%bd%ae%e7%bd%91%e7%bb%9c%e5%92%8c%e7%94%a8%e6%88%b7%e5%af%86%e7%a0%81"></a>
+7.安装需要注意的两件事：配置网络和用户密码。
+</h4><p><strong>配置网络</strong></p>
+<p>可以在这里提前配置好手动地址，或者等安装完成后再通过配置文件修改（这部分后面会写到）</p>
+<p>图 配置手动地址</p>
+<p><strong>用户密码</strong></p>
+<p>根据个人喜欢配置即可，新用户可不用配置，直接使用root用户更方便。</p>
+<p><img src="https://i-blog.csdnimg.cn/blog_migrate/46831afb1ff72236aeafc971876ca086.png" alt="图 配置用户密码"></p>
+<h4 id="8设置静态ip">
+<a class="header-anchor" href="#8%e8%ae%be%e7%bd%ae%e9%9d%99%e6%80%81ip"></a>
+8.设置静态ip
+</h4><p>进入虚拟机后,通过如下命令修改ifcfg文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/sysconfig/network-scripts/ifcfg-eth193
+</span></span></code></pre></div><blockquote>
+<p>注意：这里eth193是我使用的服务器的网卡，需要自行确认后再进行编辑</p>
+        
+        <hr><p>Published on 2025-10-29 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-10-29</p>]]>
+      </description>
+      
+        <category>Linux</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>Getting into Competitive Programming from Zero</title>
-      <link>https://wittleLuna.github.io/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
+      <link>http://localhost:1313/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
+      <guid>http://localhost:1313/en/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
       <description>
         <![CDATA[<h1>Getting into Competitive Programming from Zero</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -99,7 +184,7 @@
 <p>评分：按解题数排序；同解题数按罚时（最后一次通过时间之和 + 每题若干分钟的错误罚时）升序。</p>
 <p>特点：强调分工协作与代码实现速度；不允许上网；常见于 ICPC、CCPC 等。</p>
         
-        <hr><p>Published on 2025-10-25 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-10-25</p>]]>
+        <hr><p>Published on 2025-10-25 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-10-25</p>]]>
       </description>
       
         <category>STUDY</category>
@@ -110,10 +195,10 @@
 
     <item>
       <title>[Git]Common Errors and Solutions</title>
-      <link>https://wittleLuna.github.io/en/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <link>http://localhost:1313/en/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <guid>http://localhost:1313/en/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>[Git]Common Errors and Solutions</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -146,7 +231,7 @@
 </span></span><span class="line"><span class="cl">git push
 </span></span></code></pre></div><p>或 git pull origin main &ndash;allow-unrelated-histories</p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Git</category>
@@ -157,10 +242,10 @@
 
     <item>
       <title>[Deep Learning]Residual Connection</title>
-      <link>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <link>http://localhost:1313/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>http://localhost:1313/en/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
       <description>
         <![CDATA[<h1>[Deep Learning]Residual Connection</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -218,7 +303,7 @@
 ✅ 一句话总结
 </h2><p><strong>残差连接就是在网络里给输入开一条“捷径”，把输入直接加到输出上，帮助训练更深的神经网络。</strong></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Deep Learning</category>
@@ -229,10 +314,10 @@
 
     <item>
       <title>[Deep Learning]Graph Attention Network, Graph Neural Network</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</guid>
       <description>
         <![CDATA[<h1>[Deep Learning]Graph Attention Network, Graph Neural Network</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -261,7 +346,7 @@
 </span></span></code></pre></div><p>其中 alpha_{ij} 是 <strong>可学习的权重</strong>，依赖于节点特征本身。
 ➡ 聚合方式是 <strong>动态的</strong>，模型能根据任务自动决定哪些邻居更重要。</p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Deep Learning</category>
@@ -272,10 +357,10 @@
 
     <item>
       <title>[Algorithm]Graph Attention Network v2</title>
-      <link>https://wittleLuna.github.io/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <link>http://localhost:1313/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <guid>http://localhost:1313/en/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
       <description>
         <![CDATA[<h1>[Algorithm]Graph Attention Network v2</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -297,7 +382,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\alpha_{ij} = \text{softmax}_j \left( a^T \, \text{LeakyReLU}( W [h_i \, || \, h_j] ) \right)
 </span></span></code></pre></div><p>区别：</p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Algorithm</category>
@@ -308,10 +393,10 @@
 
     <item>
       <title>[Algorithm]Collaborative Filtering</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://localhost:1313/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://localhost:1313/en/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
       <description>
         <![CDATA[<h1>[Algorithm]Collaborative Filtering</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -381,7 +466,7 @@
 </ul>
 <p>📌 <strong>一句话总结</strong></p>
         
-        <hr><p>Published on 2025-09-09 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
+        <hr><p>Published on 2025-09-09 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-09</p>]]>
       </description>
       
         <category>Algorithm</category>
@@ -392,10 +477,10 @@
 
     <item>
       <title>[Git]Push the project and collaborate with multiple contributors</title>
-      <link>https://wittleLuna.github.io/en/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
+      <link>http://localhost:1313/en/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
+      <guid>http://localhost:1313/en/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
       <description>
         <![CDATA[<h1>[Git]Push the project and collaborate with multiple contributors</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -440,7 +525,7 @@ Git如何推送项目
 🔑 后续日常开发流程（以后每次更新代码）
 </h2><p>当你修改了文件后，只需要执行以下三步：</p>
         
-        <hr><p>Published on 2025-09-01 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-01</p>]]>
+        <hr><p>Published on 2025-09-01 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-01</p>]]>
       </description>
       
         <category>Git</category>
@@ -451,10 +536,10 @@ Git如何推送项目
 
     <item>
       <title>[Git]Common Commands and Usage</title>
-      <link>https://wittleLuna.github.io/en/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>http://localhost:1313/en/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>http://localhost:1313/en/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>[Git]Common Commands and Usage</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -483,7 +568,7 @@ Git如何推送项目
 <p>HEAD 是一个对当前所在分支的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。</p>
 <p>HEAD 总是指向当前分支上最近一次提交记录。HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。</p>
         
-        <hr><p>Published on 2025-09-01 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-09-01</p>]]>
+        <hr><p>Published on 2025-09-01 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-09-01</p>]]>
       </description>
       
         <category>Git</category>
@@ -494,10 +579,10 @@ Git如何推送项目
 
     <item>
       <title>[Mati Cup]2025 Problems — Study Notes</title>
-      <link>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <link>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
       <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <guid>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
       <description>
         <![CDATA[<h1>[Mati Cup]2025 Problems — Study Notes</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -600,102 +685,10 @@ Git如何推送项目
 老者点头道：“此考验涉及两组长度均为n神秘数列，分别称为‘天数列’a1~an和‘地数列’b1 ~ bn.每个数皆为正整数。”
 他指了指桥上的一块石碑，上面刻着一道古老的公式：</p>
         
-        <hr><p>Published on 2025-07-15 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
+        <hr><p>Published on 2025-07-15 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>algorithm questions of lanqiao cup</title>
-      <link>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
-      <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
-      <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
-      <description>
-        <![CDATA[<h1>algorithm questions of lanqiao cup</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
-        
-          <h2 id="杂题">
-<a class="header-anchor" href="#%e6%9d%82%e9%a2%98"></a>
-杂题
-</h2><h3 id="105-油漆面积">
-<a class="header-anchor" href="#105-%e6%b2%b9%e6%bc%86%e9%9d%a2%e7%a7%af"></a>
-<a href="https://www.lanqiao.cn/problems/105/learning/?page=1&amp;first_category_id=1&amp;problem_id=105">105 油漆面积</a>
-</h3><p><strong>错误描述</strong> ： 发生了段错误</p>
-<p><strong>原因</strong>： 保持二维数组时使用了int数组，一个int占4字节。10004*10004(个int类型变量) * 4 (转换成字节) / 1000 (转换为kb/千字节) / 1024 (转换为mb) 约为390mb， 远超题目最大运行内存256mb,所以会报段字节的错误</p>
-<p><strong>解决方法</strong>： 使用占用内存更小的类型，如boolean,占用1个字节</p>
-<p><strong>代码实现</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		 
-</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		 
-</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span><span class="w"> </span><span class="n">rectangles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		 
-</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="kt">boolean</span><span class="o">[][]</span><span class="w"> </span><span class="n">grid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">boolean</span><span class="o">[</span><span class="n">10004</span><span class="o">][</span><span class="n">10004</span><span class="o">]</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		 
-</span></span></span><span class="line"><span class="cl"><span class="w">	  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="kt">int</span><span class="w"> </span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			
-</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="kt">int</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="n">x1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">x2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">x2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x1</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">x1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">if</span><span class="p">(</span><span class="n">y1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y2</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">y2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y1</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="n">y1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">rectangles</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">});</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">arr</span><span class="p">:</span><span class="w"> </span><span class="n">rectangles</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">2</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">&lt;</span><span class="w"> </span><span class="n">arr</span><span class="o">[</span><span class="n">3</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">grid</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="k">if</span><span class="p">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">					</span><span class="n">result</span><span class="o">++</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">				</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">		
-</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><h3 id="3527-阶乘的和">
-<a class="header-anchor" href="#3527-%e9%98%b6%e4%b9%98%e7%9a%84%e5%92%8c"></a>
-<a href="https://www.lanqiao.cn/problems/3527/learning/?page=1&amp;first_category_id=1&amp;problem_id=3527">3527 阶乘的和</a>
-</h3><p><strong>解题方法</strong>
-从最小的数开始，尽可能多地将它的次数合并到更高一阶的数，直到无法合并为止。最终的min就是最大的m，因为此时所有比min小的阶乘已经被合并，而当前的min的阶乘次数不足以再合并到更高阶，所以m!就是最大的可能。</p>
-        
-        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
-      </description>
-      
-        <category>algorithm question</category>
       
     </item>
     

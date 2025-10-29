@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>动态规划算法 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/</link>
+    <link>http://localhost:1313/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 15 Jun 2025 14:35:43 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>动态规划算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <link>http://localhost:1313/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description>
         <![CDATA[<h1>动态规划算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -59,7 +59,7 @@
 <li>
 <p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
         
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>

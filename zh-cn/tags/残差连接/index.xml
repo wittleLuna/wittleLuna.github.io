@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>残差连接 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+    <link>http://localhost:1313/zh-cn/tags/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[深度学习]残差连接</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
+      <link>http://localhost:1313/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/</guid>
       <description>
         <![CDATA[<h1>[深度学习]残差连接</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -40,7 +40,7 @@
 </ul>
 <p>公式：</p>
         
-        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+        <hr><p>本文2025-09-09首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
       </description>
       
         <category>深度学习</category>

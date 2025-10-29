@@ -1,1 +1,42 @@
-(()=>{window.addEventListener("pjax:success",()=>{_$$("script[data-pjax]").forEach(t=>{let{textContent:w,parentNode:r,id:n,className:d,type:a,src:i,dataset:l,integrity:s,crossOrigin:o}=t,c=w||"",e=document.createElement("script");n&&(e.id=n),d&&(e.className=d),a&&(e.type=a),l.pjax!==void 0&&(e.dataset.pjax=""),s&&(e.integrity=s),o&&(e.crossOrigin=o),i?(e.src=i,e.async=!1):c&&(e.textContent=c),r?.replaceChild(e,t)})});window.addEventListener("pjax:complete",()=>{_$("#header-nav")?.classList.remove("header-nav-hidden");let t=window.localStorage.getItem("dark_mode");t=="true"?document.body.dispatchEvent(new CustomEvent("dark-theme-set")):t=="false"&&document.body.dispatchEvent(new CustomEvent("light-theme-set")),window.walineInstance&&(window.walineInstance.destroy(),window.walineInstance=null)});window.addEventListener("pjax:send",()=>{window.lightboxStatus="loading"});window.startLoading&&window.addEventListener("pjax:send",startLoading);window.endLoading&&window.addEventListener("pjax:complete",endLoading);window.aosInit&&window.addEventListener("pjax:success",aosInit);})();
+(() => {
+  // <stdin>
+  window.addEventListener("pjax:success", () => {
+    _$$("script[data-pjax]").forEach((element) => {
+      const { textContent, parentNode, id, className, type, src, dataset, integrity, crossOrigin } = element;
+      const code = textContent || "";
+      const script = document.createElement("script");
+      id && (script.id = id);
+      className && (script.className = className);
+      type && (script.type = type);
+      dataset.pjax !== void 0 && (script.dataset.pjax = "");
+      integrity && (script.integrity = integrity);
+      crossOrigin && (script.crossOrigin = crossOrigin);
+      if (src) {
+        script.src = src;
+        script.async = false;
+      } else if (code) {
+        script.textContent = code;
+      }
+      parentNode?.replaceChild(script, element);
+    });
+  });
+  window.addEventListener("pjax:complete", () => {
+    _$("#header-nav")?.classList.remove("header-nav-hidden");
+    const mode = window.localStorage.getItem("dark_mode");
+    if (mode == "true") {
+      document.body.dispatchEvent(new CustomEvent("dark-theme-set"));
+    } else if (mode == "false") {
+      document.body.dispatchEvent(new CustomEvent("light-theme-set"));
+    }
+    if (window.walineInstance) {
+      window.walineInstance.destroy();
+      window.walineInstance = null;
+    }
+  });
+  window.addEventListener("pjax:send", () => {
+    window.lightboxStatus = "loading";
+  });
+  if (window.startLoading) window.addEventListener("pjax:send", startLoading);
+  if (window.endLoading) window.addEventListener("pjax:complete", endLoading);
+  if (window.aosInit) window.addEventListener("pjax:success", aosInit);
+})();

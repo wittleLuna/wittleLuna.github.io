@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>学习 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <link>http://localhost:1313/zh-cn/categories/%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sat, 25 Oct 2025 17:41:41 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>从零开始，入坑编程比赛</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
+      <link>http://localhost:1313/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</link>
       <pubDate>Sat, 25 Oct 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/</guid>
       <description>
         <![CDATA[<h1>从零开始，入坑编程比赛</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -39,7 +39,7 @@
 </h2><p>编程比赛，一般称为程序设计竞赛，要求选手在有限的时间内编写程序，分析和解决问题。</p>
 <p>国内比较出名的比赛有：</p>
         
-        <hr><p>本文2025-10-25首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-10-25</p>]]>
+        <hr><p>本文2025-10-25首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-10-25</p>]]>
       </description>
       
         <category>学习</category>
@@ -50,10 +50,10 @@
 
     <item>
       <title>雅思阅读判断总结(十分有效，我阅读考了8.0)</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</link>
+      <link>http://localhost:1313/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</link>
       <pubDate>Tue, 20 May 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/</guid>
       <description>
         <![CDATA[<h1>雅思阅读判断总结(十分有效，我阅读考了8.0)</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -237,7 +237,7 @@
 <hr>
 <p>题干的范围“比原文窄” = False；比原文“宽”但未明确 = Not Given；完全一致 = True。</p>
         
-        <hr><p>本文2025-05-20首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-05-20</p>]]>
+        <hr><p>本文2025-05-20首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-05-20</p>]]>
       </description>
       
         <category>学习</category>
@@ -248,10 +248,10 @@
 
     <item>
       <title>[蓝桥杯]赛事介绍</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</link>
+      <link>http://localhost:1313/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Wed, 22 Jan 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/</guid>
       <description>
         <![CDATA[<h1>[蓝桥杯]赛事介绍</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -270,7 +270,7 @@
 <strong>题目类型</strong>：单结果题+编程题。单结果题：只需要输出题目问题的答案。编程题：有多个测试点，每个测试点有一个正确答案。
 <strong>评分规则</strong>：每道题包含多个测试点，根据通过的测试点数量得分，部分数据通过也能获得部分分数。最终得分在赛后公布。</p>
         
-        <hr><p>本文2025-01-22首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-01-22</p>]]>
+        <hr><p>本文2025-01-22首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-01-22</p>]]>
       </description>
       
         <category>学习</category>

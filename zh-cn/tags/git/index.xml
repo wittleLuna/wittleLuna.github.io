@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/tags/git/</link>
+    <link>http://localhost:1313/zh-cn/tags/git/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/tags/git/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/tags/git/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Git]常见错误和解决方法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <link>http://localhost:1313/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <guid>http://localhost:1313/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>[Git]常见错误和解决方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -43,7 +43,7 @@
 </h2><p>1.别人先 push 了
 团队协作时，别人往远端推送了新提交，而你本地的分支还停留在旧的版本。</p>
         
-        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+        <hr><p>本文2025-09-09首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
       </description>
       
         <category>Git</category>
@@ -54,10 +54,10 @@
 
     <item>
       <title>[Git]推送项目，多人协助</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
+      <link>http://localhost:1313/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
+      <guid>http://localhost:1313/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/</guid>
       <description>
         <![CDATA[<h1>[Git]推送项目，多人协助</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -102,7 +102,7 @@ Git如何推送项目
 🔑 后续日常开发流程（以后每次更新代码）
 </h2><p>当你修改了文件后，只需要执行以下三步：</p>
         
-        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+        <hr><p>本文2025-09-01首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
       </description>
       
         <category>Git</category>
@@ -113,10 +113,10 @@ Git如何推送项目
 
     <item>
       <title>[Git]常用命令，使用方法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>http://localhost:1313/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>http://localhost:1313/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>[Git]常用命令，使用方法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -131,7 +131,7 @@ Git如何推送项目
 <blockquote>
 <p>注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p>
         
-        <hr><p>本文2025-09-01首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
+        <hr><p>本文2025-09-01首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-01</p>]]>
       </description>
       
         <category>Git</category>

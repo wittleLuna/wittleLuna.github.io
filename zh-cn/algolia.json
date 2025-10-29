@@ -1,162 +1,169 @@
 [
     {
+      "objectID": "4bcde465f59a70a68d0ce0f4a8f8398f-zh-cn",
+      "lang": "zh-cn",
+      "permalink": "http://localhost:1313/zh-cn/post/esxi%E9%85%8D%E7%BD%AEspark%E9%9B%86%E7%BE%A4/",
+      "title": "EXSI配置Spark集群","content": " ESXI 配置 Spark集群 一、安装虚拟机，配置网络 在主页面左侧选择虚拟机选项卡，点击虚拟机，此时会自动跳转到虚拟机详情页，在详情页左上角单击点击创建/注册虚拟机。\n具体步骤|易错事项 1.选择创建类型，这里默认第一个即可。因为服务器上只有ISO镜像文件 2.设置名称，按要求设置即可，操作系统系列和版本等根据自身安装需求对应选择。 例： 服务器上有CentOS7和ubuntu的镜像，可根据个人喜欢选择。就算和后面加载的镜像文件不对应其实也不影响，不会出错\n3.选择储存， 这里注意选择第二项。选择第一项会导致错误而无法新建虚拟机 4.CPU,内存和硬盘根据实际要求选择，这里需要注意的关键点有两个：网络适配器和CD/DVD驱动器。接下来就这两部分进行详细介绍 网络适配器\n为保证虚拟机之间能够正常通信，需要将创建的虚拟机设置在同一个VLAN口。\n详情设置可看到网络部分的vswitcher(虚拟交换机)， 虚拟交换机和VMkernel已提取配置好，可以看到其中Management Network中的VMkernel端口就是服务器的访问地址。这些VLAN口最后连接到物理适配器实现网络互通。\n同理，因为所有服务器都在同一个网段 10.10.10.x, 且服务器之间可以互相通信，所以不同服务器上的虚拟机也是可以互相通信的。\nCD/DVD驱动器\n我们需要新建多个CD/DVD驱动器，用于安装系统和后续的安装。由于服务器没有网络，我们需要添加新的CD/DVD驱动器，通过IOS镜像挂载的方式把提前下载好的文件挂载到虚拟机，再进行后续的安装操作。\n选择准备好的ISO文件\n选择合适系统镜像\n关于系统镜像，需要注意的是，这里要选择大的，包括完整系统的镜像，容量小的镜像需要后续进行在线下载。\n关于文件镜像，可用镜像制作软件(如UltraISO) 进行镜像制作，之后进行挂载。\n5.配置确认无误，点 …","date": "2025-10-29T00:00:00+00:00",
+      "updated": "2025-10-29T17:41:41+08:00"
+    }, 
+    {
       "objectID": "d62995adc6b8a6334d192da821e1f2f4-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%85%A5%E5%9D%91%E7%BC%96%E7%A8%8B%E6%AF%94%E8%B5%9B/",
       "title": "从零开始，入坑编程比赛","content": " 从零开始，入坑编程比赛 1. 什么是编程比赛？ 编程比赛，一般称为程序设计竞赛，要求选手在有限的时间内编写程序，分析和解决问题。\n国内比较出名的比赛有：\nOI（Olympiad in Informatics，信息学奥林匹克竞赛），是高中五大学科竞赛之一。\nICPC（International Collegiate Programming Contest，国际大学生程序设计竞赛），由 ICPC 基金会（ICPC Foundation）举办，是最具影响力的大学生计算机竞赛。由于以前 ACM 赞助这个竞赛，也有很多人习惯叫它 ACM 竞赛。\n蓝桥杯，由中华人民共和国工业和信息化部人才交流中心主办（据相关新闻，2026届起已与工信部脱钩），从中小学到大学高校一直备受青睐，是参加人数多，知名度较高的比赛之一。\n码蹄杯，是由全国高等学校计算机教育研究会主办、清华大学出版社承办的编程竞赛，截至2025年举办了六届，也是目前备受青睐的，知名度较高的编程比赛之一。\n百度之星，由百度公司于2005年发起并主办的年度程序设计竞赛，初赛不限制参赛选手身份要求，是影响力较大，含金量较高的编程比赛之一。\n1.1 关于难度与含金量 注：关于评分码蹄杯比蓝桥杯难度高：码蹄杯题目数量更大，且难度与蓝桥杯大差不差（有些更难）。另外该图表只反映外界的普遍共识，但对于我们普通人来说，无论你参加了哪个比赛都很棒！\n2. 关于各种算法比赛的介绍 2.1 不同的赛制 根据不同的比赛规则，需要采取不同的策略来完成比赛。\n2.2 比赛规则之如何评分 每道算法题会有若干个检测点。检测点具体是什么东西，如何判断的呢？\n举个例子，你编写了一个程序，现在有各种各样的用户来做测试，如果一个用户用完你的程序没有问题，体验好，那你就通过了检测。反之，如果用户做出了你没考虑到的操作，导致程序失灵出现错误，那么这个检测你就没有通过。\n对应 …","date": "2025-10-25T00:00:00+00:00",
       "updated": "2025-10-25T17:41:41+08:00"
     }, 
     {
       "objectID": "ba0227469ab790e7b9503b88e81b7e61-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/",
+      "permalink": "http://localhost:1313/zh-cn/post/git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/",
       "title": "[Git]常见错误和解决方法","content": " 1.拉取镜像时报错 hint: Updates were rejected because the tip of your current branch is behind hint: its remote counterpart. If you want to integrate the remote changes, hint: use \u0026#39;git pull\u0026#39; before pushing again. hint: See the \u0026#39;Note about fast-forwards\u0026#39; in \u0026#39;git push --help\u0026#39; for details. 出现原因 1.别人先 push 了 团队协作时，别人往远端推送了新提交，而你本地的分支还停留在旧的版本。\n2.本地仓库没及时同步远端 你可能有一段时间没 git pull，导致历史落后。\n解决方法 不使用git pull origin main而是改为使用git pull --rebase origin main来保持直线历史。\n万金油自检顺序 git status # 看看是否有未提交/冲突/进行中操作 git branch -vv # 确认当前分支及其 upstream git fetch origin # 先拉最新引用 git pull --rebase origin \u0026lt;your-branch\u0026gt; # 整合远端 # 若有冲突：按提示解决 -\u0026gt; git add -\u0026gt; git rebase --continue git push 或 git pull origin main \u0026ndash;allow-unrelated-histories\n","date": "2025-09-09T00:00:00+00:00",
       "updated": "2025-09-09T14:36:58+08:00"
     }, 
     {
       "objectID": "afacf803fd1274679fd65187032f3388-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E6%AE%8B%E5%B7%AE%E8%BF%9E%E6%8E%A5/",
       "title": "[深度学习]残差连接","content": " 📖 什么是残差连接 残差连接是深度学习里的一种 网络结构设计技巧，最早在 ResNet（残差网络） 中提出。 它的核心思想是： 👉 让输入绕过若干层神经网络，直接加到输出上。 公式：\ny = F(x) + x 其中：\nx = 输入 F(x) = 若干层神经网络的变换 y = 输出（包含了原始输入 + 新学到的变化） 📌 为什么要用残差连接 缓解梯度消失/爆炸\n在非常深的神经网络里，梯度可能传不下去，导致训练困难。 残差连接给梯度提供了一条“捷径”，更容易训练。 避免退化问题\n网络越深，不一定越好，有时反而性能下降。 残差连接让深层网络至少能“模仿浅层网络”，避免性能变差。 更易学习\n网络不需要学完整的映射 H(x)，只需学“残差” F(x) = H(x) - x，任务更简单。 🎯 直观理解 没有残差：网络必须学会 从 0 到目标函数 的完整映射。 有了残差：网络只需在“已有的输入基础上，做一些修正”。 👉 就像写作文：不是从零开始写，而是拿一篇草稿（输入）做修改（残差），效率更高。\n✅ 一句话总结 残差连接就是在网络里给输入开一条“捷径”，把输入直接加到输出上，帮助训练更深的神经网络。\n","date": "2025-09-09T00:00:00+00:00",
       "updated": "2025-09-09T14:36:58+08:00"
     }, 
     {
       "objectID": "dcb6cd9511b2648db127cc79997a533f-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C-%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/",
       "title": "[深度学习]图注意力网络 图神经网络","content": " 1. 信息聚合方式的区别 🔹 传统 GNN（如 GCN） 采用 固定的归一化权重 来聚合邻居节点特征。 公式示例（GCN）： h_i\u0026#39; = \\sigma\\left( \\sum_{j \\in \\mathcal{N}(i)} \\frac{1}{\\sqrt{d_i d_j}} W h_j \\right) 这里权重 $\\frac{1}{\\sqrt{d_i d_j}}$ 仅依赖于节点度数，是预定义的，不随数据学习。 ➡ 聚合方式是 静态的，缺少自适应性。\n🔹 图注意力网络（GAT / GATv2） 采用 自注意力机制 来为邻居分配权重。 公式： h_i\u0026#39; = \\sigma\\left( \\sum_{j \\in \\mathcal{N}(i)} \\alpha_{ij} W h_j \\right), \\quad \\alpha_{ij} = \\text{softmax}_j \\big( a^T \\, \\text{LeakyReLU}(W[h_i \\, || \\, h_j]) \\big) 其中 alpha_{ij} 是 可学习的权重，依赖于节点特征本身。 ➡ 聚合方式是 动态的，模型能根据任务自动决定哪些邻居更重要。\n2. 表达能力的区别 传统 GNN（GCN, GraphSAGE 等）：对所有邻居的贡献大体一致，只能学习“平均化”或“加权和”的表示。 GAT 系列：允许不同邻居有不同的重要性，可以突出关键邻居、弱化噪声邻居，表达能力更强。 3. 可解释性的区别 传统 GNN：聚合权重由图结构决定，难以解释“为什么这个邻居重要”。 GAT 系列：注意力权重 alpha_{ij} 可以直接看作“节点 i 对邻居 j 的依赖程度”，可解释性更好。 4. 适用场景的区别 传统 GNN：适合结构相对规则的图（如社交网络、引文网络），邻居的贡献差别不大。 图注意力网络：适合异质图、知识图谱、推荐系统等场景——因为这些图的边类型复杂、邻居的重要性差异大。 5. 小总结 方面 传统 GNN (如 GCN) 图注意力网络 (GAT / GATv2) 聚合方式 固定权重（度数归一化） 动态权重（自注意力学习） 表达能力 相对有限 更灵活、更强 可解释性 较弱 较强（注意力可视化） 适用场景 同质图、规则图 异质图、复杂关系图 ","date": "2025-09-09T00:00:00+00:00",
       "updated": "2025-09-09T14:36:58+08:00"
     }, 
     {
       "objectID": "4adae78a76cd18454aa0bae7d2843349-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/",
+      "permalink": "http://localhost:1313/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/",
       "title": "[算法]GATv2图注意力网络","content": " 1. 背景：GAT 的问题 GAT（Velickovic et al., ICLR 2018）通过 自注意力机制 在图结构上聚合邻居节点信息，每条边的权重由注意力函数计算：\n\\alpha_{ij} = \\text{softmax}_j \\left( \\text{LeakyReLU}(a^T [W h_i \\, || \\, W h_j]) \\right) 其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。 但 GAT 有一个限制：注意力权重的计算公式在 输入的线性变换 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：\na^T (W h_i \\, || \\, W h_j) = a^T (W h_j \\, || \\, W h_i) → 可能导致表达能力不足。\n2. GATv2 的改进 GATv2（Brody et al., ICLR 2021）在注意力机制上进行了关键修改： 把 非线性函数移到线性变换之前，得到更强的表达能力。\n注意力计算公式：\n\\alpha_{ij} = \\text{softmax}_j \\left( a^T \\, \\text{LeakyReLU}( W [h_i \\, || \\, h_j] ) \\right) 区别：\nGAT：先对每个节点分别线性变换，再拼接，再做非线性。 GATv2：直接拼接原始特征，再做线性变换 + 非线性 → 更灵活。 ==这使得 GATv2 可以学习到 非对称的注意力模式，从而提升了表达能力。==\n3. 特点总结 更强表达能力：能捕捉 GAT 无法区分的模式。 兼容 GAT：如果权重矩阵退化，GATv2 可退化为 GAT。 性能提升：在多个数据集上比 GAT 表现更好，尤其在异质关系或需要方向性建模的任务上。 简单易用：代码和参数量与 GAT 几乎相同。 4. 公式回顾 节点更新公式：\nh_i\u0026#39; = \\sigma \\left( \\sum_{j \\in \\mathcal{N}(i)} \\alpha_{ij} W h_j \\right) 其中注意力：\n\\alpha_{ij} = \\frac{\\exp\\left( \\text{LeakyReLU}(a^T W [h_i \\, || \\, h_j]) \\right)}{\\sum_{k \\in \\mathcal{N}(i)} \\exp\\left( \\text{LeakyReLU}(a^T W [h_i \\, || \\, h_k]) \\right)} 和 GAT 的区别就在于 LeakyReLU 放在更前的位置。\n5. 应用场景 知识图谱问答（KGQA）：处理图谱中的实体关系，建模方向性边。 图分类 / 节点分类：尤其是图结构复杂、关系非对称的任务。 图生成 / 图谱结构学习：对边关系敏感时，GATv2 的非对称注意力很有优势。 ","date": "2025-09-09T00:00:00+00:00",
       "updated": "2025-09-09T14:36:58+08:00"
     }, 
     {
       "objectID": "6624464f066ab9f2d730e9c3358dbf5f-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/",
       "title": "[算法]协同过滤系统","content": "协同过滤系统（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐。\n1. 核心思想 “志同道合的人喜欢相似的东西。”\n如果用户 A 和用户 B 的兴趣很相似，那么 A 喜欢的物品，B 也可能喜欢。 如果物品 X 和物品 Y 被很多相同用户喜欢，那么喜欢 X 的人也可能喜欢 Y。 2. 两大类型 (1) 基于用户的协同过滤（User-Based CF） 找到与目标用户兴趣相似的其他用户（邻居），推荐他们喜欢的物品。\n例子：\n你喜欢电影 A、B，有另一个用户也喜欢 A、B，而且他还喜欢 C → 推荐 C 给你。 (2) 基于物品的协同过滤（Item-Based CF） 找到与目标物品相似的其他物品，推荐这些物品给用户。\n例子：\n很多人看了电影 A 后还看了电影 B → 如果你看了 A，就推荐 B。 3. 优点 不需要物品内容信息（可以处理多媒体、文本等无法直接比较的内容）。 只依赖用户行为数据，容易实现。 可以发现意料之外的推荐（serendipity）。 4. 缺点 冷启动问题：新用户/新物品没有足够的交互数据时很难推荐。 稀疏性问题：用户-物品矩阵很稀疏时，找到相似用户/物品的难度大。 无法直接利用上下文信息（时间、地点等）。 5. 在工业界的变体 矩阵分解（Matrix Factorization）：如 SVD、ALS，把用户和物品映射到同一个向量空间。 深度学习 CF：用 MLP、Embedding 代替传统相似度计算（比如 YouTube 双塔模型就是一种协同过滤思想的深度实现）。 📌 一句话总结\n协同过滤就是用“人和人之间的兴趣相似度”或“物品和物品之间的相似度”来做推荐，它是现代深度推荐系统的理论基础之一。\n","date": "2025-09-09T00:00:00+00:00",
       "updated": "2025-09-09T14:36:58+08:00"
     }, 
     {
       "objectID": "0d27cbeee9b8171434b6853dd40e88ad-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/",
+      "permalink": "http://localhost:1313/zh-cn/post/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/",
       "title": "[Git]常用命令，使用方法","content": " 分支 git branch 新建分支\n使用分支其实就相当于在说：“我想基于这个提交以及它所有的 parent 提交进行新的工作。”\ngit checkout 切换到指定分支\n注意：在 Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。\n更简洁的方式：如果你想创建一个新的分支同时切换到新创建的分支的话，可以通过 git checkout -b 来实现。\n分支与合并 git merge \u0026amp;lt;你要合并的另一个分支\u0026amp;gt;\n在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个 parent 节点。翻译成自然语言相当于：“我要把这两个 parent 节点本身及它们所有的祖先都包含进来。\ngit rebase\n取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。\n在提交树上移动 HEAD\nHEAD 是一个对当前所在分支的符号引用 —— 也就是指向你正在其基础上进行工作的提交记录。\nHEAD 总是指向当前分支上最近一次提交记录。HEAD 总是指向当前分支上最近一次提交记录。大多数修改提交树的 Git 命令都是从改变 HEAD 的指向开始的。\n分离的 HEAD\n分离的 HEAD 就是让其指向了某个具体的提交记录而不是分支名。\n相对引用 git log 来查查看提交记录的哈希值。\n根据哈希值进行移动 git branch -f \u0026amp;lt;分支\u0026amp;gt; \u0026amp;lt;指定提交记录的哈希值位置\u0026amp;gt;\n“ ^ ” 操作符\n相对引用非常给力，这里我介绍两个简单的用法：\n使用 ^ 向上移动 1 个提交记录 使用 ~ 向上移动多个提交记录，如 ~3 git checkout \u0026amp;lt;分支\u0026amp;gt;^ “~”操作符\n如果你想在提交树中向上移动很多步的 …","date": "2025-09-01T00:00:00+00:00",
       "updated": "2025-09-01T14:36:58+08:00"
     }, 
     {
       "objectID": "f58b9b257d7dc72fab83409b02481270-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/",
+      "permalink": "http://localhost:1313/zh-cn/post/git%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%8A%A9/",
       "title": "[Git]推送项目，多人协助","content": " Git如何推送项目 🚀 从本地推送项目到 GitHub 的完整流程 # 1. 进入你的项目目录 cd F:/备份/项目备份GPU/algokg_platform_server（改成你的文件路径） # 2. 初始化 Git 仓库（如果你已经 git init 过，可以跳过） git init # 3. 添加所有文件到暂存区 git add . # 4. 提交到本地仓库，写提交说明 git commit -m \u0026#34;初始化项目\u0026#34; # 5. 确认本地分支名称（旧版本 Git 默认是 master，新版本默认是 main） git branch # 如果不是 main，可以把当前分支改名为 main git branch -M main # 6. 添加远程仓库地址（如果已经添加过，就用 set-url 修改） # 第一次添加： # git remote add origin https://github.com/wittleLuna/AlgoKG.git # 如果提示 remote origin already exists，说明已经绑定过，就用： git remote set-url origin https://github.com/wittleLuna/AlgoKG.git # 7. 拉取远程仓库的 main 分支（避免冲突，比如 GitHub 默认生成的 README.md） git pull origin main --rebase # 8. 推送本地 main 分支到远程，并建立跟踪关系 git push -u origin main 🔑 后续日常开发流程（以后每次更新代码） 当你修改了文件后，只需要执行以下三步：\n# 查看状态，确认改了哪些文件 git status # 添加改动 git add . # 提交改动 git commit -m \u0026#34;修改了XXX功能\u0026#34; # 推送到远程仓库 git push Git如何多人协作 🟢 情况 1：你们是协作开发（推荐） 步骤 你给别人添加权限\n打开 GitHub 仓库页面 → Settings → Collaborators → 添加对方的 GitHub 用户名 / 邮箱 → 发送邀请。 对方接受后，就能对仓库有 push 权限。 别人克隆仓库\ngit clone https://github.com/wittleLuna/AlgoKG.git cd AlgoKG 别人日常操作\n# 修改代码后 git add . git commit -m \u0026#34;修改了XXX\u0026#34; git push origin main ✅ 就能把代码直接推送到你的仓库。\n🟡 情况 2：你不想直接给权限（更安全） 这种情况适合 开源项目 或者 只想让别人贡献代码但不想给写权限。\n流程是 Fork + Pull Request：\n别人在 GitHub 上点击你的仓库 → Fork → 复制一份到自己的账户。 在自己账户的仓库里改代码、commit、push。 改好后发起 Pull Request (PR) 给你。 你在仓库里审核 → 如果同意，就合并进主仓库。 拉取远程仓库文件 git pull origin main git pull origin main --allow-unrelated-histories git remote set-url origin https://github.com/wittleLuna/AlgoKG.git\n","date": "2025-09-01T00:00:00+00:00",
       "updated": "2025-09-01T14:36:58+08:00"
     }, 
     {
       "objectID": "878015405502d481a0095ddf8183b1ca-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E7%A0%81%E8%B9%84%E6%9D%AF/",
       "title": "[码蹄杯]2025年题目学习","content": " 括号序列 唐僧师徒途经一座神秘的古庙，庙前刻着一行字：“欲往决赛，需解此阵！” 小码哥自告奋勇上前查看，发现地上刻着一串由“(”和“)”括号组成的符号（长度为偶数），显然是某种法阵，但次序混乱，使得灵气无法流转。 小码哥看了一眼，笑道：“这法阵应该是要变成一套匹配的符号，才能显现出通往西天的正确道路，但怎么判断是否匹配呢？” 悟空指着庙旁的一块石碑说道：“规则在这儿！这几种情况都可以递归地定义一个括号序列是匹配的: 1.空序列是匹配的。 2.若A和B都是匹配的，则AB是匹配的。 3.若A是匹配的，则(A)是匹配的。\n但此法阵只能交换相邻两个符号的位置，那我们最少需要多少次才能使其完全匹配呢？ 小码哥摩拳擦掌：“交给我吧，我一定能算出来！”\n输入格式:第一行一个整数 T(T\u0026amp;lt; 10^6)，表示测试数据组数。对于每组测试数据:一行一个字符串，表示括号序列。数据保证，最终结果一定可以匹配。所有字符串长度之和不超过 10^6 输出格式:对于每组测试数据:输出一行一个整数，表示答案。\n输入:\n3 ()())( )( ()()\n输出:\n1 1 0\n标签 找规律 括号匹配\n解题思路 根据题目可以获得的信息有:\n1.括号字符串是肯定可以匹配的，只是次序乱了 2.每次只能交换两个字符的位置\n括号的特点:\n匹配的括号: () , 不匹配的括号: )(, 也就是说如果不匹配，肯定是 ) 出现在 ( 的 前面。那么在判断需要移动几次的时候，肯定要依据 ( 来，才能得到正确的结果，因为不匹配时, ( 肯定是出现在不匹配字符串的后面的位置的。\n通过分别统计(和)的数量（leftbracket 和 rightbracket），和字符串当前所在的位置，来判断需要移动几次。具体操作如下:\n如果当前为(, 并且当前已经有统计的 rightbracket, 那么可以把当前的( …","date": "2025-07-15T00:00:00+00:00",
       "updated": "2025-07-15T14:36:58+08:00"
     }, 
     {
       "objectID": "3ec19241c503f5bfa4d6d6cd12368936-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/",
+      "permalink": "http://localhost:1313/zh-cn/post/huggingface-%E4%B9%8B-%E4%BD%BF%E7%94%A8space-%E5%88%9B%E5%BB%BA%E8%81%8A%E5%A4%A9%E7%A8%8B%E5%BA%8F/",
       "title": "[Huggingface] 如何建立自己的Space","content": " 简单介绍 Hugging Face, Inc. is a French-American company based in New York City that develops computation tools for building applications using machine learning. It is most notable for its transformers library built for natural language processing applications and its platform that allows users to share machine learning models and datasets and showcase their work.\n简单来说就是一个社区，它提供了服务器的功能，用户可以把自己建立的应用，模型等通过它的服务能够在公网进行访问和使用\n前提准备 huggingface, github账号 第一步 建立新的space 在这里选择new space, 可以看到huggingface还支持建立模型，数据集等，这些目前用不到\n这一步需要填写下列内容 你的空间名称\n对空间的描述\n许可，这里可默认不写\n选择空间的SDK, 这一步很关键，决定了你的空间是何种类型的;可以看到我们可以使用Gradio构建web应用，用HTML构建静态内容，或者使用Docker拉取镜像。\n这里Huggingface提供了很丰富的不同版本的内容，可按照个人喜好自由选择 公开/私有： 决定你的空间是否别人能够访问\n第二部，配置 Space 以我这里选择Gradio为例（不同类型流程也是一样的），你现在需要做的事情有：\n克隆space到自己的Github仓库\n创建/修改克隆到仓库中的文件内容，以符合你的需要\n如图，这是我 …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:35:09+08:00"
     }, 
     {
       "objectID": "33f933bd343a607362e0b249de0590ec-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/",
+      "permalink": "http://localhost:1313/zh-cn/post/openwebui-%E4%B9%8B-%E4%BD%BF%E7%94%A8pipeline-%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8/",
       "title": "[Openwebui] 使用Pipeline功能","content": " 方法一： 用 Docker 容器运行 Pipelines docker run -d -p 9099:9099 \\ --add-host=host.docker.internal:host-gateway \\ -v /home/yourname/my-pipelines:/app/pipelines \\ --name pipelines \\ --restart always \\ ghcr.io/open-webui/pipelines:main 这种方法直接使用官方预构建的 Docker 镜像，自动加载 /app/pipelines 路径下的 pipeline 文件；将你写好的 pipeline 挂载进去即可使用\n官方镜像下载慢，但是华为云又版本过低？没事，这里我已经帮你找到了南京大学的镜像，速度快，版本新，十分甚至九分的好用\nghcr.nju.edu.cn/open-webui/pipelines:main 方法二： 本地部署pipelines 第一步：克隆官方pipeline仓库 git clone https://github.com/open-webui/pipelines.git cd pipelines python3.11 -m venv venv source venv/bin/activate pip install -r requirements.txt 注意的点 关于 clone github 仓库 如果你拥有自己的服务器，可以在云端进行。而且vscode支持远程连接时git 仓库，很方便（可能需要科学上网），也可以选择先克隆到本地，再把写好的文件上传到云端服务器\n关于 requirement.txt 需要rustc和cargo的支持，需要先下载rust。直接安装依赖可能报错 第二步：创建 rag_pipeline.py 文件 📁 …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:35:27+08:00"
     }, 
     {
       "objectID": "5840f0be3985306ab2f1b5cca4f9f6c9-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/",
       "title": "[基础知识]数据结构与算法","content": " 数据结构和算法 经典算法题 字符串匹配问题： 暴力匹配 KMP算法 八皇后：回溯算法 汉诺塔：分治算法 马踏棋盘：图的深度优化遍历算法(DFS)+贪心算法\n线性结构和非线性结构 数据结构包括线性结构和非线性结构\n线性结构 最常用的线性结构\n特点：数据之间存在==一对一==的线性关系\n存储结构：\n顺序存储结构（数组）：顺序存储的线性表称为顺序表，==顺序表中的存储元素是连续的（内存分配的地址是连续的）==\n链式存储结构（链表）：链式存储的线性表称为链表，==存储元素不一定连续==\n常见的线性结构：数组，队列，链表，栈\n非线性结构 不是一对一的关系\n常见的非线性结构：二维数组，多维数组，广义表，树结构，图结构\n稀疏数组和队列 稀疏数组(sparseArray) 如：用二维数组记录棋盘数据，有很多0，记录了很多没有意义的数据 基本介绍： 当一个数组中大部分元素是0，或者为同一个值的数组时，可以使用稀疏数组来保存数组。\n稀疏数组的处理方法：\n1.记录数组一共有几行几列，有多少个不同的值\n2.把具有不同值的元素的行列及值记录在一个小规模数组中，从而缩小程序的规模\n稀疏数组转二维数组：\n1.遍历原始二维数组，得到有效数据的个数sum\n2.根据sum创建sum创建sparsearr int[sum + 1][3]\n3.将二维数组的有效数据存到一维数组\n二维数组转稀疏数组：\n1.先读取稀疏数组的第一行，根据第一行的数据，创建原始二维数组\n2.再读取稀疏数组后几行的数据，并赋给原始的二维数组\n代码实现 package sparsearray; public class SparsearrDemo1 { public static void main(String[] args) { int[][] arr = new int[11][11]; arr[1][2] = 1; …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:36:47+08:00"
     }, 
     {
       "objectID": "08d916ce800c13a660e205c615063679-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
+      "permalink": "http://localhost:1313/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
       "title": "DFS/BFS理论基础","content": " 深度优先搜索理论基础 两者大概的区别： dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。\nbfs是先把本节点所连接的所有节点遍历一遍，走到下一个节点的时候，再把连接节点的所有节点遍历一遍，搜索方向更像是广度，四面八方的搜索过程。\ndfs搜索过程 如图一，是一个无向图，我们要搜索从节点1到节点6的所有路径。 那么dfs搜索的第一条路径是这样的： （假设第一次延默认方向，就找到了节点6），图二 此时我们找到了节点6，（遇到黄河了，是不是应该回头了），那么应该再去搜索其他方向了。 如图三： 路径2撤销了，改变了方向，走路径3（红色线）， 接着也找到终点6。 那么撤销路径2，改为路径3，在dfs中其实就是回溯的过程（这一点很重要，很多录友不理解dfs代码中回溯是用来干什么的）\n又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图四中，路径4撤销（回溯的过程），改为路径5。 又找到了一条从节点1到节点6的路径，又到黄河了，此时再回头，下图图五，路径6撤销（回溯的过程），改为路径7，路径8 和 路径7，路径9， 结果发现死路一条，都走到了自己走过的节点。 那么节点2所连接路径和节点3所链接的路径 都走过了，撤销路径只能向上回退，去选择撤销当初节点4的选择，也就是撤销路径5，改为路径10 。 如图图六： 上图演示中，其实我并没有把 所有的 从节点1 到节点6的dfs（深度优先搜索）的过程都画出来，那样太冗余了，但 已经把dfs 关键的地方都涉及到了，关键就两点：\n搜索方向，是认准一个方向搜，直到碰壁之后再换方向 换方向是撤销原路径，改为节点链接的下一个路径，回溯的过程。 代码框架 二叉树的递归法其实就是dfs，而二叉树的迭代法，就是bfs（广度优先搜索）\n所以dfs，bfs其实是基础搜索算法，也广泛应用与其他数据 …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:33:47+08:00"
     }, 
     {
       "objectID": "72a54093b13861d65bc821ddb8913c16-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/",
       "title": "动态规划算法","content": " 动规五部曲 确定dp数组和下标的含义 写出递推公式 确定dp数组如何初始化 确定遍历顺序（方向） 打印，举例推导验证dp数组是否正确 背包问题 01背包 可使用二维背包，一维滚动背包 二维背包 基本了解 基本递推公式 : dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])\ndp[i][j] 表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少\n遍历顺序一般是先物品，再背包。也可以先背包，再物品\n第一列初始化为0，第一行为第一个物品能否装入的价值\ndp的方向是由左上方决定的，遍历顺序从前往后/从后往前都可以\n一维背包/滚动背包 基本递推公式 : dp[j] = max(dp[j],dp[j - weight[i]] + value[i]) 需要先遍历物品，再遍历背包，遍历背包时要倒序遍历 初始化为0 dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j] 为什么背包容量循环需要倒序： dp[j - weight[i]] + value[i] : 说明是从左边的值来寻找当前合适的值\n如果倒序，此时j从大到小，从左边：左边初始化都为0，所以不会使用到已经用过的物品\n如果顺序，此时j从小到大，从左边：假如已经填了第一个物品，那么第二次，查找左边，就会继续把第一个物品的值加上\n题型类型 1.纯01背包，计算背包装满的最大价值\n2.能否填满背包（一般背包容量也可以是指定数字，数组里的数作为元素，能否达到指定数字）\n不同点：返回值是和需要的容量作比较后的布尔值 3.尽量填满背包\n4.填满背包的方法数量\n不同点 ：\n1.递推公式不同: 总填充方法 = 不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数\ndp[j] += dp[j …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:35:43+08:00"
     }, 
     {
       "objectID": "9857ac6b72a87029be956f036d9ee5d4-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E9%94%99%E8%AF%AF%E6%80%BB%E7%BB%93%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/",
       "title": "蓝桥杯题库复习","content": " 杂题 105 油漆面积 错误描述 ： 发生了段错误\n原因： 保持二维数组时使用了int数组，一个int占4字节。10004*10004(个int类型变量) * 4 (转换成字节) / 1000 (转换为kb/千字节) / 1024 (转换为mb) 约为390mb， 远超题目最大运行内存256mb,所以会报段字节的错误\n解决方法： 使用占用内存更小的类型，如boolean,占用1个字节\n代码实现\npublic static void main(String[] args) { Scanner scan = new Scanner(System.in); int n = scan.nextInt(); ArrayList\u0026amp;lt;int[]\u0026amp;gt; rectangles = new ArrayList\u0026amp;lt;\u0026amp;gt;(); boolean[][] grid = new boolean[10004][10004]; for(int i = 0 ; i \u0026amp;lt; n ; i++) { int x1 = scan.nextInt(); int y1 = scan.nextInt(); int x2 = scan.nextInt(); int y2 = scan.nextInt(); int temp = 0; if(x1 \u0026amp;gt; x2) { temp = x2; x2 = x1; x1 = temp; } if(y1 \u0026amp;gt; y2) { temp = y2; y2 = y1; y1 = temp; } rectangles.add(new int[]{x1,y1,x2,y2}); } for(int[] arr: rectangles) { for(int x = arr[0]; x \u0026amp;lt; arr[2]; x++) { for(int y = arr[1]; y\u0026amp;lt; …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:37:27+08:00"
     }, 
     {
       "objectID": "c7cd35aad8111e2ecee01efdd394514b-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/",
       "title": "图论理论基础","content": " 图论 图论理论基础 图的基本概念 二维坐标中，两点可以连成线，多个点连成的线就构成了图。\n当然图也可以就一个节点，甚至没有节点（空图）\n图的种类 整体上分为有向图和无向图\n有向图：图中边是有方向的： 无向图：图中边没有方向: 加权有向图，就是图中边是有权值的: 加权无向图也是同理\n度 无向图:有几条边连接该节点，该节点就有几度 例如，该无向图中，节点4的度为5，节点6的度为3。 有向图:每个节点有出度和入度 出度：从该节点出发的边的个数 入度:指向该节点的边的个数\n例如，该有向图中，节点3的入度为2，出度为1，节点1的入度为0，出度为2。 连通性 在图中表示节点的连通情况，称之为连通性\n连通图 在无向图中，任何两个节点都是可以到达的，我们称之为连通图 如果有节点不能到达其他节点，则为非连通图 强连通图 在有向图中，任何两个节点是可以相互到达的，我们称之为 强连通图。、\n注意：强连通图是在有向图中任何两个节点是可以相互到达\n这个图不是强连通图，因为1能到5的位置，但是5不能到1的位置。\n这个图是强连通图\n连通分量 在无向图中的极大连通子图称之为该图的一个连通分量。 该无向图中节点1、节点2、节点5构成的子图就是 该无向图中的一个连通分量，该子图所有节点都是相互可达到的。\n同理，节点3、节点4、节点6构成的子图 也是该无向图中的一个连通分量。\n那么无向图中节点3 、节点4构成的子图 是该无向图的联通分量吗？\n不是！\n因为必须是极大联通子图才能是连通分量，所以 必须是节点3、节点4、节点6构成的子图才是连通分量。\n在图论中，连通分量是一个很重要的概念，例如岛屿问题（后面章节会有专门讲解）其实就是求连通分量。\n强连通分量 在有向图中极大强连通子图称之为该图的强连通分量。 节点1、节点2、节点3、节点4、节点5 构成的子图是强连通分量，因为这是强连通图，也是极大图。\n节点6、节 …","date": "2025-06-14T00:00:00+00:00",
       "updated": "2025-06-15T14:36:16+08:00"
     }, 
     {
       "objectID": "af8d9e6ebb52f38a177f234d18a71818-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/",
+      "permalink": "http://localhost:1313/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/",
       "title": "Djikstra算法","content": "dijkstra 三部曲：\n第一步，选源点到哪个节点近且该节点未被访问过 第二步，该最近节点被标记访问过 第三步，更新非访问节点到源点的距离（即更新minDist数组）\n==解决单源最短路径问题，适用于有向图和无向图，但边权值不能为负==\n参加科学大会 解题思路 使用dijkstra模板实现\n代码实现\npublic static void main(String[] args){ Scanner sc = new Scanner(System.in); int pointsNum = sc.nextInt(); int edgesNum = sc.nextInt(); int[][] map = new int[pointsNum + 1][pointsNum + 1];\tboolean[] isTree = new boolean[pointsNum+1]; int[] minDis = new int[pointsNum + 1]; Arrays.fill(minDis, Integer.MAX_VALUE); minDis[1] = 0; for(int i = 0 ; i \u0026amp;lt; edgesNum; i++) { int p1 = sc.nextInt(); int p2 = sc.nextInt(); int v = sc.nextInt(); map[p1][p2] = v; } for(int i = 1; i \u0026amp;lt;= pointsNum; i ++) { int cur = 1; int min = Integer.MAX_VALUE; //第一步，选距离源点最近且未访问过的节点 for(int j = 1; j \u0026amp;lt;= pointsNum; j++) { if(!isTree[j] \u0026amp;amp;\u0026amp;amp; minDis[j] \u0026amp;lt; min) { …","date": "2025-06-12T00:00:00+00:00",
       "updated": "2025-06-15T14:34:40+08:00"
     }, 
     {
       "objectID": "f7c17377324c8c2ad02f6bbdad9713d9-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%9B%BE%E8%AE%BA%E9%A2%98/",
       "title": "图论算法题","content": " 图的存储 邻接矩阵 Scanner scanner = new Scanner(System.in); int n = scanner.nextInt(); //n是节点数 int m = scanner.nextInt(); //m是边数 // 节点编号从1到n，所以申请 n+1 这么大的数组 int[][] graph = new int[n + 1][n + 1]; for (int i = 0; i \u0026amp;lt; m; i++) { int s = scanner.nextInt(); int t = scanner.nextInt(); // 使用邻接矩阵表示无向图，1 表示 s 与 t 是相连的 graph[s][t] = 1; } 邻接表 Scanner scanner = new Scanner(System.in); int n = scanner.nextInt(); //n是节点数 int m = scanner.nextInt(); //m是边数 // 节点编号从1到n，所以申请 n+1 这么大的数组 List\u0026amp;lt;LinkedList\u0026amp;lt;Integer\u0026amp;gt;\u0026amp;gt; graph = new ArrayList\u0026amp;lt;\u0026amp;gt;(n + 1); for (int i = 0; i \u0026amp;lt;= n; i++) { graph.add(new LinkedList\u0026amp;lt;\u0026amp;gt;()); } while (m-- \u0026amp;gt; 0) { int s = scanner.nextInt(); int t = scanner.nextInt(); // 使用邻接表表示 s -\u0026amp;gt; t 是相连的 graph.get(s).add(t); } 所有可达路径 题目描述 给定一个有 n 个节点的有向无环图，节点编号从 1 到 n。请编写一个函数，找出并返回所有从 …","date": "2025-06-12T00:00:00+00:00",
       "updated": "2025-06-15T14:36:31+08:00"
     }, 
     {
       "objectID": "553990afda82dc3f3fca468252c0adb1-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/",
       "title": "最小生成树算法","content": "最小生成树是所有节点的最小连通子图，即：以最小的成本（边的权值）将图中所有节点链接到一起。\nprim算法 图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。\n==只适用于加权无向图==\n那么如何选择这n-1条边就是最小生成树算法的任务所在。\n在这个图中，如何选取n-1条边使得图中所有节点连接到一起，并且边的权值和最小呢？\n（图中为n为7，即7个节点，那么只需要n-1即6条边就可以讲所有顶点连接到一起）\nprim算法是从节点的角度采用贪心的策略每次寻找距离最小生成树最近的节点并加入到最小生成树中。\nprim算法核心就是三步，我称为prim三部曲，大家一定要熟悉这三步，代码相对会好些很多：\n第一步，选距离生成树最近节点 第二步，最近节点加入生成树 第三步，更新非生成树节点到生成树的距离（即更新minDist数组） minDist数组的含义：记录每一个节点距离最小生成树的最近距离。\n最小生成树prim算法\n寻宝 在世界的某个区域，有一些分散的神秘岛屿，每个岛屿上都有一种珍稀的资源或者宝藏。国王打算在这些岛屿上建公路，方便运输。\n不同岛屿之间，路途距离不同，国王希望你可以规划建公路的方案，如何可以以最短的总公路距离将 所有岛屿联通起来（注意：这是一个无向图）。\n给定一张地图，其中包括了所有的岛屿，以及它们之间的距离。以最小化公路建设长度，确保可以链接到所有岛屿。\n输入描述 第一行包含两个整数V 和 E，V代表顶点数，E代表边数 。顶点编号是从1到V。例如：V=2，一个有两个顶点，分别是1和2。\n接下来共有 E 行，每行三个整数 v1，v2 和 val，v1 和 v2 为边的起点和终点，val代表边的权值。\n输出描述 输出联通所有岛屿的最小路径总距离 输入示例 7 11 1 2 1 1 3 1 1 5 2 2 6 1 2 4 2 2 3 2 3 4 1 4 5 1 5 6 …","date": "2025-06-12T00:00:00+00:00",
       "updated": "2025-06-15T14:36:58+08:00"
     }, 
     {
       "objectID": "32e32753f52fbaf154fe153782b5c8be-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/",
       "title": "回溯算法","content": "回溯和递归相辅相成，本质上是暴力查找算法(穷举)，所有的回溯法都可以抽象为树形结构\n回溯法，一般可以解决如下几种问题：\n组合问题：N个数里面按一定规则找出k个数的集合 切割问题：一个字符串按一定规则有几种切割方式 子集问题：一个N个数的集合里有多少符合条件的子集 排列问题：N个数按一定规则全排列，有几种排列方式 棋盘问题：N皇后，解数独等等 模板框架:\nvoid backtracking(参数) { if (终止条件) { 存放结果; return; } for (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) { 处理节点; backtracking(路径，选择列表); // 递归 回溯，撤销处理结果 } } 回溯三部曲: 1.确定递归函数的参数和返回值 2.确定递归的终止条件 3.确定单层搜索的逻辑\n一般返回值都为void\n组合问题 ==需要startIndex来保证元素不被重复选取==\n组合 给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。\n你可以按 任何顺序 返回答案。\n示例 1：\n输入：n = 4, k = 2 输出： [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ]\n确定参数和返回值： 参数：n:代表遍历的次数 k:代表需要走到的深度 startIndex: 代表当前层的遍历位置(因为是组合问题，每个节点只能从其之后的位置开始遍历)\n返回值：none, 使用全局遍历存储结果和当前路径的元素\n确定递归终止条件： 如果当前路径的元素=当前的深度 ： 说明找到的元素个数符合要求，那么把当前路径作为一种结果加入结果变量，之后返回 确定单层的递归逻辑： for循环，加入当前的元素，之后递归进行下一层循环，注意循环开始的位置，之后回溯去掉当前加入的元素（删除当前元素，之后回溯加入其他元素） …","date": "2025-06-11T00:00:00+00:00",
       "updated": "2025-06-15T14:35:59+08:00"
     }, 
     {
       "objectID": "190c022a65c850da958a8f1d779e5475-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E9%98%85%E8%AF%BB%E8%A7%A6%E5%8F%91%E8%AF%8D/",
       "title": "雅思阅读判断总结(十分有效，我阅读考了8.0)","content": " 📘 雅思阅读判断题十大陷阱类型 + 触发语速查卡 ✅ 陷阱类型 🚨 特征关键词 🎯 触发语口诀 1️⃣ 主语错配 the author / researchers / experts / some / all “谁说的？别乱代入作者。” 2️⃣ 程度误导 all, always, never, only “看到 always / never，要提高警觉。” 3️⃣ 范围偷换 some ↔ most / people ↔ students “小变大，大变小，一律警惕。” 4️⃣ 时态陷阱 used to / now / recent studies “时间变了，观点也会变！” 5️⃣ 语气反转 however, although, but “but 出没，反转常有。” 6️⃣ 观点 vs 事实 “argue”, “believe” vs “confirm”, “prove” “观点 ≠ 事实，别搞混！” 7️⃣ 模糊词对撞 may, might vs must / will “原文说可能，题干说一定 → FALSE！” 8️⃣ 双面观点 some believe X, others believe Y “题干说一致？直接判 FALSE。” 9️⃣ 同义换骨 “cut costs” vs “save money”, “concerned” vs “worried” “换壳不换意，看透词芯。” 🔟 因果关系误判 “A happened and B happened” ≠ “A caused B” “并列 ≠ 因果，小心脑补！” 触发语 常见误判 正确处理 the country / this practice / such an approach 忽略代词指代的具体对象，觉得信息不明确（误选 NG） 回头找前文最近明确提到的对象，代入判断是否对应 题目中带有“所有人 / 所有人 …","date": "2025-05-20T00:00:00+00:00",
       "updated": "2025-05-20T14:36:58+08:00"
     }, 
     {
       "objectID": "03fcf2da5448523bbd3963d79c22b449-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/",
       "title": "自然语言处理","content": " 背景知识 自然语言处理(natural language processing, NLP)\nNLP发展历程 阶段一：图灵测试 该测试的流程是，一名测试者写下自己的问题，随后将问题以纯文本的形式（如计算机屏幕和键盘）发送给另一个房间中的一个人与一台机器。测试者根据他们的回答来判断哪一个是真人，哪一个是机器。所有参与测试的人或机器都会被分开。这个测试旨在探究机器能否模拟出与人类相似或无法区分的智能 [1]。 现在的图灵测试测试时长通常为5分钟，如果电脑能回答由人类测试者提出的一系列问题，且其超过30%的回答让测试者误认为是人类所答，则电脑通过测试。\n阶段二：基于规则的方法 自然语言处理的最早阶段主要采用基于规则的方法，通过人工定义语法和规则来解析和生成文本。这些方法的局限性在于难以涵盖语言的复杂性和多样性，因为规则需要人为设计且难以适应不同的语境。\n阶段三：统计学习方法 随着统计学习方法的兴起，自然语言处理进入了统计学习阶段。该阶段的代表性方法包括隐马尔可夫模型（Hidden Markov Models，HMM）和最大熵模型（Maximum Entropy Models）。这些方法通过从大量语料中学习统计规律来解决语言处理问题，提高了模型的泛化能力。\n阶段四：深度学习与神经网络 深度学习的广泛应用推动了自然语言处理领域的进一步发展。循环神经网络（Recurrent Neural Networks，RNN）和长短时记忆网络（Long Short-Term Memory，LSTM）等模型在序列标注、机器翻译等任务上取得了显著的成果。随后，注意力机制和Transformer模型的提出进一步提升了自然语言处理的性能，例如BERT、GPT等模型。\nAI发展历程 第一阶段-AI兴起：人工智能的诞生（1941- 1956）\n第二阶段-AI早期成功：AI黄金发展时代（1956-1974）\n第 …","date": "2025-02-25T00:00:00+00:00",
       "updated": "2025-02-25T14:36:58+08:00"
     }, 
     {
       "objectID": "2fbcaeed0e4e4f766e1e6c76b77dff9b-zh-cn",
       "lang": "zh-cn",
-      "permalink": "https://wittleLuna.github.io/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/",
+      "permalink": "http://localhost:1313/zh-cn/post/%E8%93%9D%E6%A1%A5%E6%9D%AF%E4%BB%8B%E7%BB%8D/",
       "title": "[蓝桥杯]赛事介绍","content": " 蓝桥杯介绍 蓝桥杯赛制 IO赛制\n赛制特点： 个人赛：每个选手独立参赛。 比赛时长：4小时。 题目数量：通常8-10道题。 答题方式：选手每题可提交多次，但==仅保留最后一次提交结果，比赛期间无法看到评测结果==。 题目类型：单结果题+编程题。单结果题：只需要输出题目问题的答案。编程题：有多个测试点，每个测试点有一个正确答案。 评分规则：每道题包含多个测试点，根据通过的测试点数量得分，部分数据通过也能获得部分分数。最终得分在赛后公布。\nOI赛制最大的特点在于考试的时候看不到评测结果，不像ACM赛制可以立马看到结果，知道自己对不对，但是好处是有部分分，过了几个点也有分拿。\n图例[19728 拼十字]\n官网题库练习界面，有调试和提交检测按钮。调试按钮使用第一个节点的测试数据测试程序能不能得到正确结果，提交检测会检测所有测试数据，最后给出完整的结果。 怎样的答案才算是正确答案？ 1.程序逻辑正确 2.满足时间复杂度和空间复杂度的要求\n根据选择使用的算法不同，复杂度不同，通过率会有差别。20个检测点，使用回溯算法，通过6个，得6分。\n==在正式比赛中，需要在指定位置上传自己的程序代码。看不到提交后的结果，不能进行调试。检测方法就是根据题目要求，自己想例子手动测试。==\n蓝桥杯常用数据结构 列表(数组) 特点： 连续存储，支持随机访问，索引复杂度为 \\(O(1)\\)。 插入、删除复杂度为 \\(O(n)\\)。 应用场景： 简单的序列存储（如题目输入输出）。 作为动态数组的基础结构。 蓝桥杯常见题型： 前缀和：求连续子数组的和。 双指针：查找满足条件的子数组或子序列。 例题： 给定一个数组，找到和为目标值的连续子数组。 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。\n子数组是数组中元素的连续非空序列。\n示例 1：\n输入：nums = …","date": "2025-01-22T00:00:00+00:00",
       "updated": "2025-01-22T14:36:58+08:00"
     }

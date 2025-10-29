@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on wittleLuna的博客</title>
-    <link>https://wittleLuna.github.io/zh-cn/categories/%E7%AE%97%E6%B3%95/</link>
+    <link>http://localhost:1313/zh-cn/categories/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content from wittleLuna的博客</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 09 Sep 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/zh-cn/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/zh-cn/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,16 +23,16 @@
 
     <item>
       <title>[算法]协同过滤系统</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://localhost:1313/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%B3%BB%E7%BB%9F/</guid>
       <description>
         <![CDATA[<h1>[算法]协同过滤系统</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
           <p><strong>协同过滤系统</strong>（Collaborative Filtering, CF）是一种推荐系统方法，它不依赖物品的内容特征，而是<strong>利用用户和物品之间的交互数据（如评分、点击、购买记录）来发现相似性并进行推荐</strong>。</p>
         
-        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+        <hr><p>本文2025-09-09首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
       </description>
       
         <category>算法</category>
@@ -43,10 +43,10 @@
 
     <item>
       <title>[算法]GATv2图注意力网络</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
+      <link>http://localhost:1313/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</link>
       <pubDate>Tue, 09 Sep 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
+      <guid>http://localhost:1313/zh-cn/post/gatv2%E5%9B%BE%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BD%91%E7%BB%9C/</guid>
       <description>
         <![CDATA[<h1>[算法]GATv2图注意力网络</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -58,7 +58,7 @@
 </span></span></code></pre></div><p>其中 h_i 是节点特征，W 是线性变换，a 是可学习参数。
 但 GAT 有一个限制：注意力权重的计算公式在 <strong>输入的线性变换</strong> 之后才进入非线性函数，因此注意力分布空间受到限制，不能区分一些对称情况。例如：</p>
         
-        <hr><p>本文2025-09-09首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
+        <hr><p>本文2025-09-09首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-09-09</p>]]>
       </description>
       
         <category>算法</category>
@@ -69,10 +69,10 @@
 
     <item>
       <title>最小生成树算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
+      <link>http://localhost:1313/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
       <description>
         <![CDATA[<h1>最小生成树算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -82,7 +82,7 @@
 prim算法
 </h2><p>图中有n个节点，那么一定可以用n-1条边将所有节点连接到一起。</p>
         
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-12首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>
@@ -93,10 +93,10 @@ prim算法
 
     <item>
       <title>图论理论基础</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <link>http://localhost:1313/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
       <description>
         <![CDATA[<h1>图论理论基础</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -116,7 +116,7 @@ prim算法
 图的种类
 </h3><p><strong>整体上分为有向图和无向图</strong></p>
         
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>
@@ -127,10 +127,10 @@ prim算法
 
     <item>
       <title>回溯算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>回溯算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -145,7 +145,7 @@ prim算法
 </ul>
 <p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210130173631174.png" alt="image"></p>
         
-        <hr><p>本文2025-06-11首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-11首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>
@@ -156,10 +156,10 @@ prim算法
 
     <item>
       <title>动态规划算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <link>http://localhost:1313/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <guid>http://localhost:1313/zh-cn/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description>
         <![CDATA[<h1>动态规划算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -192,7 +192,7 @@ prim算法
 <li>
 <p>基本递推公式 : <code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])</code></p>
         
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>
@@ -203,10 +203,10 @@ prim算法
 
     <item>
       <title>Djikstra算法</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/zh-cn/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Djikstra算法</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -215,7 +215,7 @@ prim算法
 第二步，该最近节点被标记访问过
 第三步，更新非访问节点到源点的距离（即更新minDist数组）</p>
         
-        <hr><p>本文2025-06-12首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-12首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>
@@ -226,10 +226,10 @@ prim算法
 
     <item>
       <title>DFS/BFS理论基础</title>
-      <link>https://wittleLuna.github.io/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <link>http://localhost:1313/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://localhost:1313/zh-cn/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
       <description>
         <![CDATA[<h1>DFS/BFS理论基础</h1><p>作者：wittleLuna（syaz23277@gmail.com）</p>
         
@@ -246,7 +246,7 @@ prim算法
 <li>
 <p>dfs是朝一个方向去搜，不到黄河不回头，直到遇到绝境了，搜不下去了，再换方向（换方向的过程就涉及到了回溯）。</p>
         
-        <hr><p>本文2025-06-14首发于<a href='https://wittleLuna.github.io/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
+        <hr><p>本文2025-06-14首发于<a href='http://localhost:1313/'>wittleLuna的博客</a>，最后修改于2025-06-15</p>]]>
       </description>
       
         <category>算法</category>

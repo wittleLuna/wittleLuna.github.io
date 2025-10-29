@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computer Algorithm on wittleLuna&#39;s blog</title>
-    <link>https://wittleLuna.github.io/en/categories/computer-algorithm/</link>
+    <link>http://localhost:1313/en/categories/computer-algorithm/</link>
     <description>Recent content from wittleLuna&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Tue, 15 Jul 2025 14:36:58 +0800</lastBuildDate>
     
     
-    <atom:link href="https://wittleLuna.github.io/en/categories/computer-algorithm/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/en/categories/computer-algorithm/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>[Mati Cup]2025 Problems — Study Notes</title>
-      <link>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
+      <link>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</link>
       <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
+      <guid>http://localhost:1313/en/post/%E7%A0%81%E8%B9%84%E6%9D%AF/</guid>
       <description>
         <![CDATA[<h1>[Mati Cup]2025 Problems — Study Notes</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -129,7 +129,7 @@
 老者点头道：“此考验涉及两组长度均为n神秘数列，分别称为‘天数列’a1~an和‘地数列’b1 ~ bn.每个数皆为正整数。”
 他指了指桥上的一块石碑，上面刻着一道古老的公式：</p>
         
-        <hr><p>Published on 2025-07-15 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
+        <hr><p>Published on 2025-07-15 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-07-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -140,10 +140,10 @@
 
     <item>
       <title>Minimum Spanning Tree</title>
-      <link>https://wittleLuna.github.io/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
+      <link>http://localhost:1313/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
+      <guid>http://localhost:1313/en/post/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95prim-kruskal/</guid>
       <description>
         <![CDATA[<h1>Minimum Spanning Tree</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -199,7 +199,7 @@ prim算法
 1 &lt;= E &lt;= 100000;
 0 &lt;= val &lt;= 10000;</p>
         
-        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -210,10 +210,10 @@ prim算法
 
     <item>
       <title>theoretical basis of Graph Theory</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <link>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://localhost:1313/en/post/%E5%9B%BE%E8%AE%BA%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
       <description>
         <![CDATA[<h1>theoretical basis of Graph Theory</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -295,7 +295,7 @@ prim算法
 </h2><p><strong>一般使用邻接表、邻接矩阵 或者用类来表示。</strong></p>
 <p><strong>主要是 朴素存储、邻接表和邻接矩阵。</strong></p>
         
-        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -306,10 +306,10 @@ prim算法
 
     <item>
       <title>Backtracking-algorithm</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/en/post/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Backtracking-algorithm</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -363,7 +363,7 @@ prim算法
 [1,4],
 ]</p>
         
-        <hr><p>Published on 2025-06-11 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-11 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -374,10 +374,10 @@ prim算法
 
     <item>
       <title>dynamic programming</title>
-      <link>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <link>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <guid>http://localhost:1313/en/post/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
       <description>
         <![CDATA[<h1>dynamic programming</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -454,7 +454,7 @@ prim算法
 <p>1.递推公式不同: 总填充方法 =  不要该物品的填充方法+空出该物品容量，要该物品的填充方法，以及分支条件，如果装不下该物品，采用之前的填充方法数</p>
 <p>dp[j] += dp[j - weight[i]]</p>
         
-        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -465,10 +465,10 @@ prim算法
 
     <item>
       <title>Djikstra</title>
-      <link>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/en/post/dijkstra%E7%AE%97%E6%B3%95/</guid>
       <description>
         <![CDATA[<h1>Djikstra</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -653,7 +653,7 @@ prim算法
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div>
         
-        <hr><p>Published on 2025-06-12 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-12 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
@@ -664,10 +664,10 @@ prim算法
 
     <item>
       <title>theoretical basis of DFS/BFS</title>
-      <link>https://wittleLuna.github.io/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <link>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Sat, 14 Jun 2025 00:00:00 &#43;0000</pubDate>
       <author>syaz23277@gmail.com (wittleLuna)</author>
-      <guid>https://wittleLuna.github.io/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://localhost:1313/en/post/dfsbfs%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
       <description>
         <![CDATA[<h1>theoretical basis of DFS/BFS</h1><p>Author: wittleLuna(syaz23277@gmail.com)</p>
         
@@ -742,7 +742,7 @@ dfs搜索过程
 深搜三部曲
 </h3><p>1.<strong>确认递归函数，参数</strong></p>
         
-        <hr><p>Published on 2025-06-14 at <a href='https://wittleLuna.github.io/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
+        <hr><p>Published on 2025-06-14 at <a href='http://localhost:1313/'>wittleLuna's blog</a>, last modified on 2025-06-15</p>]]>
       </description>
       
         <category>computer algorithm</category>
